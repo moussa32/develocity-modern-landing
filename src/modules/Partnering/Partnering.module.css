@@ -1,0 +1,25 @@
+.partneringWraper{
+    /* margin-top: 400px;
+    margin-bottom: 400px; */
+}
+.partneringWraper h3{
+    font-size: 20px;
+}
+.partnering_body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+.partnering_body>div{
+    width: 30%;
+}
+.partnering_body img{
+    width: 150px;
+}
+.partnering_body>div:last-child{
+    text-align: end;
+}
+.partnering_body>div:nth-child(2){
+    text-align: center;
+}

@@ -1,0 +1,50 @@
+.newsWrapper{
+   margin-top: 70px;
+}
+.btn_blog{
+    width: 180px;
+    height: 40px;
+    color: #707070 !important;
+    border: 1px solid #707070 !important;
+ }
+.news_header{
+    color: #373737;
+    margin-bottom: -1px;
+}
+ .news_caption{
+    color: #6C757D;
+ }
+ .card_wrapper{
+    margin-top: 15px;
+ }
+ .myCard{
+    height: 420px;
+    width: 350px;
+ }
+ .cardImageContainer{
+    height: 250px;
+    background-color: #E1C7FF;
+    text-align: center;
+    line-height: 250px;
+ }
+
+ .cardImageContainer img{
+    width: 150px;
+ }
+ .cardBody{
+    height: 170px;
+ }
+ .cardBody span{
+    background-color: rgba(148, 99, 249, 0.2) !important;
+    height: 23px;
+    /* width: 117px; */
+    display: inline-block;
+    padding: 2px 10px ;
+    font-size: 11px;
+ }
+ .readMore {
+    padding-top: 20px;
+    background-color: transparent !important;
+    text-align: end !important;
+    font-size: 12px;
+}
