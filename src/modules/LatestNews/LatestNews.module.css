@@ -19,7 +19,7 @@
  }
  .myCard{
     height: 420px;
-    width: 350px;
+    width: 30%;
  }
  .cardImageContainer{
     height: 250px;
@@ -47,4 +47,22 @@
     background-color: transparent !important;
     text-align: end !important;
     font-size: 12px;
+}
+
+
+@media screen and (max-width:992px) {
+   .cardImageContainer{
+      height: 150px;
+      line-height: 150px;
+   }
+  .myCard{
+   width: 32%;
+   height: 300px;
+  }
+  .cardBody{
+   height: 150px;
+}
+   .cardImageContainer img{
+      width: 100px;
+   }
 }
