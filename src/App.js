@@ -1,9 +1,7 @@
+import Home from "./modules/Home/Home";
+
 const App = () => {
-  return (
-    <div className="App">
-      <h1 className="text-primary">Last Presale Phase!</h1>
-    </div>
-  );
+  return <Home />;
 };
 
 export default App;

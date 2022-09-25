@@ -1,0 +1,68 @@
+@keyframes outerEcosystem {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(365deg);
+  }
+}
+
+@keyframes innerEcosystem {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(365deg);
+  }
+}
+
+.circleWrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 556px;
+  margin-left: auto;
+}
+
+.circleWrapper img {
+  display: block;
+}
+
+.outerCircle {
+  animation-name: outerEcosystem;
+  animation-duration: 110s;
+  animation-iteration-count: infinite;
+  z-index: 9998;
+  padding: 35px;
+  width: 100%;
+}
+
+.innerCircleWrapper {
+  width: 60%;
+}
+
+.innerCircle {
+  width: 100%;
+  animation-name: innerEcosystem;
+  animation-duration: 65s;
+  animation-iteration-count: infinite;
+}
+
+.smallAtom {
+  z-index: 9999;
+}
+
+.customAtom {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 26%;
+  bottom: 19px;
+  background-color: #fff;
+  box-shadow: 0 0 0 20px 20px #ddd;
+}
+
+@include media-breakpoint-up(md) {
+  .circleWrapper {
+    height: 527px;
+  }
+}
