@@ -1,5 +1,15 @@
+import Footer from "../../shared/components/Footer/Footer";
+import Featured from "./Featured";
+import Invest from "./Invest";
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      <Featured />
+      <Invest />
+      <Footer />
+    </>
+  );
 };
 
 export default Home;
