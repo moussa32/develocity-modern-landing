@@ -1,0 +1,36 @@
+.nav-link,
+.nav-span{
+  color: #4D4D4D !important;
+}
+.nav-link:hover{
+  border-bottom: 2px solid #9967FE !important;
+  margin-bottom: -2px;
+}
+.nav-border{
+  border: 1px solid rgba(112, 112, 112, 20%);
+  border-radius: 8px;
+}
+.nav-btn{
+  background-color: rgba(170, 121, 240, 14%) !important;
+  color: #A066DC !important;
+  border: none !important;
+  border-radius: 4px !important;
+}
+.nav-btn:hover{
+  border: 2px solid rgba(170, 121, 240, 14%) !important;
+  margin: -2px !important;
+}
+.dropdown-item,
+.dropdown-toggle{
+  color: #6C757D !important;
+}
+.dropdown-item:hover,
+.dropdown-item:focus{
+  background-color: rgba(108, 117, 125, 20%);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.icons{
+  direction: rtl;
+  color: #6C757D;
+}
