@@ -1,0 +1,21 @@
+.footer-top {
+  border-top: 1px #6c757d6b solid;
+  border-bottom: 1px #6c757d6b solid;
+  padding-top: 38px;
+  padding-bottom: 38px;
+  gap: 106px;
+}
+
+.footer-item {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  color: $paragraph;
+}
+
+.footer-bottom {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  color: #6c757d;
+}

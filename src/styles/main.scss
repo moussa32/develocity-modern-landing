@@ -1,7 +1,11 @@
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
+
 $primary: #a066dc;
 $secondary: #373737;
 $dark: #0000;
 $muted: #6c757d;
+$paragraph: #3d3d3d;
 
 // 14 => fs-sm
 // 82 => fs-3xl
@@ -31,5 +35,7 @@ $font-sizes: (
 );
 
 @import "node_modules/bootstrap/scss/bootstrap";
-
+@import "./custom";
 @import "./Featured";
+@import "./Footer";
+@import "./Invest";
