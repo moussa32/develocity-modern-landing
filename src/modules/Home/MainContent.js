@@ -1,4 +1,3 @@
-import "../../styles/MainContent.scss"
 import Icons from "./Icons"
 import Progress from "./Progress"
 import TransactionCard from "./TransactionCard"

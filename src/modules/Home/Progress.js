@@ -1,4 +1,4 @@
-import "../../styles/MainContent.scss"
+
 
 const Progress = () => {
   return (

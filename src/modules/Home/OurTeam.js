@@ -1,4 +1,3 @@
-import "../../styles/OurTeam.scss"
 import TeamCard from "./TeamCard"
 
 const OurTeam = () => {

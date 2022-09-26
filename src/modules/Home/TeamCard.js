@@ -1,4 +1,4 @@
-import "../../styles/OurTeam.scss"
+
 
 const TeamCard = (props) => {
 
