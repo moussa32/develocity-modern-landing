@@ -29,11 +29,11 @@ export function LatestNews() {
             <div className={`container ${styles.newsWrapper}`}>
                 <h3 className={`${styles.news_header}`}>Latest News From Develocity</h3>
                 <div className="d-flex justify-content-between align-items-center">
-                    <span className={`fs-md  ${styles.news_caption}`}>Don't Miss Update From Develocity</span>
+                    <span className={`  ${styles.news_caption}`}>Don't Miss Update From Develocity</span>
                     <button className={`btn fs-sm  ${styles.btn_blog}`}>CHECK OUR BLOG</button>
                 </div>
 
-                <div className={`${styles.card_wrapper} d-flex justify-content-between align-items-center`}>
+                <div className={`${styles.card_wrapper} d-flex justify-content-between align-items-center flex-wrap`}>
                     {newsCard.map((el, index) => (
                         <div key={index} className={`card shadow ${styles.myCard}`}>
                             <div className={`${styles.cardImageContainer}`}>

@@ -1,4 +1,113 @@
 .roadmapWrapper{
-   margin-top: 70px;
+   margin-top: 150px;
+   /* margin-bottom: 150px; */
 
 }
+.roadmapCards{
+   margin-top: 40px;
+}
+.header >h3{
+   font-size: 42px;
+   font-weight: bold;
+   font-family: 'Manrope', sans-serif;
+}
+
+/* footer */
+.line_vr{
+   height: 45px;
+   width: 2px;
+}
+.circle{
+   width: 42px;
+   height: 42px;
+   line-height: 37px;
+   border-radius: 100%;
+   margin-top: -10px;
+   z-index: 5;
+}
+.line_hr{
+   height: 4px;
+   border-top: 4px dotted #6C757D;
+   margin-top: -21px;
+}
+.step{
+   margin-top: -4px;
+    height: 6px;
+    background-color: #AA79F0;
+    width: 23%;
+}
+.step2{
+   height: 6px;
+   background-color: #AA79F0;
+   margin-top: -4px;
+
+}
+/* card component */
+.cardContent{
+   width: 250px;
+   height: 260px !important;
+}
+.cardContent h3{
+   font-size: 26px;
+   padding-top: 20px;
+   font-weight: bold;
+   font-family: 'Manrope', sans-serif;
+}
+
+.cardContent ul{
+   padding-top: 20px;
+   font-family: 'Manrope', sans-serif;
+   font-weight: 500;
+
+}
+.cardContent ul>li{
+   padding-top: 4px;
+   font-size: 14px;
+}
+
+
+@media screen and (max-width:1200px) {
+   .cardContent{
+      width: 230px;
+      height: 260px !important;
+   } 
+   .cardContent ul>li{
+      padding-top: 4px;
+      font-size: 12px;
+   }
+   .header >h3{
+      font-size: 36px;
+      font-weight: bold;
+      font-family: 'Manrope', sans-serif;
+   }
+}
+
+@media screen and (max-width:992px) {
+   .step{
+    width: 35%;
+      margin-top: -4px;
+      height: 6px;
+   }
+   .cardContent{
+      width: 92%;
+      height: 260px !important;
+   }
+   .cardContent h3{
+      font-size: 18px;
+   }
+   .cardContent ul>li{
+      padding-top: 3px;
+      font-size: 10px;
+   }
+}
+
+@media screen and (max-width:767px) {
+   .step{
+    width: 50%;
+
+      margin-top: -4px;
+      height: 6px;
+   }
+}
+
+
