@@ -46,7 +46,7 @@ const Invest = () => {
                     height="50"
                     rx="4"
                     transform="translate(355 22.5)"
-                    fill="url(#linear-gradient)"
+                    fill="#fff"
                   />
                 </g>
                 <text
@@ -186,7 +186,7 @@ const Invest = () => {
                       height="89"
                       rx="2"
                       transform="translate(269 26)"
-                      fill="url(#linear-gradient)"
+                      fill="#fff"
                     />
                   </g>
                   <text
@@ -353,7 +353,7 @@ const Invest = () => {
                       height="35"
                       rx="4"
                       transform="translate(15 111)"
-                      fill="url(#linear-gradient)"
+                      fill="#fff"
                     />
                   </g>
                   <g
@@ -520,7 +520,7 @@ const Invest = () => {
                       height="31"
                       rx="4"
                       transform="translate(43 12)"
-                      fill="url(#linear-gradient)"
+                      fill="#fff"
                     />
                   </g>
                   <text
@@ -556,7 +556,7 @@ const Invest = () => {
                       data-name="Path 503"
                       d="M4.484,0H152.441a4.484,4.484,0,0,1,4.484,4.484V26.9a4.484,4.484,0,0,1-4.484,4.484H4.484A4.484,4.484,0,0,1,0,26.9V4.484A4.484,4.484,0,0,1,4.484,0Z"
                       transform="translate(260.01 149.75)"
-                      fill="url(#linear-gradient)"
+                      fill="#fff"
                     />
                   </g>
                   <rect
