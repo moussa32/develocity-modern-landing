@@ -7,33 +7,7 @@ $dark: #0000;
 $muted: #6c757d;
 $paragraph: #3d3d3d;
 
-// 14 => fs-sm
-// 82 => fs-3xl
-// 42 => fs-2xl
-// 22 => fs-lg
-// 18 => fs-md
-// 11 => fs-xs
-// 28 => fs-xl
-
-$font-size-base: 0.688rem;
-$font-size-3xl: $font-size-base * 7.45;
-$font-size-2xl: $font-size-base * 3.81;
-$font-size-xl: $font-size-base * 2.54;
-$font-size-lg: $font-size-base * 2;
-$font-size-md: $font-size-base * 1.64;
-$font-size-sm: $font-size-base * 1.27;
-$font-size-xs: $font-size-base;
-
-$font-sizes: (
-  3xl: $font-size-3xl,
-  2xl: $font-size-2xl,
-  xl: $font-size-xl,
-  lg: $font-size-lg,
-  md: $font-size-md,
-  sm: $font-size-sm,
-  xs: $font-size-xs,
-);
-
+@import "./variables/fonts";
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "./custom";
 @import "./Featured";
