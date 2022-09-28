@@ -1,6 +1,32 @@
-.c-header{
+.i-header{
   font-weight: 700;
+  gap: 0;
+}
+.t-header{
+  font-size: $font-size-2xl;
 }
 .p-info{
   color: rgba(55, 55, 55, 50%);
+}
+@media (max-width: 576px) { 
+  .t-header{
+    font-size: $font-size-lg;
+  }
+  .c-border{
+    border: 1px solid #D6D6D6;
+    gap: 10px;
+  }
+  .p-info{
+    margin-top: 10px;
+    color: #373737;
+    padding-left: 10px;
+  }
+  .info-border{
+    border-left: 1px solid #D6D6D6;
+  }
+  .c-svg{
+    margin-top: 5px;
+    margin-left: 7px;
+
+  }
 }
