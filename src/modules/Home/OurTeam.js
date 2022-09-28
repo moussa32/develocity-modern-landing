@@ -27,8 +27,8 @@ const OurTeam = () => {
 
   return (
     <section className="container my-5">
-      <header className="t-header fs-2xl text-center mb-5">Our Team</header>
-      <div className="container d-flex flex-wrap justify-content-around">
+      <header className="t-header text-center mb-5">Our Team</header>
+      <div className="container d-flex flex-wrap justify-content-around gap-4">
        {data?.map((d,index)=>{
         return <TeamCard 
          key={index}

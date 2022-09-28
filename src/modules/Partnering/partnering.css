@@ -1,0 +1,11 @@
+
+
+.partnering-slide-item svg{
+    filter:  grayscale(1);
+
+}
+.swiper-slide-active {
+    -webkit-filter: grayscale(0);
+    filter: none;
+    opacity: 1;
+  }

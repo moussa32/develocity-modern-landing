@@ -1,0 +1,55 @@
+.line_hr {
+    height: 4px;
+    border-top: 4px dotted #6C757D;
+    margin-top: -21px;
+    width: 100%;
+}
+
+.step {
+    margin-top: -4px;
+    height: 6px;
+    background-color: #AA79F0;
+    width: 23%;
+}
+
+.stepName {
+    padding-top: 30px;
+    display: inline-block;
+    text-align: center;
+    width: 250px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Manrope', sans-serif;
+    color: #373737;
+
+}
+
+.line_hr .stepName:nth-child(1) {
+    padding-left: 120px;
+
+}
+
+.line_hr .stepName:nth-child(2) {
+    padding-left: 150px;
+
+}
+
+.line_hr .stepName:nth-child(3) {
+    padding-left: 120px;
+
+}
+
+@media screen and (max-width:992px) {}
+
+@media screen and (max-width:767px) {
+    .stepwrapper{
+        height: 100%;
+        background-color: black;
+    }
+    .line_hr {
+        height: 100%;
+        width: 4px;
+        border-left: 4px dotted #6C757D;
+        margin-top: 0px;
+    }
+}

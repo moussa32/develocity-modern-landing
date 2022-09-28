@@ -301,6 +301,7 @@ const Featured = () => {
             </svg>
           </SwiperSlide>
         </Swiper>
+        
         <div className="flex-md-row flex-column featured-images align-items-center d-none d-md-flex">
           <AnimatedImage
             src={Bloomberg}

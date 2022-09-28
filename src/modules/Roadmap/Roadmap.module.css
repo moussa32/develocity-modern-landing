@@ -1,8 +1,19 @@
+
 .roadmapWrapper{
    margin-top: 150px;
    /* margin-bottom: 150px; */
 
 }
+/* .roadmapContent{
+   background-color: brown;
+   position: relative;
+   height: 1200px;
+   display: flex;
+   justify-content: space-between;
+} */
+
+
+
 .roadmapCards{
    margin-top: 40px;
 }
@@ -13,6 +24,10 @@
 }
 
 /* footer */
+.Line_vr_Wrapper{
+   display: flex;
+   justify-content: center;
+}
 .line_vr{
    height: 45px;
    width: 2px;
@@ -25,23 +40,8 @@
    margin-top: -10px;
    z-index: 5;
 }
-.line_hr{
-   height: 4px;
-   border-top: 4px dotted #6C757D;
-   margin-top: -21px;
-}
-.step{
-   margin-top: -4px;
-    height: 6px;
-    background-color: #AA79F0;
-    width: 23%;
-}
-.step2{
-   height: 6px;
-   background-color: #AA79F0;
-   margin-top: -4px;
 
-}
+
 /* card component */
 .cardContent{
    width: 250px;
@@ -83,15 +83,20 @@
 }
 
 @media screen and (max-width:992px) {
+   .roadmapContent{
+      overflow-x: scroll;
+      width: 130%;
+   }
+
    .step{
     width: 35%;
       margin-top: -4px;
       height: 6px;
    }
-   .cardContent{
+   /* .cardContent{
       width: 92%;
       height: 260px !important;
-   }
+   } */
    .cardContent h3{
       font-size: 18px;
    }
@@ -102,12 +107,121 @@
 }
 
 @media screen and (max-width:767px) {
-   .step{
-    width: 50%;
+   .roadmapContent{
+      overflow-x: scroll;
+      width: 100%;
+   }
+   .header >h3{
+      font-size: 22px;
+   }
+   .cardContent{
+      width: 240px;
+      height: auto!important;
+      margin-top: -10px;
+   }
+   .cardContent ul{
+      padding-top: 10px;
+      margin-bottom: 21px;
+   
+   }
+   .cardContent ul>li{
+      padding-top: 3px;
+      font-size: 12px;
+   }
+   .cardContainer{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   .roadmapCards .cardBox:nth-child(1) .cardContainer{
+      height: 235px;
+   }
+   .roadmapCards .cardBox:nth-child(2) .cardContainer{
+      height: 272px;
+   }
+   .roadmapCards .cardBox:nth-child(3) .cardContainer{
+      height: 272px;
+   }
+   .roadmapCards .cardBox:nth-child(4) .cardContainer{
+      height: 265px;
+   }
+   .stepperMobile{
+      width: 30px;
+      border-color: #6C757D;
+      border-style: dotted;
+      border-top-width:2px ;
+      border-bottom-width: 2px;
+      border-left-width: 2px;
+      border-right-width: 0px;
+   }
+   .roadmapCards .cardBox:nth-child(1) .stepperMobile{
+      border-color: #A066DC;
+      border-style: solid;
+      height: 235px;
 
+
+   }
+   .roadmapCards .cardBox:nth-child(2) .stepperMobile{
+      border-top-style: none;
+      height: 272px;
+
+   }
+   .roadmapCards .cardBox:nth-child(3) .stepperMobile{
+      height: 272px;
+
+   }
+   .roadmapCards .cardBox:nth-child(4) .stepperMobile{
+      border-color: transparent;
+      border-style: solid;
+
+   }
+   .Line_vr_Wrapper, .line_vr{
+      display: none !important;
+   }
+   .circle{
+      position: absolute;
+      left: 30px;
+   }
+   .roadmapCards .cardBox:nth-child(1) .circle{
+      top: -245px;
+   }
+   .roadmapCards .cardBox:nth-child(2) .circle{
+      top: -285px;
+   }
+   .roadmapCards .cardBox:nth-child(3) .circle{
+      top: -285px;
+   }
+   .roadmapCards .cardBox:nth-child(4) .circle{
+      top: -275px;
+   }
+   .circle::after{
+      position: absolute;
+      left: 40px;
+      top: 3px;
+      width: 100px;
+      font-size: 22px;
+      font-weight: bold;
+      font-family: 'Manrope', sans-serif;
+
+      display: inline-block;
+   }
+   .roadmapCards .cardBox:nth-child(1) .circle::after{
+      content: "Phase I";
+   }
+   .roadmapCards .cardBox:nth-child(2) .circle::after{
+      content: "Phase II";
+   }
+   .roadmapCards .cardBox:nth-child(3) .circle::after{
+      content: "Phase III";
+   }
+   .roadmapCards .cardBox:nth-child(4) .circle::after{
+      content: "Phase IV";
+   }
+   /* .step{
+    width: 50%;
       margin-top: -4px;
       height: 6px;
-   }
+   } */
 }
 
 
