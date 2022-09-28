@@ -68,3 +68,12 @@
     } */
     
  }
+
+ @media screen and (max-width:390px) {
+ 
+    .slideContent svg{
+        height: 38px;
+        width: 150px !important;
+    }
+  
+ }

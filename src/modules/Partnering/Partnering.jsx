@@ -61,7 +61,7 @@ export function Partnering() {
                 <div className={`${styles.sliderShow}`}>
                     <Swiper className="mySwiper"
                         slidesPerView={1}
-                        spaceBetween={-105}
+                        spaceBetween={-100}
                         onSwiper={setSwiperRef}
                         modules={[FreeMode]}
                     >

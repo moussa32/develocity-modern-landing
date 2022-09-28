@@ -27,7 +27,7 @@ export function LatestNews() {
     return (
         <>
         <div className={`${ styles.newsWrapper}`}> 
-                <h3 className={`container ${styles.news_header}`}>Latest News From Develocity</h3>
+                <h3 className={`container ${styles.news_header}`}><span>Latest News From Develocity</span></h3>
 
             <div className={`container ${styles.newsBody}`}>
                 <div className="d-flex justify-content-center justify-content-md-between  align-items-center flex-column flex-md-row">
