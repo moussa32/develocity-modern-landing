@@ -4,10 +4,14 @@ import Forbes from "../../assets/images/Forbes.png";
 import YahooFinance from "../../assets/images/Yahoo-Finance.png";
 import Wired from "../../assets/images/Wired.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import Ecosystem from "./Ecosystem";
+import { useState } from "react";
+import AnimatedImage from "../../shared/components/AnimatedImage";
+import "swiper/css";
 
 const Featured = () => {
+  const [activeFeaturedImage, setActiveFeaturedImage] = useState(null);
+
   return (
     <>
       <section>
@@ -298,11 +302,41 @@ const Featured = () => {
           </SwiperSlide>
         </Swiper>
         <div className="flex-md-row flex-column featured-images align-items-center d-none d-md-flex">
-          <img src={Bloomberg} alt="blommberg" title="blommberg" />
-          <img src={Wired} alt="wired" title="wired" />
-          <img src={YahooFinance} alt="Yahoo Finance" title="Yahoo Finance" />
-          <img src={Coindesk} alt="coindesk" title="coindesk" />
-          <img src={Forbes} alt="forbes" title="forbes" />
+          <AnimatedImage
+            src={Bloomberg}
+            alt="blommberg"
+            title="blommberg"
+            currentActiveImage={activeFeaturedImage}
+            handleActiveImage={setActiveFeaturedImage}
+          />
+          <AnimatedImage
+            src={Wired}
+            alt="wired"
+            title="wired"
+            currentActiveImage={activeFeaturedImage}
+            handleActiveImage={setActiveFeaturedImage}
+          />
+          <AnimatedImage
+            src={YahooFinance}
+            alt="Yahoo Finance"
+            title="Yahoo Finance"
+            currentActiveImage={activeFeaturedImage}
+            handleActiveImage={setActiveFeaturedImage}
+          />
+          <AnimatedImage
+            src={Coindesk}
+            alt="coindesk"
+            title="coindesk"
+            currentActiveImage={activeFeaturedImage}
+            handleActiveImage={setActiveFeaturedImage}
+          />
+          <AnimatedImage
+            src={Forbes}
+            alt="forbes"
+            title="forbes"
+            currentActiveImage={activeFeaturedImage}
+            handleActiveImage={setActiveFeaturedImage}
+          />
         </div>
       </section>
       <section className="container">

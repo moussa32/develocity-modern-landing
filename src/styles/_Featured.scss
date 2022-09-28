@@ -90,12 +90,21 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 120px;
-  transition: 0.5s all ease-in;
-  &:hover {
-    img {
-      margin-top: 1rem;
-    }
-  }
+}
+
+.featured-image {
+  transition: 0.3s all ease-in-out;
+}
+
+.normal-featured-image {
+  transition: 0.3s all ease-in-out;
+  opacity: 0.5;
+  transform: translateY(-20px);
+}
+
+.active-featured-image {
+  transition: 0.3s all ease-in-out;
+  opacity: 1;
 }
 
 .featured-badge {
