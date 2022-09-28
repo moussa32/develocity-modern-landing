@@ -1,4 +1,5 @@
-import styles from './Roadmap.module.css'
+import styles from './Roadmap.module.css';
+import styleStepper from './StepLine.module.css'
 import { Card } from './Card'
 import check from '../../assets/images/check-circle.png'
 const cardInfo = [
@@ -34,45 +35,65 @@ const cardInfo = [
 export function Roadmap() {
     return (
         <>
-            <div className={`container ${styles.roadmapWrapper}`}>
+            <div className={` ${styles.roadmapWrapper}`}>
                 <div className={`text-center  ${styles.header}`}>
                     <h3>Roadmap to Building</h3>
                     <h3 >Most Secure Eco-System</h3>
                 </div>
-                <div className={`d-flex justify-content-between  ${styles.roadmapCards}`}>
-                    {
-                        cardInfo.map((el, index) => (
-                            <div className={` ${styles.cardBox}`}>
-                                <Card
-                                    header={el.header}
-                                    key={index}
-                                    details={el.details}
+                <section className={` ${styles.roadmapContent}`}>
+                    <div className={`d-flex justify-content-center justify-content-lg-between flex-wrap flex-md-nowrap  container ${styles.roadmapCards}`}>
+                        {
+                            cardInfo.map((el, index) => (
+                                <div className={`  ${styles.cardBox}`}>
+                                    <div className={`${styles.cardContainer}`}>
+                                        <div className={`${styles.stepperMobile}`}></div>
+                                        <Card
+                                            header={el.header}
+                                            key={index}
+                                            details={el.details}
 
-                                />
-                                <div className='  w-100 '>
-                                    <div className='d-flex  justify-content-center '>
-                                        <span className={`d-inline-block text-center ${styles.line_vr}`} style={{ backgroundColor: el.bgColor }}></span>
+                                        />
+                                        
                                     </div>
-                                    <div className='d-flex  justify-content-center '>
-                                        <span className={`d-inline-block text-center ${styles.circle}`} style={{ backgroundColor: el.bgColor }}>
-                                            {el.icon && <img src={el.icon} alt="status" />}
-                                        </span>
+                                    <div className='position-relative  w-100 '>
+                                        <div className={` ${styles.Line_vr_Wrapper}`}>
+                                            <span className={`d-inline-block text-center ${styles.line_vr}`} style={{ backgroundColor: el.bgColor }}></span>
+                                        </div>
+                                        <div className='d-flex  justify-content-center '>
+                                            <span className={`d-inline-block text-center ${styles.circle}`} style={{ backgroundColor: el.bgColor }}>
+                                                {el.icon && <img src={el.icon} alt="status" />}
+                                            </span>
+                                        </div>
+
                                     </div>
+
                                 </div>
+                            ))
+                        }
+                    </div>
 
+
+                    <div className={`d-none d-md-block  ${styleStepper.stepwrapper}`}>
+                        <div className={`d-flex  ${styleStepper.line_hr} `}>
+                            <div className={`col-2 ${styleStepper.step} `}></div>
+                            <div className={`  ${styleStepper.step}`}></div>
+                            <div className={` bg-transparent ${styleStepper.step}`}></div>
+                            <div></div>
+                        </div>
+
+
+                        <div className={`container position-relative h-100 `}>
+                            <div className={`d-flex  justify-content-between `}>
+                                <span className={`  ${styleStepper.stepName}`}>Phase I</span>
+                                <span className={` ${styleStepper.stepName}`}>Phase II</span>
+                                <span className={`   ${styleStepper.stepName}`}>Phase III</span>
+                                <span className={`  ${styleStepper.stepName}`}>Phase IV</span>
                             </div>
-                        ))
-                    }
-                </div>
-
-
+                        </div>
+                    </div>
+                </section>
             </div>
-            <div className={`w-100 d-flex  ${styles.line_hr} `}>
-                <div className={`col-2 ${styles.step} `}></div>
-                <div className={`  ${styles.step}`}></div>
-                <div className={` bg-transparent ${styles.step}`}></div>
-                <div></div>
-            </div>
+
         </>
     )
 }
