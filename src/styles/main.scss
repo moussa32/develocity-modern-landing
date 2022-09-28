@@ -5,7 +5,20 @@ $primary: #a066dc;
 $secondary: #373737;
 $dark: #0000;
 $muted: #6c757d;
-$paragraph: #3d3d3d;
+$body-text: #6b6b6b;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "dark": $dark,
+  "muted": $muted,
+);
+
+$custom-colors: (
+  "body-text": $body-text,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
 
 @import "./variables/fonts";
 @import "node_modules/bootstrap/scss/bootstrap";
