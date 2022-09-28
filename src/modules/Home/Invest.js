@@ -1,6 +1,23 @@
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { InView } from "react-intersection-observer";
+
 const Invest = () => {
+  const [entered, setEntered] = useState(false);
+
   return (
-    <section className="container">
+    <InView
+      as="section"
+      onChange={(inView, entry) => {
+        if (inView === true) {
+          setEntered(true);
+        }
+      }}
+      root={null}
+      rootMargin="0px"
+      threshold={0.8}
+      className="container"
+    >
       <section className="row spacing-between-section">
         <div className="col-md-6 mx-auto text-center">
           <span className="bg-primary bg-opacity-25 text-primary text-capitalize rounded text-center mx-auto fs-xs d-block invest-badge">
@@ -177,7 +194,14 @@ const Invest = () => {
                     <feComposite in="SourceGraphic" />
                   </filter>
                 </defs>
-                <g id="Group_3564" data-name="Group 3564" transform="translate(268.98 8.517)">
+                <motion.g
+                  initial={{ opacity: 0, x: 268.98, y: 100 }}
+                  animate={{ opacity: 1, x: 268.98, y: 8.517 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  id="Group_3564"
+                  data-name="Group 3564"
+                  transform="translate(268.98 8.517)"
+                >
                   <g transform="matrix(1, 0, 0, 1, -268.98, -8.52)" filter="url(#Rectangle_670)">
                     <rect
                       id="Rectangle_670-4"
@@ -343,7 +367,7 @@ const Invest = () => {
                     stroke-width="1"
                     opacity="0.54"
                   />
-                </g>
+                </motion.g>
                 <g id="Group_3569" data-name="Group 3569" transform="translate(14.539 110.518)">
                   <g transform="matrix(1, 0, 0, 1, -14.54, -110.52)" filter="url(#Rectangle_670-2)">
                     <rect
@@ -412,7 +436,14 @@ const Invest = () => {
                     </tspan>
                   </text>
                 </g>
-                <g id="Group_3570" data-name="Group 3570" transform="translate(142.32 57.836)">
+                <motion.g
+                  initial={{ opacity: 0, x: 142.32, y: 100 }}
+                  animate={{ opacity: 1, x: 142.32, y: 57.836 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  id="Group_3570"
+                  data-name="Group 3570"
+                  transform="translate(142.32 57.836)"
+                >
                   <g transform="matrix(1, 0, 0, 1, -142.32, -57.84)" filter="url(#Rectangle_668)">
                     <rect
                       id="Rectangle_668-2"
@@ -510,8 +541,15 @@ const Invest = () => {
                       <path id="Vector-9" data-name="Vector" d="M0,0H11.583V11.583H0Z" fill="none" opacity="0" />
                     </g>
                   </g>
-                </g>
-                <g id="Group_3562" data-name="Group 3562" transform="translate(42.561 11.88)">
+                </motion.g>
+                <motion.g
+                  initial={{ opacity: 0, x: 42.561, y: 100 }}
+                  animate={{ opacity: 1, x: 42.561, y: 11.88 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  id="Group_3562"
+                  data-name="Group 3562"
+                  transform="translate(42.561 11.88)"
+                >
                   <g transform="matrix(1, 0, 0, 1, -42.56, -11.88)" filter="url(#Rectangle_670-3)">
                     <rect
                       id="Rectangle_670-6"
@@ -548,7 +586,7 @@ const Invest = () => {
                       Total Scans
                     </tspan>
                   </text>
-                </g>
+                </motion.g>
                 <g id="Group_3563" data-name="Group 3563" transform="translate(260.013 149.749)">
                   <g transform="matrix(1, 0, 0, 1, -260.01, -149.75)" filter="url(#Path_503)">
                     <path
@@ -648,7 +686,7 @@ const Invest = () => {
           </div>
         </div>
       </section>
-    </section>
+    </InView>
   );
 };
 
