@@ -23,11 +23,17 @@
 .start-button {
   width: 294px;
   height: 52px;
-  background: linear-gradient(90deg, rgb(187, 139, 255), rgb(151, 77, 200));
+  background: linear-gradient(90deg, rgb(187, 139, 255), $primary);
   margin-top: 30px;
 }
 
 .invest-left {
   margin-left: auto;
   margin-right: 98px;
+}
+
+@include media-breakpoint-down(sm) {
+  .invest-subheading {
+    justify-content: center;
+  }
 }

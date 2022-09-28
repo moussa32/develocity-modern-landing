@@ -2,3 +2,23 @@
   margin-bottom: 150px;
   margin-top: 150px;
 }
+
+@include media-breakpoint-down(sm) {
+  .fs-2xl {
+    font-size: $font-size-base * 2 !important;
+  }
+  .fs-xl {
+    font-size: $font-size-base * 2.55 !important;
+  }
+  .fs-md {
+    font-size: $font-size-base * 1.27 !important;
+  }
+  .extra-padding {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  .spacing-between-section {
+    margin-bottom: 80px;
+    margin-top: 80px;
+  }
+}

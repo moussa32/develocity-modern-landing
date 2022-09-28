@@ -12,8 +12,8 @@ const Invest = () => {
         </div>
         <div className="row mx-auto">
           <div className="col-md-6">
-            <div className="invest-left" style={{ maxWidth: "450px" }}>
-              <svg width="467.5" height="95" viewBox="0 0 467.5 95">
+            <div className="invest-left" style={{ width: "100%", maxWidth: "450px" }}>
+              <svg viewBox="0 0 467.5 95">
                 <defs>
                   <linearGradient id="linear-gradient" y1="0.107" x2="1" y2="0.736" gradientUnits="objectBoundingBox">
                     <stop offset="0" stop-color="#fff" />
@@ -114,7 +114,7 @@ const Invest = () => {
                   stroke-width="1.5"
                 />
               </svg>
-              <svg width="431.938" height="257.5" viewBox="0 0 431.938 257.5">
+              <svg viewBox="0 0 431.938 257.5">
                 <defs>
                   <linearGradient
                     id="linear-gradient"
@@ -636,11 +636,11 @@ const Invest = () => {
               </span>
               Scan and Earn
             </h3>
-            <p className="fs-md">
+            <p className="fs-md text-body-text">
               DeFi users are always trying to find the ideal investment, and they are willing to take the risk; even if
               they try as much as they can to reduce the risk, they won’t be able to determine the size of the risk.
             </p>
-            <p className="fs-md mt-4">
+            <p className="fs-md mt-4 text-body-text">
               The multi-functional tool comes to help the users with their challenges by scanning the contract or
               searching for the token to get a quick and deep detailed report about the token.
             </p>

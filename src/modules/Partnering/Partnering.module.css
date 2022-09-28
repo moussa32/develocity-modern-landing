@@ -55,14 +55,16 @@
         height: 38px;
         width: 212px;
     }
-
-    .active{
+    .swiper-slide-active{
+        filter: sepia(100%) hue-rotate(200deg) saturate(800%) ;
+    }
+    /* .active{
         filter: sepia(100%) hue-rotate(200deg) saturate(800%) ;
     }
     .notActive{
 
         filter: sepia(0%) hue-rotate(0deg) saturate(0%) ;
 
-    }
+    } */
     
  }
