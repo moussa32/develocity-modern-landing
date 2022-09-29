@@ -9,20 +9,22 @@ import Navbar from "../../shared/components/Navbar/Navbar";
 import ContactInfo from "./ContactInfo";
 import MainContent from "./MainContent";
 import OurTeam from "./OurTeam";
+import SVGTest from "./SVGTest";
 
 const Home = () => {
   return (
     <>
-     <Navbar/>
-     <MainContent/>
+      <Navbar />
+      <MainContent />
       <Featured />
       <Invest />
 
       <Partnering />
-     
+
       <LatestNews />
       <Roadmap />
       <OurTeam />
+      <SVGTest />
       <ContactInfo />
       <Footer />
     </>
