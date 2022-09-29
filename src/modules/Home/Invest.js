@@ -9,13 +9,14 @@ const Invest = () => {
     <InView
       as="section"
       onChange={(inView, entry) => {
+        console.log(inView, entry);
         if (inView === true) {
           setEntered(true);
         }
       }}
       root={null}
       rootMargin="0px"
-      threshold={0.8}
+      threshold={0.2}
       className="container"
     >
       <section className="row spacing-between-section">
