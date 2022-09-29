@@ -6,6 +6,8 @@ const Ecosystem = () => {
         className="ecosystem-svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 586 542"
+        width="auto"
+        height="auto"
       >
         <defs>
           <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
