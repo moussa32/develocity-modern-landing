@@ -54,6 +54,8 @@ const Ecosystem = () => {
         </filter>
       </defs>
       <g id="Group_3560" data-name="Group 3560" transform="translate(-1059 -222.295)">
+        <circle cx="254.5" cy="254" r="254.5" fill="gray" transform="translate(1059 487.295)" />
+
         <g
           id="Ellipse_1"
           data-name="Ellipse 1"
