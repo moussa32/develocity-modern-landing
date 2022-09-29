@@ -19,7 +19,7 @@ const Navbar = () => {
   window.addEventListener("scroll", listenScrollEvent);
 
   return (
-    <div className="container bg-nav sticky-top">
+    <div className="container bg-nav sticky-top nav-border">
       <div className="d-flex justify-content-between pt-3 d-md-none mt-2 mb-3">
         <span className="mx-2 fs-sm">Trust, Security, Credibility</span>
         <div>
@@ -63,20 +63,21 @@ const Navbar = () => {
             </defs>
             <path id="Deve_Logo" data-name="Deve Logo" d="M405.786,384.721h-21.12v14.4l14.4,12,24-14.4-24,26.4-24-20v-28h30.72a17.28,17.28,0,0,1,17.28,17.28v1.92l-9.372,4.686-.228-6.606A7.49,7.49,0,0,0,405.786,384.721Z" transform="translate(-375.066 -375.121)" fill="url(#linear-gradient)"/>
           </svg>*/}
-          <img src={`${logo}`} />
+          <a>
+            <img src={`${logo}`} />
 
-          <svg
-            className="ms-3 d-md-inline d-none"
-            xmlns="http://www.w3.org/2000/svg"
-            width="1"
-            height="32"
-            viewBox="0 0 1 32"
-          >
-            <rect id="Rectangle_42" data-name="Rectangle 42" width="1" height="32" fill="#6c757d" opacity="0.4" />
-          </svg>
+            <svg
+              className="ms-3 d-md-inline d-none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="1"
+              height="32"
+              viewBox="0 0 1 32"
+            >
+              <rect id="Rectangle_42" data-name="Rectangle 42" width="1" height="32" fill="#6c757d" opacity="0.4" />
+            </svg>
 
-          <span className="ms-3 d-md-inline d-none nav-span fs-sm">Trust, Security, Credibility</span>
-
+            <span className="ms-3 d-md-inline d-none nav-span fs-sm">Trust, Security, Credibility</span>
+          </a>
           <button
             className="navbar-toggler"
             type="button"

@@ -33,7 +33,7 @@ const ContactInfo = () => {
 
         </div>
 
-        <div className="d-flex c-border ">
+   {/*     <div className="d-flex c-border ">
           <svg className="d-none d-md-inline me-2 mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <g id="vuesax_outline_call-calling" data-name="vuesax/outline/call-calling" transform="translate(-172 -188)">
               <g id="call-calling">
@@ -44,7 +44,7 @@ const ContactInfo = () => {
               </g>
             </g>
           </svg>
-          {/*Displayed svg in mobile */}    
+          {/*Displayed svg in mobile   
           <svg className="d-md-none c-svg" xmlns="http://www.w3.org/2000/svg" width="40" height="34" viewBox="0 0 28 28">
             <g id="vuesax_outline_call-calling" data-name="vuesax/outline/call-calling" transform="translate(-172 -188)" opacity="0.3">
               <g id="call-calling" transform="translate(172 188)">
@@ -61,7 +61,7 @@ const ContactInfo = () => {
             <p className="fs-sm p-info">+995-5966-3344</p>
           </div>
 
-        </div>
+        </div>*/} 
 
         <div className="d-flex c-border">
           <svg className="d-none d-md-inline me-2 mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
