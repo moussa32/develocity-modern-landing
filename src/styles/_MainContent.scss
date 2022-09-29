@@ -2,9 +2,13 @@
   background-image: url("../assets/images/Arrows.png");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 813px;
+  height: 713px;
+}
+main h1{
+  font-size: $font-size-3xl;
 }
 main h3{
+  font-size: $font-size-2xl;
   color: #373737;
   font-weight: 400;
 }
@@ -13,7 +17,6 @@ main h3{
   width: 640px;
   height: 52px;
   background-color: #D1D1D1;
-  margin:0 auto ;
   border-radius: 4px;
 }
 .g-progress{
@@ -30,6 +33,7 @@ main h2{
 .btn-one{
   width: 180px;
   height: 52px;
+  font-size: $font-size-md;
   color: white;
   background-image: linear-gradient(to right, #BB8BFF , #974DC8);
   font-weight: 500;
@@ -40,6 +44,7 @@ main h2{
 .btn-two{
   width: 180px;
   height: 52px;
+  font-size: $font-size-md;
   color: #505050;
   background-color: unset;
   font-weight: 500;
@@ -51,12 +56,15 @@ main h2{
 .t-container{
   width: 260px;
   height: 110px;
-  margin: 0 auto;
   margin-top: 80px;
   border: 1px solid rgba(186, 136, 253, 48%);
   background-color: white;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  opacity: 1;
+ transition: opacity 2s ease-in-out ;
+  transition: margin 2s ease-in-out;
+  animation: fadeIn 3s infinite;
 }
 .t-span{
   color: #48CF70;
@@ -84,9 +92,6 @@ main h2{
   justify-content: center;
   align-items: center;
   align-content: center;
-}
-.m-icons div{
-  margin-top: 114px;
 }
 .img-icon{
   cursor: pointer;
@@ -124,3 +129,62 @@ main h2{
   fill: #ffbe40 ;
 }
 
+@media (max-width: 768px) { 
+  .space{
+    height: 600px;
+  }
+  main h1{
+    /*32px*/
+    font-size: 2rem;
+  }
+  main h2{
+    /*16px*/
+    font-size: 1rem;
+  }
+  main h3 {
+    font-size: $font-size-lg;
+  }
+  /* Progress bar*/
+  .g-container{
+    width: 300px;
+    height: 50px;
+  }
+  .btn-one{
+    font-size: 1rem;
+    width: 160px;
+    height: 52px;
+  
+  }
+  .btn-two{
+    font-size: 1rem;
+    width: 160px;
+    height: 52px;
+  }
+  /*Icons*/
+  .c-header{
+    font-size: $font-size-lg;
+    font-weight: 700;
+    color: #373737;
+    text-align: center;
+  }
+ }
+
+@keyframes fadeIn {
+  0%{ opacity: 0;
+    margin-left: 20px; }
+
+  20%{ opacity: 1;
+    margin-left: 10px;}
+  
+  40%{ opacity: 1;
+    margin-left: 10px;}  
+    
+  60% { opacity: 1; 
+    margin-left: 10px; }
+
+  80% { opacity: 1; 
+    margin-left: 10px; }
+  
+  100% { opacity: 0; 
+    margin-left: 0; }
+}

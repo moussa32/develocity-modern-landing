@@ -1,19 +1,56 @@
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { InView } from "react-intersection-observer";
+
 const Invest = () => {
+  const [entered, setEntered] = useState(false);
+
   return (
-    <section className="container">
+    <InView
+      as="section"
+      onChange={(inView, entry) => {
+        console.log(inView, entry);
+        if (inView === true) {
+          setEntered(true);
+        }
+      }}
+      root={null}
+      rootMargin="0px"
+      threshold={0.2}
+      className="container"
+    >
       <section className="row spacing-between-section">
         <div className="col-md-6 mx-auto text-center">
-          <span className="bg-primary bg-opacity-25 text-primary text-capitalize rounded text-center mx-auto fs-xs d-block invest-badge">
+          <motion.span
+            initial={{ opacity: 0, x: 0, y: 0 }}
+            animate={
+              entered ? { opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1], x: 0, y: 0 } : { opacity: 0 }
+            }
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-primary bg-opacity-25 text-primary text-capitalize rounded text-center mx-auto fs-xs d-block invest-badge"
+          >
             Multifunctional Tool
-          </span>
-          <h2 className="fs-2xl fw-bold text-secondary invest-heading text-center mx-auto">
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, x: 0, y: 0 }}
+            animate={
+              entered ? { opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1], x: 0, y: 0 } : { opacity: 0 }
+            }
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="fs-2xl fw-bold text-secondary invest-heading text-center mx-auto"
+          >
             Reinventing The Way You Invest And Make Money
-          </h2>
+          </motion.h2>
         </div>
         <div className="row mx-auto">
           <div className="col-md-6">
             <div className="invest-left" style={{ width: "100%", maxWidth: "450px" }}>
-              <svg viewBox="0 0 467.5 95">
+              <motion.svg
+                viewBox="0 0 467.5 95"
+                initial={{ opacity: 0, x: 0, y: 100 }}
+                animate={entered ? { opacity: 1, x: 0, y: 8.517 } : { opacity: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
                 <defs>
                   <linearGradient id="linear-gradient" y1="0.107" x2="1" y2="0.736" gradientUnits="objectBoundingBox">
                     <stop offset="0" stop-color="#fff" />
@@ -113,7 +150,7 @@ const Invest = () => {
                   stroke-linejoin="round"
                   stroke-width="1.5"
                 />
-              </svg>
+              </motion.svg>
               <svg viewBox="0 0 431.938 257.5">
                 <defs>
                   <linearGradient
@@ -177,7 +214,14 @@ const Invest = () => {
                     <feComposite in="SourceGraphic" />
                   </filter>
                 </defs>
-                <g id="Group_3564" data-name="Group 3564" transform="translate(268.98 8.517)">
+                <motion.g
+                  initial={{ opacity: 0, x: 268.98, y: 100 }}
+                  animate={entered ? { opacity: 1, x: 268.98, y: 8.517 } : { opacity: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  id="Group_3564"
+                  data-name="Group 3564"
+                  transform="translate(268.98 8.517)"
+                >
                   <g transform="matrix(1, 0, 0, 1, -268.98, -8.52)" filter="url(#Rectangle_670)">
                     <rect
                       id="Rectangle_670-4"
@@ -343,8 +387,15 @@ const Invest = () => {
                     stroke-width="1"
                     opacity="0.54"
                   />
-                </g>
-                <g id="Group_3569" data-name="Group 3569" transform="translate(14.539 110.518)">
+                </motion.g>
+                <motion.g
+                  initial={{ opacity: 0, x: 14.539, y: 100 }}
+                  animate={entered ? { opacity: 1, x: 14.539, y: 110.518 } : { opacity: 0 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  id="Group_3569"
+                  data-name="Group 3569"
+                  transform="translate(14.539 110.518)"
+                >
                   <g transform="matrix(1, 0, 0, 1, -14.54, -110.52)" filter="url(#Rectangle_670-2)">
                     <rect
                       id="Rectangle_670-5"
@@ -411,8 +462,15 @@ const Invest = () => {
                       Withdraw The Money
                     </tspan>
                   </text>
-                </g>
-                <g id="Group_3570" data-name="Group 3570" transform="translate(142.32 57.836)">
+                </motion.g>
+                <motion.g
+                  initial={{ opacity: 0, x: 142.32, y: 100 }}
+                  animate={entered ? { opacity: 1, x: 142.32, y: 57.836 } : { opacity: 0 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  id="Group_3570"
+                  data-name="Group 3570"
+                  transform="translate(142.32 57.836)"
+                >
                   <g transform="matrix(1, 0, 0, 1, -142.32, -57.84)" filter="url(#Rectangle_668)">
                     <rect
                       id="Rectangle_668-2"
@@ -510,8 +568,15 @@ const Invest = () => {
                       <path id="Vector-9" data-name="Vector" d="M0,0H11.583V11.583H0Z" fill="none" opacity="0" />
                     </g>
                   </g>
-                </g>
-                <g id="Group_3562" data-name="Group 3562" transform="translate(42.561 11.88)">
+                </motion.g>
+                <motion.g
+                  initial={{ opacity: 0, x: 42.561, y: 100 }}
+                  animate={entered ? { opacity: 1, x: 42.561, y: 11.88 } : { opacity: 0 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  id="Group_3562"
+                  data-name="Group 3562"
+                  transform="translate(42.561 11.88)"
+                >
                   <g transform="matrix(1, 0, 0, 1, -42.56, -11.88)" filter="url(#Rectangle_670-3)">
                     <rect
                       id="Rectangle_670-6"
@@ -548,8 +613,15 @@ const Invest = () => {
                       Total Scans
                     </tspan>
                   </text>
-                </g>
-                <g id="Group_3563" data-name="Group 3563" transform="translate(260.013 149.749)">
+                </motion.g>
+                <motion.g
+                  initial={{ opacity: 0, x: 260.013, y: 149.749 }}
+                  animate={entered ? { opacity: 1, x: 260.013, y: 149.749 } : { opacity: 0 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  id="Group_3563"
+                  data-name="Group 3563"
+                  transform="translate(260.013 149.749)"
+                >
                   <g transform="matrix(1, 0, 0, 1, -260.01, -149.75)" filter="url(#Path_503)">
                     <path
                       id="Path_503-2"
@@ -594,12 +666,17 @@ const Invest = () => {
                       Averag Score
                     </tspan>
                   </text>
-                </g>
+                </motion.g>
               </svg>
             </div>
           </div>
           <div className="col-md-6">
-            <h3 className="fs-xl d-flex align-items-center invest-subheading">
+            <motion.h3
+              initial={{ opacity: 0, x: 0, y: 100 }}
+              animate={entered ? { opacity: 1, x: 0, y: 0 } : { opacity: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="fs-xl d-flex align-items-center invest-subheading"
+            >
               <span className="bg-white scan-icon-wrapper d-flex align-items-center justify-content-center">
                 <svg
                   id="vuesax_outline_buy-crypto"
@@ -635,20 +712,34 @@ const Invest = () => {
                 </svg>
               </span>
               Scan and Earn
-            </h3>
-            <p className="fs-md text-body-text">
-              DeFi users are always trying to find the ideal investment, and they are willing to take the risk; even if
-              they try as much as they can to reduce the risk, they won’t be able to determine the size of the risk.
-            </p>
-            <p className="fs-md mt-4 text-body-text">
-              The multi-functional tool comes to help the users with their challenges by scanning the contract or
-              searching for the token to get a quick and deep detailed report about the token.
-            </p>
-            <button className="btn text-white start-button fs-md">Start Using Scanner Tool →</button>
+            </motion.h3>
+            <motion.div
+              initial={{ opacity: 0, x: 0, y: 100 }}
+              animate={entered ? { opacity: 1, x: 0, y: 0 } : { opacity: 0 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+            >
+              <motion.p className="fs-md text-body-text">
+                DeFi users are always trying to find the ideal investment, and they are willing to take the risk; even
+                if they try as much as they can to reduce the risk, they won’t be able to determine the size of the
+                risk.
+              </motion.p>
+              <motion.p className="fs-md mt-4 text-body-text">
+                The multi-functional tool comes to help the users with their challenges by scanning the contract or
+                searching for the token to get a quick and deep detailed report about the token.
+              </motion.p>
+            </motion.div>
+            <motion.button
+              initial={{ opacity: 0, x: 0, y: 100 }}
+              animate={entered ? { opacity: 1, x: 0, y: 0 } : { opacity: 0 }}
+              transition={{ duration: 0.7, delay: 0.7 }}
+              className="btn text-white start-button fs-md"
+            >
+              Start Using Scanner Tool →
+            </motion.button>
           </div>
         </div>
       </section>
-    </section>
+    </InView>
   );
 };
 

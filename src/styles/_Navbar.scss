@@ -1,3 +1,9 @@
+.nav-container{
+  /*background-color: white;*/
+  /*box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 15px 0px;*/
+  box-shadow: none;
+  border-radius: 8px;
+}
 .nav-link,
 .nav-span{
   color: #4D4D4D !important;
@@ -7,7 +13,7 @@
   margin-bottom: -2px;
 }
 .nav-border{
-  border: 1px solid rgba(112, 112, 112, 20%);
+ /* border: 1px solid rgba(112, 112, 112, 20%);*/
   border-radius: 8px;
 }
 .nav-btn{
@@ -15,6 +21,8 @@
   color: #A066DC !important;
   border: none !important;
   border-radius: 4px !important;
+  padding: 8px;
+  margin: 0 auto;
 }
 .nav-btn:hover{
   border: 2px solid rgba(170, 121, 240, 14%) !important;
@@ -30,7 +38,27 @@
   border-radius: 4px;
   cursor: pointer;
 }
+.margin{
+  margin: 0 0.7rem;
+}
 .icons{
   direction: rtl;
   color: #6C757D;
+}
+
+@media (max-width: 768px) {
+  .nav-border{
+    border: none;
+    border-top: 1px solid rgba(112, 112, 112, 20%);
+    border-radius: 8px;
+  }
+  .nav-container{
+    box-shadow: none;
+  }
+  .margin{
+    margin: 0;
+  }
+  .bg-nav{
+    background-color: white;
+  }
 }
