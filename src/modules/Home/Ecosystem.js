@@ -74,7 +74,7 @@ const Ecosystem = () => {
             opacity="0.8"
           >
             <ellipse cx="254.5" cy="254" rx="254.5" ry="254" stroke="#6c757d" />
-            <ellipse cx="254.5" cy="254" rx="251.5" ry="251" fill="#6c757d" />
+            <ellipse cx="254.5" cy="254" rx="251.5" ry="251" fill="none" />
           </g>
           <g
             id="Ellipse_4"
@@ -89,7 +89,7 @@ const Ecosystem = () => {
             opacity="0.6"
           >
             <ellipse cx="148.5" cy="148" rx="148.5" ry="148" stroke="#6c757d" />
-            <ellipse cx="148.5" cy="148" rx="146.5" ry="146" fill="#6c757d" />
+            <ellipse cx="148.5" cy="148" rx="146.5" ry="146" fill="none" />
           </g>
           <text
             id="Develocity_Eco-system"
