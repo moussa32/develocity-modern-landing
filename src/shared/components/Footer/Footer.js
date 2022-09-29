@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="d-flex align-items-center justify-content-center footer-top flex-wrap">
-        <p className="fs-md footer-item mb-0">
+        <a href="http://t.me/develocity" target="_blank" className="fs-md footer-item mb-0 text-decoration-none">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
             <g
               id="vuesax_outline_send-2"
@@ -29,8 +29,12 @@ const Footer = () => {
             </g>
           </svg>
           Stay Updated
-        </p>
-        <p className="fs-md footer-item mb-0">
+        </a>
+        <a
+          href="https://tool.develocity.finance"
+          target="_blank"
+          className="fs-md footer-item mb-0 text-decoration-none"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
             <g
               id="vuesax_outline_scan-barcode"
@@ -99,8 +103,12 @@ const Footer = () => {
             </g>
           </svg>
           Multifunctional Tool
-        </p>
-        <p className="fs-md footer-item mb-0">
+        </a>
+        <a
+          href="https://develocity.finance/whitepaper.pdf"
+          target="_blank"
+          className="fs-md footer-item mb-0 text-decoration-none"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
             <g
               id="vuesax_outline_document-text"
@@ -141,7 +149,7 @@ const Footer = () => {
             </g>
           </svg>
           Whitepaper
-        </p>
+        </a>
       </div>
       <p className="footer-bottom fs-md mb-0">Copyright © Develocity 2022</p>
     </footer>
