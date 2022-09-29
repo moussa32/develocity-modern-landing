@@ -88,6 +88,7 @@ const Ecosystem = () => {
             stroke-width="4"
             stroke-dasharray="0 20"
             opacity="0.6"
+            style={{ position: "absolute", transform: "translate(201%, 66%)" }}
           >
             <ellipse cx="148.5" cy="148" rx="148.5" ry="148" stroke="none" />
             <ellipse cx="148.5" cy="148" rx="146.5" ry="146" fill="none" />
