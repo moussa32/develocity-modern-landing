@@ -65,7 +65,7 @@ const Ecosystem = () => {
             id="Ellipse_1"
             data-name="Ellipse 1"
             transform="translate(1070 248.295)"
-            fill="none"
+            fill="#6c757d"
             stroke="#6c757d"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -73,14 +73,14 @@ const Ecosystem = () => {
             stroke-dasharray="0 30"
             opacity="0.8"
           >
-            <ellipse cx="254.5" cy="254" rx="254.5" ry="254" stroke="none" />
-            <ellipse cx="254.5" cy="254" rx="251.5" ry="251" fill="none" />
+            <ellipse cx="254.5" cy="254" rx="254.5" ry="254" stroke="#6c757d" />
+            <ellipse cx="254.5" cy="254" rx="251.5" ry="251" fill="#6c757d" />
           </g>
           <g
             id="Ellipse_4"
             data-name="Ellipse 4"
             transform="translate(1176 354.295)"
-            fill="none"
+            fill="#6c757d"
             stroke="#6c757d"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -88,8 +88,8 @@ const Ecosystem = () => {
             stroke-dasharray="0 20"
             opacity="0.6"
           >
-            <ellipse cx="148.5" cy="148" rx="148.5" ry="148" stroke="none" />
-            <ellipse cx="148.5" cy="148" rx="146.5" ry="146" fill="none" />
+            <ellipse cx="148.5" cy="148" rx="148.5" ry="148" stroke="#6c757d" />
+            <ellipse cx="148.5" cy="148" rx="146.5" ry="146" fill="#6c757d" />
           </g>
           <text
             id="Develocity_Eco-system"
