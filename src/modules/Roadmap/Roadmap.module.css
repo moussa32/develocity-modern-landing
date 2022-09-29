@@ -83,11 +83,17 @@
 }
 
 @media screen and (max-width:992px) {
-   .roadmapContent{
+   /* .roadmapContent{
       overflow-x: scroll;
       width: 130%;
-   }
-
+   } */
+.roadmapscroll{
+   display: flex;
+   overflow-x: scroll;
+}
+.roadmapscroll::-webkit-scrollbar{
+   display: none;
+}
    .step{
     width: 35%;
       margin-top: -4px;
@@ -104,13 +110,52 @@
       padding-top: 3px;
       font-size: 10px;
    }
+   .roadmapCards .cardBox:nth-child(1) {
+            margin-left: 600px;
+            margin-right: 50px;
+
+   }
+   .roadmapCards .cardBox:nth-child(2) {
+      margin-right: 50px;
+
+}
+.roadmapCards .cardBox:nth-child(3) {
+   margin-right: 50px;
+
+}
+.roadmapCards .cardBox:nth-child(4) .cardContainer{
+   margin-right: 100px;
+}
+   .roadmapCards .cardBox:nth-child(4) .circle{
+    
+      margin-right: 100px;
+   }
+   .roadmapCards .cardBox:nth-child(4) .line_vr{
+      margin-right: 100px;
+   }
 }
 
 @media screen and (max-width:767px) {
-   .roadmapContent{
-      overflow-x: scroll;
-      width: 100%;
+   .roadmapCards .cardBox:nth-child(1) {
+      margin-left: 0px;
+      margin-right: 0px;
+
+}
+   .roadmapCards .cardBox:nth-child(2) {
+      margin-right: 0px;
+
+}
+    .roadmapCards .cardBox:nth-child(3) {
+      margin-right: 0px;
+   
    }
+   .roadmapCards .cardBox:nth-child(4) .cardContainer{
+      margin-right: 0px;
+   }
+   /* .roadmapContent{
+      overflow-x:hidden;
+      width: 100%;
+   } */
    .header >h3{
       font-size: 22px;
    }
@@ -145,6 +190,7 @@
    .roadmapCards .cardBox:nth-child(4) .cardContainer{
       height: 265px;
    }
+  
    .stepperMobile{
       width: 30px;
       border-color: #6C757D;

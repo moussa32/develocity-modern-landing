@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from "../../../assets/images/Deve Logo.svg"
 
 const Navbar = () => {
   const [shadow ,setShadow] = useState({boxShadow: "none"})
@@ -33,10 +34,10 @@ const Navbar = () => {
       </div>
       <div className='d-none d-md-block h-25 bg-white text-white'>hello</div>
 
-      <nav className="navbar nav-container navbar-expand-lg nav-border"
+      <nav className="navbar text-center nav-container navbar-expand-lg nav-border"
       style={{boxShadow: shadow.boxShadow, backgroundColor: bgcolor.color}}>
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        {/*logo 
           <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
             <defs>
               <linearGradient id="linear-gradient" x1="0.423" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
@@ -45,12 +46,15 @@ const Navbar = () => {
               </linearGradient>
             </defs>
             <path id="Deve_Logo" data-name="Deve Logo" d="M405.786,384.721h-21.12v14.4l14.4,12,24-14.4-24,26.4-24-20v-28h30.72a17.28,17.28,0,0,1,17.28,17.28v1.92l-9.372,4.686-.228-6.606A7.49,7.49,0,0,0,405.786,384.721Z" transform="translate(-375.066 -375.121)" fill="url(#linear-gradient)"/>
-          </svg>
+          </svg>*/}
+          <img src={`${logo}`}/>
+
           <svg className="ms-3 d-md-inline d-none" xmlns="http://www.w3.org/2000/svg" width="1" height="32" viewBox="0 0 1 32">
             <rect id="Rectangle_42" data-name="Rectangle 42" width="1" height="32" fill="#6c757d" opacity="0.4"/>
           </svg>
+
           <span className="ms-3 d-md-inline d-none nav-span fs-sm">Trust, Security, Credibility</span>
-        </a>
+        
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -97,7 +101,7 @@ const Navbar = () => {
                 <li><a className="dropdown-item">Russian</a></li>
               </ul>
             </li>
-            <li className="nav-item margin">
+            <li className="nav-item">
               <button className="nav-link nav-btn">↓ Whitepaper</button>
             </li>
           </ul>

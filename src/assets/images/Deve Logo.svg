@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.423" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#aa79f0"/>
+      <stop offset="1" stop-color="#944ec2"/>
+    </linearGradient>
+  </defs>
+  <path id="Deve_Logo" data-name="Deve Logo" d="M405.786,384.721h-21.12v14.4l14.4,12,24-14.4-24,26.4-24-20v-28h30.72a17.28,17.28,0,0,1,17.28,17.28v1.92l-9.372,4.686-.228-6.606A7.49,7.49,0,0,0,405.786,384.721Z" transform="translate(-375.066 -375.121)" fill="url(#linear-gradient)"/>
+</svg>
