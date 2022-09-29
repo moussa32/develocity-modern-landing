@@ -26,7 +26,7 @@ const OurTeam = () => {
 ]
 
   return (
-    <section className="container my-5">
+    <section id="team" className="container my-5">
       <header className="t-header text-center mb-5">Our Team</header>
       {/*In medium screen */}
       <div className="d-none d-md-flex mb-5 flex-column justify-content-center align-items-center">

@@ -2,7 +2,7 @@
 
 const ContactInfo = () => {
   return (
-    <section className="container my-5 py-5">
+    <section id="contact" className="container my-5 py-5">
       <header className="t-header text-center my-5">Get In Touch!</header>
       <div className="container flex-column flex-md-row d-flex justify-content-center justify-content-md-around ">
 

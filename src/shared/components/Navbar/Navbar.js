@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../../assets/images/Deve-Logo.svg";
+import * as Scroll from 'react-scroll';
+let Link      = Scroll.Link;
 
 const Navbar = () => {
   const [shadow, setShadow] = useState({ boxShadow: "none" });
@@ -96,44 +98,44 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link className="nav-link" activeClass="active" smooth spy to="home">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" activeClass="active" smooth spy to="about">
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" activeClass="active" smooth spy to="partners">
                   Partners
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" activeClass="active" smooth spy to="scan-to-earn">
                   Scan to Earn
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" activeClass="active" smooth spy to="news">
                   News
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" activeClass="active" smooth spy to="roadmap">
                   Roadmap
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" activeClass="active" smooth spy to="team">
                   Team
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" activeClass="active" smooth spy to="contact">
                   Contact
-                </a>
+                </Link>
               </li>
               <li className="nav-item d-none d-lg-inline">
                 <svg className="ms-3" xmlns="http://www.w3.org/2000/svg" width="1" height="32" viewBox="0 0 1 32">
