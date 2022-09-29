@@ -115,7 +115,7 @@ Eco-system"
             cy="13"
             r="13"
             transform="translate(1059 487.295)"
-            fill="url(#linear-gradient)"
+            fill="#AA79F0"
           />
           <circle
             id="Ellipse_71"
@@ -124,7 +124,7 @@ Eco-system"
             cy="20"
             r="20"
             transform="translate(1301 232.295)"
-            fill="url(#linear-gradient)"
+            fill="#AA79F0"
           />
           <g transform="matrix(1, 0, 0, 1, 1059, 222.29)" filter="url(#Ellipse_189)">
             <circle
@@ -199,7 +199,7 @@ Eco-system"
             cy="10"
             r="10"
             transform="translate(1212 597.295)"
-            fill="url(#linear-gradient)"
+            fill="#AA79F0"
           />
           <circle
             id="Ellipse_75"
@@ -208,7 +208,7 @@ Eco-system"
             cy="21.5"
             r="21.5"
             transform="translate(1433 695.295)"
-            fill="url(#linear-gradient)"
+            fill="#AA79F0"
           />
           <circle
             id="Ellipse_76"
@@ -217,7 +217,7 @@ Eco-system"
             cy="9"
             r="9"
             transform="translate(1276 741.295)"
-            fill="url(#linear-gradient)"
+            fill="#AA79F0"
           />
           <circle
             id="Ellipse_73"
@@ -226,7 +226,7 @@ Eco-system"
             cy="12.5"
             r="12.5"
             transform="translate(1306 344.295)"
-            fill="url(#linear-gradient)"
+            fill="#AA79F0"
           />
           <circle
             id="Ellipse_74"
@@ -235,7 +235,7 @@ Eco-system"
             cy="7"
             r="7"
             transform="translate(1458 286.295)"
-            fill="url(#linear-gradient)"
+            fill="#AA79F0"
           />
           <g id="teacher" transform="translate(1158 276.295)">
             <path
@@ -530,7 +530,7 @@ Eco-system"
     //         <stop offset="1" stopColor="#944ec2" />
     //       </linearGradient>
     //     </defs>
-    //     <circle id="Ellipse_76" data-name="Ellipse 76" cx="9" cy="9" r="9" fill="url(#linear-gradient)" />
+    //     <circle id="Ellipse_76" data-name="Ellipse 76" cx="9" cy="9" r="9" fill="#AA79F0" />
     //   </svg>
     //   <svg
     //     className="position-absolute"
@@ -545,7 +545,7 @@ Eco-system"
     //         <stop offset="1" stop-color="#944ec2" />
     //       </linearGradient>
     //     </defs>
-    //     <circle id="Ellipse_75" data-name="Ellipse 75" cx="21.5" cy="21.5" r="21.5" fill="url(#linear-gradient)" />
+    //     <circle id="Ellipse_75" data-name="Ellipse 75" cx="21.5" cy="21.5" r="21.5" fill="#AA79F0" />
     //   </svg>
     //   <svg
     //     className="position-absolute"
@@ -560,7 +560,7 @@ Eco-system"
     //         <stop offset="1" stop-color="#944ec2" />
     //       </linearGradient>
     //     </defs>
-    //     <circle id="Ellipse_74" data-name="Ellipse 74" cx="7" cy="7" r="7" fill="url(#linear-gradient)" />
+    //     <circle id="Ellipse_74" data-name="Ellipse 74" cx="7" cy="7" r="7" fill="#AA79F0" />
     //   </svg>
 
     //   <svg xmlns="http://www.w3.org/2000/svg" className="outerCircle" viewBox="0 0 509 508">
@@ -703,7 +703,7 @@ Eco-system"
     //         <stop offset="1" stop-color="#944ec2" />
     //       </linearGradient>
     //     </defs>
-    //     <circle id="Ellipse_71" data-name="Ellipse 71" cx="20" cy="20" r="20" fill="url(#linear-gradient)" />
+    //     <circle id="Ellipse_71" data-name="Ellipse 71" cx="20" cy="20" r="20" fill="#AA79F0" />
     //   </svg>
     //   <svg
     //     width="26"
@@ -718,7 +718,7 @@ Eco-system"
     //         <stop offset="1" stop-color="#944ec2" />
     //       </linearGradient>
     //     </defs>
-    //     <circle id="Ellipse_70" data-name="Ellipse 70" cx="13" cy="13" r="13" fill="url(#linear-gradient)" />
+    //     <circle id="Ellipse_70" data-name="Ellipse 70" cx="13" cy="13" r="13" fill="#AA79F0" />
     //   </svg>
     //   <div className="customAtom bg-white" style={{ right: "-7%", bottom: "35%" }}>
     //     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
