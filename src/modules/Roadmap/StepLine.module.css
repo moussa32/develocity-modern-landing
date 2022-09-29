@@ -38,8 +38,31 @@
     padding-left: 120px;
 
 }
+@media screen and (max-width:1200px) {
+    .line_hr{
+        width: 100%;
+    }
+    
+}
 
-@media screen and (max-width:992px) {}
+@media screen and (max-width:992px) {
+    .line_hr{
+        width: 170%;
+    }
+    .stepperContainer{
+        width: 170%;
+    }
+    .stepperContainer .stepName:nth-child(1){
+        padding-left: 100px;
+    }
+    .stepperContainer .stepName:nth-child(2){
+        padding-left: 50px;
+    }
+    .stepperContainer .stepName:nth-child(4){
+        text-align: start;
+        padding-left: 50px;
+    }
+}
 
 @media screen and (max-width:767px) {
     .stepwrapper{

@@ -9,3 +9,6 @@
     filter: none;
     opacity: 1;
   }
+  .swiper-wrapper{
+    height: auto !important;
+  }

@@ -66,8 +66,10 @@ const Ecosystem = () => {
           stroke-dasharray="0 30"
           opacity="0.8"
         >
-          <ellipse cx="254.5" cy="254" rx="254.5" ry="254" stroke="none" />
-          <ellipse cx="254.5" cy="254" rx="251.5" ry="251" fill="none" />
+          {/* <ellipse cx="254.5" cy="254" rx="254.5" ry="254" stroke="none" />
+          <ellipse cx="254.5" cy="254" rx="251.5" ry="251" fill="none" /> */}
+            <circle cx="254.5" cy="254" r="254.5"  stroke="gray" />
+          {/* <ellipse cx="254.5" cy="254" rx="251.5" ry="251" fill="none" /> */}
         </g>
         <g
           id="Ellipse_4"
