@@ -14,7 +14,7 @@ const Featured = () => {
 
   return (
     <>
-      <section>
+      {/* <section className="spacing-between-section">
         <h2 className="fs-2xl text-capitalize text-secondary text-center fw-bold featured-heading">featured in</h2>
         <Swiper
           className="d-block d-md-none"
@@ -301,7 +301,7 @@ const Featured = () => {
             </svg>
           </SwiperSlide>
         </Swiper>
-        
+
         <div className="flex-md-row flex-column featured-images align-items-center d-none d-md-flex">
           <AnimatedImage
             src={Bloomberg}
@@ -339,7 +339,7 @@ const Featured = () => {
             handleActiveImage={setActiveFeaturedImage}
           />
         </div>
-      </section>
+      </section> */}
       <section className="container">
         <section className="row spacing-between-section featured-info-section extra-padding">
           <div className="col-md-6 col-sm-12">
