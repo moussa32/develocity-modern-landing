@@ -23,10 +23,7 @@ const Navbar = () => {
       <div className="d-flex justify-content-between pt-3 d-md-none mt-2 mb-3">
         <span className="mx-2 fs-sm">Trust, Security, Credibility</span>
         <div>
-          <svg className="mx-2" xmlns="http://www.w3.org/2000/svg"
-xmlnsXlink="http://www.w3.org/1999/xlink"
-width="auto"
-height="auto" viewBox="0 0 19.692 16">
+          <svg className="mx-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 19.692 16">
             <path id="Twitter" d="M19.692,1.894a8.1,8.1,0,0,1-2.32.637A4.052,4.052,0,0,0,19.148.3a8.074,8.074,0,0,1-2.566.979A4.042,4.042,0,0,0,9.592,4.039,4.085,4.085,0,0,0,9.7,4.96,11.469,11.469,0,0,1,1.372.739a4.043,4.043,0,0,0,1.25,5.392A4.007,4.007,0,0,1,.792,5.627v.051a4.041,4.041,0,0,0,3.24,3.96,4.034,4.034,0,0,1-1.065.142,3.974,3.974,0,0,1-.76-.073,4.046,4.046,0,0,0,3.774,2.806A8.116,8.116,0,0,1,.964,14.241,8.143,8.143,0,0,1,0,14.185,11.433,11.433,0,0,0,6.193,16,11.415,11.415,0,0,0,17.688,4.508c0-.176,0-.349-.012-.522a8.211,8.211,0,0,0,2.016-2.09Z" fill="#6c757d"/>
           </svg>
           <svg className="mx-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
