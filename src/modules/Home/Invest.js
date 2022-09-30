@@ -18,7 +18,7 @@ const Invest = () => {
           <div className="col-md-6 mx-auto text-center">
             <m.span
               initial={{ opacity: 0, x: 0, y: 0 }}
-              animate={{ opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1], x: 0, y: 0 }}
+              animate={isInView && { opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1], x: 0, y: 0 }}
               transition={{
                 x: { type: "spring", stiffness: 100 },
                 duration: 0.5,
@@ -30,7 +30,7 @@ const Invest = () => {
             </m.span>
             <m.h2
               initial={{ opacity: 0, x: 0, y: 0 }}
-              animate={{ opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1], x: 0, y: 0 }}
+              animate={isInView && { opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1], x: 0, y: 0 }}
               transition={{
                 x: { type: "spring", stiffness: 100 },
                 duration: 0.5,
@@ -47,7 +47,7 @@ const Invest = () => {
                 <m.svg
                   viewBox="0 0 467.5 95"
                   initial={{ opacity: 0, x: 0, y: 100 }}
-                  animate={{ opacity: 1, x: 0, y: 8.517 }}
+                  animate={isInView && { opacity: 1, x: 0, y: 8.517 }}
                   transition={{
                     x: { type: "spring", stiffness: 100 },
                     duration: 0.5,
@@ -226,10 +226,10 @@ const Invest = () => {
                   </defs>
                   <m.g
                     initial={{ opacity: 0, x: 268.98, y: 100 }}
-                    animate={{ opacity: 1, x: 268.98, y: 8.517 }}
+                    animate={isInView && { opacity: 1, x: 268.98, y: 8.517 }}
                     transition={{
                       x: { type: "spring", stiffness: 100 },
-                      duration: 0.3,
+                      duration: 0.7,
                       delay: 0.2,
                     }}
                     id="Group_3564"
@@ -404,10 +404,10 @@ const Invest = () => {
                   </m.g>
                   <m.g
                     initial={{ opacity: 0, x: 14.539, y: 100 }}
-                    animate={{ opacity: 1, x: 14.539, y: 110.518 }}
+                    animate={isInView && { opacity: 1, x: 14.539, y: 110.518 }}
                     transition={{
                       x: { type: "spring", stiffness: 100 },
-                      duration: 0.3,
+                      duration: 0.7,
                       delay: 0.2,
                     }}
                     id="Group_3569"
@@ -483,10 +483,10 @@ const Invest = () => {
                   </m.g>
                   <m.g
                     initial={{ opacity: 0, x: 142.32, y: 100 }}
-                    animate={{ opacity: isInView && 1, x: isInView && 142.32, y: isInView && 57.836 }}
+                    animate={isInView && { opacity: 1, x: 142.32, y: 57.836 }}
                     transition={{
                       x: { type: "spring", stiffness: 100 },
-                      duration: 0.3,
+                      duration: 0.7,
                       delay: 0.2,
                     }}
                     id="Group_3570"
@@ -593,10 +593,10 @@ const Invest = () => {
                   </m.g>
                   <m.g
                     initial={{ opacity: 0, x: 42.561, y: 100 }}
-                    animate={{ opacity: 1, x: 42.561, y: 11.88 }}
+                    animate={isInView && { opacity: 1, x: 42.561, y: 11.88 }}
                     transition={{
                       x: { type: "spring", stiffness: 100 },
-                      duration: 0.3,
+                      duration: 0.7,
                       delay: 0.2,
                     }}
                     id="Group_3562"
@@ -642,10 +642,10 @@ const Invest = () => {
                   </m.g>
                   <m.g
                     initial={{ opacity: 0, x: 260.013, y: 149.749 }}
-                    animate={{ opacity: 1, x: 260.013, y: 149.749 }}
+                    animate={isInView && { opacity: 1, x: 260.013, y: 149.749 }}
                     transition={{
                       x: { type: "spring", stiffness: 100 },
-                      duration: 0.3,
+                      duration: 0.7,
                       delay: 0.2,
                     }}
                     id="Group_3563"
@@ -703,10 +703,10 @@ const Invest = () => {
             <div className="col-md-6">
               <m.h3
                 initial={{ opacity: 0, x: 0, y: 100 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
+                animate={isInView && { opacity: 1, x: 0, y: 0 }}
                 transition={{
                   x: { type: "spring", stiffness: 100 },
-                  duration: 0.3,
+                  duration: 0.7,
                   delay: 0.2,
                 }}
                 className="fs-xl d-flex align-items-center invest-subheading"
@@ -749,10 +749,10 @@ const Invest = () => {
               </m.h3>
               <m.div
                 initial={{ opacity: 0, x: 0, y: 100 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
+                animate={isInView && { opacity: 1, x: 0, y: 0 }}
                 transition={{
                   x: { type: "spring", stiffness: 100 },
-                  duration: 0.3,
+                  duration: 0.7,
                   delay: 0.2,
                 }}
               >
@@ -768,10 +768,10 @@ const Invest = () => {
               </m.div>
               <m.button
                 initial={{ opacity: 0, x: 0, y: 100 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
+                animate={isInView && { opacity: 1, x: 0, y: 0 }}
                 transition={{
                   x: { type: "spring", stiffness: 100 },
-                  duration: 0.3,
+                  duration: 0.7,
                   delay: 0.2,
                 }}
                 className="btn text-white start-button fs-md"
