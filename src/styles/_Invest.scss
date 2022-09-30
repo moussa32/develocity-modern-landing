@@ -32,6 +32,28 @@
   margin-right: 98px;
 }
 
+.scan-svg {
+  opacity: 0;
+  transition: all 1s ease;
+  transform: translate(0, 150px);
+}
+
+.active-animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.total-scan-svg {
+  opacity: 0;
+  transition: all 1s ease;
+  transform: translate(42.561px, 150px);
+}
+
+.active-animated-total-scan {
+  opacity: 1;
+  transform: translate(42.561px, 11.88px);
+}
+
 @include media-breakpoint-down(sm) {
   .invest-subheading {
     justify-content: center;
