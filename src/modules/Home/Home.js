@@ -12,18 +12,28 @@ import OurTeam from "./OurTeam";
 
 const Home = () => {
   return (
-    <>
+    <div id="home">
       <Navbar />
       <MainContent />
-      <Featured />
-      <Invest />
-      <Partnering />
-      <LatestNews />
-      <Roadmap />
+      <div id="about">
+        <Featured />
+      </div>
+      <div id="scan-to-earn">
+        <Invest />
+      </div>
+      <div id="partners">
+        <Partnering />
+      </div>
+      <div id="news">
+        <LatestNews />
+      </div>
+      <div id="roadmap">
+        <Roadmap />
+      </div>
       <OurTeam />
       <ContactInfo />
       <Footer />
-    </>
+    </div>
   );
 };
 
