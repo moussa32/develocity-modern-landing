@@ -1,13 +1,17 @@
 import { useInView } from "react-intersection-observer";
 
 const Invest = () => {
-  const [investSectionRef, isInvestSectionVisible, sectionEntry] = useInView({ threshold: 0.1 });
+  const [investSectionRef, isInvestSectionVisible, sectionEntry] = useInView({ threshold: 0.3 });
   const [investScanSVGRef, isInvestScanSVGVisible, scanSVGEntry] = useInView({ threshold: 0.1 });
 
   return (
     <section ref={investSectionRef} className="container">
       <section className="row spacing-between-section">
-        <div className="col-md-6 mx-auto text-center">
+        <div
+          className={`${
+            isInvestScanSVGVisible ? "active-animated-invest-section" : ""
+          } col-md-6 mx-auto text-center invest-section-heading`}
+        >
           <span className="bg-primary bg-opacity-25 text-primary text-capitalize rounded text-center mx-auto fs-xs d-block invest-badge">
             Multifunctional Tool
           </span>
@@ -421,7 +425,12 @@ const Invest = () => {
                     </tspan>
                   </text>
                 </g>
-                <g id="Group_3570" data-name="Group 3570" transform="translate(142.32 57.836)">
+                <g
+                  id="Group_3570"
+                  className={`${isInvestScanSVGVisible ? "active-animated-my-wallet" : ""} my-wallet-svg`}
+                  data-name="Group 3570"
+                  transform="translate(142.32 57.836)"
+                >
                   <g transform="matrix(1, 0, 0, 1, -142.32, -57.84)" filter="url(#Rectangle_668)">
                     <rect
                       id="Rectangle_668-2"

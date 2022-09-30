@@ -46,12 +46,34 @@
 .total-scan-svg {
   opacity: 0;
   transition: all 1s ease;
-  transform: translate(42.561px, 150px);
+  transform: translate(42.561px, 70px);
 }
 
 .active-animated-total-scan {
   opacity: 1;
   transform: translate(42.561px, 11.88px);
+}
+
+.my-wallet-svg {
+  opacity: 0;
+  transition: all 1s ease;
+  transform: translate(142.32px, 110px);
+}
+
+.active-animated-my-wallet {
+  opacity: 1;
+  transform: translate(142.32px, 57.836px);
+}
+
+.invest-section-heading {
+  opacity: 0;
+  transition: all 1s ease;
+  transform: translate(0, 110px);
+}
+
+.active-animated-invest-section {
+  opacity: 1;
+  transform: translate(0);
 }
 
 @include media-breakpoint-down(sm) {
