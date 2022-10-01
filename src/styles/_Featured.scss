@@ -146,7 +146,7 @@
   .ecosystem-header-center{
     position: absolute;
     background: #fff;
-    width: 200px;
+    width: 280px;
     height: 60px;
     line-height: 60px;
     top: 50%;
@@ -183,5 +183,12 @@
       width: 20px;
       height: 20px;
     }
+  }
+}
+
+
+@media screen and (max-width:767px) {
+  .ecosystem-header-center{
+    background: aquamarine;
   }
 }

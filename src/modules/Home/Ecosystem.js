@@ -1,5 +1,4 @@
 import EcosystemImage from "../../assets/images/Ecosystem.png";
-
 const Ecosystem = () => {
   return (
     <>
