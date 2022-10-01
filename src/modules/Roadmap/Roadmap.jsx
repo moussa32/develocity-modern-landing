@@ -10,7 +10,7 @@ const cardInfo = [
         bgColor: '#5AD2FF'
     },
     {
-        header: "Fair Launch",
+        header: "Launch",
         details: ['Publishing Tool "Beta Version"', "Start Pre-Sale", "Teaser Marketing Campaign", "Project #2 Introduction", "Promoting & Marketing", "Join Centralized Exchanges"],
         icon: check,
         bgColor: "#FFD13A"

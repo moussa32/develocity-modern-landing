@@ -3,7 +3,10 @@ import EcosystemImage from "../../assets/images/Ecosystem.png";
 const Ecosystem = () => {
   return (
     <>
+    <div className="position-relative">
       <img src={EcosystemImage} className="ecosystem-svg" alt="ecosystem" title="ecosystem" />
+      <div className="ecosystem-header-center">Our Vision</div>
+    </div>
     </>
 
     // <div className="circleWrapper">

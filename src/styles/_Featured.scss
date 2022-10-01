@@ -105,7 +105,11 @@
 .active-featured-image {
   transition: 0.3s all ease-in-out;
   opacity: 1;
+
+
 }
+
+
 
 .featured-badge {
   padding: 2px 13px;
@@ -121,6 +125,7 @@
 .ecosystem-svg {
   width: 305px;
   height: 292px;
+
 }
 
 @include media-breakpoint-up(sm) {
@@ -132,9 +137,26 @@
     height: 527px;
     margin-left: auto;
     display: block;
+   
   }
   .featured-heading {
     margin-bottom: 52px;
+  }
+  // changing text center
+  .ecosystem-header-center{
+    position: absolute;
+    background: #fff;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-32%, -30%);
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+   font-family: 'Manrope', sans-serif;
+    color: #6C757D;
   }
 }
 

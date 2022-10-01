@@ -32,7 +32,7 @@ const OurTeam = () => {
       <div className="d-none d-md-flex mb-5 flex-column justify-content-center align-items-center">
         <div className="circle"></div>
         <h4 className="fs-lg c-name">Marwan Bin Mohammed Al Maktoum</h4>
-        <h5 className="fs-md">Owner</h5>
+        <h5 className="fs-md">Founder</h5>
         <div className="mt-4">
           <svg className="me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
             <path id="Instagram" d="M11.234,16H4.766A4.772,4.772,0,0,1,0,11.234V4.766A4.772,4.772,0,0,1,4.766,0h6.467A4.772,4.772,0,0,1,16,4.766v6.467A4.772,4.772,0,0,1,11.234,16ZM4.766,1.609A3.161,3.161,0,0,0,1.609,4.766v6.467A3.16,3.16,0,0,0,4.766,14.39h6.467a3.16,3.16,0,0,0,3.157-3.157V4.766a3.16,3.16,0,0,0-3.157-3.157ZM8,12.138A4.138,4.138,0,1,1,12.138,8,4.143,4.143,0,0,1,8,12.138ZM8,5.472A2.528,2.528,0,1,0,10.528,8,2.531,2.531,0,0,0,8,5.472Zm4.146-.587a.992.992,0,1,1,.992-.991A.993.993,0,0,1,12.146,4.885Z" fill="#a9a9aa"/>

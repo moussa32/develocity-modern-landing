@@ -1,6 +1,10 @@
-import coinbaseImag from './../../assets/images/Coinbase.png';
-import bitmexImag from './../../assets/images/bitmex.png';
-import binanceImag from './../../assets/images/binance.png';
+// import coinbaseImag from './../../assets/images/Coinbase.png'; 
+// import binanceImag from './../../assets/images/binance.png';
+// import bitmexImag from './../../assets/images/bitmex.png';  
+
+import coinbaseImag from './../../assets/images/CoinbaseColored.svg'; 
+import bitmexImag from './../../assets/images/BitmexColored.svg';  
+import binanceImag from './../../assets/images/BinanceColored.svg';
 import { useState } from 'react';
 import AnimatedImage from '../../shared/components/AnimatedImage';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -25,7 +29,7 @@ export function Partnering() {
                 <h3 className={`text-center text-secondary`}>Partnering With</h3>
 
                 <div className={`${styles.partnering_body} `}>
-                    <div className=''>
+                    <div className={`${styles.imgColorful}`}>
                         {/* <img src={coinbaseImag} alt="Coinbase" loading='lazy' /> */}
                         <AnimatedImage
                             src={coinbaseImag}
@@ -35,7 +39,7 @@ export function Partnering() {
                             handleActiveImage={setActiveFeaturedImage}
                         />
                     </div>
-                    <div className=''>
+                    <div className={`${styles.imgColorful}`}>
                         {/* <img src={bitmexImag} alt="bitmex" loading='lazy' /> */}
                         <AnimatedImage
                             src={bitmexImag}
@@ -45,7 +49,7 @@ export function Partnering() {
                             handleActiveImage={setActiveFeaturedImage}
                         />
                     </div>
-                    <div className=''>
+                    <div className={`${styles.imgColorful}`}>
                         {/* <img src={binanceImag} alt="binance" loading='lazy' /> */}
                         <AnimatedImage
                             src={binanceImag}
