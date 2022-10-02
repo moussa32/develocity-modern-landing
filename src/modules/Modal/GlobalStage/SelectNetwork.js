@@ -1,11 +1,18 @@
 import ButtonItem from "../CommonStage/ButtonItem";
 import EtherumIcon from "../../../assets/images/Ethereum-icon.png";
+import PolygonIcon from "../../../assets/images/polygon-icon.png";
 import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 import { useCallback, useState } from "react";
+import WalletConnectProvider from "@walletconnect/web3-provider";
 
 const providerOptions = {
-  /* See Provider Options Section */
+  walletconnect: {
+    package: WalletConnectProvider,
+    options: {
+      rpc: { 56: "https://bsc-dataseed.binance.org/" },
+    },
+  },
 };
 
 const SelectNetwork = ({ handleStep, handleNetwork }) => {
@@ -50,7 +57,7 @@ const SelectNetwork = ({ handleStep, handleNetwork }) => {
         <ButtonItem
           mainText="Polygon"
           secondaryText="MATIC"
-          image={EtherumIcon}
+          image={PolygonIcon}
           selected={selectedNetwork}
           handleSelect={handleSelectNetworkName}
         />
