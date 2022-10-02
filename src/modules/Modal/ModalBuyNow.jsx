@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import { Step1 } from "./CommonStage/Step1";
 import { Step2 } from "./CommonStage/Step2";
@@ -6,6 +6,7 @@ import { Step3 } from "./BuyStage/Step3";
 import { Step4 } from "./BuyStage/Step4";
 import { Step5 } from "./BuyStage/Step5";
 import { Step6 } from "./BuyStage/Step6";
+import { Step7 } from "./ClaimStage/Step7";
 import styles from "./Modal.module.css";
 
 const SelectedCurrentStep = ({ currentStep, next }) => {
@@ -23,9 +24,9 @@ const SelectedCurrentStep = ({ currentStep, next }) => {
     case 6:
       return <Step6 next={next} />;
     case 7:
-      return <Step4 next={next} />;
+      return <Step7 next={next} />;
     case 8:
-      return <Step4 next={next} />;
+      return <Step7 next={next} />;
     default:
       return <h1>bravoo</h1>;
   }
@@ -34,9 +35,13 @@ const SelectedCurrentStep = ({ currentStep, next }) => {
 export function ModalBuyNow({ open, onClose }) {
   const [currentStep, setCurrentStep] = useState(1);
 
-  const next = (n) => {
-    setCurrentStep(currentStep + n);
-  };
+  useCallback( ()=>{
+    = (n) => {
+      console.log("N:", n)
+      setCurrentStep(currentStep + n);
+    };
+  } )
+ 
 
   if (!open) return null;
   return ReactDOM.createPortal(
@@ -47,9 +52,7 @@ export function ModalBuyNow({ open, onClose }) {
         <button className={styles.closeBtn_ltr} onClick={onClose}>
           close
         </button>
-        <h1>modal</h1>
         <div>
-          one:
           <SelectedCurrentStep currentStep={currentStep} next={next} />
           {/* 
                     {
