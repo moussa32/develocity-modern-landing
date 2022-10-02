@@ -1,40 +1,46 @@
 import { m, LazyMotion, domAnimation, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
-// import { useInView } from "react-intersection-observer";
+import { useRef } from "react";
 
 const Invest = () => {
-  // const [investSectionRef, isInvestSectionVisible, entry] = useInView({ threshold: 0.1 });
-  const sectionContainerRef = useRef(null);
-  const isInView = useInView(sectionContainerRef, { once: true });
+  const headingRef = useRef(null);
+  const scanSVGRef = useRef(null);
+  const walletSVGRef = useRef(null);
+  const isInView = useInView(headingRef, { once: true, margin: "0px 0px -12% 0px" });
+  const isScanSVGInView = useInView(scanSVGRef, { once: true, margin: "0px 0px -10% 0px" });
+  const isWalletSVGInView = useInView(walletSVGRef, { once: true, margin: "0px 0px -10% 0px" });
+  const isMobile = window.innerWidth < 768;
 
-  useEffect(() => {
-    console.log("Container in view", isInView);
-  }, [isInView]);
+  const animationHeading = !isMobile && {
+    initial: { opacity: 0, y: 40 },
+    animate: isInView && { opacity: 1, y: 0 },
+    transition: { duration: 0.4 },
+  };
 
   return (
     <LazyMotion features={domAnimation}>
-      <section className="container" ref={sectionContainerRef}>
+      <section className="container">
         <section className="row spacing-between-section">
-          <div className="col-md-6 mx-auto text-center">
-            <span
-              className={`bg-primary bg-opacity-25 text-primary text-capitalize rounded text-center mx-auto fs-xs d-block invest-badge ${
-                isInView && "animated-bade"
-              }`}
+          <div className="col-md-6 mx-auto text-center" ref={headingRef}>
+            <m.span
+              {...animationHeading}
+              className="bg-primary bg-opacity-25 text-primary text-capitalize rounded text-center mx-auto fs-xs d-block invest-badge"
             >
               Multifunctional Tool
-            </span>
-            <h2
-              className={`fs-2xl fw-bold text-secondary invest-heading text-center mx-auto ${
-                isInView && "animated-invest-heading"
-              }`}
-            >
+            </m.span>
+            <m.h2 {...animationHeading} className="fs-2xl fw-bold text-secondary invest-heading text-center mx-auto">
               Reinventing The Way You Invest And Make Money
-            </h2>
+            </m.h2>
           </div>
           <div className="row mx-auto">
             <div className="col-md-6">
               <div className="invest-left" style={{ width: "100%", maxWidth: "450px" }}>
-                <svg viewBox="0 0 467.5 95">
+                <m.svg
+                  viewBox="0 0 467.5 95"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={isScanSVGInView && { opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  ref={scanSVGRef}
+                >
                   <defs>
                     <linearGradient id="linear-gradient" y1="0.107" x2="1" y2="0.736" gradientUnits="objectBoundingBox">
                       <stop offset="0" stop-color="#fff" />
@@ -134,8 +140,8 @@ const Invest = () => {
                     stroke-linejoin="round"
                     stroke-width="1.5"
                   />
-                </svg>
-                <svg viewBox="0 0 431.938 257.5">
+                </m.svg>
+                <svg viewBox="0 0 431.938 257.5" ref={walletSVGRef}>
                   <defs>
                     <linearGradient
                       id="linear-gradient"
@@ -205,7 +211,14 @@ const Invest = () => {
                       <feComposite in="SourceGraphic" />
                     </filter>
                   </defs>
-                  <g id="Group_3564" data-name="Group 3564" transform="translate(268.98 8.517)">
+                  <m.g
+                    initial={{ opacity: 0, x: 268.98, y: 40 }}
+                    animate={isWalletSVGInView && { opacity: 1, y: 8.517 }}
+                    transition={{ duration: 0.4 }}
+                    id="Group_3564"
+                    data-name="Group 3564"
+                    transform="translate(268.98 8.517)"
+                  >
                     <g transform="matrix(1, 0, 0, 1, -268.98, -8.52)" filter="url(#Rectangle_670)">
                       <rect
                         id="Rectangle_670-4"
@@ -371,10 +384,11 @@ const Invest = () => {
                       stroke-width="1"
                       opacity="0.54"
                     />
-                  </g>
+                  </m.g>
                   <m.g
-                    initial={{ opacity: 0, x: 14.539, y: 100 }}
-                    animate={isInView && { opacity: 1, x: 14.539, y: 110.518 }}
+                    initial={{ opacity: 0, x: 14.539, y: 120 }}
+                    animate={isWalletSVGInView && { opacity: 1, y: 110.518 }}
+                    transition={{ duration: 0.4 }}
                     id="Group_3569"
                     data-name="Group 3569"
                     transform="translate(14.539 110.518)"
@@ -446,7 +460,14 @@ const Invest = () => {
                       </tspan>
                     </text>
                   </m.g>
-                  <g id="Group_3570" data-name="Group 3570" transform="translate(142.32 57.836)">
+                  <m.g
+                    id="Group_3570"
+                    initial={{ opacity: 0, x: 142.32, y: 80 }}
+                    animate={isWalletSVGInView && { opacity: 1, y: 57.836 }}
+                    transition={{ duration: 0.4 }}
+                    data-name="Group 3570"
+                    transform="translate(142.32 57.836)"
+                  >
                     <g transform="matrix(1, 0, 0, 1, -142.32, -57.84)" filter="url(#Rectangle_668)">
                       <rect
                         id="Rectangle_668-2"
@@ -544,8 +565,15 @@ const Invest = () => {
                         <path id="Vector-9" data-name="Vector" d="M0,0H11.583V11.583H0Z" fill="none" opacity="0" />
                       </g>
                     </g>
-                  </g>
-                  <g id="Group_3562" data-name="Group 3562" transform="translate(42.561 11.88)">
+                  </m.g>
+                  <m.g
+                    id="Group_3562"
+                    initial={{ opacity: 0, x: 42.561, y: 30 }}
+                    animate={isWalletSVGInView && { opacity: 1, y: 11.88 }}
+                    transition={{ duration: 0.4, delay: 0.5 }}
+                    data-name="Group 3562"
+                    transform="translate(42.561 11.88)"
+                  >
                     <g transform="matrix(1, 0, 0, 1, -42.56, -11.88)" filter="url(#Rectangle_670-3)">
                       <rect
                         id="Rectangle_670-6"
@@ -582,10 +610,11 @@ const Invest = () => {
                         Total Scans
                       </tspan>
                     </text>
-                  </g>
+                  </m.g>
                   <m.g
-                    initial={{ opacity: 0, x: 260.013, y: 149.749 }}
-                    animate={isInView && { opacity: 1, x: 260.013, y: 149.749 }}
+                    initial={{ opacity: 0, x: 260.013, y: 160 }}
+                    animate={isWalletSVGInView && { opacity: 1, y: 149.749 }}
+                    transition={{ duration: 0.4, delay: 0.4 }}
                     id="Group_3563"
                     data-name="Group 3563"
                     transform="translate(260.013 149.749)"
@@ -640,8 +669,9 @@ const Invest = () => {
             </div>
             <div className="col-md-6">
               <m.h3
-                initial={{ opacity: 0, x: 0, y: 100 }}
-                animate={isInView && { opacity: 1, x: 0, y: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isWalletSVGInView && { opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
                 className="fs-xl d-flex align-items-center invest-subheading"
               >
                 <span className="bg-white scan-icon-wrapper d-flex align-items-center justify-content-center">
@@ -680,7 +710,11 @@ const Invest = () => {
                 </span>
                 Scan and Earn
               </m.h3>
-              <m.div initial={{ opacity: 0, x: 0, y: 100 }} animate={isInView && { opacity: 1, x: 0, y: 0 }}>
+              <m.div
+                initial={{ opacity: 0, y: 120 }}
+                animate={isWalletSVGInView && { opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+              >
                 <m.p className="fs-md text-body-text">
                   DeFi users are always trying to find the ideal investment, and they are willing to take the risk; even
                   if they try as much as they can to reduce the risk, they won’t be able to determine the size of the
@@ -692,8 +726,9 @@ const Invest = () => {
                 </m.p>
               </m.div>
               <m.button
-                initial={{ opacity: 0, x: 0, y: 100 }}
-                animate={isInView && { opacity: 1, x: 0, y: 0 }}
+                initial={{ opacity: 0, y: 120 }}
+                animate={isWalletSVGInView && { opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
                 className="btn text-white start-button fs-md"
               >
                 Start Using Scanner Tool →
