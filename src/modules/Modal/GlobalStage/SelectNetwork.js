@@ -4,16 +4,8 @@ import PolygonIcon from "../../../assets/images/polygon-icon.png";
 import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 import { useCallback, useState } from "react";
+import { networkProviderOptions } from "../../../shared/util/handleNetworkProvider";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-
-const providerOptions = {
-  walletconnect: {
-    package: WalletConnectProvider, // required
-    options: {
-      rpc: { 1: "https://mainnet.infura.io/v3/" },
-    },
-  },
-};
 
 const SelectNetwork = ({ handleStep, handleNetwork }) => {
   const [selectedNetwork, setSelectedNetwork] = useState("");
@@ -22,7 +14,14 @@ const SelectNetwork = ({ handleStep, handleNetwork }) => {
     const web3Modal = new Web3Modal({
       network: networkName,
       cacheProvider: false,
-      providerOptions,
+      providerOptions: {
+        walletconnect: {
+          package: WalletConnectProvider,
+          options: {
+            rpc: networkProviderOptions(networkName),
+          },
+        },
+      },
     });
     const instance = await web3Modal.connect();
 
