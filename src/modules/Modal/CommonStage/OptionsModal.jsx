@@ -10,13 +10,14 @@ export default function OptionsModal({ handleStep }) {
       <div>
         <ModalHeaderText header="Select Your Option" caption="What You Wanna Do!" />
         <div>
-          <button class="d-block m-auto select-btn" onClick={() => setSelectedOption("amount")}>
+          {/*test */}
+          <button class="d-block m-auto select-btn" onClick={() => setSelectedOption("buyamount")}>
             Buy DEVE
           </button>
-          <button onclick={() => setSelectedOption("")} className="d-block m-auto select-btn">
+          <button onClick={() => setSelectedOption("")} className="d-block m-auto select-btn">
             Claim Your Tokens
           </button>
-          <button onclick={() => setSelectedOption("")} className="d-block m-auto select-btn">
+          <button onClick={() => setSelectedOption("referral")} className="d-block m-auto select-btn">
             Referrals
           </button>
         </div>
