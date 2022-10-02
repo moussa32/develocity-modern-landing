@@ -8,6 +8,13 @@ import { Step5 } from "./BuyStage/Step5";
 import { Step6 } from "./BuyStage/Step6";
 import styles from "./Modal.module.css";
 
+const steps = {
+  global: ["starter", "options"],
+  buy: ["amount", "buywith", "buyamount", "final"],
+  claim: ["claim", "final"],
+  referral: ["referral", "final"],
+};
+
 const SelectedCurrentStep = ({ currentStep, next }) => {
   switch (currentStep) {
     case 1:
@@ -31,7 +38,7 @@ const SelectedCurrentStep = ({ currentStep, next }) => {
   }
 };
 
-export function ModalBuyNow({ open, onClose }) {
+const ModalBuyNow = ({ open, onClose }) => {
   const [currentStep, setCurrentStep] = useState(1);
 
   const next = (n) => {
@@ -76,4 +83,6 @@ export function ModalBuyNow({ open, onClose }) {
     </>,
     document.getElementById("modal-buyNow-btn")
   );
-}
+};
+
+export default ModalBuyNow;
