@@ -42,13 +42,10 @@ const SelectedCurrentStep = ({ currentStep, next }) => {
 const ModalBuyNow = ({ open, onClose }) => {
   const [currentStep, setCurrentStep] = useState(1);
 
-  useCallback( ()=>{
-    = (n) => {
-      console.log("N:", n)
-      setCurrentStep(currentStep + n);
-    };
-  } )
- 
+  const next = useCallback((n) => {
+    console.log("N:", n);
+    setCurrentStep(currentStep + n);
+  }, []);
 
   if (!open) return null;
   return ReactDOM.createPortal(

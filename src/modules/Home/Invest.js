@@ -73,13 +73,13 @@ const Invest = () => {
                 >
                   <defs>
                     <linearGradient id="linear-gradient" y1="0.107" x2="1" y2="0.736" gradientUnits="objectBoundingBox">
-                      <stop offset="0" stop-color="#fff" />
-                      <stop offset="1" stop-color="#f9f9f9" />
+                      <stop offset="0" stopColor="#fff" />
+                      <stop offset="1" stopColor="#f9f9f9" />
                     </linearGradient>
                     <filter id="Rectangle_667" x="332.5" y="0" width="135" height="95" filterUnits="userSpaceOnUse">
                       <feOffset input="SourceAlpha" />
                       <feGaussianBlur stdDeviation="7.5" result="blur" />
-                      <feFlood flood-opacity="0.161" />
+                      <feFlood floodOpacity="0.161" />
                       <feComposite operator="in" in2="blur" />
                       <feComposite in="SourceGraphic" />
                     </filter>
@@ -90,7 +90,7 @@ const Invest = () => {
                     transform="translate(0 17.5)"
                     fill="#fff"
                     stroke="#b885fa"
-                    stroke-width="1"
+                    strokeWidth="1"
                   >
                     <rect width="450" height="60" rx="4" stroke="none" />
                     <rect x="0.5" y="0.5" width="449" height="59" rx="3.5" fill="none" />
@@ -168,7 +168,7 @@ const Invest = () => {
                     stroke="#373737"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                   />
                 </m.svg>
                 <svg viewBox="0 0 431.938 257.5" ref={walletSVGRef}>
@@ -181,20 +181,20 @@ const Invest = () => {
                       y2="1"
                       gradientUnits="objectBoundingBox"
                     >
-                      <stop offset="0" stop-color="#fff" />
-                      <stop offset="1" stop-color="#f9f9f9" />
+                      <stop offset="0" stopColor="#fff" />
+                      <stop offset="1" stopColor="#f9f9f9" />
                     </linearGradient>
                     <filter id="Rectangle_670" x="254" y="14" width="134" height="119" filterUnits="userSpaceOnUse">
                       <feOffset dy="3" input="SourceAlpha" />
                       <feGaussianBlur stdDeviation="5" result="blur" />
-                      <feFlood flood-opacity="0.2" />
+                      <feFlood floodOpacity="0.2" />
                       <feComposite operator="in" in2="blur" />
                       <feComposite in="SourceGraphic" />
                     </filter>
                     <filter id="Rectangle_670-2" x="0" y="99" width="186" height="65" filterUnits="userSpaceOnUse">
                       <feOffset dy="3" input="SourceAlpha" />
                       <feGaussianBlur stdDeviation="5" result="blur-2" />
-                      <feFlood flood-opacity="0.2" />
+                      <feFlood floodOpacity="0.2" />
                       <feComposite operator="in" in2="blur-2" />
                       <feComposite in="SourceGraphic" />
                     </filter>
@@ -208,21 +208,21 @@ const Invest = () => {
                     >
                       <feOffset dy="3" input="SourceAlpha" />
                       <feGaussianBlur stdDeviation="12.5" result="blur-3" />
-                      <feFlood flood-opacity="0.2" />
+                      <feFlood floodOpacity="0.2" />
                       <feComposite operator="in" in2="blur-3" />
                       <feComposite in="SourceGraphic" />
                     </filter>
                     <filter id="Rectangle_669" x="145.001" y="60" width="154" height="155" filterUnits="userSpaceOnUse">
                       <feOffset input="SourceAlpha" />
                       <feGaussianBlur stdDeviation="3" result="blur-4" />
-                      <feFlood flood-opacity="0.161" />
+                      <feFlood floodOpacity="0.161" />
                       <feComposite operator="in" in2="blur-4" />
                       <feComposite in="SourceGraphic" />
                     </filter>
                     <filter id="Rectangle_670-3" x="28.001" y="0" width="186" height="61" filterUnits="userSpaceOnUse">
                       <feOffset dy="3" input="SourceAlpha" />
                       <feGaussianBlur stdDeviation="5" result="blur-5" />
-                      <feFlood flood-opacity="0.2" />
+                      <feFlood floodOpacity="0.2" />
                       <feComposite operator="in" in2="blur-5" />
                       <feComposite in="SourceGraphic" />
                     </filter>
@@ -236,7 +236,7 @@ const Invest = () => {
                     >
                       <feOffset dy="3" input="SourceAlpha" />
                       <feGaussianBlur stdDeviation="5" result="blur-6" />
-                      <feFlood flood-opacity="0.2" />
+                      <feFlood floodOpacity="0.2" />
                       <feComposite operator="in" in2="blur-6" />
                       <feComposite in="SourceGraphic" />
                     </filter>
@@ -381,7 +381,7 @@ const Invest = () => {
                       transform="translate(8.407 32.506)"
                       fill="none"
                       stroke="#212121"
-                      stroke-width="1"
+                      strokeWidth="1"
                       opacity="0.54"
                     />
                     <line
@@ -391,7 +391,7 @@ const Invest = () => {
                       transform="translate(8.407 52.682)"
                       fill="none"
                       stroke="#212121"
-                      stroke-width="1"
+                      strokeWidth="1"
                       opacity="0.54"
                     />
                     <line
@@ -401,7 +401,7 @@ const Invest = () => {
                       transform="translate(8.407 72.858)"
                       fill="none"
                       stroke="#212121"
-                      stroke-width="1"
+                      strokeWidth="1"
                       opacity="0.54"
                     />
                     <line
@@ -411,7 +411,7 @@ const Invest = () => {
                       transform="translate(8.407 93.034)"
                       fill="none"
                       stroke="#212121"
-                      stroke-width="1"
+                      strokeWidth="1"
                       opacity="0.54"
                     />
                   </m.g>

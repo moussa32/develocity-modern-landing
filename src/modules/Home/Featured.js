@@ -41,7 +41,7 @@ const Featured = () => {
                   fill="none"
                   stroke="#010101"
                   stroke-miterlimit="10"
-                  stroke-width="7.5"
+                  strokeWidth="7.5"
                 />
                 <path
                   id="Path_391"

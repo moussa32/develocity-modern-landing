@@ -2,10 +2,10 @@ import EcosystemImage from "../../assets/images/Ecosystem.png";
 const Ecosystem = () => {
   return (
     <>
-    <div className="position-relative">
-      <img src={EcosystemImage} className="ecosystem-svg" alt="ecosystem" title="ecosystem" />
-      <div className="ecosystem-header-center">Our Vision</div>
-    </div>
+      <div className="position-relative">
+        <img src={EcosystemImage} className="ecosystem-svg" alt="ecosystem" title="ecosystem" />
+        <div className="ecosystem-header-center">Our Vision</div>
+      </div>
     </>
 
     // <div className="circleWrapper">
@@ -33,8 +33,8 @@ const Ecosystem = () => {
     //   >
     //     <defs>
     //       <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-    //         <stop offset="0" stop-color="#aa79f0" />
-    //         <stop offset="1" stop-color="#944ec2" />
+    //         <stop offset="0" stopColor="#aa79f0" />
+    //         <stop offset="1" stopColor="#944ec2" />
     //       </linearGradient>
     //     </defs>
     //     <circle id="Ellipse_75" data-name="Ellipse 75" cx="21.5" cy="21.5" r="21.5" fill="url(#linear-gradient)" />
@@ -48,8 +48,8 @@ const Ecosystem = () => {
     //   >
     //     <defs>
     //       <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-    //         <stop offset="0" stop-color="#aa79f0" />
-    //         <stop offset="1" stop-color="#944ec2" />
+    //         <stop offset="0" stopColor="#aa79f0" />
+    //         <stop offset="1" stopColor="#944ec2" />
     //       </linearGradient>
     //     </defs>
     //     <circle id="Ellipse_74" data-name="Ellipse 74" cx="7" cy="7" r="7" fill="url(#linear-gradient)" />
@@ -80,7 +80,7 @@ const Ecosystem = () => {
     //         stroke="#6c757d"
     //         stroke-linecap="round"
     //         stroke-linejoin="round"
-    //         stroke-width="4"
+    //         strokeWidth="4"
     //         stroke-dasharray="0 20"
     //         opacity="0.6"
     //       >
@@ -191,8 +191,8 @@ const Ecosystem = () => {
     //   >
     //     <defs>
     //       <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-    //         <stop offset="0" stop-color="#aa79f0" />
-    //         <stop offset="1" stop-color="#944ec2" />
+    //         <stop offset="0" stopColor="#aa79f0" />
+    //         <stop offset="1" stopColor="#944ec2" />
     //       </linearGradient>
     //     </defs>
     //     <circle id="Ellipse_71" data-name="Ellipse 71" cx="20" cy="20" r="20" fill="url(#linear-gradient)" />
@@ -206,8 +206,8 @@ const Ecosystem = () => {
     //   >
     //     <defs>
     //       <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-    //         <stop offset="0" stop-color="#aa79f0" />
-    //         <stop offset="1" stop-color="#944ec2" />
+    //         <stop offset="0" stopColor="#aa79f0" />
+    //         <stop offset="1" stopColor="#944ec2" />
     //       </linearGradient>
     //     </defs>
     //     <circle id="Ellipse_70" data-name="Ellipse 70" cx="13" cy="13" r="13" fill="url(#linear-gradient)" />
