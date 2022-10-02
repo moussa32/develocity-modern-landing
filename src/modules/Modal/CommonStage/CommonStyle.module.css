@@ -1,22 +1,79 @@
-.TextLine{
+.TextLine {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
 
-  .TextLine h6{
+.TextLine h6 {
     font-size: 14px;
     color: #8B8B8B;
     margin: 0;
-  }
-  .TextLine p{
+}
+
+.TextLine p {
     font-size: 14px;
     color: #333;
     display: flex;
     margin: 0;
     align-items: center;
-  }
-  .TextLine p span{
+}
+
+.TextLine p span {
     color: #888;
     margin: 0;
-  }
+}
+
+.nextBtn {
+    width: 220px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #0D162A;
+    border-radius: 6px;
+    margin: 20px auto 0;
+    font-size: 16px;
+}
+.walletText{
+    font-size: 14px;
+    color: #A5A5A5;
+}
+.contractaddress{
+    height: 58px;
+    border: 1px solid #35C486;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+    background-color: rgba(53, 196, 134, 0.15);
+    position: relative;
+    margin-top: 7px;
+    margin-bottom: 18px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+}
+.contractaddress p{
+    height: 58px;
+    line-height: 58px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+.contractaddress button{
+    width: 25px;
+    height: 25px;
+    line-height: 20px;
+    border: 1.5px solid #8B8B8B;
+    position: absolute;
+    right: 20px;
+    padding: 0px !important;
+}
+.nextButtonContainer{
+    margin-top: 50px;
+}
+.balanceText{
+   text-align: end;
+   font-size: 14px !important;
+   color: #23282C !important;
+}

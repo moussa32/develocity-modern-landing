@@ -4,14 +4,16 @@ import StarterModal from "./CommonStage/StarterModal";
 import OptionsModal from "./CommonStage/OptionsModal";
 import FinalModal from "./CommonStage/FinalModal";
 import AmountModal from "./BuyStage/AmountModal";
+import WalletInfoModal from "./CommonStage/WalletInfoModal";
+import BuywithModal from "./BuyStage/BuywithModal";
 import styles from "./Modal.module.css";
 
-const steps = {
-  global: ["starter", "selectWallet", "walletInfo", "options"],
-  buy: ["buywith", "buyamount", "final"],
-  claim: ["claim", "final"],
-  referral: ["referral", "final"],
-};
+// const steps = {
+//   global: ["starter", "selectWallet", "walletInfo", "options"],
+//   buy: ["buywith", "buyamount", "final"],
+//   claim: ["claim", "final"],
+//   referral: ["referral", "final"],
+// };
 
 const ModalBuyNow = ({ open, onClose }) => {
   const [currentStep, setCurrentStep] = useState("starter");
@@ -28,8 +30,10 @@ const ModalBuyNow = ({ open, onClose }) => {
         return <OptionsModal handleStep={handleStep} />;
       case "amount":
         return <AmountModal handleStep={handleStep} />;
-      // case "buywith":
-      //   return <StarterModal />;
+        case "walletInfo":
+          return <WalletInfoModal handleStep={handleStep}/>;
+      case "buywith":
+        return <BuywithModal handleStep={handleStep}/>;
       // case "buyamount":
       //   return <OptionsModal />;
       // case "claim":
@@ -50,9 +54,9 @@ const ModalBuyNow = ({ open, onClose }) => {
       <div className={styles.backDrop} onClick={onClose} />
 
       <div className={` ${styles.overlay}`}>
-        <button className={styles.closeBtn_ltr} onClick={onClose}>
+        {/* <button className={styles.closeBtn_ltr} onClick={onClose}>
           close
-        </button>
+        </button> */}
         <div>{handleRenderComponentStep()}</div>
       </div>
     </>,

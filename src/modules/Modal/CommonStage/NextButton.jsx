@@ -1,10 +1,10 @@
 import React from 'react'
-
+import styles from './CommonStyle.module.css'
 export default function NextButton({ handleStep }) {
     return (
-        <div>
-            <button type="button" className="nextBtn2"  onClick={handleStep}>Next<i class="bi bi-arrow-right"></i></button>
-        </div>
+        <>
+            <button type="button" className={styles.nextBtn}  onClick={handleStep}>Next &#8594;</button>
+        </>
     )
 }
 

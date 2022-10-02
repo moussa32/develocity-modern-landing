@@ -1,15 +1,23 @@
+
+
+
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
 import NextButton from "./NextButton";
 import TextItem from "./TextItem";
-import TextFloatRight from "./TextFloatRight";
 import styles from './CommonStyle.module.css'
 
-const StarterModal = ({ handleStep }) => {
+const WalletInfoModal = ({ handleStep }) => {
   return (
     <>
       <div>
-        <ModalHeaderText header="Buying With" caption="Select The Cryptocurrency You Want To Use" />
-        <TextFloatRight  balanceValue="567.29"/>
+        <ModalHeaderText header="Your Wallet" caption="DEVE Balance In Your Wallet" />
+        <div>
+          <span className={styles.walletText}>Wallet</span>
+          <div className={styles.contractaddress}>
+              <p>0xccccccccccccc</p>
+              <button className="btn">&#9747;</button>
+          </div>
+        </div>
         <TextItem 
         title="DEVE Balance"
         value="500"
@@ -36,4 +44,5 @@ const StarterModal = ({ handleStep }) => {
   );
 };
 
-export default StarterModal;
+export default WalletInfoModal;
+
