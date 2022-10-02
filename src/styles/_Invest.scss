@@ -3,6 +3,12 @@
   padding: 4px 14px;
   margin-bottom: 5px;
 }
+.invest-heading,
+.invest-badge {
+  transform: translate3d(0, 40px, 0);
+  opacity: 0;
+  transition: 0.7s;
+}
 
 .invest-heading {
   max-width: 502px;
@@ -83,4 +89,10 @@
   .start-button {
     width: 100%;
   }
+}
+
+.animated-bade,
+.animated-invest-heading {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
