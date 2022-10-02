@@ -9,6 +9,8 @@ import ClaimModal from "./ClaimStage/ClaimModal";
 import styles from "./Modal.module.css";
 import SelectNetwork from "./GlobalStage/SelectNetwork";
 import SelectOption from "./GlobalStage/SelectOption";
+import BuyAmountModal from "./BuyStage/BuyAmountModal";
+import ReferralsModal from "./Referrals/ReferralsModal"
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
@@ -42,12 +44,12 @@ const ModalBuyNow = ({ open, onClose }) => {
         return <WalletInfoModal handleStep={handleStep} />;
       case "buywith":
         return <BuywithModal handleStep={handleStep} />;
-      // case "buyamount":
-      //   return <OptionsModal />;
+      case "buyamount":
+        return <BuyAmountModal handleStep={handleStep}/>;
       case "claim":
         return <ClaimModal handleStep={handleStep} />;
-      // case "referral":
-      //   return <StarterModal />;
+      case "referral":
+        return <ReferralsModal handleStep={handleStep}/>;
       case "final":
         return <FinalModal />;
       default:
