@@ -1,7 +1,7 @@
-export function Step2({next}){
+export function Step6({next}){
     return(
         <>
-        <h1>step2</h1>
+        <h1>step6</h1>
         <button onClick={()=>next(1)}>next</button>
         </>
     )
