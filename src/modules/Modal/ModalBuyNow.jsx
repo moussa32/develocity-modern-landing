@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import StarterModal from "./CommonStage/StarterModal";
-import OptionsModal from "./CommonStage/OptionsModal";
 import FinalModal from "./CommonStage/FinalModal";
 import AmountModal from "./BuyStage/AmountModal";
 import WalletInfoModal from "./CommonStage/WalletInfoModal";
@@ -9,6 +8,7 @@ import BuywithModal from "./BuyStage/BuywithModal";
 import ClaimModal from "./ClaimStage/ClaimModal";
 import styles from "./Modal.module.css";
 import SelectNetwork from "./GlobalStage/SelectNetwork";
+import SelectOption from "./GlobalStage/SelectOption";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
@@ -18,8 +18,13 @@ import SelectNetwork from "./GlobalStage/SelectNetwork";
 // };
 
 const ModalBuyNow = ({ open, onClose }) => {
-  const [currentStep, setCurrentStep] = useState("starter");
+  const [currentStep, setCurrentStep] = useState("options");
   const [network, setNetwork] = useState("");
+  console.log(currentStep);
+
+  useEffect(() => {
+    return () => setCurrentStep("options");
+  }, []);
 
   const handleStep = useCallback((step) => {
     setCurrentStep(step);
@@ -30,17 +35,17 @@ const ModalBuyNow = ({ open, onClose }) => {
       case "starter":
         return <SelectNetwork handleStep={handleStep} handleNetwork={setNetwork} />;
       case "options":
-        return <OptionsModal handleStep={handleStep} />;
+        return <SelectOption handleStep={handleStep} />;
       case "amount":
         return <AmountModal handleStep={handleStep} />;
-        case "walletInfo":
-          return <WalletInfoModal handleStep={handleStep}/>;
+      case "walletInfo":
+        return <WalletInfoModal handleStep={handleStep} />;
       case "buywith":
-        return <BuywithModal handleStep={handleStep}/>;
+        return <BuywithModal handleStep={handleStep} />;
       // case "buyamount":
       //   return <OptionsModal />;
       case "claim":
-        return <ClaimModal handleStep={handleStep}/>;
+        return <ClaimModal handleStep={handleStep} />;
       // case "referral":
       //   return <StarterModal />;
       case "final":
