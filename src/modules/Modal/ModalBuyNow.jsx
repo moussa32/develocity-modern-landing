@@ -1,9 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import ReactDOM from "react-dom";
-import StarterModal from "./CommonStage/StarterModal";
 import FinalModal from "./CommonStage/FinalModal";
-import AmountModal from "./BuyStage/AmountModal";
-import WalletInfoModal from "./CommonStage/WalletInfoModal";
+// import AmountModal from "./BuyStage/AmountModal";
+import WalletInfoModal from "./GlobalStage/WalletInfoModal";
 import BuywithModal from "./BuyStage/BuywithModal";
 import ClaimModal from "./ClaimStage/ClaimModal";
 import styles from "./Modal.module.css";
@@ -18,13 +17,9 @@ import SelectOption from "./GlobalStage/SelectOption";
 // };
 
 const ModalBuyNow = ({ open, onClose }) => {
-  const [currentStep, setCurrentStep] = useState("options");
+  const [currentStep, setCurrentStep] = useState("claim");
   const [network, setNetwork] = useState("");
   console.log(currentStep);
-
-  useEffect(() => {
-    return () => setCurrentStep("options");
-  }, []);
 
   const handleStep = useCallback((step) => {
     setCurrentStep(step);
@@ -34,16 +29,14 @@ const ModalBuyNow = ({ open, onClose }) => {
     switch (currentStep) {
       case "starter":
         return <SelectNetwork handleStep={handleStep} handleNetwork={setNetwork} />;
-      case "options":
-        return <SelectOption handleStep={handleStep} />;
-      case "amount":
-        return <AmountModal handleStep={handleStep} />;
       case "walletInfo":
         return <WalletInfoModal handleStep={handleStep} />;
+      case "options":
+        return <SelectOption handleStep={handleStep} />;
+      // case "amount":
+      //   return <AmountModal handleStep={handleStep} />;
       case "buywith":
         return <BuywithModal handleStep={handleStep} />;
-      // case "buyamount":
-      //   return <OptionsModal />;
       case "claim":
         return <ClaimModal handleStep={handleStep} />;
       // case "referral":
@@ -51,7 +44,7 @@ const ModalBuyNow = ({ open, onClose }) => {
       case "final":
         return <FinalModal />;
       default:
-        return <StarterModal handleStep={handleStep} />;
+        return <SelectNetwork handleStep={handleStep} handleNetwork={setNetwork} />;
     }
   };
 
