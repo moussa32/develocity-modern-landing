@@ -6,8 +6,6 @@ import binanceUSD from '../../../assets/images/BinanceUSD.png';
 import TextFloatRight from '../CommonStage/TextFloatRight';
 import ButtonItem from "..//CommonStage/ButtonItem";
 
-// import styles from '../CommonStage/CommonStyle.module.css'
-
 export default function BuywithModal({ handleStep }) {
     const [selectedNetwork, setSelectedNetwork] = useState("");
 
