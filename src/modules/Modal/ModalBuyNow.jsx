@@ -1,7 +1,6 @@
 import { useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import FinalModal from "./CommonStage/FinalModal";
-// import AmountModal from "./BuyStage/AmountModal";
 import WalletInfoModal from "./GlobalStage/WalletInfoModal";
 import BuywithModal from "./BuyStage/BuywithModal";
 import ClaimModal from "./ClaimStage/ClaimModal";
@@ -19,7 +18,7 @@ import ReferralsModal from "./Referrals/ReferralsModal";
 // };
 
 const ModalBuyNow = ({ open, onClose }) => {
-  const [currentStep, setCurrentStep] = useState("claim");
+  const [currentStep, setCurrentStep] = useState("walletInfo");
   const [network, setNetwork] = useState("");
   console.log(currentStep);
 
@@ -35,8 +34,6 @@ const ModalBuyNow = ({ open, onClose }) => {
         return <WalletInfoModal handleStep={handleStep} />;
       case "options":
         return <SelectOption handleStep={handleStep} />;
-      // case "amount":
-      //   return <AmountModal handleStep={handleStep} />;
       case "buywith":
         return <BuywithModal handleStep={handleStep} />;
       case "buyamount":

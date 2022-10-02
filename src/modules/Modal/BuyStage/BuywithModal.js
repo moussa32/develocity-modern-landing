@@ -14,7 +14,7 @@ const BuywithModal = ({ handleStep }) => {
         <TextItem title="Tokens To Claim:" value="250" percentage="250" hr="true" />
         <TextItem title="Referrals To Claim" value="150" percentage="" hr="" />
         <div className={styles.nextButtonContainer}>
-          <NextButton text="Next" handleStep={() => handleStep("options")} />
+          <NextButton text="Next" handleStep={() => handleStep("buyamount")} />
         </div>
       </div>
     </>
