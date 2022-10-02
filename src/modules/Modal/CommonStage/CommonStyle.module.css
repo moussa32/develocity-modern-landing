@@ -1,0 +1,22 @@
+.TextLine{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .TextLine h6{
+    font-size: 14px;
+    color: #8B8B8B;
+    margin: 0;
+  }
+  .TextLine p{
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    margin: 0;
+    align-items: center;
+  }
+  .TextLine p span{
+    color: #888;
+    margin: 0;
+  }
