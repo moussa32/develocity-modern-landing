@@ -1,0 +1,20 @@
+.button-item-wrapper {
+  border: 1px #ddd solid;
+  border-radius: 6px;
+  background-color: #fff;
+  padding: 15px 23px;
+  box-shadow: 0 0 14px 3px #ddd;
+  min-width: 320px;
+  cursor: pointer;
+}
+
+.button-item-wrapper.active {
+  border-color: $primary;
+}
+
+.button-item-image {
+  width: 42px;
+  height: 42px;
+  margin: auto 0;
+  margin-right: 10px;
+}

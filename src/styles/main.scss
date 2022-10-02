@@ -30,3 +30,4 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "./MainContent";
 @import "./Navbar";
 @import "./OurTeam";
+@import "./Modal";

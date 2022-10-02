@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import StarterModal from "./CommonStage/StarterModal";
 import OptionsModal from "./CommonStage/OptionsModal";
@@ -7,6 +7,7 @@ import AmountModal from "./BuyStage/AmountModal";
 import WalletInfoModal from "./CommonStage/WalletInfoModal";
 import BuywithModal from "./BuyStage/BuywithModal";
 import styles from "./Modal.module.css";
+import SelectNetwork from "./GlobalStage/SelectNetwork";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
@@ -17,6 +18,7 @@ import styles from "./Modal.module.css";
 
 const ModalBuyNow = ({ open, onClose }) => {
   const [currentStep, setCurrentStep] = useState("starter");
+  const [network, setNetwork] = useState("");
 
   const handleStep = useCallback((step) => {
     setCurrentStep(step);
@@ -25,7 +27,7 @@ const ModalBuyNow = ({ open, onClose }) => {
   const handleRenderComponentStep = () => {
     switch (currentStep) {
       case "starter":
-        return <StarterModal handleStep={handleStep} />;
+        return <SelectNetwork handleStep={handleStep} handleNetwork={setNetwork} />;
       case "options":
         return <OptionsModal handleStep={handleStep} />;
       case "amount":
@@ -42,17 +44,15 @@ const ModalBuyNow = ({ open, onClose }) => {
       //   return <StarterModal />;
       case "final":
         return <FinalModal />;
-        default:
-          return <StarterModal handleStep={handleStep} />;
+      default:
+        return <StarterModal handleStep={handleStep} />;
     }
-   
   };
 
   if (!open) return null;
   return ReactDOM.createPortal(
     <>
       <div className={styles.backDrop} onClick={onClose} />
-
       <div className={` ${styles.overlay}`}>
         {/* <button className={styles.closeBtn_ltr} onClick={onClose}>
           close
