@@ -29,7 +29,7 @@ const StarterModal = ({ handleStep }) => {
         hr=""
         />
         <div className={styles.nextButtonContainer}>
-        <NextButton handleStep={()=>handleStep("options")}/>
+        <NextButton text="Next" handleStep={()=>handleStep("options")}/>
         </div>
       </div>
     </>

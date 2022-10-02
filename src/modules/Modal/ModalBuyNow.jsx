@@ -6,6 +6,7 @@ import FinalModal from "./CommonStage/FinalModal";
 import AmountModal from "./BuyStage/AmountModal";
 import WalletInfoModal from "./CommonStage/WalletInfoModal";
 import BuywithModal from "./BuyStage/BuywithModal";
+import ClaimModal from "./ClaimStage/ClaimModal";
 import styles from "./Modal.module.css";
 import SelectNetwork from "./GlobalStage/SelectNetwork";
 
@@ -38,8 +39,8 @@ const ModalBuyNow = ({ open, onClose }) => {
         return <BuywithModal handleStep={handleStep}/>;
       // case "buyamount":
       //   return <OptionsModal />;
-      // case "claim":
-      //   return <OptionsModal />;
+      case "claim":
+        return <ClaimModal handleStep={handleStep}/>;
       // case "referral":
       //   return <StarterModal />;
       case "final":

@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './CommonStyle.module.css'
-export default function NextButton({ handleStep }) {
+export default function NextButton({ handleStep , text}) {
     return (
         <>
-            <button type="button" className={styles.nextBtn}  onClick={handleStep}>Next &#8594;</button>
+            <button type="button" className={styles.nextBtn}  onClick={handleStep}>{text} &#8594;</button>
         </>
     )
 }
