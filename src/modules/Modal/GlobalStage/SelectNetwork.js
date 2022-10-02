@@ -8,9 +8,9 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 
 const providerOptions = {
   walletconnect: {
-    package: WalletConnectProvider,
+    package: WalletConnectProvider, // required
     options: {
-      rpc: { 56: "https://bsc-dataseed.binance.org/" },
+      rpc: { 1: "https://mainnet.infura.io/v3/" },
     },
   },
 };
