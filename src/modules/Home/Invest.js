@@ -22,11 +22,29 @@ const Invest = () => {
     transition: { duration: 0.4, delay: 0.3 },
   };
 
+  const animationInfoHeading = !isMobile && {
+    initial: { opacity: 0, y: 30 },
+    animate: isWalletSVGInView && { opacity: 1, y: 0 },
+    transition: { duration: 0.4 },
+  };
+
   const animationInfoButton = !isMobile && {
     initial: { opacity: 0, y: 120 },
     animate: isWalletSVGInView && { opacity: 1, y: 0 },
     transition: { duration: 0.4, delay: 0.4 },
   };
+
+  const animationMyWalletSVG = isMobile
+    ? {
+        initial: { opacity: 0, x: 142.32, y: 80 },
+        animate: isWalletSVGInView && { opacity: 1, y: 57.836 },
+        transition: { duration: 0.3, delay: 0.3 },
+      }
+    : {
+        initial: { opacity: 0, x: 142.32, y: 80 },
+        animate: isWalletSVGInView && { opacity: 1, y: 57.836 },
+        transition: { duration: 0.4 },
+      };
 
   return (
     <LazyMotion features={domAnimation}>
@@ -474,9 +492,7 @@ const Invest = () => {
                   </m.g>
                   <m.g
                     id="Group_3570"
-                    initial={{ opacity: 0, x: 142.32, y: 80 }}
-                    animate={isWalletSVGInView && { opacity: 1, y: 57.836 }}
-                    transition={{ duration: 0.4 }}
+                    {...animationMyWalletSVG}
                     data-name="Group 3570"
                     transform="translate(142.32 57.836)"
                   >
@@ -680,12 +696,7 @@ const Invest = () => {
               </div>
             </div>
             <div className="col-md-6">
-              <m.h3
-                initial={{ opacity: 0, y: 30 }}
-                animate={isWalletSVGInView && { opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className="fs-xl d-flex align-items-center invest-subheading"
-              >
+              <m.h3 {...animationInfoHeading} className="fs-xl d-flex align-items-center invest-subheading">
                 <span className="bg-white scan-icon-wrapper d-flex align-items-center justify-content-center">
                   <svg
                     id="vuesax_outline_buy-crypto"
