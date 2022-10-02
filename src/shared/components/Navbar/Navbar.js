@@ -103,32 +103,32 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" activeClass="active" smooth spy to="about">
+                <Link className="nav-link" activeClass="active" smooth spy to="about" offset={window.innerWidth<768 ? -150 : -120}>
                   About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" activeClass="active" smooth spy to="partners">
+                <Link className="nav-link" activeClass="active" smooth spy to="partners" offset={window.innerWidth<768 ? -200 : -120}>
                   Partners
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" activeClass="active" smooth spy to="scan-to-earn">
+                <Link className="nav-link" activeClass="active" smooth spy to="scan-to-earn" offset={window.innerWidth<768 ? -180 : -100}>
                   Scan to Earn
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" activeClass="active" smooth spy to="news">
+                <Link className="nav-link" activeClass="active" smooth spy to="news" offset={window.innerWidth<768 ? -180 : -120}>
                   News
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" activeClass="active" smooth spy to="roadmap">
+                <Link className="nav-link" activeClass="active" smooth spy to="roadmap" offset={window.innerWidth<768 ? -180 : -100}>
                   Roadmap
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" activeClass="active" smooth spy to="team">
+                <Link className="nav-link" activeClass="active" smooth spy to="team" offset={window.innerWidth<768 ? -160 :-100}>
                   Team
                 </Link>
               </li>
