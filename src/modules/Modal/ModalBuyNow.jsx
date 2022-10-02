@@ -6,12 +6,12 @@ import FinalModal from "./CommonStage/FinalModal";
 import AmountModal from "./BuyStage/AmountModal";
 import styles from "./Modal.module.css";
 
-// const steps = {
-//   global: ["starter", "options"],
-//   buy: ["amount", "buywith", "buyamount", "final"],
-//   claim: ["claim", "final"],
-//   referral: ["referral", "final"],
-// };
+const steps = {
+  global: ["starter", "selectWallet", "walletInfo", "options"],
+  buy: ["buywith", "buyamount", "final"],
+  claim: ["claim", "final"],
+  referral: ["referral", "final"],
+};
 
 const ModalBuyNow = ({ open, onClose }) => {
   const [currentStep, setCurrentStep] = useState("starter");
