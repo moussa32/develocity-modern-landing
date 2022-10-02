@@ -1,12 +1,9 @@
 import { useCallback, useState } from "react";
 import ReactDOM from "react-dom";
-import { Step1 } from "./CommonStage/Step1";
-import { Step2 } from "./CommonStage/Step2";
-import { Step3 } from "./BuyStage/Step3";
-import { Step4 } from "./BuyStage/Step4";
-import { Step5 } from "./BuyStage/Step5";
-import { Step6 } from "./BuyStage/Step6";
-import { Step7 } from "./ClaimStage/Step7";
+import StarterModal from "./CommonStage/StarterModal";
+import OptionsModal from "./CommonStage/OptionsModal";
+import FinalModal from "./CommonStage/FinalModal";
+import AmountModal from "./BuyStage/AmountModal";
 import styles from "./Modal.module.css";
 
 const steps = {
@@ -16,36 +13,33 @@ const steps = {
   referral: ["referral", "final"],
 };
 
-const SelectedCurrentStep = ({ currentStep, next }) => {
-  switch (currentStep) {
-    case 1:
-      return <Step1 next={next} />;
-    case 2:
-      return <Step2 next={next} />;
-    case 3:
-      return <Step3 next={next} />;
-    case 4:
-      return <Step4 next={next} />;
-    case 5:
-      return <Step5 next={next} />;
-    case 6:
-      return <Step6 next={next} />;
-    case 7:
-      return <Step7 next={next} />;
-    case 8:
-      return <Step7 next={next} />;
-    default:
-      return <h1>bravoo</h1>;
-  }
-};
-
 const ModalBuyNow = ({ open, onClose }) => {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState("starter");
 
-  const next = useCallback((n) => {
-    console.log("N:", n);
-    setCurrentStep(currentStep + n);
+  const handleStep = useCallback((step) => {
+    setCurrentStep(step);
   }, []);
+
+  const handleRenderComponentStep = () => {
+    switch (currentStep) {
+      case "starter":
+        return <StarterModal handleStep={handleStep} />;
+      case "options":
+        return <OptionsModal handleStep={handleStep} />;
+      case "amount":
+        return <AmountModal handleStep={handleStep} />;
+      // case "buywith":
+      //   return <StarterModal />;
+      // case "buyamount":
+      //   return <OptionsModal />;
+      // case "claim":
+      //   return <OptionsModal />;
+      // case "referral":
+      //   return <StarterModal />;
+      case "final":
+        return <FinalModal />;
+    }
+  };
 
   if (!open) return null;
   return ReactDOM.createPortal(
@@ -56,29 +50,7 @@ const ModalBuyNow = ({ open, onClose }) => {
         <button className={styles.closeBtn_ltr} onClick={onClose}>
           close
         </button>
-        <div>
-          <SelectedCurrentStep currentStep={currentStep} next={next} />
-          {/* 
-                    {
-                        (() => {
-
-
-                            switch (currentStep) {
-                                case 1:
-                                    return (
-                                        <Step1 next={next} />
-                                    );
-                                case 2: 
-                                    return (
-                                        <Step2 next={next} />
-                                    );
-                                default:
-                                    return <h1>bravoo</h1>;
-                            }
-
-                        })()
-                    } */}
-        </div>
+        <div>{handleRenderComponentStep()}</div>
       </div>
     </>,
     document.getElementById("modal-buyNow-btn")
