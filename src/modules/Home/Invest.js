@@ -16,6 +16,18 @@ const Invest = () => {
     transition: { duration: 0.4 },
   };
 
+  const animationInfoSection = !isMobile && {
+    initial: { opacity: 0, y: 120 },
+    animate: isWalletSVGInView && { opacity: 1, y: 0 },
+    transition: { duration: 0.4, delay: 0.3 },
+  };
+
+  const animationInfoButton = !isMobile && {
+    initial: { opacity: 0, y: 120 },
+    animate: isWalletSVGInView && { opacity: 1, y: 0 },
+    transition: { duration: 0.4, delay: 0.4 },
+  };
+
   return (
     <LazyMotion features={domAnimation}>
       <section className="container">
@@ -710,11 +722,7 @@ const Invest = () => {
                 </span>
                 Scan and Earn
               </m.h3>
-              <m.div
-                initial={{ opacity: 0, y: 120 }}
-                animate={isWalletSVGInView && { opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-              >
+              <m.div {...animationInfoSection}>
                 <m.p className="fs-md text-body-text">
                   DeFi users are always trying to find the ideal investment, and they are willing to take the risk; even
                   if they try as much as they can to reduce the risk, they won’t be able to determine the size of the
@@ -725,12 +733,7 @@ const Invest = () => {
                   searching for the token to get a quick and deep detailed report about the token.
                 </m.p>
               </m.div>
-              <m.button
-                initial={{ opacity: 0, y: 120 }}
-                animate={isWalletSVGInView && { opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.4 }}
-                className="btn text-white start-button fs-md"
-              >
+              <m.button {...animationInfoButton} className="btn text-white start-button fs-md">
                 Start Using Scanner Tool →
               </m.button>
             </div>
