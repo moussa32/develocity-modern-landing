@@ -2,8 +2,8 @@ import Icons from "./Icons";
 import Progress from "./Progress";
 import TransactionCard from "./TransactionCard";
 import ModalBuyNow from "../Modal/ModalBuyNow";
-import { useState } from "react";
-const MainContent = ({isOpen,setIsOpen}) => {
+
+const MainContent = ({ isOpen, setIsOpen }) => {
   return (
     <>
       <ModalBuyNow open={isOpen} handleOpen={setIsOpen} onClose={() => setIsOpen(false)} />

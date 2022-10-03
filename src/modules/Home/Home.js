@@ -16,8 +16,8 @@ const Home = () => {
 
   return (
     <div id="home">
-      <Navbar onClose={setIsOpen}/>
-      <MainContent isOpen={isOpen} setIsOpen={setIsOpen}/>
+      <Navbar onClose={setIsOpen} />
+      <MainContent isOpen={isOpen} setIsOpen={setIsOpen} />
       <div id="about">
         <Featured />
       </div>
