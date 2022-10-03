@@ -1,11 +1,45 @@
 import React, { useState } from "react";
 import logo from "../../../assets/images/Deve-Logo.svg";
 import * as Scroll from 'react-scroll';
+import { useTranslation } from 'react-i18next';
 let Link      = Scroll.Link;
 
 const Navbar = ({onClose}) => {
+  const { i18n, t } = useTranslation();
+  const [selectedLang, setSelectedLang] = useState('English');
   const [shadow, setShadow] = useState({ boxShadow: "none" });
   const [bgcolor, setBgcolor] = useState({ color: "unset" });
+
+  const langs = [
+    {
+      locale: "en",
+      name: `${t("headSection.languages.english")}`
+    },
+    {
+      locale: "ar",
+      name: `${t("headSection.languages.arabic")}`
+    },
+    {
+      locale: "tr",
+      name: `${t("headSection.languages.turkish")}`
+    }
+  ]
+
+  const returnSelectedLang = (locale) => {
+    switch(locale){
+      case "en":
+        return "English";
+      case "ar":
+        return "العربية";
+      case "tr":
+        return "Türk"
+    }
+  }
+
+  const changeLanguage = (langObj) => {
+    setSelectedLang(returnSelectedLang(langObj.locale))
+    i18n.changeLanguage(langObj.locale);
+  }
 
   /* Add box shadow when scroll */
   const listenScrollEvent = (e) => {
@@ -23,7 +57,7 @@ const Navbar = ({onClose}) => {
   return (
     <div className="container bg-nav sticky-top nav-border" style={{zIndex:1}}>
       <div className="d-flex justify-content-between pt-3 d-md-none mt-2 mb-3">
-        <span className="mx-2 fs-sm">Trust, Security, Credibility</span>
+        <span className="mx-2 fs-sm">{t("headSection.slogan")}</span>
         <div>
         <a href="https://twitter.com/Deve_Develocity">
             <svg
@@ -82,7 +116,7 @@ const Navbar = ({onClose}) => {
               <rect id="Rectangle_42" data-name="Rectangle 42" width="1" height="32" fill="#6c757d" opacity="0.4" />
             </svg>
 
-            <span className="ms-3 d-md-inline d-none nav-span fs-sm">Trust, Security, Credibility</span>
+            <span className="ms-3 d-md-inline d-none nav-span fs-sm">{t("headSection.slogan")}</span>
           </a>
           <button
             className="navbar-toggler"
@@ -99,42 +133,42 @@ const Navbar = ({onClose}) => {
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link  onClick={()=>{onClose(false)}} className="nav-link" activeClass="active" smooth spy to="home">
-                  Home
+                {t("headSection.navbar.home")}
                 </Link>
               </li>
               <li className="nav-item">
                 <Link  onClick={()=>{onClose(false)}} className="nav-link" activeClass="active" smooth spy to="about" offset={window.innerWidth<768 ? -150 : -120}>
-                  About
+                {t("headSection.navbar.about")}
                 </Link>
               </li>
               <li className="nav-item">
                 <Link  onClick={()=>{onClose(false)}} className="nav-link" activeClass="active" smooth spy to="partners" offset={window.innerWidth<768 ? -200 : -120}>
-                  Partners
+                {t("headSection.navbar.partners")}
                 </Link>
               </li>
               <li className="nav-item">
                 <Link  onClick={()=>{onClose(false)}} className="nav-link" activeClass="active" smooth spy to="scan-to-earn" offset={window.innerWidth<768 ? -180 : -100}>
-                  Scan to Earn
+                {t("headSection.navbar.scanToEarn")}
                 </Link>
               </li>
               <li className="nav-item">
                 <Link  onClick={()=>{onClose(false)}} className="nav-link" activeClass="active" smooth spy to="news" offset={window.innerWidth<768 ? -180 : -120}>
-                  News
+                {t("headSection.navbar.news")}
                 </Link>
               </li>
               <li className="nav-item">
                 <Link  onClick={()=>{onClose(false)}} className="nav-link" activeClass="active" smooth spy to="roadmap" offset={window.innerWidth<768 ? -180 : -100}>
-                  Roadmap
+                {t("headSection.navbar.roadmap")}
                 </Link>
               </li>
               <li className="nav-item">
                 <Link  onClick={()=>{onClose(false)}} className="nav-link" activeClass="active" smooth spy to="team" offset={window.innerWidth<768 ? -160 :-100}>
-                  Team
+                {t("headSection.navbar.team")}
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" activeClass="active" smooth spy to="contact" onClick={()=>{onClose(false)}}>
-                  Contact
+                {t("headSection.navbar.contact")}
                 </Link>
               </li>
               <li className="nav-item d-none d-lg-inline">
@@ -153,19 +187,22 @@ const Navbar = ({onClose}) => {
                       fill="#6c757d"
                     />
                   </svg>
-                  English
+                  {selectedLang}
                 </a>
                 <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item">Arabic</a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item">Russian</a>
-                  </li>
+                  {langs.map((lang, idx) => {
+                    return (
+                      <>
+                        <li key={idx} onClick={() => changeLanguage(lang)}>
+                          <a className="dropdown-item">{lang.name}</a>
+                        </li>
+                      </>
+                    )
+                  })}
                 </ul>
               </li>
               <li className="nav-item">
-                <a href="https://develocity.finance/whitepaper.pdf" className="nav-link nav-btn">↓ Whitepaper</a>
+                <a href="https://develocity.finance/whitepaper.pdf" className="nav-link nav-btn">↓ {t("headSection.whitepaper")}</a>
               </li>
             </ul>
           </div>
@@ -191,7 +228,7 @@ const Navbar = ({onClose}) => {
             />
           </svg>
         </a>
-        <span className="mx-2 fs-sm">:Follow us on</span>
+        <span className="mx-2 fs-sm">{t("headSection.followUs")}</span>
       </div>
     </div>
   );

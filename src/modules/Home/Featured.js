@@ -8,8 +8,10 @@ import Ecosystem from "./Ecosystem";
 import { useState } from "react";
 import AnimatedImage from "../../shared/components/AnimatedImage";
 import "swiper/css";
+import { useTranslation } from 'react-i18next';
 
 const Featured = () => {
+    const { t } = useTranslation();
   const [activeFeaturedImage, setActiveFeaturedImage] = useState(null);
 
   return (
@@ -344,19 +346,14 @@ const Featured = () => {
         <section className="row spacing-between-section featured-info-section extra-padding">
           <div className="col-md-6 col-sm-12">
             <span className="bg-primary bg-opacity-25 text-primary text-capitalize fs-xs featured-badge">
-              Trust, Security, Credibility
+              {t("aboutSection.header")}
             </span>
-            <h2 className="text-capitalize text-secondary fs-2xl fw-bold featured-info-heading">What's Develocity?</h2>
+            <h2 className="text-capitalize text-secondary fs-2xl fw-bold featured-info-heading">{t("aboutSection.mainText")}</h2>
             <p className="fs-md mb-3 text-body-text">
-              Develocity aspires to present its final project in four primary stages. Each stage is presented separately
-              and merged in the post-final stage to create a decentralised platform, which would be distinctively in
-              terms of technology and development based on Web 3.0.
+            {t("aboutSection.subText")}
             </p>
             <p className="fs-md text-body-text">
-              DeVelocity strives to create a safe and trustworthy crypto environment where investors and developers can
-              interact securely, considering the transparent credibility and technical measures and standards.
-              DeVelocity’s goal is to become a thought leadership organisation, enhancing the community’s awareness and
-              knowledge of the cryptocurrency market by building a virtual academy.
+              {t("aboutSection.subTextSecondParagraph")}
             </p>
           </div>
           <div className="col-md-6 col-sm-12">

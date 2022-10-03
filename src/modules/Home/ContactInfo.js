@@ -1,9 +1,10 @@
-
+import { useTranslation } from 'react-i18next';
 
 const ContactInfo = () => {
+  const { t } = useTranslation();
   return (
     <section id="contact" className="container my-5 py-5">
-      <header className="t-header text-center my-5">Get In Touch!</header>
+      <header className="t-header text-center my-5">{t("contactSection.mainText")}</header>
       <div className="container flex-column flex-md-row d-flex justify-content-center justify-content-md-around ">
 
         <div className="d-flex c-border ">
@@ -27,8 +28,8 @@ const ContactInfo = () => {
             </g>
           </svg>
           <div className="info-border">
-            <header className='d-none d-md-block fs-lg i-header'>Headquarter</header>
-            <p className="fs-sm p-info">Dubai, United Arab Emirates</p>
+            <header className='d-none d-md-block fs-lg i-header'>{t("contactSection.headquarter.mainText")}</header>
+            <p className="fs-sm p-info">{t("contactSection.headquarter.subText")}</p>
           </div>
 
         </div>
@@ -84,8 +85,8 @@ const ContactInfo = () => {
             </g>
           </svg>
           <div className="info-border">
-            <header className='fs-lg d-none d-md-block i-header'>Email</header>
-            <p className="fs-sm p-info">contact@develocity.finance</p>
+            <header className='fs-lg d-none d-md-block i-header'>{t("contactSection.email.mainText")}</header>
+            <p className="fs-sm p-info">{t("contactSection.email.subText")}</p>
           </div>
 
         </div>

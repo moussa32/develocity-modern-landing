@@ -12,10 +12,12 @@ import styles from './Partnering.module.css';
 import './partnering.css'
 import 'swiper/css';
 import "swiper/css/free-mode";
+import { useTranslation } from 'react-i18next';
 
 import { FreeMode } from "swiper";
 
 export function Partnering() {
+    const { t } = useTranslation();
     const [swiperRef, setSwiperRef] = useState(null);
     const [activeFeaturedImage, setActiveFeaturedImage] = useState(null);
 
@@ -26,7 +28,7 @@ export function Partnering() {
     return (
         <>
             <div className={`container ${styles.partneringWraper}`}>
-                <h3 className={`text-center text-secondary`}>Partnering With</h3>
+                <h3 className={`text-center text-secondary`}>{t("partnersSection.mainText")}</h3>
 
                 <div className={`${styles.partnering_body} `}>
                     <div className={`${styles.imgColorful}`}>

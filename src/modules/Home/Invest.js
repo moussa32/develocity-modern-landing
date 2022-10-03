@@ -1,7 +1,9 @@
 import { m, LazyMotion, domAnimation, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTranslation } from 'react-i18next';
 
 const Invest = () => {
+  const { t } = useTranslation();
   const headingRef = useRef(null);
   const scanSVGRef = useRef(null);
   const walletSVGRef = useRef(null);
@@ -55,10 +57,10 @@ const Invest = () => {
               {...animationHeading}
               className="bg-primary bg-opacity-25 text-primary text-capitalize rounded text-center mx-auto fs-xs d-block invest-badge"
             >
-              Multifunctional Tool
+              {t("scanToEarnSection.header")}
             </m.span>
             <m.h2 {...animationHeading} className="fs-2xl fw-bold text-secondary invest-heading text-center mx-auto">
-              Reinventing The Way You Invest And Make Money
+            {t("scanToEarnSection.mainText")}
             </m.h2>
           </div>
           <div className="row mx-auto">
@@ -114,7 +116,7 @@ const Invest = () => {
                     fontFamily="SegoeUI, Segoe UI"
                   >
                     <tspan x="-19.076" y="0">
-                      SCAN
+                      {t("scanToEarnSection.svg.scan")}
                     </tspan>
                   </text>
                   <g
@@ -156,7 +158,7 @@ const Invest = () => {
                     fontFamily="SegoeUI, Segoe UI"
                   >
                     <tspan x="0" y="0">
-                      Token Name
+                    {t("scanToEarnSection.svg.tokenName")}
                     </tspan>
                   </text>
                   <path
@@ -271,7 +273,7 @@ const Invest = () => {
                       opacity="0.5"
                     >
                       <tspan x="0" y="0">
-                        Top Tokens
+                      {t("scanToEarnSection.svg.topTokens")}
                       </tspan>
                     </text>
                     <g id="Group_3565" data-name="Group 3565" transform="translate(81.825 25.78)">
@@ -486,7 +488,7 @@ const Invest = () => {
                       fontFamily="SegoeUI, Segoe UI"
                     >
                       <tspan x="0" y="0">
-                        Withdraw The Money
+                      {t("scanToEarnSection.svg.withdrawTheMoney")}
                       </tspan>
                     </text>
                   </m.g>
@@ -567,7 +569,7 @@ const Invest = () => {
                       opacity="0.5"
                     >
                       <tspan x="-31.021" y="0">
-                        My Wallet
+                      {t("scanToEarnSection.svg.myWallet")}
                       </tspan>
                     </text>
                     <g
@@ -635,7 +637,7 @@ const Invest = () => {
                       fontFamily="SegoeUI, Segoe UI"
                     >
                       <tspan x="0" y="0">
-                        Total Scans
+                      {t("scanToEarnSection.svg.totalScans")}
                       </tspan>
                     </text>
                   </m.g>
@@ -688,7 +690,7 @@ const Invest = () => {
                       fontFamily="SegoeUI, Segoe UI"
                     >
                       <tspan x="0" y="0">
-                        Averag Score
+                      {t("scanToEarnSection.svg.averageScore")}
                       </tspan>
                     </text>
                   </m.g>
@@ -731,21 +733,18 @@ const Invest = () => {
                     </g>
                   </svg>
                 </span>
-                Scan and Earn
+                {t("scanToEarnSection.subText")}
               </m.h3>
               <m.div {...animationInfoSection}>
                 <m.p className="fs-md text-body-text">
-                  DeFi users are always trying to find the ideal investment, and they are willing to take the risk; even
-                  if they try as much as they can to reduce the risk, they won’t be able to determine the size of the
-                  risk.
+                {t("scanToEarnSection.normalText")}
                 </m.p>
                 <m.p className="fs-md mt-4 text-body-text">
-                  The multi-functional tool comes to help the users with their challenges by scanning the contract or
-                  searching for the token to get a quick and deep detailed report about the token.
+                {t("scanToEarnSection.normalTextSecondParagraph")}
                 </m.p>
               </m.div>
               <m.button {...animationInfoButton} className="btn text-white start-button fs-md">
-                Start Using Scanner Tool →
+                {t("scanToEarnSection.btn")}
               </m.button>
             </div>
           </div>

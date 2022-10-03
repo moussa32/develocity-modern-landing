@@ -2,43 +2,47 @@ import styles from './Roadmap.module.css';
 import styleStepper from './StepLine.module.css'
 import { Card } from './Card'
 import check from '../../assets/images/check-circle.png'
-const cardInfo = [
-    {
-        header: "Startup",
-        details: ["Website Launching", "Project #1 Introduction", "Company Name Registration", "License & Legale Opinion"],
-        icon: check,
-        bgColor: '#5AD2FF'
-    },
-    {
-        header: "Launch",
-        details: ['Publishing Tool "Beta Version"', "Start Pre-Sale", "Teaser Marketing Campaign", "Project #2 Introduction", "Promoting & Marketing", "Join Centralized Exchanges"],
-        icon: check,
-        bgColor: "#FFD13A"
+import { useTranslation } from 'react-i18next';
 
-    },
-    {
-        header: "Expansion",
-        details: ['Publishing SWAP "Beta Version"', "Teaser Marketing Campaign", "Project #3 Introduction", "Promoting & Marketing", "NFT First Edition", " Join Centralized Exchanges"],
-        icon: '',
-        bgColor: "#71E581"
-
-    },
-    {
-        header: "Opportunities",
-        details: ['Publishing Bridge "Beta Version"', "Project #4 Introduction", "Teaser Marketing Campaign", "Promoting & Marketing", "Looking At The Opportunities"],
-        icon: '',
-        bgColor: "#EC92EC"
-
-    },
-
-]
 export function Roadmap() {
+    const { t } = useTranslation();
+
+    const cardInfo = [
+        {
+            header: `${t("roadmapSection.cards.startup.mainText")}`,
+            details: [`${t("roadmapSection.cards.startup.subText.0")}`, `${t("roadmapSection.cards.startup.subText.1")}`, `${t("roadmapSection.cards.startup.subText.2")}`, `${t("roadmapSection.cards.startup.subText.3")}`],
+            icon: check,
+            bgColor: '#5AD2FF'
+        },
+        {
+            header: `${t("roadmapSection.cards.launch.mainText")}`,
+            details: [`${t("roadmapSection.cards.launch.subText.0")}`, `${t("roadmapSection.cards.launch.subText.1")}`, `${t("roadmapSection.cards.launch.subText.2")}`, `${t("roadmapSection.cards.launch.subText.3")}`, `${t("roadmapSection.cards.launch.subText.4")}`, `${t("roadmapSection.cards.launch.subText.5")}`],
+            icon: check,
+            bgColor: "#FFD13A"
+    
+        },
+        {
+            header: `${t("roadmapSection.cards.expansion.mainText")}`,
+            details: [`${t("roadmapSection.cards.expansion.subText.0")}`, `${t("roadmapSection.cards.expansion.subText.1")}`, `${t("roadmapSection.cards.expansion.subText.2")}`, `${t("roadmapSection.cards.expansion.subText.3")}`, `${t("roadmapSection.cards.expansion.subText.4")}`, `${t("roadmapSection.cards.expansion.subText.5")}`],
+            icon: '',
+            bgColor: "#71E581"
+    
+        },
+        {
+            header: `${t("roadmapSection.cards.opportunities.mainText")}`,
+            details: [`${t("roadmapSection.cards.opportunities.subText.0")}`, `${t("roadmapSection.cards.opportunities.subText.1")}`, `${t("roadmapSection.cards.opportunities.subText.2")}`, `${t("roadmapSection.cards.opportunities.subText.3")}`, `${t("roadmapSection.cards.opportunities.subText.4")}`],
+            icon: '',
+            bgColor: "#EC92EC"
+    
+        },
+    
+    ]
     return (
         <>
             <div className={` ${styles.roadmapWrapper}`}>
                 <div className={`text-center  ${styles.header}`}>
-                    <h3>Roadmap to Building</h3>
-                    <h3 >Most Secure Eco-System</h3>
+                    <h3>{t("roadmapSection.mainText")}</h3>
+                    <h3 >{t("roadmapSection.mainTextSubstring")}</h3>
                 </div>
                 <div className={`${styles.roadmapscroll}`}>
                     <section className={` ${styles.roadmapContent}`}>
@@ -85,10 +89,10 @@ export function Roadmap() {
 
                             <div className={`container position-relative h-100 `}>
                                 <div className={`d-flex  justify-content-between ${styleStepper.stepperContainer}`}>
-                                    <span className={`  ${styleStepper.stepName}`}>Phase I</span>
-                                    <span className={` ${styleStepper.stepName}`}>Phase II</span>
-                                    <span className={`   ${styleStepper.stepName}`}>Phase III</span>
-                                    <span className={`  ${styleStepper.stepName}`}>Phase IV</span>
+                                    <span className={`  ${styleStepper.stepName}`}>{t("roadmapSection.phases.0")}</span>
+                                    <span className={` ${styleStepper.stepName}`}>{t("roadmapSection.phases.1")}</span>
+                                    <span className={`   ${styleStepper.stepName}`}>{t("roadmapSection.phases.2")}</span>
+                                    <span className={`  ${styleStepper.stepName}`}>{t("roadmapSection.phases.3")}</span>
                                 </div>
                             </div>
                         </div>

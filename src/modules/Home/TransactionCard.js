@@ -1,6 +1,7 @@
-
+import { useTranslation } from 'react-i18next';
 
 const TransactionCard = () => {
+  const { t } = useTranslation();
   return (
     <div className="t-container mt-5">
       <div >
@@ -13,7 +14,7 @@ const TransactionCard = () => {
             </g>
           </g>
         </svg>
-        <span className="fs-xs t-span">Transaction Complete</span>
+        <span className="fs-xs t-span">{t("homeSection.exampleSection.transactionComplete")}</span>
       </div>
       <div className="fs-md equ">10 BUSD = 45.5 DEVE</div>
       <div className="mt-3 d-flex justify-content-around">
@@ -31,7 +32,7 @@ const TransactionCard = () => {
         </svg>
           <span className="me-2">0Xa6f0359.....Acaaffd12</span>
         </h4>
-        <h4 className="fs-xs card-text-r">35 sec ago</h4>
+        <h4 className="fs-xs card-text-r">{t("homeSection.exampleSection.time")}</h4>
       </div>
     </div>
   )

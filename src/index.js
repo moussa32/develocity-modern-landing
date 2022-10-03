@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/main.scss";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import './i18n/i18n';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

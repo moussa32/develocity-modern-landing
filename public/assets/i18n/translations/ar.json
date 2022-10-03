@@ -1,0 +1,237 @@
+{
+    "headSection": {
+        "slogan": "ثقة، أمان، مصداقية",
+        "navbar": {
+            "home": "الصفحة الرئيسية",
+            "about": "عن",
+            "partners": "الشركاء",
+            "scanToEarn": "ابحث و اربح",
+            "news": "الأخبار",
+            "roadmap": "خطة العمل",
+            "team": "الفريق",
+            "contact": "التواصل "
+        },
+        "languages": {
+            "english": "الانجليزية",
+            "arabic": "العربية",
+            "turkish": "التركية"
+        },
+        "whitepaper": "الصحيفة البيضاء",
+        "followUs": ":Follow us on"
+    },
+    "homeSection": {
+        "mainText": "بدأ الاكتتاب",
+        "subText": "١٠٠٪ من العملات متبقية",
+        "btns": {
+            "buyNow": "اشتر الأن",
+            "howToBuy": "طريقة الشراء"
+        },
+        "modal": {
+            "starterModal": {
+                "mainText": "Connect To",
+                "subText": "Select Blockchain To Connect To It"
+            },
+            "walletInfoModal": {
+                "mainText": "Your Wallet",
+                "subText": "DEVE Balance In Your Wallet",
+                "inputLable": "Wallet",
+                "deveBalance": "DEVE Balance:",
+                "tokensToClaim": "Tokens To Claim:",
+                "referralsToClaim": "Referrals To Claim:",
+                "nextBtn": "Next →"
+            },
+            "optionsModal": {
+                "mainText": "Select You Option",
+                "subText": "What You Wanna Do",
+                "btns": {
+                    "buyDEVE": "Buy DEVE",
+                    "claimYourTokens": "Claim Your Tokens",
+                    "referrals": "Referrals"
+                }
+            },
+            "buyWithModal": {
+                "mainText": "Buying With",
+                "subText": "Select The Cryptocurrency You Want To Use",
+                "btns": {
+                    "binanceCoin": {
+                        "balance": "Balance: 567.29",
+                        "btnMainText": "Binance Coin",
+                        "btnSubText": "BNB"
+                    },
+                    "binanceUSD": {
+                        "balance": "Balance: 2,914.0594",
+                        "btnMainText": "Binance USD",
+                        "btnSubText": "BUSD"
+                    }
+                }
+            },
+            "buyAmountModal": {
+                "balance": "Balance: 2,914.0594",
+                "lables":{
+                    "from": "From",
+                    "to": "To"
+                },
+                "price": "Price",
+                "estimatedBalance": "Estimated Balance:",
+                "btns": {
+                    "buy": "Buy →",
+                    "approve": "Approve"
+                }
+            },
+            "claimModal": {
+                "mainText": "Claim Your Tokens",
+                "subText": "Claim Your Referrals Tokens",
+                "DEVEBalance": "DEVE Balance:",
+                "tokensToClaim": "Tokens To Claim:",
+                "claimBtn": "Claim →"
+            },
+            "referralModal": {
+                "mainText": "Referrals",
+                "subText": "Use Your Code Or Claim Referrals",
+                "referralLinkLabel": "Referral Link",
+                "yourReferrals": "Your Referrals:",
+                "referralsToClaim": "Referrals To Claim:",
+                "claimBtn": "Claim →"
+            },
+            "finalModal": {
+                "mainText": "Done!",
+                "subText": "Your Transaction Is Complete.",
+                "referralText": "Get 50 DEVE Per Invitation With",
+                "referralBtn": "Referral Code.",
+                "DEVEBalance": "DEVE Balance:",
+                "contribution": "Contribution:",
+                "fromReferrals": "From Referrals:",
+                "backToHomepageBtn": "Back To Homepage →"
+            }
+        },
+        "exampleSection":{
+            "transactionComplete": "اكتملت المعاملة",
+            "time": "٣٥ ثانية مضت"
+        }
+    },
+    "aboutSection": {
+        "header": "ثقة، أمان، مصداقية",
+        "mainText": "ما هي ديڤيلوستي ؟",
+        "subText": "Develocity aspires to present its final project in four primary stages. Each stage is presented separately and merged in the post-final stage to create a decentralised platform, which would be distinctively in terms of technology and development based on Web 3.0. DeVelocity strives to create a safe and trustworthy crypto environment where investors and developers can interact securely, considering the transparent credibility and technical measures and standards.",
+        "subTextSecondParagraph": "DeVelocity’s goal is to become a thought leadership organisation, enhancing the community’s awareness and knowledge of the cryptocurrency market by building a virtual academy."
+    },
+    "scanToEarnSection": {
+        "header": "أداة متعددة الوظائف " ,
+        "mainText": "إعادة ابتكار الطريقة التي تستثمر بها و تجني الأموال",
+        "subText": "ابحث و اكسب",
+        "normalText": "DeFi users are always trying to find the ideal investment, and they are willing to take the risk; even if they try as much as they can to reduce the risk, they won’t be able to determine the size of the risk.",
+        "normalTextSecondParagraph": "The multi-functional tool comes to help the users with their challenges by scanning the contract or searching for the token to get a quick and deep detailed report about the token.",
+        "btn": "ابدأ باستخدام أداة البحث →",
+        "svg": {
+            "scan": "SCAN",
+            "tokenName": "اسم العملة",
+            "topTokens": "أعلى العملات",
+            "withdrawTheMoney": "سحب الأموال",
+            "myWallet": "محفظتي",
+            "totalScans": "إجمالي البحث",
+            "averageScore": "متوسط النقاط"
+        }
+    },
+    "partnersSection": {
+        "mainText": "بالشراكة مع"
+    },
+    "newsSection": {
+        "mainText": "آخر الأخبار من ديڤيلوستي",
+        "subText": "لا تفوت اخر الأخبار من ديڤيلوستي",
+        "blogBtn": "تصفح الموقع",
+        "readMore": "اقرأ المزيد <"
+    },
+    "roadmapSection": {
+        "mainText": "خطة لبناء",
+        "mainTextSubstring": "نظام بيئي أكثر أماناً",
+        "cards": {
+            "startup": {
+                "mainText": "البداية",
+                "subText": [
+                    "Website Launching",
+                    "تعريف المشروع الأول",
+                    "تسجيل اسم الشركة رسميا ً",
+                    "ترخيص والرأي القانوني "
+                ]
+            },
+            "launch": {
+                "mainText": "الانطلاق",
+                "subText": [
+                    "إطلاق النسخة التجريبية الأولى من الأداة",
+                    "بدء البيع الأولي",
+                    "حملة تسويقية",
+                    "تعريف المشروع الثاني",
+                    "الدعاية والتسويق",
+                    "دخول منصات مركزية"
+                ]
+            },
+            "expansion": {
+                "mainText": "التوسع",
+                "subText": [
+                    "إطلاق النسخة التجريبية من السواب",
+                    "حملة تسويقية",
+                    "تعريف المشروع الثالث",
+                    "الدعاية و التسويق",
+                    "إطلاق النسخة الأولى من NFT",
+                    "دخول منصات مركزية "
+                ]
+            },
+            "opportunities": {
+                "mainText": "الفرص",
+                "subText": [
+                    "إطلاق النسخة التجريبية من الجسر بين البلوكتشينز",
+                    "تعريف المشروع  الرابع",
+                    "حملة تسويقية",
+                    "الدعاية و الإعلان",
+                    "البحث عن فرص"
+                ]
+            }
+        },
+        "phases": [
+            "المرحلة الأولى",
+            "المرحلة الثانية",
+            "المرحلة الثالثة",
+            "المرحلة الرابعة"
+        ]
+    },
+    "teamSection": {
+        "mainText": "فريق العمل",
+        "members": [
+            {
+                "name": "Marwan Bin Mohammed Al Maktoum",
+                "role": "المؤسس"
+            },
+            {
+                "name": "Mahdi Ajaj",
+                "role": "الرئيس التنفيذي"
+            },
+            {
+                "name": "Abdulaziz Bin Fahad",
+                "role": "رئيس قسم التكنولوجيا"
+            },
+            {
+                "name": "Mamuka Kavtelishvili",
+                "role": "رئيس قسم التسويق"
+            }
+        ]
+    },
+    "contactSection": {
+        "mainText": "Get In Touch!",
+        "headquarter": {
+            "mainText": "Headquarter",
+            "subText": "Dubai, United Arab Emirates"
+        },
+        "email": {
+            "mainText": "Email",
+            "subText": "contact@develocity.finance"
+        }
+    },
+    "footerSection": {
+        "links": {
+            "stayUpdated": "كن على إطلاع",
+            "multifunctionalTool": "الأداة متعددة الوظائف",
+            "whitePaper": "الصحيفة البيضاء"
+        },
+        "copyright": "Develocity 2022 © حقوق محفوظة "
+    }
+}
