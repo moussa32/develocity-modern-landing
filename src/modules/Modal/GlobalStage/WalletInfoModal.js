@@ -2,16 +2,8 @@ import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
 import NextButton from "../CommonStage/NextButton";
 import TextItem from "../CommonStage/TextItem";
 import styles from "../CommonStage/CommonStyle.module.css";
-import { web3Modal } from "../../../shared/util/handleWeb3Modal";
 
-const WalletInfoModal = ({ handleStep, walletAddress, handleOpen }) => {
-  const disconnectWeb3Modal = async () => {
-    await web3Modal.clearCachedProvider();
-    handleOpen(false);
-    handleStep("starter");
-    localStorage.clear();
-  };
-
+const WalletInfoModal = ({ handleStep, walletAddress, disconnect }) => {
   return (
     <>
       <div>
@@ -20,7 +12,7 @@ const WalletInfoModal = ({ handleStep, walletAddress, handleOpen }) => {
           <span className={styles.walletText}>Wallet</span>
           <div className={styles.contractaddress}>
             <p>{walletAddress && walletAddress.slice(0, 10) + "..." + walletAddress.slice(31, 41)}</p>
-            <button className="btn" onClick={() => disconnectWeb3Modal()}>
+            <button className="btn" onClick={() => disconnect()}>
               &#9747;
             </button>
           </div>

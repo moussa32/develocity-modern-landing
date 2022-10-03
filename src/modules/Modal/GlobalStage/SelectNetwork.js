@@ -1,6 +1,7 @@
 import ButtonItem from "../CommonStage/ButtonItem";
 import EtherumIcon from "../../../assets/images/Ethereum-icon.png";
 import PolygonIcon from "../../../assets/images/polygon-icon.png";
+import BinanceIcon from "../../../assets/images/binanceCoin.png";
 import { ethers } from "ethers";
 import { useCallback, useState } from "react";
 import { web3Modal } from "../../../shared/util/handleWeb3Modal";
@@ -21,7 +22,6 @@ const SelectNetwork = ({ handleStep, handleOpen, handleWalletAddress }) => {
       handleOpen(true);
       handleStep("walletInfo");
     } catch (error) {
-      alert(error);
       handleStep("starter");
       console.log(error);
     }
@@ -51,7 +51,7 @@ const SelectNetwork = ({ handleStep, handleOpen, handleWalletAddress }) => {
           mainText="Binance Smart Chain"
           secondaryText="BNB"
           itemToSelect="binance"
-          image={EtherumIcon}
+          image={BinanceIcon}
           selected={selectedNetwork}
           handleSelect={handleSelectNetworkName}
         />
