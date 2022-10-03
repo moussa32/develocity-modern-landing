@@ -9,12 +9,15 @@ import Navbar from "../../shared/components/Navbar/Navbar";
 import ContactInfo from "./ContactInfo";
 import MainContent from "./MainContent";
 import OurTeam from "./OurTeam";
+import { useState } from "react";
 
 const Home = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div id="home">
-      <Navbar />
-      <MainContent />
+      <Navbar onClose={setIsOpen}/>
+      <MainContent isOpen={isOpen} setIsOpen={setIsOpen}/>
       <div id="about">
         <Featured />
       </div>
