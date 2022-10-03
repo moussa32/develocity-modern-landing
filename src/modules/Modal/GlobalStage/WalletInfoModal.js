@@ -2,8 +2,10 @@ import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
 import NextButton from "../CommonStage/NextButton";
 import TextItem from "../CommonStage/TextItem";
 import styles from "../CommonStage/CommonStyle.module.css";
+import { useEffect, useState } from "react";
+import { ethers } from "ethers";
 
-const WalletInfoModal = ({ handleStep, walletAddress, disconnect }) => {
+const WalletInfoModal = ({ handleStep, walletAddress, disconnect, deveBalance, tokensToClaim, referralsToClaim }) => {
   return (
     <>
       <div>
@@ -17,9 +19,9 @@ const WalletInfoModal = ({ handleStep, walletAddress, disconnect }) => {
             </button>
           </div>
         </div>
-        <TextItem title="DEVE Balance" value="500" percentage="500" hr="true" />
-        <TextItem title="Tokens To Claim:" value="250" percentage="250" hr="true" />
-        <TextItem title="Referrals To Claim" value="150" percentage="" hr="" />
+        <TextItem title="DEVE Balance" value={deveBalance.amount} percentage={deveBalance.value} hr="true" />
+        <TextItem title="Referrals Percentage" value={tokensToClaim.amount} secondaryText="%" hr="true" />
+        <TextItem title="Referrals To Claim" value={referralsToClaim} percentage="" hr="" />
         <div className={styles.nextButtonContainer}>
           <NextButton
             text="Next"

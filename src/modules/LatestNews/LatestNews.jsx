@@ -6,22 +6,22 @@ import { useTranslation } from 'react-i18next';
 const newsCard = [
     {
         image: image1,
-        header: 'We are Launching Deve',
-        caption: "Get on Board Now!",
-        date: "September 19, 2022"
+        header: "Develocity Finance Technologies partnering with Xite Solutions.",
+        /*caption: "Get on Board Now!",*/
+        date: "September 3, 2022"
     },
     {
         image: image2,
-        header: 'We are Launching Deve',
-        caption: "Get on Board Now!",
-        date: "September 19, 2022"
+        header: 'It’s not just a search engine for crypto but also a new way to invest your time and earn money.',
+        /*caption: "Get on Board Now!",*/
+        date: "July 1, 2022"
     },
-    {
+    /*{
         image: image3,
         header: 'We are Launching Deve',
         caption: "Get on Board Now!",
         date: "September 19, 2022"
-    },
+    },*/
 
 ]
 export function LatestNews() {
@@ -34,7 +34,7 @@ export function LatestNews() {
             <div className={`container ${styles.newsBody}`}>
                 <div className="d-flex justify-content-center justify-content-md-between  align-items-center flex-column flex-md-row">
                     <span className={`  ${styles.news_caption}`}>{t("newsSection.subText")}</span>
-                    <button className={`btn ${styles.btn_blog}`}>{t("newsSection.blogBtn")}</button>
+                    <button className={`d-none btn ${styles.btn_blog}`}>{t("newsSection.blogBtn")}</button>
                 </div>
 
 <section className={`${styles.cardContainer} `}> 
@@ -49,7 +49,7 @@ export function LatestNews() {
                                 <h5 className='text-secondary'>{el.caption}</h5>
                                 <span className='text-muted border rounded'>{el.date}</span>
                                 <div className={` ${styles.readMore}`}>
-                                    <button className={`text-muted btn ${styles.btn_readmore}`}>{t("newsSection.readMore")}</button>
+                                    <button className={`d-none text-muted btn ${styles.btn_readmore}`}>{t("newsSection.readMore")}</button>
                                 </div>
                             </div>
                         </div>

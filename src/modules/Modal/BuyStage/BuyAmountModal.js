@@ -1,13 +1,15 @@
 import { useState } from "react";
 import TextItem from "../CommonStage/TextItem";
 import toast, { Toaster } from "react-hot-toast";
+import binanceCoin from "../../../assets/images/bscCoin.png";
 
-const BuyAmountModal = ({ handleStep, walletAddress, disconnect }) => {
-  const [address, setAddress] = useState(walletAddress);
+const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency }) => {
   const [balance, setBalance] = useState("2,914.0594");
 
   const [fromBalance, setFromBalance] = useState(0);
   const [toBalance, setToBalance] = useState(0);
+
+  //getwethPrice(265 خانة)
 
   const approveAlert = () => {
     // window.alert("Approved")
@@ -71,54 +73,27 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect }) => {
           />
           <path id="Vector-4" data-name="Vector" d="M0,0H24V24H0Z" fill="none" opacity="0" />
         </svg>
-        <h5 className="address">{address && address.slice(0, 10) + "..." + address.slice(31, 41)}</h5>
+        <h5 className="address">{walletAddress && walletAddress.slice(0, 10) + "..." + walletAddress.slice(31, 41)}</h5>
       </div>
 
-      <div className="mt-3">
+      <div className="mt-4">
         <div className="d-flex justify-content-between">
           <label className="first-lable">From</label>
-          <h5 className="second-lable">Balance: {balance} </h5>
+          <h5 className="second-lable">Balance: {currentCurrency.balance} </h5>
         </div>
         <div className="d-flex s-container">
           <input
             className="w-75"
             value={fromBalance}
+            type="number"
             onChange={(e) => {
               setFromBalance(e.target.value);
             }}
             placeholder="0"
           />
-          <div className="d-flex justify-content-center align-items-center w-25">
-            <svg xmlns="http://www.w3.org/2000/svg" width="23.998" height="24" viewBox="0 0 23.998 24">
-              <path
-                id="Binance_Coin_BNB_"
-                data-name="Binance Coin (BNB)"
-                d="M23.638,14.9A12,12,0,1,1,14.9.359,12,12,0,0,1,23.638,14.9h0Z"
-                fill="#f3ba2f"
-              />
-              <path
-                id="Binance_Coin_BNB_2"
-                data-name="Binance Coin (BNB)"
-                d="M1.807,6.72,4.913,3.614,8.02,6.721,9.827,4.914,4.913,0,0,4.913,1.807,6.72"
-                transform="translate(7.091 4.004)"
-                fill="#fff"
-              />
-              <path
-                id="Binance_Coin_BNB_3"
-                data-name="Binance Coin (BNB)"
-                d="M1.809,0,4.915,3.107,8.022,0,9.83,1.806h0L4.915,6.721,0,1.808l0,0L1.81,0"
-                transform="translate(7.088 13.275)"
-                fill="#fff"
-              />
-              <path
-                id="Binance_Coin_BNB_4"
-                data-name="Binance Coin (BNB)"
-                d="M0,1.807,1.807,0,3.614,1.807,1.807,3.614Z"
-                transform="translate(16.385 10.194)"
-                fill="#fff"
-              />
-            </svg>
-            <span>BNB</span>
+          <div className="bnb-container d-flex bg-white justify-content-center align-items-center w-25">
+            <img src={currentCurrency.image} width="23" />
+            <span>{currentCurrency.ticker}</span>
           </div>
         </div>
       </div>
@@ -154,7 +129,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect }) => {
         />
       </svg>
 
-      <div className="mt-2">
+      <div className="mt-1">
         <div className="d-flex justify-content-between">
           <label className="first-lable">To</label>
         </div>
@@ -167,7 +142,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect }) => {
             }}
             placeholder="0"
           />
-          <div className="d-flex justify-content-center align-items-center w-25">
+          <div className="bnb-container d-flex bg-white justify-content-center align-items-center w-25">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"

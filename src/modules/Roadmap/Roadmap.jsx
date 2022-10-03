@@ -2,6 +2,7 @@ import styles from './Roadmap.module.css';
 import styleStepper from './StepLine.module.css'
 import { Card } from './Card'
 import check from '../../assets/images/check-circle.png'
+import clock from '../../assets/images/clockHistory.svg'
 import { useTranslation } from 'react-i18next';
 
 export function Roadmap() {
@@ -17,7 +18,7 @@ export function Roadmap() {
         {
             header: `${t("roadmapSection.cards.launch.mainText")}`,
             details: [`${t("roadmapSection.cards.launch.subText.0")}`, `${t("roadmapSection.cards.launch.subText.1")}`, `${t("roadmapSection.cards.launch.subText.2")}`, `${t("roadmapSection.cards.launch.subText.3")}`, `${t("roadmapSection.cards.launch.subText.4")}`, `${t("roadmapSection.cards.launch.subText.5")}`],
-            icon: check,
+            icon: clock,
             bgColor: "#FFD13A"
     
         },
