@@ -31,7 +31,14 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const handleRenderComponentStep = () => {
     switch (currentStep) {
       case "starter":
-        return <SelectNetwork handleStep={handleStep} handleNetwork={setNetwork} handleOpen={handleOpen} />;
+        return (
+          <SelectNetwork
+            handleStep={handleStep}
+            handleWalletAddress={setwalletAddress}
+            handleNetwork={setNetwork}
+            handleOpen={handleOpen}
+          />
+        );
       case "walletInfo":
         return <WalletInfoModal handleStep={handleStep} walletAddress={walletAddress} />;
       case "options":
