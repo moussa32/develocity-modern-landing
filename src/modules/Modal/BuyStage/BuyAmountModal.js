@@ -13,10 +13,11 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
   const memoizedCoinBalanceConverted = useMemo(() => (coinBalance * Math.pow(10, 18)).toString(), [coinBalance]);
 
   useEffect(() => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const walletInfoContract = new ethers.Contract(walletInfoContractAddress, contractAbi, provider);
+
     const delayDebounceFn = setTimeout(async () => {
       if (coinBalance > 0) {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const walletInfoContract = new ethers.Contract(walletInfoContractAddress, contractAbi, provider);
         const calculateDeveCoins = await walletInfoContract.getwethPrice(memoizedCoinBalanceConverted);
         setConvertedDeve(calculateDeveCoins.toLocaleString("en-US"));
       }
