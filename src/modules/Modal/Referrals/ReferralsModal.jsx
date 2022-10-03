@@ -26,15 +26,14 @@ const ReferralsModal = ({ handleStep }) => {
     </svg>
 
     <ModalHeaderText header="Referrals" caption="Use Your Code Or Claim Referrals"/>
-    <div>
+    <div className="ref-container">
       <label className="referral-lable">Referral Link</label>
-      <div className="copy-link d-flex w-100">
-        <p className="m-3">{link}</p>
+      <div className="copy-link d-flex ">
+        <p className="mx-2 my-3">{link}</p>
         <svg className="m-3 copy-svg" onClick={()=>copyToClipboard()} xmlns="http://www.w3.org/2000/svg" width="21.5" height="21.5" viewBox="0 0 21.5 21.5">
           <path id="Vector" d="M14,4.9V9.1c0,3.5-1.4,4.9-4.9,4.9H4.9C1.4,14,0,12.6,0,9.1V4.9C0,1.4,1.4,0,4.9,0H9.1C12.6,0,14,1.4,14,4.9Z" transform="translate(0.75 6.75)" fill="none" stroke="#292d32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
           <path id="Vector-2" data-name="Vector" d="M14,4.9V9.1c0,3.5-1.4,4.9-4.9,4.9H8V10.9C8,7.4,6.6,6,3.1,6H0V4.9C0,1.4,1.4,0,4.9,0H9.1C12.6,0,14,1.4,14,4.9Z" transform="translate(6.75 0.75)" fill="none" stroke="#292d32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" opacity="0.4"/>
         </svg>
-
       </div>
     </div>
     <div className="mt-4 w-100">
