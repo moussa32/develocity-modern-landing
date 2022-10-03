@@ -3,6 +3,7 @@ import TextItem from "../CommonStage/TextItem";
 import toast from "react-hot-toast";
 import { ethers } from "ethers";
 import contractAbi from "../../../assets/contractABI.json";
+import { provider, walletContract } from "../../../shared/util/handleContract";
 
 let walletInfoContractAddress = "0xc1ec20ef71c47004616a7c82ce0dd6a60fbe897c";
 
@@ -13,12 +14,9 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
   const memoizedCoinBalanceConverted = useMemo(() => (coinBalance * Math.pow(10, 18)).toString(), [coinBalance]);
 
   useEffect(() => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const walletInfoContract = new ethers.Contract(walletInfoContractAddress, contractAbi, provider);
-
     const delayDebounceFn = setTimeout(async () => {
       if (coinBalance > 0) {
-        const calculateDeveCoins = await walletInfoContract.getwethPrice(memoizedCoinBalanceConverted);
+        const calculateDeveCoins = await walletContract.getwethPrice(memoizedCoinBalanceConverted);
         setConvertedDeve(calculateDeveCoins.toLocaleString("en-US"));
       }
     }, 500);
@@ -29,7 +27,6 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
   }, [coinBalance]);
 
   const handleBuy = async () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const contract = new ethers.Contract(walletInfoContractAddress, contractAbi, signer);
     const urlParams = new URLSearchParams(window.location.search);

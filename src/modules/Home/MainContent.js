@@ -2,7 +2,7 @@ import Icons from "./Icons";
 import Progress from "./Progress";
 import TransactionCard from "./TransactionCard";
 import ModalBuyNow from "../Modal/ModalBuyNow";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const MainContent = ({ isOpen, setIsOpen }) => {
   const { t } = useTranslation();

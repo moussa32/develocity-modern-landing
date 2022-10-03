@@ -11,7 +11,7 @@ import BuyAmountModal from "./BuyStage/BuyAmountModal";
 import ReferralsModal from "./Referrals/ReferralsModal";
 import { web3Modal } from "../../shared/util/handleWeb3Modal";
 import toast, { Toaster } from "react-hot-toast";
-import { ethers } from "ethers";
+
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
 //   buy: ["buywith", "buyamount", "final"],
