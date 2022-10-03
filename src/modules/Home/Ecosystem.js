@@ -1,10 +1,12 @@
-import EcosystemImage from "../../assets/images/Ecosystem.png";
+import EcosystemImage from "../../assets/images/vision.PNG";
 const Ecosystem = () => {
   return (
     <>
-      <div className="position-relative">
-        <img src={EcosystemImage} className="ecosystem-svg" alt="ecosystem" title="ecosystem" />
-        <div className="ecosystem-header-center">Our Vision</div>
+      <div>
+      <img src={EcosystemImage} className="ecosystem-svg" alt="ecosystem" title="ecosystem" />
+
+        {/* <img src={EcosystemImage} className="ecosystem-svg" alt="ecosystem" title="ecosystem" />
+        <div className="ecosystem-header-center">Our Vision</div> */}
       </div>
     </>
 

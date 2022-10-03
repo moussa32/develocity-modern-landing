@@ -110,8 +110,8 @@ const Invest = () => {
                     id="scan"
                     transform="translate(391 53.5)"
                     fill="#373737"
-                    font-size="15"
-                    font-family="SegoeUI, Segoe UI"
+                    fontSize="15"
+                    fontFamily="SegoeUI, Segoe UI"
                   >
                     <tspan x="-19.076" y="0">
                       SCAN
@@ -152,8 +152,8 @@ const Invest = () => {
                     data-name="Token Name"
                     transform="translate(51 53.5)"
                     fill="#373737"
-                    font-size="17"
-                    font-family="SegoeUI, Segoe UI"
+                    fontSize="17"
+                    fontFamily="SegoeUI, Segoe UI"
                   >
                     <tspan x="0" y="0">
                       Token Name
@@ -166,8 +166,8 @@ const Invest = () => {
                     transform="translate(424.695 42.039)"
                     fill="none"
                     stroke="#373737"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     strokeWidth="1.5"
                   />
                 </m.svg>
@@ -265,9 +265,9 @@ const Invest = () => {
                       data-name="Top Tokens"
                       transform="translate(0.02 9.483)"
                       fill="#373737"
-                      font-size="8"
-                      font-family="SegoeUI-Bold, Segoe UI"
-                      font-weight="700"
+                      fontSize="8"
+                      fontFamily="SegoeUI-Bold, Segoe UI"
+                      fontWeight="700"
                       opacity="0.5"
                     >
                       <tspan x="0" y="0">
@@ -290,9 +290,9 @@ const Invest = () => {
                         data-name="63"
                         transform="translate(7.195 8.702)"
                         fill="#ffb300"
-                        font-size="7"
-                        font-family="SegoeUI, Segoe UI"
-                        letter-spacing="0.02em"
+                        fontSize="7"
+                        fontFamily="SegoeUI, Segoe UI"
+                        letterSpacing="0.02em"
                       >
                         <tspan x="-3.843" y="0">
                           63
@@ -315,9 +315,9 @@ const Invest = () => {
                         data-name="64"
                         transform="translate(7.195 8.526)"
                         fill="#ffb300"
-                        font-size="7"
-                        font-family="SegoeUI, Segoe UI"
-                        letter-spacing="0.02em"
+                        fontSize="7"
+                        fontFamily="SegoeUI, Segoe UI"
+                        letterSpacing="0.02em"
                       >
                         <tspan x="-3.843" y="0">
                           64
@@ -340,9 +340,9 @@ const Invest = () => {
                         data-name="82"
                         transform="translate(7.195 9.351)"
                         fill="#1dd21d"
-                        font-size="7"
-                        font-family="SegoeUI, Segoe UI"
-                        letter-spacing="0.02em"
+                        fontSize="7"
+                        fontFamily="SegoeUI, Segoe UI"
+                        letterSpacing="0.02em"
                       >
                         <tspan x="-3.843" y="0">
                           82
@@ -365,9 +365,9 @@ const Invest = () => {
                         data-name="84"
                         transform="translate(7.195 9.175)"
                         fill="#1dd21d"
-                        font-size="7"
-                        font-family="SegoeUI, Segoe UI"
-                        letter-spacing="0.02em"
+                        fontSize="7"
+                        fontFamily="SegoeUI, Segoe UI"
+                        letterSpacing="0.02em"
                       >
                         <tspan x="-3.843" y="0">
                           84
@@ -482,8 +482,8 @@ const Invest = () => {
                       data-name="Withdraw The Money"
                       transform="translate(33.461 22.482)"
                       fill="#373737"
-                      font-size="11"
-                      font-family="SegoeUI, Segoe UI"
+                      fontSize="11"
+                      fontFamily="SegoeUI, Segoe UI"
                     >
                       <tspan x="0" y="0">
                         Withdraw The Money
@@ -523,10 +523,10 @@ const Invest = () => {
                       data-name="$1,384"
                       transform="translate(77.68 93.164)"
                       fill="#373737"
-                      font-size="26"
-                      font-family="SegoeUI-Bold, Segoe UI"
-                      font-weight="700"
-                      letter-spacing="0.02em"
+                      fontSize="26"
+                      fontFamily="SegoeUI-Bold, Segoe UI"
+                      fontWeight="700"
+                      letterSpacing="0.02em"
                     >
                       <tspan x="-42.211" y="0">
                         $1,384
@@ -537,8 +537,8 @@ const Invest = () => {
                       data-name="$239"
                       transform="translate(48.68 119.164)"
                       fill="#6c757d"
-                      font-size="11"
-                      font-family="SegoeUI, Segoe UI"
+                      fontSize="11"
+                      fontFamily="SegoeUI, Segoe UI"
                     >
                       <tspan x="-11.859" y="0">
                         $239
@@ -549,8 +549,8 @@ const Invest = () => {
                       data-name="2,14%"
                       transform="translate(95.68 118.164)"
                       fill="#57ac76"
-                      font-size="10"
-                      font-family="SegoeUI, Segoe UI"
+                      fontSize="10"
+                      fontFamily="SegoeUI, Segoe UI"
                     >
                       <tspan x="-13.262" y="0">
                         2,14%
@@ -561,9 +561,9 @@ const Invest = () => {
                       data-name="My Wallet"
                       transform="translate(79.68 50.164)"
                       fill="#373737"
-                      font-size="13"
-                      font-family="SegoeUI-Bold, Segoe UI"
-                      font-weight="700"
+                      fontSize="13"
+                      fontFamily="SegoeUI-Bold, Segoe UI"
+                      fontWeight="700"
                       opacity="0.5"
                     >
                       <tspan x="-31.021" y="0">
@@ -618,9 +618,9 @@ const Invest = () => {
                       data-name="24,148"
                       transform="translate(131.439 20.12)"
                       fill="#373737"
-                      font-size="11"
-                      font-family="SegoeUI, Segoe UI"
-                      letter-spacing="0.02em"
+                      fontSize="11"
+                      fontFamily="SegoeUI, Segoe UI"
+                      letterSpacing="0.02em"
                     >
                       <tspan x="-16.567" y="0">
                         24,148
@@ -631,8 +631,8 @@ const Invest = () => {
                       data-name="Total Scans"
                       transform="translate(9.439 20.12)"
                       fill="#373737"
-                      font-size="11"
-                      font-family="SegoeUI, Segoe UI"
+                      fontSize="11"
+                      fontFamily="SegoeUI, Segoe UI"
                     >
                       <tspan x="0" y="0">
                         Total Scans
@@ -671,9 +671,9 @@ const Invest = () => {
                       data-name="79"
                       transform="translate(129.987 20.251)"
                       fill="#ffb300"
-                      font-size="11"
-                      font-family="SegoeUI, Segoe UI"
-                      letter-spacing="0.02em"
+                      fontSize="11"
+                      fontFamily="SegoeUI, Segoe UI"
+                      letterSpacing="0.02em"
                     >
                       <tspan x="-6.04" y="0">
                         79
@@ -684,8 +684,8 @@ const Invest = () => {
                       data-name="Averag Score"
                       transform="translate(8.987 20.251)"
                       fill="#373737"
-                      font-size="11"
-                      font-family="SegoeUI, Segoe UI"
+                      fontSize="11"
+                      fontFamily="SegoeUI, Segoe UI"
                     >
                       <tspan x="0" y="0">
                         Averag Score

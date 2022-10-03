@@ -21,7 +21,7 @@ const Navbar = () => {
   window.addEventListener("scroll", listenScrollEvent);
 
   return (
-    <div className="container bg-nav sticky-top nav-border">
+    <div className="container bg-nav sticky-top nav-border" style={{zIndex:5}}>
       <div className="d-flex justify-content-between pt-3 d-md-none mt-2 mb-3">
         <span className="mx-2 fs-sm">Trust, Security, Credibility</span>
         <div>
@@ -52,7 +52,7 @@ const Navbar = () => {
           </a>
         </div>
       </div>
-      <div className="d-none d-md-block h-25 bg-white text-white">hello</div>
+      <div className="bg-transparent d-none d-md-block bg-white text-white" style={{height:"10px"}}></div>
 
       <nav
         className="navbar text-center nav-container navbar-expand-lg nav-border"

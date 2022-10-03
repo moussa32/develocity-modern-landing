@@ -4,35 +4,38 @@ import PolygonIcon from "../../../assets/images/polygon-icon.png";
 import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 import { useCallback, useState } from "react";
+import { networkProviderOptions } from "../../../shared/util/handleNetworkProvider";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
-const providerOptions = {
-  walletconnect: {
-    package: WalletConnectProvider, // required
-    options: {
-      rpc: { 1: "https://mainnet.infura.io/v3/" },
-    },
-  },
-};
-
-const SelectNetwork = ({ handleStep, handleNetwork }) => {
+const SelectNetwork = ({ handleStep, handleNetwork ,handleWalletAddress}) => {
   const [selectedNetwork, setSelectedNetwork] = useState("");
 
   const handleSelectNetwork = async (networkName) => {
     const web3Modal = new Web3Modal({
       network: networkName,
       cacheProvider: false,
-      providerOptions,
+      providerOptions: {
+        walletconnect: {
+          package: WalletConnectProvider,
+          options: {
+            rpc: networkProviderOptions(networkName),
+          },
+        },
+      },
     });
     const instance = await web3Modal.connect();
 
     const provider = new ethers.providers.Web3Provider(instance);
-    console.log(provider);
+    const signer = provider.getSigner();
+    const address = await signer.getAddress()
+    handleWalletAddress(address)
+    console.log(address," === <<< address");
   };
 
-  const handleSelectNetworkName = useCallback((name) => {
-    handleSelectNetwork(name);
+  const handleSelectNetworkName = useCallback(async (name) => {
     setSelectedNetwork(name);
+    await handleSelectNetwork(name);
+    handleStep("walletInfo");
   }, []);
 
   return (

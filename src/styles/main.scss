@@ -31,3 +31,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "./Navbar";
 @import "./OurTeam";
 @import "./Modal";
+@import "./BuyAmount";
+@import "./FinalModal";
+@import "./ReferralsModal";
