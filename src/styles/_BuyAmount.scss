@@ -65,3 +65,17 @@
   color: #23282C;
   background-color: unset; 
 }
+@media screen and (max-width:576px) {
+  .s-container{
+    height: 48px;
+  }
+  .s-container span{
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  .s-container input{
+    font-size: 20px;
+  }
+ 
+ 
+}
