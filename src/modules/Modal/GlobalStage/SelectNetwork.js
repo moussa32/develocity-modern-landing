@@ -11,16 +11,15 @@ const SelectNetwork = ({ handleStep, handleNetwork, handleOpen, handleWalletAddr
   const [selectedNetwork, setSelectedNetwork] = useState("");
 
   const handleSelectNetwork = async (networkName) => {
-    console.log(networkProviderOptions(networkName));
-
+    console.log(networkName, networkProviderOptions(networkName));
     const web3Modal = new Web3Modal({
-      network: "binance",
+      network: networkName,
       cacheProvider: false,
       providerOptions: {
         walletconnect: {
           package: WalletConnectProvider,
           options: {
-            rpc: { 56: "https://bsc-dataseed.binance.org/" },
+            rpc: networkProviderOptions(networkName),
           },
         },
       },
@@ -55,6 +54,7 @@ const SelectNetwork = ({ handleStep, handleNetwork, handleOpen, handleWalletAddr
         <ButtonItem
           mainText="Etherum"
           secondaryText="ETH"
+          itemToSelect="mainnet"
           image={EtherumIcon}
           selected={selectedNetwork}
           handleSelect={handleSelectNetworkName}
@@ -62,12 +62,14 @@ const SelectNetwork = ({ handleStep, handleNetwork, handleOpen, handleWalletAddr
         <ButtonItem
           mainText="Binance Smart Chain"
           secondaryText="BNB"
+          itemToSelect="binance"
           image={EtherumIcon}
           selected={selectedNetwork}
           handleSelect={handleSelectNetworkName}
         />
         <ButtonItem
           mainText="Polygon"
+          itemToSelect="polygon"
           secondaryText="MATIC"
           image={PolygonIcon}
           selected={selectedNetwork}

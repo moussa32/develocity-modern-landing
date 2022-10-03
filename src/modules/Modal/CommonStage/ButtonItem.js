@@ -1,13 +1,8 @@
 import { memo, useState } from "react";
 
-const ButtonItem = ({ selected, handleSelect, image, mainText, secondaryText, doubleCallbackFunc }) => {
+const ButtonItem = ({ selected, handleSelect, image, mainText, secondaryText, itemToSelect }) => {
   const handleClick = (event) => {
-    handleSelect(mainText);
-    // if (event.detail === 2) {
-    //   console.log("double click");
-    //   console.log(doubleCallbackFunc);
-    //   doubleCallbackFunc(mainText);
-    // }
+    handleSelect(itemToSelect);
   };
 
   return (
