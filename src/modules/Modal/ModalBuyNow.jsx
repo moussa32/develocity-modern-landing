@@ -21,10 +21,15 @@ import { web3Modal } from "../../shared/util/handleWeb3Modal";
 const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [currentStep, setCurrentStep] = useState("starter");
   const [walletAddress, setwalletAddress] = useState("");
+  const [firstCoin, setFirstCoin] = useState(0);
+  const [secondCoin, setSecondCoin] = useState(0);
+  const [selectedCurrency, setSelectedCurreny] = useState({ name: "", image: "", ticker: "", balance: "" });
 
   const handleStep = useCallback((step) => {
     setCurrentStep(step);
   }, []);
+
+  console.log(selectedCurrency);
 
   const handleDisconnectWeb3Modal = async () => {
     await web3Modal.clearCachedProvider();
@@ -49,13 +54,24 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
       case "options":
         return <SelectOption handleStep={handleStep} />;
       case "buywith":
-        return <BuywithModal handleStep={handleStep} walletAddress={walletAddress} />;
+        return (
+          <BuywithModal
+            handleStep={handleStep}
+            walletAddress={walletAddress}
+            handleBinanceCoin={setFirstCoin}
+            binanceBalance={firstCoin}
+            handleBinanceUSD={setSecondCoin}
+            binanceUSDBalance={secondCoin}
+            handleSelectCurrency={setSelectedCurreny}
+          />
+        );
       case "buyamount":
         return (
           <BuyAmountModal
             handleStep={handleStep}
             walletAddress={walletAddress}
             disconnect={handleDisconnectWeb3Modal}
+            currentCurrency={selectedCurrency}
           />
         );
       case "claim":

@@ -2,12 +2,13 @@ import { useState } from "react";
 import TextItem from "../CommonStage/TextItem";
 import toast, { Toaster } from "react-hot-toast";
 
-const BuyAmountModal = ({ handleStep, walletAddress, disconnect }) => {
-  const [address, setAddress] = useState(walletAddress);
+const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency }) => {
   const [balance, setBalance] = useState("2,914.0594");
 
   const [fromBalance, setFromBalance] = useState(0);
   const [toBalance, setToBalance] = useState(0);
+
+  //getwethPrice(265 خانة)
 
   const approveAlert = () => {
     // window.alert("Approved")
@@ -71,18 +72,19 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect }) => {
           />
           <path id="Vector-4" data-name="Vector" d="M0,0H24V24H0Z" fill="none" opacity="0" />
         </svg>
-        <h5 className="address">{address && address.slice(0, 10) + "..." + address.slice(31, 41)}</h5>
+        <h5 className="address">{walletAddress && walletAddress.slice(0, 10) + "..." + walletAddress.slice(31, 41)}</h5>
       </div>
 
       <div className="mt-4">
         <div className="d-flex justify-content-between">
           <label className="first-lable">From</label>
-          <h5 className="second-lable">Balance: {balance} </h5>
+          <h5 className="second-lable">Balance: {currentCurrency.balance} </h5>
         </div>
         <div className="d-flex s-container">
           <input
             className="w-75"
             value={fromBalance}
+            type="number"
             onChange={(e) => {
               setFromBalance(e.target.value);
             }}
@@ -118,7 +120,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect }) => {
                 fill="#fff"
               />
             </svg>
-            <span>BNB</span>
+            <span>{currentCurrency.ticker}</span>
           </div>
         </div>
       </div>

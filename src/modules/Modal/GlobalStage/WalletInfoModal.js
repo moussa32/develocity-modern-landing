@@ -264,7 +264,7 @@ const WalletInfoModal = ({ handleStep, walletAddress, disconnect }) => {
       setReferralsToClaim(referralsToClaim);
 
       // Methods =>  _contributions(address) - getRefPer(address) _RefAmount [0.3]
-      console.log(referralsToClaim);
+      console.log(walletInfoContract);
     };
     getBalance();
   }, []);

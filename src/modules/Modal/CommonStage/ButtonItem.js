@@ -1,8 +1,9 @@
-import { memo, useState } from "react";
-
-const ButtonItem = ({ selected, handleSelect, image, mainText, secondaryText, itemToSelect }) => {
+const ButtonItem = ({ selected, handleSelect, image, mainText, secondaryText, itemToSelect, getAllValues }) => {
   const handleClick = (event) => {
     handleSelect(itemToSelect);
+    if (getAllValues) {
+      getAllValues(selected, image, mainText, secondaryText, itemToSelect);
+    }
   };
 
   return (
@@ -16,4 +17,4 @@ const ButtonItem = ({ selected, handleSelect, image, mainText, secondaryText, it
   );
 };
 
-export default memo(ButtonItem);
+export default ButtonItem;
