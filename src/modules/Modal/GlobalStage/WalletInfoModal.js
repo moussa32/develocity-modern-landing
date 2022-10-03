@@ -282,7 +282,7 @@ const WalletInfoModal = ({ handleStep, walletAddress, disconnect }) => {
           </div>
         </div>
         <TextItem title="DEVE Balance" value={deveBalance.amount} percentage={deveBalance.value} hr="true" />
-        <TextItem title="Referrals Percentage:" value={tokensToClaim.amount} secondaryText="%" hr="true" />
+        <TextItem title="Referrals Percentage" value={tokensToClaim.amount} secondaryText="%" hr="true" />
         <TextItem title="Referrals To Claim" value={referralsToClaim} percentage="" hr="" />
         <div className={styles.nextButtonContainer}>
           <NextButton
