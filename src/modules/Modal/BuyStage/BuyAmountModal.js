@@ -24,7 +24,7 @@ const BuyAmountModal = ({ handleStep ,walletAddress }) => {
                 <h5 className="address">{address && address.slice(0, 10)+'...'+address.slice(31, 41)}</h5>
             </div>
             
-            <div className="mt-4">
+            <div className="mt-3">
                 <div className="d-flex justify-content-between">
                     <label className="first-lable">From</label>
                     <h5 className="second-lable">Balance: {balance} </h5>
@@ -43,7 +43,7 @@ const BuyAmountModal = ({ handleStep ,walletAddress }) => {
                 </div>
             </div>
 
-            <svg className="mt-4" xmlns="http://www.w3.org/2000/svg" width="16.284" height="21.333" viewBox="0 0 16.284 21.333">
+            <svg className="mt-3" xmlns="http://www.w3.org/2000/svg" width="16.284" height="21.333" viewBox="0 0 16.284 21.333">
             <path id="Vector" d="M14.163,0,7.082,7.082,0,0" transform="translate(1.061 13.502)" fill="none" stroke="#292d32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
             <path id="Vector-2" data-name="Vector" d="M0,0V19.635" transform="translate(8.143 0.75)" fill="none" stroke="#292d32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" opacity="0.4"/>
             </svg>
