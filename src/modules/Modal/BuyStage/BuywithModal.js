@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useCallback } from 'react';
 import { ModalHeaderText } from '../ModalHeader/ModalHeaderText';
-import binanceCoin from '../../../assets/images/bscCoin.svg';
-import binanceUSD from '../../../assets/images/BinanceUSD.png';
+import binanceUSD from '../../../assets/images/bscCoin.svg';
+import binanceCoin from '../../../assets/images/BinanceUSD.png';
 import TextFloatRight from '../CommonStage/TextFloatRight';
 import ButtonItem from "..//CommonStage/ButtonItem";
 
