@@ -13,4 +13,6 @@
     height: auto !important;
   }
 
-
+  .swiper {
+    z-index: 0;
+}
