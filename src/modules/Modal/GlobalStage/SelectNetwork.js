@@ -2,47 +2,35 @@ import ButtonItem from "../CommonStage/ButtonItem";
 import EtherumIcon from "../../../assets/images/Ethereum-icon.png";
 import PolygonIcon from "../../../assets/images/polygon-icon.png";
 import { ethers } from "ethers";
-import Web3Modal from "web3modal";
 import { useCallback, useState } from "react";
-import { networkProviderOptions } from "../../../shared/util/handleNetworkProvider";
-import WalletConnectProvider from "@walletconnect/web3-provider";
+import { web3Modal } from "../../../shared/util/handleWeb3Modal";
 
-const SelectNetwork = ({ handleStep, handleNetwork, handleOpen, handleWalletAddress }) => {
+const SelectNetwork = ({ handleStep, handleOpen, handleWalletAddress }) => {
   const [selectedNetwork, setSelectedNetwork] = useState("");
 
-  const handleSelectNetwork = async (networkName) => {
-    console.log(networkName, networkProviderOptions(networkName));
-    const web3Modal = new Web3Modal({
-      network: networkName,
-      cacheProvider: false,
-      providerOptions: {
-        walletconnect: {
-          package: WalletConnectProvider,
-          options: {
-            rpc: networkProviderOptions(networkName),
-          },
-        },
-      },
-    });
-    handleOpen(false);
-
-    const instance = await web3Modal.connect();
-
-    const provider = new ethers.providers.Web3Provider(instance);
-    if (provider) {
-      const signer = provider.getSigner();
-      const address = await signer.getAddress();
-      handleWalletAddress(address);
-      console.log(address, " === <<< address");
-
+  const connectWeb3Wallet = async () => {
+    try {
+      handleOpen(false);
+      const web3Provider = await web3Modal.connect();
+      const library = new ethers.providers.Web3Provider(web3Provider);
+      console.log(library);
+      const web3Accounts = await library.listAccounts();
+      const network = await library.getNetwork();
+      console.log(web3Accounts[0], network);
+      handleWalletAddress(web3Accounts[0]);
       handleOpen(true);
       handleStep("walletInfo");
+    } catch (error) {
+      alert(error);
+      handleStep("starter");
+      console.log(error);
     }
   };
 
   const handleSelectNetworkName = useCallback(async (name) => {
     setSelectedNetwork(name);
-    await handleSelectNetwork(name);
+    sessionStorage.setItem("network", name);
+    connectWeb3Wallet();
     handleStep("walletInfo");
   }, []);
 
@@ -69,7 +57,7 @@ const SelectNetwork = ({ handleStep, handleNetwork, handleOpen, handleWalletAddr
         />
         <ButtonItem
           mainText="Polygon"
-          itemToSelect="polygon"
+          itemToSelect="matic"
           secondaryText="MATIC"
           image={PolygonIcon}
           selected={selectedNetwork}
