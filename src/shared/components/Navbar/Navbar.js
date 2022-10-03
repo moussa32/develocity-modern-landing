@@ -21,7 +21,7 @@ const Navbar = ({onClose}) => {
   window.addEventListener("scroll", listenScrollEvent);
 
   return (
-    <div className="container bg-nav sticky-top nav-border" style={{zIndex:5}}>
+    <div className="container bg-nav sticky-top nav-border" style={{zIndex:1}}>
       <div className="d-flex justify-content-between pt-3 d-md-none mt-2 mb-3">
         <span className="mx-2 fs-sm">Trust, Security, Credibility</span>
         <div>
