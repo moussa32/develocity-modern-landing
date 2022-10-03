@@ -1,6 +1,7 @@
 import { useState } from "react"
 import TextItem from "../CommonStage/TextItem"
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText"
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const ReferralsModal = ({ handleStep }) => {

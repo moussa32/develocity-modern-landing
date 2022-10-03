@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TextItem from "../CommonStage/TextItem";
+import toast, { Toaster } from 'react-hot-toast';
 
 const BuyAmountModal = ({ handleStep ,walletAddress }) => {
     const [address,setAddress] = useState(walletAddress) 
@@ -9,7 +10,20 @@ const BuyAmountModal = ({ handleStep ,walletAddress }) => {
     const [toBalance,setToBalance] = useState(0)
 
     const approveAlert = () =>{
-        window.alert("Approved")
+       // window.alert("Approved")
+        toast.success("Approved! You can swap your coins.",{
+            style: {
+                border: '1px solid #35C486',
+                padding: '16px',
+                backgroundColor: "#DCFFEF",
+                color: '#35C486',
+                width: "300px",
+                borderRadius: "8px",
+              },
+              iconTheme: {
+                primary: '#35C486',
+              },
+        })
     }
 
     return(
