@@ -11,7 +11,11 @@
    display: flex;
    justify-content: space-between;
 } */
+.roadmapCards .cardBox:nth-child(2) .circle img{
+   filter: invert(1);
+   width: 20px;
 
+}
 
 
 .roadmapCards{

@@ -22,3 +22,11 @@
 .web3modal-modal-card {
   z-index: 9999;
 }
+.disabledbtn{
+  background-color: #888 ;
+    color: #ccc;
+    cursor: not-allowed;
+}
+.disableImg{
+  filter: opacity(0.5);
+}
