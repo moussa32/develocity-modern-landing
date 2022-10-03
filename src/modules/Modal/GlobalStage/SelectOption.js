@@ -5,7 +5,8 @@ import ClaimTokenIcon from "../../../assets/images/ClaimTokenIcon.svg";
 import ReferralsIcon from "../../../assets/images/ReferralsIcon.svg";
 import { useState } from "react";
 
-const SelectOption = ({ handleStep }) => {
+const SelectOption = ({ handleStep ,deveBalance}) => {
+  console.log(deveBalance ,'=============<<<');
   const [selectedStep, setSelectedStep] = useState("");
   const updateStep = (nextStep) => {
     handleStep(nextStep);
@@ -32,8 +33,7 @@ const SelectOption = ({ handleStep }) => {
             image={ReferralsIcon}
             selected={selectedStep}
             handleSelect={setSelectedStep}
-            disabled={true}
-
+            disabled={deveBalance.amount <= 50 ?true:false}
           />
         </div>
       </div>
