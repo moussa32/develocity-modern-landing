@@ -27,15 +27,17 @@
   border-radius: 2px;
   border: 1px solid #D6D6D6;
 }
-.s-container:hover,
-.s-container input:hover {
+.s-container:hover{
   border: 1px solid #9C3FE5;
   border-radius: 2px;
 }
+.s-container input:hover {
+  border-right: 1px solid #9C3FE5;
+}
 .s-container input:focus-visible,
 .s-container input:focus {
-  border: 1px solid #9C3FE5 !important;
-  border-radius: 2px !important;
+  border-radius: 2px;
+  outline: none;
 }
 .s-container input{
   font-size: 24px;
@@ -64,4 +66,18 @@
 .approve{
   color: #23282C;
   background-color: unset; 
+}
+@media screen and (max-width:576px) {
+  .s-container{
+    height: 48px;
+  }
+  .s-container span{
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  .s-container input{
+    font-size: 20px;
+  }
+ 
+ 
 }

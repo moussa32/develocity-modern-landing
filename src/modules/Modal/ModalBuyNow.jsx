@@ -49,7 +49,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
       case "options":
         return <SelectOption handleStep={handleStep} />;
       case "buywith":
-        return <BuywithModal handleStep={handleStep} />;
+        return <BuywithModal handleStep={handleStep} walletAddress={walletAddress} />;
       case "buyamount":
         return (
           <BuyAmountModal
