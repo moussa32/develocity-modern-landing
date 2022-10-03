@@ -7,7 +7,7 @@ const MainContent = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <ModalBuyNow open={isOpen} onClose={() => setIsOpen(false)} />
+      <ModalBuyNow open={isOpen} handleOpen={setIsOpen} onClose={() => setIsOpen(false)} />
       <main className="container d-flex flex-column align-items-center text-center space">
         <h1 className="text-primary pt-5">IDO Has Started!</h1>
         <h3 className="d-none">15% of Tokens Remaining!</h3>

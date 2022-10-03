@@ -17,8 +17,8 @@ import ReferralsModal from "./Referrals/ReferralsModal";
 //   referral: ["referral", "final"],
 // };
 
-const ModalBuyNow = ({ open, onClose }) => {
-  const [currentStep, setCurrentStep] = useState("walletInfo");
+const ModalBuyNow = ({ open, onClose, handleOpen }) => {
+  const [currentStep, setCurrentStep] = useState("starter");
   const [network, setNetwork] = useState("");
   console.log(currentStep);
 
@@ -29,7 +29,7 @@ const ModalBuyNow = ({ open, onClose }) => {
   const handleRenderComponentStep = () => {
     switch (currentStep) {
       case "starter":
-        return <SelectNetwork handleStep={handleStep} handleNetwork={setNetwork} />;
+        return <SelectNetwork handleStep={handleStep} handleNetwork={setNetwork} handleOpen={handleOpen} />;
       case "walletInfo":
         return <WalletInfoModal handleStep={handleStep} />;
       case "options":

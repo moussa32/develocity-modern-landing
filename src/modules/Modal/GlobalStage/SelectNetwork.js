@@ -7,7 +7,7 @@ import { useCallback, useState } from "react";
 import { networkProviderOptions } from "../../../shared/util/handleNetworkProvider";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
-const SelectNetwork = ({ handleStep, handleNetwork }) => {
+const SelectNetwork = ({ handleStep, handleNetwork, handleOpen }) => {
   const [selectedNetwork, setSelectedNetwork] = useState("");
 
   const handleSelectNetwork = async (networkName) => {
@@ -23,10 +23,16 @@ const SelectNetwork = ({ handleStep, handleNetwork }) => {
         },
       },
     });
+    handleOpen(false);
+
     const instance = await web3Modal.connect();
 
     const provider = new ethers.providers.Web3Provider(instance);
-    console.log(provider);
+
+    if (provider) {
+      handleOpen(true);
+      handleStep("walletInfo");
+    }
   };
 
   const handleSelectNetworkName = useCallback((name) => {
