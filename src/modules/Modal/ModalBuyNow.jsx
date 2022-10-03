@@ -131,7 +131,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
       case "claim":
         return <ClaimModal handleStep={handleStep} />;
       case "referral":
-        return <ReferralsModal handleStep={handleStep} walletAddress={walletAddress} />;
+        return <ReferralsModal handleStep={handleStep} walletAddress={walletAddress} tokensToClaim={tokensToClaim.amount} referralsToClaim={referralsToClaim} />;
       case "final":
         return <FinalModal onClose={onClose} handleStep={handleStep} />;
       default:
