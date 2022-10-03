@@ -34,8 +34,10 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
     const getBalance = async () => {
       const deveCost = 0.3;
       const provider = new ethers.providers.Web3Provider(window.ethereum);
+      console.log(provider);
       let walletInfoContractAddress = "0xc1ec20ef71c47004616a7c82ce0dd6a60fbe897c";
       const walletInfoContract = new ethers.Contract(walletInfoContractAddress, contractAbi, provider);
+      console.log(walletInfoContract);
 
       //Fetch deve balance
       const DEVEBalance = Number(
@@ -58,10 +60,10 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
       setReferralsToClaim(referralsToClaim);
 
       // Methods =>  _contributions(address) - getRefPer(address) _RefAmount [0.3]
-      console.log(referralsToClaim);
     };
     getBalance();
   }, []);
+
   const handleStep = useCallback((step) => {
     setCurrentStep(step);
   }, []);
