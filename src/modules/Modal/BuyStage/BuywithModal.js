@@ -6,28 +6,34 @@ import TextFloatRight from "../CommonStage/TextFloatRight";
 import ButtonItem from "..//CommonStage/ButtonItem";
 import { ethers } from "ethers";
 
-export default function BuywithModal({ handleStep, walletAddress }) {
+export default function BuywithModal({
+  handleStep,
+  walletAddress,
+  handleBinanceCoin,
+  binanceBalance,
+  binanceUSDBalance,
+  handleBinanceUSD,
+  handleSelectCurrency,
+}) {
   const [selectedNetwork, setSelectedNetwork] = useState("");
-  const [binanceCoinBalance, setBinanceCoinBalance] = useState(0);
-  const [binanceUSDBalance, setBinanceUSDBalance] = useState(0);
 
   useEffect(() => {
     const getBalance = async () => {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const balanceInWei = await provider.getBalance("0xa6f79b60359f141df90a0c745125b131caaffd12");
+      const balanceInWei = await provider.getBalance(walletAddress);
       const convertedBalanc = Number(ethers.utils.formatEther(balanceInWei)).toFixed(3);
-      setBinanceCoinBalance(convertedBalanc);
+      handleBinanceCoin(convertedBalanc);
 
       const busdAbiContract = new ethers.Contract(
         "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
         ["function balanceOf(address) view returns (uint)"],
         provider
       );
-      const contractBalance = await busdAbiContract.balanceOf("0xf977814e90da44bfa03b6295a0616a897441acec");
+      const contractBalance = await busdAbiContract.balanceOf(walletAddress);
       const convertedContractBalance = parseFloat(ethers.utils.formatUnits(contractBalance, 18)).toLocaleString(
         "en-US"
       );
-      setBinanceUSDBalance(convertedContractBalance);
+      handleBinanceUSD(convertedContractBalance);
     };
     getBalance();
   }, []);
@@ -43,13 +49,21 @@ export default function BuywithModal({ handleStep, walletAddress }) {
     <>
       <div>
         <ModalHeaderText header="Buying With" caption="Select The Cryptocurrency You Want To Use" />
-        <TextFloatRight balanceValue={binanceCoinBalance} />
+        <TextFloatRight balanceValue={binanceBalance} />
         <ButtonItem
           mainText="Binance Coin"
           secondaryText="BNB"
           image={binanceCoin}
           selected={selectedNetwork}
           handleSelect={handleSelectNetworkName}
+          getAllValues={(...elements) =>
+            handleSelectCurrency({
+              name: elements[2],
+              ticker: elements[3],
+              image: elements[1],
+              balance: binanceUSDBalance,
+            })
+          }
         />
         <TextFloatRight balanceValue={binanceUSDBalance} />
         <ButtonItem
@@ -58,6 +72,14 @@ export default function BuywithModal({ handleStep, walletAddress }) {
           image={binanceUSD}
           selected={selectedNetwork}
           handleSelect={handleSelectNetworkName}
+          getAllValues={(...elements) =>
+            handleSelectCurrency({
+              name: elements[2],
+              ticker: elements[3],
+              image: elements[1],
+              balance: binanceUSDBalance,
+            })
+          }
         />
       </div>
     </>

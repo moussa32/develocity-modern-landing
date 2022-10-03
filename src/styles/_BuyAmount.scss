@@ -1,83 +1,81 @@
-.address-float{
-   direction: rtl;
+.address-float {
+  direction: rtl;
 }
-.address{
+.address {
   font-size: 14px;
-  color: #8B8B8B;
+  color: #2a2929;
   margin-top: 3px;
   margin-right: 5px;
 }
-.close-icon{
+.close-icon {
   cursor: pointer;
 }
-.first-lable{
+.first-lable {
   font-size: 14px;
-  color: #A5A5A5;
+  color: #a5a5a5;
 }
-.second-lable{
+.second-lable {
   font-size: 14px;
-  color: #23282C;
+  color: #23282c;
 }
-.s-container{
+.s-container {
   width: 100%;
   height: 58px;
 }
 .s-container input,
-.s-container div{
+.s-container div {
   border-radius: 2px;
-  border: 1px solid #D6D6D6;
+  border: 1px solid #d6d6d6;
 }
-.s-container:hover{
-  border: 1px solid #9C3FE5;
+.s-container:hover {
+  border: 1px solid #9c3fe5;
   border-radius: 2px;
 }
 .s-container input:hover {
-  border-right: 1px solid #9C3FE5;
+  border-right: 1px solid #9c3fe5;
 }
 .s-container input:focus-visible,
 .s-container input:focus {
   border-radius: 2px;
   outline: none;
 }
-.s-container input{
+.s-container input {
   font-size: 24px;
-  color: #23282C;
+  color: #23282c;
   padding: 10px;
 }
-.s-container input::placeholder{
+.s-container input::placeholder {
   font-size: 24px;
 }
-.s-container span{
+.s-container span {
   font-size: 16px;
   margin-left: 5px;
 }
-.m-btns{
+.m-btns {
   width: 40%;
   height: 54px;
   border-radius: 6px;
   font-size: 16px;
-  border: 1px solid #23282C;
+  border: 1px solid #23282c;
 }
-.buy{
-   color: white;
-   background-color: #23282C;
-   margin-left: 8px;
+.buy {
+  color: white;
+  background-color: #23282c;
+  margin-left: 8px;
 }
-.approve{
-  color: #23282C;
-  background-color: unset; 
+.approve {
+  color: #23282c;
+  background-color: unset;
 }
-@media screen and (max-width:576px) {
-  .s-container{
+@media screen and (max-width: 576px) {
+  .s-container {
     height: 48px;
   }
-  .s-container span{
+  .s-container span {
     font-size: 14px;
     margin-right: 5px;
   }
-  .s-container input{
+  .s-container input {
     font-size: 20px;
   }
- 
- 
 }

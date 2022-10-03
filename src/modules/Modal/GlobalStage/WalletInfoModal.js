@@ -5,9 +5,7 @@ import styles from "../CommonStage/CommonStyle.module.css";
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 
-
-const WalletInfoModal = ({ handleStep, walletAddress, disconnect ,deveBalance,tokensToClaim,referralsToClaim}) => {
-
+const WalletInfoModal = ({ handleStep, walletAddress, disconnect, deveBalance, tokensToClaim, referralsToClaim }) => {
   return (
     <>
       <div>

@@ -10,7 +10,7 @@ import SelectOption from "./GlobalStage/SelectOption";
 import BuyAmountModal from "./BuyStage/BuyAmountModal";
 import ReferralsModal from "./Referrals/ReferralsModal";
 import { web3Modal } from "../../shared/util/handleWeb3Modal";
-import contractAbi from "../../assets/contractABI.json"
+import contractAbi from "../../assets/contractABI.json";
 import toast, { Toaster } from "react-hot-toast";
 import { ethers } from "ethers";
 // const steps = {
@@ -23,6 +23,9 @@ import { ethers } from "ethers";
 const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [currentStep, setCurrentStep] = useState("starter");
   const [walletAddress, setwalletAddress] = useState("");
+  const [firstCoin, setFirstCoin] = useState(0);
+  const [secondCoin, setSecondCoin] = useState(0);
+  const [selectedCurrency, setSelectedCurreny] = useState({ name: "", image: "", ticker: "", balance: "" });
   const [deveBalance, setDeveBalance] = useState({ amount: 0, value: 0 });
   const [tokensToClaim, setTokensToClaim] = useState({ amount: 0, value: 0 });
   const [referralsToClaim, setReferralsToClaim] = useState(0);
@@ -62,8 +65,6 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const handleStep = useCallback((step) => {
     setCurrentStep(step);
   }, []);
-
-
 
   const handleDisconnectWeb3Modal = async () => {
     await web3Modal.clearCachedProvider();
@@ -105,13 +106,24 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
       case "options":
         return <SelectOption deveBalance={deveBalance} handleStep={handleStep} />;
       case "buywith":
-        return <BuywithModal handleStep={handleStep} walletAddress={walletAddress} />;
+        return (
+          <BuywithModal
+            handleStep={handleStep}
+            walletAddress={walletAddress}
+            handleBinanceCoin={setFirstCoin}
+            binanceBalance={firstCoin}
+            handleBinanceUSD={setSecondCoin}
+            binanceUSDBalance={secondCoin}
+            handleSelectCurrency={setSelectedCurreny}
+          />
+        );
       case "buyamount":
         return (
           <BuyAmountModal
             handleStep={handleStep}
             walletAddress={walletAddress}
             disconnect={handleDisconnectWeb3Modal}
+            currentCurrency={selectedCurrency}
           />
         );
       case "claim":
@@ -128,10 +140,13 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   if (!open) return null;
   return ReactDOM.createPortal(
     <>
-      <div className={styles.backDrop} onClick={() => {
-        handleStep("starter")
-        onClose()
-      }} />
+      <div
+        className={styles.backDrop}
+        onClick={() => {
+          handleStep("starter");
+          onClose();
+        }}
+      />
       <div className={` ${styles.overlay}`}>
         {/* <button className={styles.closeBtn_ltr} onClick={onClose}>
           close
