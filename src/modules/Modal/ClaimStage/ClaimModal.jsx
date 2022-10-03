@@ -31,7 +31,7 @@ export default function ClaimModal({handleStep}) {
                     <NextButton
                         text="Claim"
                         stylesButton={{ bg: "#9C3FE5" }}
-                        disabled={false}
+                        disabled={true}
                         handleStep={() => handleStep("final")} />
                 </div>
     </div>

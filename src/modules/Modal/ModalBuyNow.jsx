@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useEffect, useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import FinalModal from "./CommonStage/FinalModal";
 import WalletInfoModal from "./GlobalStage/WalletInfoModal";
@@ -10,7 +10,9 @@ import SelectOption from "./GlobalStage/SelectOption";
 import BuyAmountModal from "./BuyStage/BuyAmountModal";
 import ReferralsModal from "./Referrals/ReferralsModal";
 import { web3Modal } from "../../shared/util/handleWeb3Modal";
-
+import contractAbi from "../../assets/contractABI.json";
+import toast, { Toaster } from "react-hot-toast";
+import { ethers } from "ethers";
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
 //   buy: ["buywith", "buyamount", "final"],
@@ -24,12 +26,45 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [firstCoin, setFirstCoin] = useState(0);
   const [secondCoin, setSecondCoin] = useState(0);
   const [selectedCurrency, setSelectedCurreny] = useState({ name: "", image: "", ticker: "", balance: "" });
+  const [deveBalance, setDeveBalance] = useState({ amount: 0, value: 0 });
+  const [tokensToClaim, setTokensToClaim] = useState({ amount: 0, value: 0 });
+  const [referralsToClaim, setReferralsToClaim] = useState(0);
 
+  useEffect(() => {
+    const getBalance = async () => {
+      const deveCost = 0.3;
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      let walletInfoContractAddress = "0xc1ec20ef71c47004616a7c82ce0dd6a60fbe897c";
+      const walletInfoContract = new ethers.Contract(walletInfoContractAddress, contractAbi, provider);
+
+      //Fetch deve balance
+      const DEVEBalance = Number(
+        ethers.utils.formatEther(await walletInfoContract._contributions(walletAddress))
+      ).toFixed(0);
+
+      const DEVEBalanceValue = (DEVEBalance * deveCost).toFixed(2);
+      setDeveBalance({ amount: DEVEBalance, value: DEVEBalanceValue });
+
+      //Fetch Tokens to claim
+      const tokensToClaim = Number(ethers.utils.formatEther(await walletInfoContract.getRefPer(walletAddress))).toFixed(
+        0
+      );
+      setTokensToClaim({ amount: tokensToClaim, value: tokensToClaim });
+
+      //Fetch Referrals to claim
+      const referralsToClaim = Number(
+        ethers.utils.formatEther(await walletInfoContract._RefAmount(walletAddress))
+      ).toFixed(0);
+      setReferralsToClaim(referralsToClaim);
+
+      // Methods =>  _contributions(address) - getRefPer(address) _RefAmount [0.3]
+      console.log(referralsToClaim);
+    };
+    getBalance();
+  }, []);
   const handleStep = useCallback((step) => {
     setCurrentStep(step);
   }, []);
-
-  console.log(selectedCurrency);
 
   const handleDisconnectWeb3Modal = async () => {
     await web3Modal.clearCachedProvider();
@@ -37,6 +72,20 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
     handleOpen(false);
     handleStep("starter");
     window.localStorage.clear();
+    /*Toast notification*/
+    toast.success("Disconnected!", {
+      style: {
+        border: "1px solid #e30e27",
+        padding: "16px",
+        backgroundColor: "#ffcdd2",
+        color: "white",
+        width: "300px",
+        borderRadius: "8px",
+      },
+      iconTheme: {
+        primary: "#e30e27",
+      },
+    });
   };
 
   const handleRenderComponentStep = () => {
@@ -46,13 +95,16 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
       case "walletInfo":
         return (
           <WalletInfoModal
+            deveBalance={deveBalance}
+            tokensToClaim={tokensToClaim}
+            referralsToClaim={referralsToClaim}
             handleStep={handleStep}
             walletAddress={walletAddress}
             disconnect={handleDisconnectWeb3Modal}
           />
         );
       case "options":
-        return <SelectOption handleStep={handleStep} />;
+        return <SelectOption deveBalance={deveBalance} handleStep={handleStep} />;
       case "buywith":
         return (
           <BuywithModal
@@ -77,7 +129,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
       case "claim":
         return <ClaimModal handleStep={handleStep} />;
       case "referral":
-        return <ReferralsModal handleStep={handleStep} />;
+        return <ReferralsModal handleStep={handleStep} walletAddress={walletAddress} />;
       case "final":
         return <FinalModal onClose={onClose} handleStep={handleStep} />;
       default:
@@ -88,7 +140,13 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   if (!open) return null;
   return ReactDOM.createPortal(
     <>
-      <div className={styles.backDrop} onClick={onClose} />
+      <div
+        className={styles.backDrop}
+        onClick={() => {
+          handleStep("starter");
+          onClose();
+        }}
+      />
       <div className={` ${styles.overlay}`}>
         {/* <button className={styles.closeBtn_ltr} onClick={onClose}>
           close
