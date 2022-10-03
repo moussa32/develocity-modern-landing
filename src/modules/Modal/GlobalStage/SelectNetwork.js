@@ -21,7 +21,6 @@ const SelectNetwork = ({ handleStep, handleOpen, handleWalletAddress }) => {
       handleOpen(true);
       handleStep("walletInfo");
     } catch (error) {
-      alert(error);
       handleStep("starter");
       console.log(error);
     }

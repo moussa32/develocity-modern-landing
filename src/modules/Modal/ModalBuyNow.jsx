@@ -9,6 +9,7 @@ import SelectNetwork from "./GlobalStage/SelectNetwork";
 import SelectOption from "./GlobalStage/SelectOption";
 import BuyAmountModal from "./BuyStage/BuyAmountModal";
 import ReferralsModal from "./Referrals/ReferralsModal";
+import { web3Modal } from "../../shared/util/handleWeb3Modal";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
@@ -25,18 +26,38 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
     setCurrentStep(step);
   }, []);
 
+  const handleDisconnectWeb3Modal = async () => {
+    await web3Modal.clearCachedProvider();
+    setwalletAddress("");
+    handleOpen(false);
+    handleStep("starter");
+    window.localStorage.clear();
+  };
+
   const handleRenderComponentStep = () => {
     switch (currentStep) {
       case "starter":
         return <SelectNetwork handleStep={handleStep} handleWalletAddress={setwalletAddress} handleOpen={handleOpen} />;
       case "walletInfo":
-        return <WalletInfoModal handleStep={handleStep} walletAddress={walletAddress} handleOpen={handleOpen} />;
+        return (
+          <WalletInfoModal
+            handleStep={handleStep}
+            walletAddress={walletAddress}
+            disconnect={handleDisconnectWeb3Modal}
+          />
+        );
       case "options":
         return <SelectOption handleStep={handleStep} />;
       case "buywith":
         return <BuywithModal handleStep={handleStep} />;
       case "buyamount":
-        return <BuyAmountModal handleStep={handleStep} walletAddress={walletAddress} />;
+        return (
+          <BuyAmountModal
+            handleStep={handleStep}
+            walletAddress={walletAddress}
+            disconnect={handleDisconnectWeb3Modal}
+          />
+        );
       case "claim":
         return <ClaimModal handleStep={handleStep} />;
       case "referral":
