@@ -15,7 +15,7 @@ const SelectOption = ({ handleStep }) => {
       <ModalHeaderText header="Select You Option" caption="What You Wanna Do" />
       <div className="d-flex flex-column gap-4 w-100">
         <div onClick={() => updateStep("buywith")}>
-          <ButtonItem mainText="Buy DEVE" image={BuyIcon} selected={selectedStep} handleSelect={setSelectedStep} />
+          <ButtonItem mainText="Buy DEVE" image={BuyIcon} selected={selectedStep} handleSelect={setSelectedStep}  disabled={false}/>
         </div>
         <div onClick={() => updateStep("claim")}>
           <ButtonItem
@@ -23,6 +23,7 @@ const SelectOption = ({ handleStep }) => {
             image={ClaimTokenIcon}
             selected={selectedStep}
             handleSelect={setSelectedStep}
+            disabled={true}
           />
         </div>
         <div onClick={() => updateStep("referral")}>
@@ -31,6 +32,8 @@ const SelectOption = ({ handleStep }) => {
             image={ReferralsIcon}
             selected={selectedStep}
             handleSelect={setSelectedStep}
+            disabled={true}
+
           />
         </div>
       </div>

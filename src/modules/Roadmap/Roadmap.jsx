@@ -1,7 +1,8 @@
 import styles from './Roadmap.module.css';
 import styleStepper from './StepLine.module.css'
 import { Card } from './Card'
-import check from '../../assets/images/check-circle.png'
+import check from '../../assets/images/check-circle.png';
+import clock from '../../assets/images/clockHistory.svg'
 const cardInfo = [
     {
         header: "Startup",
@@ -12,7 +13,7 @@ const cardInfo = [
     {
         header: "Launch",
         details: ['Publishing Tool "Beta Version"', "Start Pre-Sale", "Teaser Marketing Campaign", "Project #2 Introduction", "Promoting & Marketing", "Join Centralized Exchanges"],
-        icon: check,
+        icon: clock,
         bgColor: "#FFD13A"
 
     },
