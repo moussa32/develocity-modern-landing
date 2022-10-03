@@ -1,31 +1,51 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import TextItem from "../CommonStage/TextItem";
-import toast, { Toaster } from "react-hot-toast";
-import binanceCoin from "../../../assets/images/bscCoin.png";
+import toast from "react-hot-toast";
+import { ethers } from "ethers";
+import contractAbi from "../../../assets/contractABI.json";
+
+let walletInfoContractAddress = "0xc1ec20ef71c47004616a7c82ce0dd6a60fbe897c";
+const provider = new ethers.providers.Web3Provider(window.ethereum);
+const walletInfoContract = new ethers.Contract(walletInfoContractAddress, contractAbi, provider);
 
 const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency }) => {
-  const [balance, setBalance] = useState("2,914.0594");
+  const [coinBalance, setCoinBalance] = useState(0);
+  const [convertedDeve, setConvertedDeve] = useState(0);
 
-  const [fromBalance, setFromBalance] = useState(0);
-  const [toBalance, setToBalance] = useState(0);
+  const memoizedCoinBalanceConverted = useMemo(() => (coinBalance * Math.pow(10, 18)).toString(), [coinBalance]);
 
-  //getwethPrice(265 خانة)
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(async () => {
+      if (coinBalance > 0) {
+        const calculateDeveCoins = await walletInfoContract.getwethPrice(memoizedCoinBalanceConverted);
+        setConvertedDeve(calculateDeveCoins.toLocaleString("en-US"));
+      }
+    }, 500);
 
-  const approveAlert = () => {
-    // window.alert("Approved")
-    toast.success("Approved! You can swap your coins.", {
-      style: {
-        border: "1px solid #35C486",
-        padding: "16px",
-        backgroundColor: "#DCFFEF",
-        color: "#35C486",
-        width: "300px",
-        borderRadius: "8px",
-      },
-      iconTheme: {
-        primary: "#35C486",
-      },
-    });
+    return () => {
+      clearTimeout(delayDebounceFn);
+    };
+  }, [coinBalance]);
+
+  const handleBuy = async () => {
+    const signer = provider.getSigner();
+    const contract = new ethers.Contract(walletInfoContractAddress, contractAbi, signer);
+    const urlParams = new URLSearchParams(window.location.search);
+    const ref = urlParams.get("ref");
+    console.log(ref);
+
+    const gasPrice = await contract.estimateGas.buyTokens(ref, { value: memoizedCoinBalanceConverted });
+
+    const buyRequest = await contract
+      .buyTokens(ref, { value: memoizedCoinBalanceConverted, gasPrice: gasPrice })
+      .then((res) => {
+        handleStep("final");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    // handleStep("final");
   };
 
   return (
@@ -84,12 +104,15 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
         <div className="d-flex s-container">
           <input
             className="w-75"
-            value={fromBalance}
+            value={coinBalance}
             type="number"
             onChange={(e) => {
-              setFromBalance(e.target.value);
+              if (e.target.value < 1000) {
+                setCoinBalance(e.target.value);
+              }
             }}
             placeholder="0"
+            maxLength={3}
           />
           <div className="bnb-container d-flex bg-white justify-content-center align-items-center w-25">
             <img src={currentCurrency.image} width="23" />
@@ -134,14 +157,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
           <label className="first-lable">To</label>
         </div>
         <div className="d-flex s-container">
-          <input
-            className="w-75"
-            value={toBalance}
-            onChange={(e) => {
-              setToBalance(e.target.value);
-            }}
-            placeholder="0"
-          />
+          <input className="w-75" value={convertedDeve} placeholder="0" disabled />
           <div className="bnb-container d-flex bg-white justify-content-center align-items-center w-25">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -177,14 +193,11 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
       </div>
       <div className="mt-4 w-100">
         <TextItem title={"Price"} value="1" secondaryText="DEVE = $0.22" hr="true" />
-        <TextItem title={"Estimate Balance"} value="2,000" percentage="2,003.64" hr="true" />
+        <TextItem title={"Estimate Balance"} value={convertedDeve} symbol="&plusmn;" percentage="0.25%" hr="true" />
       </div>
 
       <div className="d-flex justify-content-between w-100">
-        <button className="m-btns approve" onClick={() => approveAlert()} disabled={balance ? false : true}>
-          Approve
-        </button>
-        <button className="m-btns buy" onClick={() => handleStep("final")}>
+        <button className="m-btns buy mx-auto" onClick={handleBuy}>
           Buy →
         </button>
       </div>

@@ -6,17 +6,24 @@ import ReferralsIcon from "../../../assets/images/ReferralsIcon.svg";
 import { useState } from "react";
 
 const SelectOption = ({ handleStep, deveBalance }) => {
-  console.log(deveBalance, '=============<<<');
   const [selectedStep, setSelectedStep] = useState("");
+
   const updateStep = (nextStep) => {
     handleStep(nextStep);
   };
+
   return (
     <div>
       <ModalHeaderText header="Select You Option" caption="What You Wanna Do" />
       <div className="d-flex flex-column gap-4 w-100">
         <div onClick={() => updateStep("buywith")}>
-          <ButtonItem mainText="Buy DEVE" image={BuyIcon} selected={selectedStep} handleSelect={setSelectedStep} disabled={false} />
+          <ButtonItem
+            mainText="Buy DEVE"
+            image={BuyIcon}
+            selected={selectedStep}
+            handleSelect={setSelectedStep}
+            disabled={false}
+          />
         </div>
         <div onClick={() => deveBalance.amount >= 50 && updateStep("claim")}>
           <ButtonItem

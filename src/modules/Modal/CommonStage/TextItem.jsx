@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CommonStyle.module.css";
 
-const TextItem = ({ title, secondaryText, value, percentage, hr }) => {
+const TextItem = ({ title, secondaryText, value, percentage, hr, symbol }) => {
   return (
     <>
       <div class={styles.TextLine}>
@@ -9,7 +9,11 @@ const TextItem = ({ title, secondaryText, value, percentage, hr }) => {
         {value && (
           <p>
             {value} {secondaryText ? secondaryText : "DEVE"}
-            {percentage && <span className="ms-1">(~$ {percentage})</span>}
+            {percentage && (
+              <span className="ms-1">
+                ({symbol ? symbol : "~$"} {percentage})
+              </span>
+            )}
           </p>
         )}
       </div>

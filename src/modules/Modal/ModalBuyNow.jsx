@@ -10,7 +10,6 @@ import SelectOption from "./GlobalStage/SelectOption";
 import BuyAmountModal from "./BuyStage/BuyAmountModal";
 import ReferralsModal from "./Referrals/ReferralsModal";
 import { web3Modal } from "../../shared/util/handleWeb3Modal";
-import contractAbi from "../../assets/contractABI.json";
 import toast, { Toaster } from "react-hot-toast";
 import { ethers } from "ethers";
 // const steps = {
@@ -29,40 +28,6 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [deveBalance, setDeveBalance] = useState({ amount: 0, value: 0 });
   const [tokensToClaim, setTokensToClaim] = useState({ amount: 0, value: 0 });
   const [referralsToClaim, setReferralsToClaim] = useState(0);
-
-  useEffect(() => {
-    const getBalance = async () => {
-      const deveCost = 0.3;
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      console.log(provider);
-      let walletInfoContractAddress = "0xc1ec20ef71c47004616a7c82ce0dd6a60fbe897c";
-      const walletInfoContract = new ethers.Contract(walletInfoContractAddress, contractAbi, provider);
-      console.log(walletInfoContract);
-
-      //Fetch deve balance
-      const DEVEBalance = Number(
-        ethers.utils.formatEther(await walletInfoContract._contributions(walletAddress))
-      ).toFixed(0);
-
-      const DEVEBalanceValue = (DEVEBalance * deveCost).toFixed(2);
-      setDeveBalance({ amount: DEVEBalance, value: DEVEBalanceValue });
-
-      //Fetch Tokens to claim
-      const tokensToClaim = Number(ethers.utils.formatEther(await walletInfoContract.getRefPer(walletAddress))).toFixed(
-        0
-      );
-      setTokensToClaim({ amount: tokensToClaim, value: tokensToClaim });
-
-      //Fetch Referrals to claim
-      const referralsToClaim = Number(
-        ethers.utils.formatEther(await walletInfoContract._RefAmount(walletAddress))
-      ).toFixed(0);
-      setReferralsToClaim(referralsToClaim);
-
-      // Methods =>  _contributions(address) - getRefPer(address) _RefAmount [0.3]
-    };
-    getBalance();
-  }, []);
 
   const handleStep = useCallback((step) => {
     setCurrentStep(step);
@@ -103,6 +68,9 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             handleStep={handleStep}
             walletAddress={walletAddress}
             disconnect={handleDisconnectWeb3Modal}
+            handleDeveBalance={setDeveBalance}
+            handleTokensClaim={setTokensToClaim}
+            handleReferralsToClaim={setReferralsToClaim}
           />
         );
       case "options":
@@ -131,7 +99,14 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
       case "claim":
         return <ClaimModal handleStep={handleStep} />;
       case "referral":
-        return <ReferralsModal handleStep={handleStep} walletAddress={walletAddress} tokensToClaim={tokensToClaim.amount} referralsToClaim={referralsToClaim} />;
+        return (
+          <ReferralsModal
+            handleStep={handleStep}
+            walletAddress={walletAddress}
+            tokensToClaim={tokensToClaim.amount}
+            referralsToClaim={referralsToClaim}
+          />
+        );
       case "final":
         return <FinalModal onClose={onClose} handleStep={handleStep} />;
       default:
