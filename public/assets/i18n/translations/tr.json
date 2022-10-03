@@ -1,30 +1,30 @@
 {
     "headSection": {
-        "slogan": "ثقة، أمان، مصداقية",
+        "slogan": "Güven, Emniyet, güvenilirlik",
         "navbar": {
-            "home": "الصفحة الرئيسية",
-            "about": "عن",
-            "partners": "الشركاء",
-            "scanToEarn": "ابحث و اربح",
-            "news": "الأخبار",
-            "roadmap": "خطة العمل",
-            "team": "الفريق",
-            "contact": "التواصل "
+            "home": "Ana sayfa",
+            "about": "Hakkında",
+            "partners": "Ortaklar",
+            "scanToEarn": "Kazanmak için tarama",
+            "news": "Haberler",
+            "roadmap": "Yol haritası",
+            "team": "Takım",
+            "contact": "İletişim"
         },
         "languages": {
-            "english": "الانجليزية",
-            "arabic": "العربية",
-            "turkish": "التركية"
+            "english": "İngilizce",
+            "arabic": "Arapça",
+            "turkish": "Türk"
         },
-        "whitepaper": "الصحيفة البيضاء",
+        "whitepaper": "Beyaz sayfa",
         "followUs": ":Follow us on"
     },
     "homeSection": {
-        "mainText": "بدأ الاكتتاب",
-        "subText": "١٠٠٪ من العملات متبقية",
+        "mainText": "Ön satış Başladı",
+        "subText": "Kalan Jetonların %100'ü!",
         "btns": {
-            "buyNow": "اشتر الأن",
-            "howToBuy": "طريقة الشراء"
+            "buyNow": "Şimdi satın al",
+            "howToBuy": "Nasıl alınır"
         },
         "modal": {
             "starterModal": {
@@ -105,118 +105,118 @@
             }
         },
         "exampleSection":{
-            "transactionComplete": "اكتملت المعاملة",
-            "time": "٣٥ ثانية مضت"
+            "transactionComplete": "İşlem tamamlandı",
+            "time": "35 saniye önce"
         }
     },
     "aboutSection": {
-        "header": "ثقة، أمان، مصداقية",
-        "mainText": "ما هي ديڤيلوستي ؟",
+        "header": "Güven, Emniyet, güvenilirlik",
+        "mainText": "Develocity nedir?",
         "subText": "Develocity aspires to present its final project in four primary stages. Each stage is presented separately and merged in the post-final stage to create a decentralised platform, which would be distinctively in terms of technology and development based on Web 3.0. DeVelocity strives to create a safe and trustworthy crypto environment where investors and developers can interact securely, considering the transparent credibility and technical measures and standards.",
         "subTextSecondParagraph": "DeVelocity’s goal is to become a thought leadership organisation, enhancing the community’s awareness and knowledge of the cryptocurrency market by building a virtual academy."
     },
     "scanToEarnSection": {
-        "header": "أداة متعددة الوظائف " ,
-        "mainText": "إعادة ابتكار الطريقة التي تستثمر بها و تجني الأموال",
-        "subText": "ابحث و اكسب",
+        "header": "Çok fonksiyonlu araç" ,
+        "mainText": "Yatırım yapma ve para kazanma şeklinizi yeniden keşfetmek",
+        "subText": "Tarayın ve kazanın",
         "normalText": "DeFi users are always trying to find the ideal investment, and they are willing to take the risk; even if they try as much as they can to reduce the risk, they won’t be able to determine the size of the risk.",
         "normalTextSecondParagraph": "The multi-functional tool comes to help the users with their challenges by scanning the contract or searching for the token to get a quick and deep detailed report about the token.",
-        "btn": "ابدأ باستخدام أداة البحث →",
+        "btn": "Tarayıcı aracını kullanmaya başlayın →",
         "svg": {
             "scan": "SCAN",
-            "tokenName": "اسم العملة",
-            "topTokens": "أعلى العملات",
-            "withdrawTheMoney": "سحب الأموال",
-            "myWallet": "محفظتي",
-            "totalScans": "إجمالي البحث",
-            "averageScore": "متوسط النقاط"
+            "tokenName": "Token adı",
+            "topTokens": "En iyi tokenler",
+            "withdrawTheMoney": "Parayı çekme",
+            "myWallet": "Cüzdanım",
+            "totalScans": "Toplam tarama",
+            "averageScore": "Not ortalaması"
         }
     },
     "partnersSection": {
-        "mainText": "بالشراكة مع"
+        "mainText": "İle ortaklık"
     },
     "newsSection": {
-        "mainText": "آخر الأخبار من ديڤيلوستي",
-        "subText": "لا تفوت اخر الأخبار من ديڤيلوستي",
-        "blogBtn": "تصفح الموقع",
-        "readMore": "اقرأ المزيد <"
+        "mainText": "Develocity'den son haberler",
+        "subText": "Develocity 'den gelen son güncellemeleri kaçırmayın",
+        "blogBtn": "Siteye göz atın",
+        "readMore": "Daha fazla oku >"
     },
     "roadmapSection": {
-        "mainText": "خطة لبناء",
-        "mainTextSubstring": "نظام بيئي أكثر أماناً",
+        "mainText": "Daha güvenli bir",
+        "mainTextSubstring": "ekosistem inşa etme planı",
         "cards": {
             "startup": {
-                "mainText": "البداية",
+                "mainText": "Başlangıç",
                 "subText": [
-                    "اطلاق الموقع",
-                    "تعريف المشروع الأول",
-                    "تسجيل اسم الشركة رسميا ً",
-                    "ترخيص والرأي القانوني "
+                    "Web sitesi başlatma",
+                    "İlk projenin tanımı",
+                    "Şirket adı kaydı",
+                    "Lisans ve hukuki Görüş"
                 ]
             },
             "launch": {
-                "mainText": "الانطلاق",
+                "mainText": "Listeleme",
                 "subText": [
-                    "إطلاق النسخة التجريبية الأولى من الأداة",
-                    "بدء البيع الأولي",
-                    "حملة تسويقية",
-                    "تعريف المشروع الثاني",
-                    "الدعاية والتسويق",
-                    "دخول منصات مركزية"
+                    "Yayınlama aracı\"beta sürümü\"",
+                    "Ön satış başlama",
+                    "Pazarlama kampanyası",
+                    "İkinci proje tanımı",
+                    "Tanıtım ve pazarlama",
+                    "Merkezi borsalara katılım"
                 ]
             },
             "expansion": {
-                "mainText": "التوسع",
+                "mainText": "Genişleme",
                 "subText": [
-                    "إطلاق النسخة التجريبية من السواب",
-                    "حملة تسويقية",
-                    "تعريف المشروع الثالث",
-                    "الدعاية و التسويق",
-                    "إطلاق النسخة الأولى من NFT",
-                    "دخول منصات مركزية "
+                    "Swap \"beta sürümü\"yayınlama ",
+                    "Pazaralma kampanyası",
+                    "Üçüncü proje tanımı",
+                    "Tanıtım ve pazaralama",
+                    "NFT ilk baskı",
+                    "Merkezi borsalara katılım"
                 ]
             },
             "opportunities": {
-                "mainText": "الفرص",
+                "mainText": "Fırsatlar",
                 "subText": [
-                    "إطلاق النسخة التجريبية من الجسر بين البلوكتشينز",
-                    "تعريف المشروع  الرابع",
-                    "حملة تسويقية",
-                    "الدعاية و الإعلان",
-                    "البحث عن فرص"
+                    "Yayıncılık Köprüsü \"beta sürümü\"",
+                    "Dördüncü proje giriş",
+                    "Pazarlama kampanyası",
+                    "Tanıtım ve pazarlama",
+                    "Fırsatları arama"
                 ]
             }
         },
         "phases": [
-            "المرحلة الأولى",
-            "المرحلة الثانية",
-            "المرحلة الثالثة",
-            "المرحلة الرابعة"
+            "Birinci aşama",
+            "İkinci Aşama",
+            "Üçüncü aşama",
+            "Dördüncü aşama"
         ]
     },
     "teamSection": {
-        "mainText": "فريق العمل",
+        "mainText": "Takım",
         "members": [
             {
                 "name": "Marwan Bin Mohammed Al Maktoum",
-                "role": "المؤسس"
+                "role": "Kurucu"
             },
             {
                 "name": "Mahdi Ajaj",
-                "role": "الرئيس التنفيذي"
+                "role": "Baş yönetici"
             },
             {
                 "name": "Abdulaziz Bin Fahad",
-                "role": "رئيس قسم التكنولوجيا"
+                "role": "Teknoloji departmanı başkanı"
             },
             {
                 "name": "Mamuka Kavtelishvili",
-                "role": "رئيس قسم التسويق"
+                "role": "Pazarlama departman başkanı"
             }
         ]
     },
     "contactSection": {
-        "mainText": "ابق على تواصل",
+        "mainText": "İletişim de kal",
         "headquarter": {
             "mainText": "Headquarter",
             "subText": "Dubai, United Arab Emirates"
@@ -228,10 +228,10 @@
     },
     "footerSection": {
         "links": {
-            "stayUpdated": "كن على إطلاع",
-            "multifunctionalTool": "الأداة متعددة الوظائف",
-            "whitePaper": "الصحيفة البيضاء"
+            "stayUpdated": "Takipte kal",
+            "multifunctionalTool": "Çok fonksiyonlu araç",
+            "whitePaper": "Beyaz sayfa"
         },
-        "copyright": "Develocity 2022 © حقوق محفوظة "
+        "copyright": "Haklar saklıdır © Develocity 2022"
     }
 }
