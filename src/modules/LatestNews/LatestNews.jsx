@@ -2,6 +2,7 @@ import styles from './LatestNews.module.css'
 import image1 from './../../assets/images/newsImage1.png'
 import image2 from './../../assets/images/newsImage2.png'
 import image3 from './../../assets/images/newsImage3.png'
+import { useTranslation } from 'react-i18next';
 const newsCard = [
     {
         image: image1,
@@ -24,15 +25,16 @@ const newsCard = [
 
 ]
 export function LatestNews() {
+    const { t } = useTranslation();
     return (
         <>
         <div className={`${ styles.newsWrapper}`}> 
-                <h3 className={`container ${styles.news_header}`}><span>Latest News From Develocity</span></h3>
+                <h3 className={`container ${styles.news_header}`}><span>{t("newsSection.mainText")}</span></h3>
 
             <div className={`container ${styles.newsBody}`}>
                 <div className="d-flex justify-content-center justify-content-md-between  align-items-center flex-column flex-md-row">
-                    <span className={`  ${styles.news_caption}`}>Don't Miss Update From Develocity</span>
-                    <button className={`d-none btn ${styles.btn_blog}`}>CHECK OUR BLOG</button>
+                    <span className={`  ${styles.news_caption}`}>{t("newsSection.subText")}</span>
+                    <button className={`d-none btn ${styles.btn_blog}`}>{t("newsSection.blogBtn")}</button>
                 </div>
 
 <section className={`${styles.cardContainer} `}> 
@@ -46,8 +48,8 @@ export function LatestNews() {
                                 <h5 className='text-secondary'>{el.header}</h5>
                                 <h5 className='text-secondary'>{el.caption}</h5>
                                 <span className='text-muted border rounded'>{el.date}</span>
-                                <div className={`d-none ${styles.readMore}`}>
-                                    <button className={`text-muted btn ${styles.btn_readmore}`}>READ MORE {`>`}</button>
+                                <div className={` ${styles.readMore}`}>
+                                    <button className={`d-none text-muted btn ${styles.btn_readmore}`}>{t("newsSection.readMore")}</button>
                                 </div>
                             </div>
                         </div>

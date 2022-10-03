@@ -1,4 +1,8 @@
+import { useTranslation } from 'react-i18next';
+
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer>
       <div className="d-flex align-items-center justify-content-center footer-top flex-wrap">
@@ -28,7 +32,7 @@ const Footer = () => {
               </g>
             </g>
           </svg>
-          Stay Updated
+          {t("footerSection.links.stayUpdated")}
         </a>
         <a
           href="https://tool.develocity.finance"
@@ -102,7 +106,7 @@ const Footer = () => {
               </g>
             </g>
           </svg>
-          Multifunctional Tool
+          {t("footerSection.links.multifunctionalTool")}
         </a>
         <a
           href="https://develocity.finance/whitepaper.pdf"
@@ -148,10 +152,10 @@ const Footer = () => {
               </g>
             </g>
           </svg>
-          Whitepaper
+          {t("footerSection.links.whitePaper")}
         </a>
       </div>
-      <p className="footer-bottom fs-md mb-0">Copyright © Develocity 2022</p>
+      <p className="footer-bottom fs-md mb-0">{t("footerSection.copyright")}</p>
     </footer>
   );
 };
