@@ -17,7 +17,7 @@ import ReferralsModal from "./Referrals/ReferralsModal";
 //   referral: ["referral", "final"],
 // };
 
-const ModalBuyNow = ({ open, onClose, handleOpen, connectedAccount }) => {
+const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [currentStep, setCurrentStep] = useState("starter");
   const [walletAddress, setwalletAddress] = useState("");
 

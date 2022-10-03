@@ -13,6 +13,7 @@ const SelectNetwork = ({ handleStep, handleOpen, handleWalletAddress }) => {
       handleOpen(false);
       const web3Provider = await web3Modal.connect();
       const library = new ethers.providers.Web3Provider(web3Provider);
+      console.log(library);
       const web3Accounts = await library.listAccounts();
       const network = await library.getNetwork();
       console.log(web3Accounts[0], network);
@@ -21,6 +22,7 @@ const SelectNetwork = ({ handleStep, handleOpen, handleWalletAddress }) => {
       handleStep("walletInfo");
     } catch (error) {
       alert(error);
+      handleStep("starter");
       console.log(error);
     }
   };

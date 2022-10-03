@@ -9,6 +9,7 @@ const WalletInfoModal = ({ handleStep, walletAddress, handleOpen }) => {
     await web3Modal.clearCachedProvider();
     handleOpen(false);
     handleStep("starter");
+    localStorage.clear();
   };
 
   return (
