@@ -176,7 +176,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
         </div>
       </div>
       <div className="mt-4 w-100">
-        <TextItem title={"Price"} value="1" percentage="20.64" hr="true" />
+        <TextItem title={"Price"} value="1" secondaryText="DEVE = $0.22" hr="true" />
         <TextItem title={"Estimate Balance"} value="2,000" percentage="2,003.64" hr="true" />
       </div>
 
