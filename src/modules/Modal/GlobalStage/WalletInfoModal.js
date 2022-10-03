@@ -246,21 +246,21 @@ const WalletInfoModal = ({ handleStep, walletAddress, disconnect }) => {
       //Fetch deve balance
       const DEVEBalance = Number(
         ethers.utils.formatEther(await walletInfoContract._contributions(walletAddress))
-      ).toFixed(3);
+      ).toFixed(0);
 
-      const DEVEBalanceValue = (DEVEBalance * deveCost).toFixed(3);
+      const DEVEBalanceValue = (DEVEBalance * deveCost).toFixed(2);
       setDeveBalance({ amount: DEVEBalance, value: DEVEBalanceValue });
 
       //Fetch Tokens to claim
       const tokensToClaim = Number(ethers.utils.formatEther(await walletInfoContract.getRefPer(walletAddress))).toFixed(
-        3
+        0
       );
       setTokensToClaim({ amount: tokensToClaim, value: tokensToClaim });
 
       //Fetch Referrals to claim
       const referralsToClaim = Number(
         ethers.utils.formatEther(await walletInfoContract._RefAmount(walletAddress))
-      ).toFixed(3);
+      ).toFixed(0);
       setReferralsToClaim(referralsToClaim);
 
       // Methods =>  _contributions(address) - getRefPer(address) _RefAmount [0.3]
@@ -282,13 +282,7 @@ const WalletInfoModal = ({ handleStep, walletAddress, disconnect }) => {
           </div>
         </div>
         <TextItem title="DEVE Balance" value={deveBalance.amount} percentage={deveBalance.value} hr="true" />
-        <TextItem
-          title="Tokens To Claim:"
-          value={tokensToClaim.amount}
-          percentage={deveBalance.value}
-          secondaryText="%"
-          hr="true"
-        />
+        <TextItem title="Referrals Percentage:" value={tokensToClaim.amount} secondaryText="%" hr="true" />
         <TextItem title="Referrals To Claim" value={referralsToClaim} percentage="" hr="" />
         <div className={styles.nextButtonContainer}>
           <NextButton
