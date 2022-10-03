@@ -3,7 +3,7 @@ import logo from "../../../assets/images/Deve-Logo.svg";
 import * as Scroll from 'react-scroll';
 let Link      = Scroll.Link;
 
-const Navbar = () => {
+const Navbar = ({onClose}) => {
   const [shadow, setShadow] = useState({ boxShadow: "none" });
   const [bgcolor, setBgcolor] = useState({ color: "unset" });
 
@@ -21,7 +21,7 @@ const Navbar = () => {
   window.addEventListener("scroll", listenScrollEvent);
 
   return (
-    <div className="container bg-nav sticky-top nav-border">
+    <div className="container bg-nav sticky-top nav-border" style={{zIndex:1}}>
       <div className="d-flex justify-content-between pt-3 d-md-none mt-2 mb-3">
         <span className="mx-2 fs-sm">Trust, Security, Credibility</span>
         <div>
@@ -52,7 +52,7 @@ const Navbar = () => {
           </a>
         </div>
       </div>
-      <div className="d-none d-md-block h-25 bg-white text-white">hello</div>
+      <div className="bg-transparent d-none d-md-block bg-white text-white" style={{height:"10px"}}></div>
 
       <nav
         className="navbar text-center nav-container navbar-expand-lg nav-border"
@@ -98,42 +98,42 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" activeClass="active" smooth spy to="home">
+                <Link  onClick={()=>{onClose(false)}} className="nav-link" activeClass="active" smooth spy to="home">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" activeClass="active" smooth spy to="about" offset={window.innerWidth<768 ? -150 : -120}>
+                <Link  onClick={()=>{onClose(false)}} className="nav-link" activeClass="active" smooth spy to="about" offset={window.innerWidth<768 ? -150 : -120}>
                   About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" activeClass="active" smooth spy to="partners" offset={window.innerWidth<768 ? -200 : -120}>
+                <Link  onClick={()=>{onClose(false)}} className="nav-link" activeClass="active" smooth spy to="partners" offset={window.innerWidth<768 ? -200 : -120}>
                   Partners
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" activeClass="active" smooth spy to="scan-to-earn" offset={window.innerWidth<768 ? -180 : -100}>
+                <Link  onClick={()=>{onClose(false)}} className="nav-link" activeClass="active" smooth spy to="scan-to-earn" offset={window.innerWidth<768 ? -180 : -100}>
                   Scan to Earn
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" activeClass="active" smooth spy to="news" offset={window.innerWidth<768 ? -180 : -120}>
+                <Link  onClick={()=>{onClose(false)}} className="nav-link" activeClass="active" smooth spy to="news" offset={window.innerWidth<768 ? -180 : -120}>
                   News
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" activeClass="active" smooth spy to="roadmap" offset={window.innerWidth<768 ? -180 : -100}>
+                <Link  onClick={()=>{onClose(false)}} className="nav-link" activeClass="active" smooth spy to="roadmap" offset={window.innerWidth<768 ? -180 : -100}>
                   Roadmap
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" activeClass="active" smooth spy to="team" offset={window.innerWidth<768 ? -160 :-100}>
+                <Link  onClick={()=>{onClose(false)}} className="nav-link" activeClass="active" smooth spy to="team" offset={window.innerWidth<768 ? -160 :-100}>
                   Team
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" activeClass="active" smooth spy to="contact">
+                <Link className="nav-link" activeClass="active" smooth spy to="contact" onClick={()=>{onClose(false)}}>
                   Contact
                 </Link>
               </li>

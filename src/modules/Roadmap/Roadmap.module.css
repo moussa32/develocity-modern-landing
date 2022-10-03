@@ -38,7 +38,7 @@
    line-height: 37px;
    border-radius: 100%;
    margin-top: -10px;
-   z-index: 5;
+   z-index: 0;
 }
 
 
@@ -132,6 +132,9 @@
    }
    .roadmapCards .cardBox:nth-child(4) .line_vr{
       margin-right: 100px;
+   }
+   .circle{
+      z-index: 0;
    }
 }
 
@@ -227,6 +230,7 @@
    .circle{
       position: absolute;
       left: 30px;
+      z-index: 0;
    }
    .roadmapCards .cardBox:nth-child(1) .circle{
       top: -245px;

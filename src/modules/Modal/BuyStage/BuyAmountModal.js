@@ -1,8 +1,8 @@
 import { useState } from "react";
 import TextItem from "../CommonStage/TextItem";
 
-const BuyAmountModal = ({ handleStep }) => {
-    const [address,setAddress] = useState("0xea0A91236...Ec24887e11b55d") 
+const BuyAmountModal = ({ handleStep ,walletAddress }) => {
+    const [address,setAddress] = useState(walletAddress) 
     const [balance,setBalance] = useState("2,914.0594")
 
     const [fromBalance,setFromBalance] = useState(0)
@@ -21,7 +21,7 @@ const BuyAmountModal = ({ handleStep }) => {
                 <path id="Vector-3" data-name="Vector" d="M7,20h6c5,0,7-2,7-7V7c0-5-2-7-7-7H7C2,0,0,2,0,7v6C0,18,2,20,7,20Z" transform="translate(2 2)" fill="none" stroke="#8b8b8b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
                 <path id="Vector-4" data-name="Vector" d="M0,0H24V24H0Z" fill="none" opacity="0"/>
                 </svg>
-                <h5 className="address">{address}</h5>
+                <h5 className="address">{address && address.slice(0, 10)+'...'+address.slice(31, 41)}</h5>
             </div>
             
             <div className="mt-4">
@@ -76,7 +76,7 @@ const BuyAmountModal = ({ handleStep }) => {
             <TextItem title={"Estimate Balance"} value="2,000" percentage="2,003.64" hr="true" />
             </div>
 
-            <div>   
+            <div className="d-flex justify-content-between w-100">   
                 <button className="m-btns approve" onClick={() => approveAlert()} disabled={balance? false: true}>Approve</button>
                 <button className="m-btns buy" onClick={() => handleStep("final")}>Buy →</button>
             </div>

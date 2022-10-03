@@ -3,7 +3,7 @@ import NextButton from "../CommonStage/NextButton";
 import TextItem from "../CommonStage/TextItem";
 import styles from "../CommonStage/CommonStyle.module.css";
 
-const WalletInfoModal = ({ handleStep }) => {
+const WalletInfoModal = ({ handleStep ,walletAddress}) => {
   return (
     <>
       <div>
@@ -11,7 +11,7 @@ const WalletInfoModal = ({ handleStep }) => {
         <div>
           <span className={styles.walletText}>Wallet</span>
           <div className={styles.contractaddress}>
-            <p>0xccccccccccccc</p>
+            <p>{walletAddress && walletAddress.slice(0, 10)+'...'+walletAddress.slice(31, 41)}</p>
             <button className="btn">&#9747;</button>
           </div>
         </div>
@@ -19,7 +19,12 @@ const WalletInfoModal = ({ handleStep }) => {
         <TextItem title="Tokens To Claim:" value="250" percentage="250" hr="true" />
         <TextItem title="Referrals To Claim" value="150" percentage="" hr="" />
         <div className={styles.nextButtonContainer}>
-          <NextButton handleStep={() => handleStep("options")} />
+          <NextButton
+            text="Next"
+            stylesButton={{ bg: "#0D162A" }}
+            handleStep={() => handleStep("options")}
+            disabled={false}
+          />
         </div>
       </div>
     </>

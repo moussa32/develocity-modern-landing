@@ -27,9 +27,13 @@ export default function ClaimModal({handleStep}) {
         percentage="500"
         hr=""
         />
-         <div className={styles.nextButtonContainer}>
-        <NextButton text="Next" handleStep={()=>handleStep("final")}/>
-        </div>
+          <div className={styles.nextButtonContainer}>
+                    <NextButton
+                        text="Claim"
+                        stylesButton={{ bg: "#9C3FE5" }}
+                        disabled={false}
+                        handleStep={() => handleStep("final")} />
+                </div>
     </div>
 
     </>

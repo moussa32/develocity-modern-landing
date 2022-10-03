@@ -20,6 +20,8 @@ import ReferralsModal from "./Referrals/ReferralsModal";
 const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [currentStep, setCurrentStep] = useState("starter");
   const [network, setNetwork] = useState("");
+  const [walletAddress, setwalletAddress] = useState("");
+
   console.log(currentStep);
 
   const handleStep = useCallback((step) => {
@@ -31,19 +33,19 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
       case "starter":
         return <SelectNetwork handleStep={handleStep} handleNetwork={setNetwork} handleOpen={handleOpen} />;
       case "walletInfo":
-        return <WalletInfoModal handleStep={handleStep} />;
+        return <WalletInfoModal handleStep={handleStep} walletAddress={walletAddress} />;
       case "options":
         return <SelectOption handleStep={handleStep} />;
       case "buywith":
         return <BuywithModal handleStep={handleStep} />;
       case "buyamount":
-        return <BuyAmountModal handleStep={handleStep} />;
+        return <BuyAmountModal handleStep={handleStep} walletAddress={walletAddress} />;
       case "claim":
         return <ClaimModal handleStep={handleStep} />;
       case "referral":
         return <ReferralsModal handleStep={handleStep} />;
       case "final":
-        return <FinalModal />;
+        return <FinalModal onClose={onClose} handleStep={handleStep} />;
       default:
         return <SelectNetwork handleStep={handleStep} handleNetwork={setNetwork} />;
     }

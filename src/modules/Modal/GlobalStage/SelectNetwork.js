@@ -28,16 +28,16 @@ const SelectNetwork = ({ handleStep, handleNetwork, handleOpen }) => {
     const instance = await web3Modal.connect();
 
     const provider = new ethers.providers.Web3Provider(instance);
-
-    if (provider) {
-      handleOpen(true);
-      handleStep("walletInfo");
-    }
+    const signer = provider.getSigner();
+    const address = await signer.getAddress();
+    handleWalletAddress(address);
+    console.log(address, " === <<< address");
   };
 
-  const handleSelectNetworkName = useCallback((name) => {
-    handleSelectNetwork(name);
+  const handleSelectNetworkName = useCallback(async (name) => {
     setSelectedNetwork(name);
+    await handleSelectNetwork(name);
+    handleStep("walletInfo");
   }, []);
 
   return (

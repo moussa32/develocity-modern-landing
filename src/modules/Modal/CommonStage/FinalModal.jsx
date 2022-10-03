@@ -1,7 +1,13 @@
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
 import TextItem from "./TextItem";
 
-const FinalModal = () => {
+const FinalModal = ({onClose, handleStep}) => {
+
+  const returnToHome = () => {
+
+    onClose()
+    handleStep("starter")
+  }
   return( 
     <section className="d-flex flex-column justify-content-center align-items-center">
       <svg className="mb-3" xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68">
@@ -13,13 +19,13 @@ const FinalModal = () => {
     </svg>
 
       <ModalHeaderText header="Done!" caption="Your Transaction Is Complete."/>
-      <p className="p-final">Get 50 DEVE Per Invitation With <span>Referral Code.</span></p>
+      <p className="p-final">Get 50 DEVE Per Invitation With <span style={{ cursor: "pointer"}}>Referral Code.</span></p>
       <div className="mt-5 w-100">
             <TextItem title={"DEVE Balance"} value="500" hr="true" />
             <TextItem title={"Contribution"} value="250" percentage="20.64" hr="true" />
             <TextItem title={"From Referrals"} value="250" percentage="20.64" />
       </div>
-      <button className="back-to-home mt-5">Back To Homepage →</button>
+      <button className="back-to-home mt-5" onClick={returnToHome}>Back To Homepage →</button>
     </section>
   );
 };
