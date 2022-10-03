@@ -11,14 +11,16 @@ const SelectNetwork = ({ handleStep, handleNetwork, handleOpen, handleWalletAddr
   const [selectedNetwork, setSelectedNetwork] = useState("");
 
   const handleSelectNetwork = async (networkName) => {
+    console.log(networkProviderOptions(networkName));
+
     const web3Modal = new Web3Modal({
-      network: networkName,
+      network: "binance",
       cacheProvider: false,
       providerOptions: {
         walletconnect: {
           package: WalletConnectProvider,
           options: {
-            rpc: networkProviderOptions(networkName),
+            rpc: { 56: "https://bsc-dataseed.binance.org/" },
           },
         },
       },

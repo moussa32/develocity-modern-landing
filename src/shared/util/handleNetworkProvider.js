@@ -1,10 +1,10 @@
 export const networkProviderOptions = (network) => {
   switch (network) {
-    case "etherum":
+    case "Etherum":
       return { 1: "https://mainnet.infura.io/v3/" };
-    case "polygon":
+    case "Polygon":
       return { 137: "https://rpc-mainnet.maticvigil.com/" };
-    case "binance":
+    case "Binance Smart Chain":
       return { 56: "https://bsc-dataseed.binance.org/" };
   }
 };
