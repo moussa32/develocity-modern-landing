@@ -2,20 +2,19 @@ import React from "react";
 import styles from "./CommonStyle.module.css";
 
 const TextItem = ({ title, secondaryText, value, percentage, hr, symbol }) => {
+  console.log(secondaryText);
   return (
     <>
       <div class={styles.TextLine}>
         <h6>{title}:</h6>
-        {value && (
-          <p>
-            {value} {secondaryText ? secondaryText : "DEVE"}
-            {percentage && (
-              <span className="ms-1">
-                ({symbol ? symbol : "~$"} {percentage})
-              </span>
-            )}
-          </p>
-        )}
+        <p>
+          {value} {secondaryText ? secondaryText : "DEVE"}
+          {percentage && (
+            <span className="ms-1">
+              ({symbol ? symbol : "~$"} {percentage})
+            </span>
+          )}
+        </p>
       </div>
       {hr && <hr />}
     </>

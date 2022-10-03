@@ -3,7 +3,6 @@ import TextItem from "../CommonStage/TextItem";
 import toast from "react-hot-toast";
 import { ethers } from "ethers";
 import contractAbi from "../../../assets/contractABI.json";
-import { provider, walletContract } from "../../../shared/util/handleContract";
 
 let walletInfoContractAddress = "0xc1ec20ef71c47004616a7c82ce0dd6a60fbe897c";
 
@@ -12,6 +11,9 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
   const [convertedDeve, setConvertedDeve] = useState(0);
 
   const memoizedCoinBalanceConverted = useMemo(() => (coinBalance * Math.pow(10, 18)).toString(), [coinBalance]);
+
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const walletContract = new ethers.Contract("0xc1ec20ef71c47004616a7c82ce0dd6a60fbe897c", contractAbi, provider);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {

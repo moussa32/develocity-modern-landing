@@ -14,10 +14,12 @@ const SelectNetwork = ({ handleStep, handleOpen, handleWalletAddress }) => {
       handleOpen(false);
       const web3Provider = await web3Modal.connect();
       const library = new ethers.providers.Web3Provider(web3Provider);
-      console.log(library);
+      console.log("library", library);
       const web3Accounts = await library.listAccounts();
       const network = await library.getNetwork();
       console.log(web3Accounts[0], network);
+      console.log("etherum window", window.ethereum);
+
       handleWalletAddress(web3Accounts[0]);
       handleOpen(true);
       handleStep("walletInfo");

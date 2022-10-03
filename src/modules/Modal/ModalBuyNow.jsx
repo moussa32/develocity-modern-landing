@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import FinalModal from "./CommonStage/FinalModal";
 import WalletInfoModal from "./GlobalStage/WalletInfoModal";
@@ -54,6 +54,8 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
       },
     });
   };
+
+  console.log(window.ethereum);
 
   const handleRenderComponentStep = () => {
     switch (currentStep) {
