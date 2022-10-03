@@ -10,6 +10,7 @@ import SelectOption from "./GlobalStage/SelectOption";
 import BuyAmountModal from "./BuyStage/BuyAmountModal";
 import ReferralsModal from "./Referrals/ReferralsModal";
 import { web3Modal } from "../../shared/util/handleWeb3Modal";
+import toast, { Toaster } from "react-hot-toast";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
@@ -32,6 +33,20 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
     handleOpen(false);
     handleStep("starter");
     window.localStorage.clear();
+    /*Toast notification*/
+    toast.success("Disconnected!", {
+      style: {
+        border: "1px solid #e30e27",
+        padding: "16px",
+        backgroundColor: "#ffcdd2",
+        color: "white",
+        width: "300px",
+        borderRadius: "8px",
+      },
+      iconTheme: {
+        primary: "#e30e27",
+      },
+    });
   };
 
   const handleRenderComponentStep = () => {
