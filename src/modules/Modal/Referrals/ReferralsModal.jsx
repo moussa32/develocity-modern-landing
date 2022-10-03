@@ -10,7 +10,19 @@ const ReferralsModal = ({ handleStep }) => {
 
   const copyToClipboard = async () =>{
     await navigator.clipboard.writeText(link);
-    alert('Text copied');
+    //alert('Text copied');
+    toast.success("Copied To Clipboard",{
+      style: {
+          border: '1px solid #35C486',
+          padding: '16px',
+          backgroundColor: "white",
+          width: "300px",
+          borderRadius: "8px",
+        },
+        iconTheme: {
+          primary: '#35C486',
+        },
+  })
   }
 
   return (
