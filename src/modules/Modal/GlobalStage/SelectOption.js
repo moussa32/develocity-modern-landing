@@ -5,8 +5,8 @@ import ClaimTokenIcon from "../../../assets/images/ClaimTokenIcon.svg";
 import ReferralsIcon from "../../../assets/images/ReferralsIcon.svg";
 import { useState } from "react";
 
-const SelectOption = ({ handleStep ,deveBalance}) => {
-  console.log(deveBalance ,'=============<<<');
+const SelectOption = ({ handleStep, deveBalance }) => {
+  console.log(deveBalance, '=============<<<');
   const [selectedStep, setSelectedStep] = useState("");
   const updateStep = (nextStep) => {
     handleStep(nextStep);
@@ -16,9 +16,9 @@ const SelectOption = ({ handleStep ,deveBalance}) => {
       <ModalHeaderText header="Select You Option" caption="What You Wanna Do" />
       <div className="d-flex flex-column gap-4 w-100">
         <div onClick={() => updateStep("buywith")}>
-          <ButtonItem mainText="Buy DEVE" image={BuyIcon} selected={selectedStep} handleSelect={setSelectedStep}  disabled={false}/>
+          <ButtonItem mainText="Buy DEVE" image={BuyIcon} selected={selectedStep} handleSelect={setSelectedStep} disabled={false} />
         </div>
-        <div onClick={() => updateStep("claim")}>
+        <div onClick={() => deveBalance.amount >= 50 && updateStep("claim")}>
           <ButtonItem
             mainText="Claim Your Tokens"
             image={ClaimTokenIcon}
@@ -27,13 +27,13 @@ const SelectOption = ({ handleStep ,deveBalance}) => {
             disabled={true}
           />
         </div>
-        <div onClick={() => updateStep("referral")}>
+        <div onClick={() => deveBalance.amount >= 50 && updateStep("referral")}>
           <ButtonItem
             mainText="Referrals"
             image={ReferralsIcon}
             selected={selectedStep}
             handleSelect={setSelectedStep}
-            disabled={deveBalance.amount <= 50 ?true:false}
+            disabled={deveBalance.amount <= 50 ? true : false}
           />
         </div>
       </div>

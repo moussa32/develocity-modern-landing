@@ -1,4 +1,4 @@
-import {useEffect, useCallback, useState } from "react";
+import { useEffect, useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import FinalModal from "./CommonStage/FinalModal";
 import WalletInfoModal from "./GlobalStage/WalletInfoModal";
@@ -117,7 +117,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
       case "claim":
         return <ClaimModal handleStep={handleStep} />;
       case "referral":
-        return <ReferralsModal handleStep={handleStep}  walletAddress={walletAddress}/>;
+        return <ReferralsModal handleStep={handleStep} walletAddress={walletAddress} tokensToClaim={tokensToClaim.amount} referralsToClaim={referralsToClaim} />;
       case "final":
         return <FinalModal onClose={onClose} handleStep={handleStep} />;
       default:
@@ -128,10 +128,10 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   if (!open) return null;
   return ReactDOM.createPortal(
     <>
-      <div className={styles.backDrop} onClick={()=>{
+      <div className={styles.backDrop} onClick={() => {
         handleStep("starter")
         onClose()
-    }} />
+      }} />
       <div className={` ${styles.overlay}`}>
         {/* <button className={styles.closeBtn_ltr} onClick={onClose}>
           close
