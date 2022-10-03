@@ -19,7 +19,7 @@ const FinalModal = ({onClose, handleStep}) => {
     </svg>
 
       <ModalHeaderText header="Done!" caption="Your Transaction Is Complete."/>
-      <p className="p-final">Get 50 DEVE Per Invitation With <span style={{ cursor: "pointer"}}>Referral Code.</span></p>
+      <p className="p-final text-center">Get 50 DEVE Per Invitation With <span style={{ cursor: "pointer"}}>Referral Code.</span></p>
       <div className="mt-5 w-100">
             <TextItem title={"DEVE Balance"} value="500" hr="true" />
             <TextItem title={"Contribution"} value="250" percentage="20.64" hr="true" />

@@ -74,7 +74,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect }) => {
         <h5 className="address">{address && address.slice(0, 10) + "..." + address.slice(31, 41)}</h5>
       </div>
 
-      <div className="mt-3">
+      <div className="mt-4">
         <div className="d-flex justify-content-between">
           <label className="first-lable">From</label>
           <h5 className="second-lable">Balance: {balance} </h5>
@@ -88,7 +88,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect }) => {
             }}
             placeholder="0"
           />
-          <div className="d-flex justify-content-center align-items-center w-25">
+          <div className="bnb-container d-flex bg-white justify-content-center align-items-center w-25">
             <svg xmlns="http://www.w3.org/2000/svg" width="23.998" height="24" viewBox="0 0 23.998 24">
               <path
                 id="Binance_Coin_BNB_"
@@ -154,7 +154,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect }) => {
         />
       </svg>
 
-      <div className="mt-2">
+      <div className="mt-1">
         <div className="d-flex justify-content-between">
           <label className="first-lable">To</label>
         </div>
@@ -167,7 +167,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect }) => {
             }}
             placeholder="0"
           />
-          <div className="d-flex justify-content-center align-items-center w-25">
+          <div className="bnb-container d-flex bg-white justify-content-center align-items-center w-25">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
