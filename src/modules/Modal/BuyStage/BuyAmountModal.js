@@ -3,16 +3,16 @@ import TextItem from "../CommonStage/TextItem";
 import toast from "react-hot-toast";
 import { ethers } from "ethers";
 import contractAbi from "../../../assets/contractABI.json";
-
-let walletInfoContractAddress = "0xc1ec20ef71c47004616a7c82ce0dd6a60fbe897c";
+import { testNetContract } from "../../../shared/constants/contractAddress";
 
 const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency, provider }) => {
   const [coinBalance, setCoinBalance] = useState(0);
   const [convertedDeve, setConvertedDeve] = useState(0);
 
+  console.log(currentCurrency);
   const memoizedCoinBalanceConverted = useMemo(() => (coinBalance * Math.pow(10, 18)).toString(), [coinBalance]);
 
-  const walletContract = new ethers.Contract("0xc1ec20ef71c47004616a7c82ce0dd6a60fbe897c", contractAbi, provider);
+  const walletContract = new ethers.Contract(testNetContract, contractAbi, provider);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
@@ -29,7 +29,8 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
 
   const handleBuy = async () => {
     const signer = provider.getSigner();
-    const contract = new ethers.Contract(walletInfoContractAddress, contractAbi, signer);
+    console.log(signer);
+    const contract = new ethers.Contract(testNetContract, contractAbi, signer);
     const urlParams = new URLSearchParams(window.location.search);
     const ref = urlParams.get("ref");
     console.log(ref);
@@ -37,8 +38,9 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
     const gasPrice = await contract.estimateGas.buyTokens(ref, { value: memoizedCoinBalanceConverted });
 
     const buyRequest = await contract
-      .buyTokens(ref, { value: memoizedCoinBalanceConverted, gasPrice: gasPrice })
+      .buyTokens(ref, { value: memoizedCoinBalanceConverted, gasLimit: 100000 })
       .then((res) => {
+        console.log(res);
         handleStep("final");
       })
       .catch((error) => {

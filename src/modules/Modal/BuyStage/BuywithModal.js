@@ -22,6 +22,7 @@ export default function BuywithModal({
     const getBalance = async () => {
       const balanceInWei = await provider.getBalance(walletAddress);
       const convertedBalanc = Number(ethers.utils.formatEther(balanceInWei)).toFixed(3);
+      console.log(convertedBalanc);
       handleBinanceCoin(convertedBalanc);
 
       const busdAbiContract = new ethers.Contract(

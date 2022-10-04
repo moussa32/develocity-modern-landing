@@ -5,6 +5,7 @@ import styles from "../CommonStage/CommonStyle.module.css";
 import { useEffect } from "react";
 import { ethers } from "ethers";
 import contractAbi from "../../../assets/contractABI.json";
+import { testNetContract } from "../../../shared/constants/contractAddress";
 
 const WalletInfoModal = ({
   handleStep,
@@ -21,14 +22,11 @@ const WalletInfoModal = ({
   useEffect(() => {
     const getBalance = async () => {
       const deveCost = 0.3;
-      console.log(provider);
-      const walletContract = new ethers.Contract("0xc1ec20ef71c47004616a7c82ce0dd6a60fbe897c", contractAbi, provider);
+      const walletContract = new ethers.Contract(testNetContract, contractAbi, provider);
 
       //Fetch deve balance
-      const DEVEBalance = Number(ethers.utils.formatEther(await walletContract._contributions(walletAddress))).toFixed(
-        0
-      );
-
+      const DEVEBalance = (await walletContract._contributions(walletAddress)).toString();
+      console.log(DEVEBalance);
       const DEVEBalanceValue = (DEVEBalance * deveCost).toFixed(2);
       handleDeveBalance({ amount: DEVEBalance, value: DEVEBalanceValue });
 
