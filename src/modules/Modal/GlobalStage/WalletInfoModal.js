@@ -60,7 +60,7 @@ const WalletInfoModal = ({
         <TextItem title="Referrals To Claim" value={referralsToClaim} percentage="" hr="" />
         <div className={styles.nextButtonContainer}>
           <NextButton
-            text="Next"
+            text="Next &#8594;"
             stylesButton={{ bg: "#0D162A" }}
             handleStep={() => handleStep("options")}
             disabled={false}

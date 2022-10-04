@@ -64,7 +64,7 @@ export function Roadmap() {
       <div className={` ${styles.roadmapWrapper}`}>
         <div className={`text-center  ${styles.header}`}>
           <h3>{t("roadmapSection.mainText")}</h3>
-          <h3>{t("roadmapSection.mainTextSubstring")}</h3>
+          {/* <h3>{t("roadmapSection.mainTextSubstring")}</h3> */}
         </div>
         <div className={`${styles.roadmapscroll}`}>
           <section className={` ${styles.roadmapContent}`}>

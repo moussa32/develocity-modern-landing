@@ -21,7 +21,7 @@ export function Partnering() {
   const [swiperRef, setSwiperRef] = useState(null);
   const [activeFeaturedImage, setActiveFeaturedImage] = useState(null);
 
-  //   swiperRef?.slideTo(1, 10);
+    swiperRef?.slideTo(1, 10);
 
   // filter: sepia(100%) hue-rotate(200deg) saturate(800%)
 
