@@ -9,6 +9,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
   const [coinBalance, setCoinBalance] = useState(0);
   const [convertedDeve, setConvertedDeve] = useState(0);
 
+  console.log(currentCurrency);
   const memoizedCoinBalanceConverted = useMemo(() => (coinBalance * Math.pow(10, 18)).toString(), [coinBalance]);
 
   const walletContract = new ethers.Contract(testNetContract, contractAbi, provider);
@@ -39,7 +40,8 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
     const buyRequest = await contract
       .buyTokens(ref, { value: memoizedCoinBalanceConverted, gasLimit: 100000 })
       .then((res) => {
-        handleStep("final");
+        console.log(res);
+        // handleStep("final");
       })
       .catch((error) => {
         console.log(error);
