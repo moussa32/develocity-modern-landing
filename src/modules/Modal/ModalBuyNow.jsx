@@ -29,6 +29,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [tokensToClaim, setTokensToClaim] = useState({ amount: 0, value: 0 });
   const [referralsToClaim, setReferralsToClaim] = useState(0);
   const [provider, setProvider] = useState(null);
+  const [transAmount, setTransAmount] = useState(null);
 
   const handleStep = useCallback((step) => {
     setCurrentStep(step);
@@ -105,6 +106,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             disconnect={handleDisconnectWeb3Modal}
             currentCurrency={selectedCurrency}
             provider={provider}
+            handleFinalAmount={setTransAmount}
           />
         );
       case "claim":
@@ -119,7 +121,14 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
           />
         );
       case "final":
-        return <FinalModal onClose={onClose} handleStep={handleStep} />;
+        return (
+          <FinalModal
+            onClose={onClose}
+            handleStep={handleStep}
+            boughtAmount={transAmount}
+            referral={referralsToClaim}
+          />
+        );
       default:
         return <SelectNetwork handleStep={handleStep} />;
     }

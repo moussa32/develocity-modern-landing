@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { ethers } from "ethers";
 import contractAbi from "../../../assets/contractABI.json";
 import { testNetContract } from "../../../shared/constants/contractAddress";
+import { deveCost } from "../../../shared/constants/deveCost";
 
 const WalletInfoModal = ({
   handleStep,
@@ -15,29 +16,25 @@ const WalletInfoModal = ({
   handleTokensClaim,
   handleReferralsToClaim,
   deveBalance,
-  tokensToClaim,
   referralsToClaim,
   provider,
 }) => {
   useEffect(() => {
     const getBalance = async () => {
-      const deveCost = 0.3;
       const walletContract = new ethers.Contract(testNetContract, contractAbi, provider);
 
       //Fetch deve balance
       const DEVEBalance = (await walletContract._contributions(walletAddress)).toString();
-      console.log(DEVEBalance);
+
       const DEVEBalanceValue = (DEVEBalance * deveCost).toFixed(2);
       handleDeveBalance({ amount: DEVEBalance, value: DEVEBalanceValue });
 
       //Fetch Tokens to claim
-      const tokensToClaim = Number(ethers.utils.formatEther(await walletContract.getRefPer(walletAddress))).toFixed(0);
+      const tokensToClaim = (await walletContract.getRefPer(walletAddress)).toString();
       handleTokensClaim({ amount: tokensToClaim, value: tokensToClaim });
 
       //Fetch Referrals to claim
-      const referralsToClaim = Number(ethers.utils.formatEther(await walletContract._RefAmount(walletAddress))).toFixed(
-        0
-      );
+      const referralsToClaim = (await walletContract._RefAmount(walletAddress)).toString();
 
       handleReferralsToClaim(referralsToClaim);
       // Methods =>  _contributions(address) - getRefPer(address) _RefAmount [0.3]
@@ -59,7 +56,7 @@ const WalletInfoModal = ({
           </div>
         </div>
         <TextItem title="DEVE Balance" value={deveBalance.amount} percentage={deveBalance.value} hr="true" />
-        <TextItem title="DEVE Price" value={tokensToClaim.amount} secondaryText="= $0.22" hr="true" />
+        <TextItem title="DEVE Price" value="1 DEVE" secondaryText="= $0.22" hr="true" />
         <TextItem title="Referrals To Claim" value={referralsToClaim} percentage="" hr="" />
         <div className={styles.nextButtonContainer}>
           <NextButton

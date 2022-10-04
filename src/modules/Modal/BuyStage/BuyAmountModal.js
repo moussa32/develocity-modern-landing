@@ -4,9 +4,11 @@ import toast from "react-hot-toast";
 import { ethers } from "ethers";
 import contractAbi from "../../../assets/contractABI.json";
 import { testNetContract } from "../../../shared/constants/contractAddress";
+import NextButton from "../CommonStage/NextButton";
 
-const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency, provider }) => {
+const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency, provider, handleFinalAmount }) => {
   const [coinBalance, setCoinBalance] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
   const [convertedDeve, setConvertedDeve] = useState(0);
 
   console.log(currentCurrency);
@@ -29,25 +31,27 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
 
   const handleBuy = async () => {
     const signer = provider.getSigner();
-    console.log(signer);
     const contract = new ethers.Contract(testNetContract, contractAbi, signer);
     const urlParams = new URLSearchParams(window.location.search);
     const ref = urlParams.get("ref");
-    console.log(ref);
 
     const gasPrice = await contract.estimateGas.buyTokens(ref, { value: memoizedCoinBalanceConverted });
+    setIsLoading(true);
 
     const buyRequest = await contract
-      .buyTokens(ref, { value: memoizedCoinBalanceConverted, gasLimit: 100000 })
+      .buyTokens(ref, { value: memoizedCoinBalanceConverted, gasLimit: gasPrice })
       .then((res) => {
         console.log(res);
-        handleStep("final");
+        res.wait().then((receipt) => {
+          setIsLoading(false);
+          handleFinalAmount(convertedDeve);
+          handleStep("final");
+        });
       })
       .catch((error) => {
         console.log(error);
+        setIsLoading(false);
       });
-
-    // handleStep("final");
   };
 
   return (
@@ -199,9 +203,12 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
       </div>
 
       <div className="d-flex justify-content-between w-100">
-        <button className="m-btns buy mx-auto" onClick={handleBuy}>
-          Buy →
-        </button>
+        <NextButton
+          text={isLoading ? "Loading" : "Buy →"}
+          stylesButton={{ bg: "#0D162A" }}
+          handleStep={handleBuy}
+          disabled={isLoading}
+        />
       </div>
     </section>
   );

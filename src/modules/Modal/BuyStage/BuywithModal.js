@@ -62,7 +62,7 @@ export default function BuywithModal({
               name: elements[2],
               ticker: elements[3],
               image: elements[1],
-              balance: binanceUSDBalance,
+              balance: binanceBalance,
             })
           }
         />
