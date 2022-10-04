@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./CommonStyle.module.css";
 
 const TextItem = ({ title, secondaryText, value, percentage, hr, symbol }) => {
-  console.log(secondaryText);
   return (
     <>
       <div class={styles.TextLine}>

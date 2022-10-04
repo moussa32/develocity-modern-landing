@@ -28,6 +28,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [deveBalance, setDeveBalance] = useState({ amount: 0, value: 0 });
   const [tokensToClaim, setTokensToClaim] = useState({ amount: 0, value: 0 });
   const [referralsToClaim, setReferralsToClaim] = useState(0);
+  const [provider, setProvider] = useState(null);
 
   const handleStep = useCallback((step) => {
     setCurrentStep(step);
@@ -55,12 +56,17 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
     });
   };
 
-  console.log(window.ethereum);
-
   const handleRenderComponentStep = () => {
     switch (currentStep) {
       case "starter":
-        return <SelectNetwork handleStep={handleStep} handleWalletAddress={setwalletAddress} handleOpen={handleOpen} />;
+        return (
+          <SelectNetwork
+            handleStep={handleStep}
+            handleWalletAddress={setwalletAddress}
+            handleOpen={handleOpen}
+            handleProvider={setProvider}
+          />
+        );
       case "walletInfo":
         return (
           <WalletInfoModal
@@ -73,6 +79,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             handleDeveBalance={setDeveBalance}
             handleTokensClaim={setTokensToClaim}
             handleReferralsToClaim={setReferralsToClaim}
+            provider={provider}
           />
         );
       case "options":
@@ -87,6 +94,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             handleBinanceUSD={setSecondCoin}
             binanceUSDBalance={secondCoin}
             handleSelectCurrency={setSelectedCurreny}
+            provider={provider}
           />
         );
       case "buyamount":
@@ -96,6 +104,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             walletAddress={walletAddress}
             disconnect={handleDisconnectWeb3Modal}
             currentCurrency={selectedCurrency}
+            provider={provider}
           />
         );
       case "claim":

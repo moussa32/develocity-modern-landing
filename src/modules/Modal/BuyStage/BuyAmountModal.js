@@ -6,13 +6,12 @@ import contractAbi from "../../../assets/contractABI.json";
 
 let walletInfoContractAddress = "0xc1ec20ef71c47004616a7c82ce0dd6a60fbe897c";
 
-const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency }) => {
+const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency, provider }) => {
   const [coinBalance, setCoinBalance] = useState(0);
   const [convertedDeve, setConvertedDeve] = useState(0);
 
   const memoizedCoinBalanceConverted = useMemo(() => (coinBalance * Math.pow(10, 18)).toString(), [coinBalance]);
 
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
   const walletContract = new ethers.Contract("0xc1ec20ef71c47004616a7c82ce0dd6a60fbe897c", contractAbi, provider);
 
   useEffect(() => {

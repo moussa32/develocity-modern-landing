@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
-import binanceUSD from '../../../assets/images/bscCoin.svg';
-import binanceCoin from '../../../assets/images/BinanceUSD.png';
+import binanceUSD from "../../../assets/images/bscCoin.svg";
+import binanceCoin from "../../../assets/images/BinanceUSD.png";
 import TextFloatRight from "../CommonStage/TextFloatRight";
 import ButtonItem from "..//CommonStage/ButtonItem";
 import { ethers } from "ethers";
@@ -14,12 +14,12 @@ export default function BuywithModal({
   binanceUSDBalance,
   handleBinanceUSD,
   handleSelectCurrency,
+  provider,
 }) {
   const [selectedNetwork, setSelectedNetwork] = useState("");
 
   useEffect(() => {
     const getBalance = async () => {
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
       const balanceInWei = await provider.getBalance(walletAddress);
       const convertedBalanc = Number(ethers.utils.formatEther(balanceInWei)).toFixed(3);
       handleBinanceCoin(convertedBalanc);
