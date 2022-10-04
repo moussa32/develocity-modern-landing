@@ -41,7 +41,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
       .buyTokens(ref, { value: memoizedCoinBalanceConverted, gasLimit: 100000 })
       .then((res) => {
         console.log(res);
-        // handleStep("final");
+        handleStep("final");
       })
       .catch((error) => {
         console.log(error);
