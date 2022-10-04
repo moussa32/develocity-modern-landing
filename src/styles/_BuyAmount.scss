@@ -58,10 +58,17 @@
   font-size: 16px;
   border: 1px solid #23282c;
 }
+.m-btns:disabled {
+  opacity: 0.5;
+  border: 1px solid #a5a5a5;
+}
 .buy {
   color: white;
   background-color: #23282c;
   margin-left: 8px;
+}
+.buy:disabled {
+  background-color: #a5a5a5;
 }
 .approve {
   color: #23282c;

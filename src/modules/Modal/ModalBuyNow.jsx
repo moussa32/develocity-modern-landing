@@ -10,7 +10,7 @@ import SelectOption from "./GlobalStage/SelectOption";
 import BuyAmountModal from "./BuyStage/BuyAmountModal";
 import ReferralsModal from "./Referrals/ReferralsModal";
 import { web3Modal } from "../../shared/util/handleWeb3Modal";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],

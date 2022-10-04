@@ -1,26 +1,75 @@
 import { useEffect, useMemo, useState } from "react";
 import TextItem from "../CommonStage/TextItem";
 import toast from "react-hot-toast";
-import { ethers } from "ethers";
 import contractAbi from "../../../assets/contractABI.json";
+import { ethers } from "ethers";
 import { testNetContract } from "../../../shared/constants/contractAddress";
-import NextButton from "../CommonStage/NextButton";
+import { getBUSDContract } from "../../../shared/util/handleContracts";
+import { ReactComponent as SuccessIcon } from "../../../assets/images/SuccessIcon.svg";
 
 const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency, provider, handleFinalAmount }) => {
   const [coinBalance, setCoinBalance] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
   const [convertedDeve, setConvertedDeve] = useState(0);
+  const [isBuyButtonLoading, setIsBuyButtonLoading] = useState(currentCurrency.ticker === "BUSD" ? true : false);
+  const [buyButtonText, setBuyButtonText] = useState("Buy →");
+  const [isApprovedButtonLoading, setIsApprovedButtonDisabled] = useState(false);
+  const [isApproved, setIsApproved] = useState(false);
 
-  console.log(currentCurrency);
-  const memoizedCoinBalanceConverted = useMemo(() => (coinBalance * Math.pow(10, 18)).toString(), [coinBalance]);
+  const memoizedCoinBalanceConverted = useMemo(() => ethers.utils.parseEther(coinBalance.toString()), [coinBalance]);
 
   const walletContract = new ethers.Contract(testNetContract, contractAbi, provider);
+  const signerContract = new ethers.Contract(testNetContract, contractAbi, provider.getSigner());
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
-      if (coinBalance > 0) {
-        const calculateDeveCoins = await walletContract.getwethPrice(memoizedCoinBalanceConverted);
+      if (currentCurrency.ticker === "BUSD") {
+        const calculateDeveCoins = await walletContract.getbusdPrice(memoizedCoinBalanceConverted);
+        if (!isApproved) {
+          await walletContract
+            .getBusdAll(calculateDeveCoins, walletAddress)
+            .then((res) => {
+              setIsApproved(res);
+              if (res) {
+                toast(
+                  <div>
+                    <span className="text-success" style={{ color: "#00ac5d", marginRight: "0.5rem" }}>
+                      Approved!
+                    </span>
+                    You can swap your coins.
+                  </div>,
+                  {
+                    duration: 4000,
+                    position: "top-center",
+                    // Styling
+                    style: {
+                      fontSize: "16px",
+                      background: "#DCFFEF",
+                    },
+                    // Custom Icon
+                    icon: <SuccessIcon />,
+
+                    // Aria
+                    ariaProps: {
+                      role: "status",
+                      "aria-live": "polite",
+                    },
+                  }
+                );
+                setIsBuyButtonLoading(false);
+                setIsApprovedButtonDisabled(true);
+              }
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        }
+
         setConvertedDeve(calculateDeveCoins.toLocaleString("en-US"));
+      } else {
+        if (coinBalance > 0) {
+          const calculateDeveCoins = await walletContract.getwethPrice(memoizedCoinBalanceConverted);
+          setConvertedDeve(calculateDeveCoins.toLocaleString("en-US"));
+        }
       }
     }, 500);
 
@@ -30,27 +79,65 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
   }, [coinBalance]);
 
   const handleBuy = async () => {
-    const signer = provider.getSigner();
-    const contract = new ethers.Contract(testNetContract, contractAbi, signer);
     const urlParams = new URLSearchParams(window.location.search);
     const ref = urlParams.get("ref");
 
-    const gasPrice = await contract.estimateGas.buyTokens(ref, { value: memoizedCoinBalanceConverted });
-    setIsLoading(true);
+    const gasPrice = await signerContract.estimateGas.buyTokens(ref, { value: memoizedCoinBalanceConverted });
+    setIsBuyButtonLoading(true);
+    setBuyButtonText("Loading");
 
-    const buyRequest = await contract
+    await signerContract
       .buyTokens(ref, { value: memoizedCoinBalanceConverted, gasLimit: gasPrice })
       .then((res) => {
         console.log(res);
         res.wait().then((receipt) => {
-          setIsLoading(false);
+          setIsBuyButtonLoading(false);
+          setBuyButtonText("Buy →");
           handleFinalAmount(convertedDeve);
           handleStep("final");
         });
       })
       .catch((error) => {
         console.log(error);
-        setIsLoading(false);
+        setBuyButtonText("Buy →");
+        setIsBuyButtonLoading(false);
+      });
+  };
+
+  const handleApprove = async () => {
+    const BUSDContract = getBUSDContract(provider.getSigner());
+    await BUSDContract.approve(testNetContract, ethers.utils.parseEther("1000000"))
+      .then((res) => {
+        console.log(res);
+        setIsApprovedButtonDisabled(false);
+        setIsBuyButtonLoading(true);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const handleBuyBUSD = async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const ref = urlParams.get("ref");
+
+    const gasPrice = await signerContract.estimateGas.buyTokensBusd(memoizedCoinBalanceConverted, ref);
+    setIsBuyButtonLoading(true);
+    setBuyButtonText("Loading");
+
+    await signerContract
+      .buyTokensBusd(memoizedCoinBalanceConverted, ref, { gasLimit: gasPrice })
+      .then((res) => {
+        res.wait().then((receipt) => {
+          setIsBuyButtonLoading(false);
+          setBuyButtonText("Buy →");
+          handleFinalAmount(convertedDeve);
+
+          // handleStep("final");
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        setBuyButtonText("Buy →");
+        setIsBuyButtonLoading(false);
       });
   };
 
@@ -113,8 +200,14 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
             value={coinBalance}
             type="number"
             onChange={(e) => {
-              if (e.target.value < 1000) {
-                setCoinBalance(e.target.value);
+              if (currentCurrency.ticker === "BUSD") {
+                if (e.target.value <= 100000) {
+                  setCoinBalance(e.target.value);
+                }
+              } else {
+                if (e.target.value < 1000) {
+                  setCoinBalance(e.target.value);
+                }
               }
             }}
             placeholder="0"
@@ -203,12 +296,18 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
       </div>
 
       <div className="d-flex justify-content-between w-100">
-        <NextButton
-          text={isLoading ? "Loading" : "Buy →"}
-          stylesButton={{ bg: "#0D162A" }}
-          handleStep={handleBuy}
-          disabled={isLoading}
-        />
+        {currentCurrency.ticker === "BUSD" && (
+          <button className="m-btns approve" disabled={isApprovedButtonLoading} onClick={handleApprove}>
+            Approve
+          </button>
+        )}
+        <button
+          className="m-btns buy"
+          disabled={isBuyButtonLoading}
+          onClick={() => (currentCurrency.ticker === "BUSD" ? handleBuyBUSD() : handleBuy())}
+        >
+          {buyButtonText}
+        </button>
       </div>
     </section>
   );

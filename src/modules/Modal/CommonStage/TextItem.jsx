@@ -8,7 +8,7 @@ const TextItem = ({ title, secondaryText, value, percentage, hr, symbol }) => {
         <h6>{title}:</h6>
         <p>
           {value} {secondaryText ? secondaryText : "DEVE"}
-          {percentage && (
+          {!percentage && (
             <span className="ms-1">
               ({symbol ? symbol : "~$"} {percentage})
             </span>

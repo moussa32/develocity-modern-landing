@@ -5,6 +5,7 @@ import binanceCoin from "../../../assets/images/BinanceUSD.png";
 import TextFloatRight from "../CommonStage/TextFloatRight";
 import ButtonItem from "..//CommonStage/ButtonItem";
 import { ethers } from "ethers";
+import { getBUSDContract } from "../../../shared/util/handleContracts";
 
 export default function BuywithModal({
   handleStep,
@@ -25,11 +26,8 @@ export default function BuywithModal({
       console.log(convertedBalanc);
       handleBinanceCoin(convertedBalanc);
 
-      const busdAbiContract = new ethers.Contract(
-        "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
-        ["function balanceOf(address) view returns (uint)"],
-        provider
-      );
+      const busdAbiContract = getBUSDContract(provider);
+      console.log(busdAbiContract);
       const contractBalance = await busdAbiContract.balanceOf(walletAddress);
       const convertedContractBalance = parseFloat(ethers.utils.formatUnits(contractBalance, 18)).toLocaleString(
         "en-US"
