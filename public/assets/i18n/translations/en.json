@@ -142,7 +142,7 @@
         "readMore": "Read More >"
     },
     "roadmapSection": {
-        "mainText": "Roadmap to Building",
+        "mainText": "Roadmap",
         "mainTextSubstring": "Most Secure Eco-System",
         "cards": {
             "startup": {
@@ -150,8 +150,8 @@
                 "subText": [
                     "Website Launching",
                     "Project #1 Introduction",
-                    "Company Name Registration",
-                    "License & Legale Opinion"
+                    "Company Registration & Licence",
+                    "Legale Opinion"
                 ]
             },
             "launch": {

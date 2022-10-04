@@ -29,7 +29,7 @@ export default function ClaimModal({handleStep}) {
         />
           <div className={styles.nextButtonContainer}>
                     <NextButton
-                        text="Claim"
+                        text="Claim &#8594;"
                         stylesButton={{ bg: "#9C3FE5" }}
                         disabled={true}
                         handleStep={() => handleStep("final")} />
