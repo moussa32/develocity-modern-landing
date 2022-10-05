@@ -75,7 +75,8 @@
                 "estimatedBalance": "الرصيد المتوقع:",
                 "btns": {
                     "buy": "شراء →",
-                    "approve": "موافقة"
+                    "approve": "موافقة",
+                    "Loading": "جار التحميل"
                 }
             },
             "claimModal": {

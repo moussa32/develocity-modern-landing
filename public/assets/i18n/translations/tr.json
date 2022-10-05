@@ -75,7 +75,8 @@
                 "estimatedBalance": "Tahmini bakiye:",
                 "btns": {
                     "buy": "Satın al →",
-                    "approve": "Onaylamak"
+                    "approve": "Onaylamak",
+                    "Loading": "Yükleniyor"
                 }
             },
             "claimModal": {
