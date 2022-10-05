@@ -2,46 +2,8 @@ import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
 import NextButton from "../CommonStage/NextButton";
 import TextItem from "../CommonStage/TextItem";
 import styles from "../CommonStage/CommonStyle.module.css";
-import { useEffect } from "react";
-import { ethers } from "ethers";
-import contractAbi from "../../../assets/contractABI.json";
-import { testNetContract } from "../../../shared/constants/contractAddress";
-import { deveCost } from "../../../shared/constants/deveCost";
 
-const WalletInfoModal = ({
-  handleStep,
-  walletAddress,
-  disconnect,
-  handleDeveBalance,
-  handleTokensClaim,
-  handleReferralsToClaim,
-  deveBalance,
-  referralsToClaim,
-  provider,
-}) => {
-  useEffect(() => {
-    const getBalance = async () => {
-      const walletContract = new ethers.Contract(testNetContract, contractAbi, provider);
-
-      //Fetch deve balance
-      const DEVEBalance = (await walletContract._contributions(walletAddress)).toString();
-
-      const DEVEBalanceValue = (DEVEBalance * deveCost).toFixed(2);
-      handleDeveBalance({ amount: DEVEBalance, value: DEVEBalanceValue });
-
-      //Fetch Tokens to claim
-      const tokensToClaim = (await walletContract.getRefPer(walletAddress)).toString();
-      handleTokensClaim({ amount: tokensToClaim, value: tokensToClaim });
-
-      //Fetch Referrals to claim
-      const referralsToClaim = (await walletContract._RefAmount(walletAddress)).toString();
-
-      handleReferralsToClaim(referralsToClaim);
-      // Methods =>  _contributions(address) - getRefPer(address) _RefAmount [0.3]
-    };
-    getBalance();
-  }, []);
-
+const WalletInfoModal = ({ handleStep, walletAddress, disconnect, deveBalance, referralsToClaim }) => {
   return (
     <>
       <div>

@@ -10,7 +10,7 @@ import { ReactComponent as SuccessIcon } from "../../../assets/images/SuccessIco
 const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency, provider, handleFinalAmount }) => {
   const [coinBalance, setCoinBalance] = useState(0);
   const [convertedDeve, setConvertedDeve] = useState(0);
-  const [isBuyButtonLoading, setIsBuyButtonLoading] = useState(currentCurrency.ticker === "BUSD" ? true : false);
+  const [isBuyButtonLoading, setIsBuyButtonLoading] = useState(true);
   const [buyButtonText, setBuyButtonText] = useState("Buy →");
   const [isApprovedButtonLoading, setIsApprovedButtonDisabled] = useState(false);
   const [isApproved, setIsApproved] = useState(false);
@@ -66,9 +66,14 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
 
         setConvertedDeve(calculateDeveCoins.toLocaleString("en-US"));
       } else {
+        console.log(typeof coinBalance, coinBalance, Number(coinBalance) > 0);
         if (coinBalance > 0) {
+          setIsBuyButtonLoading(false);
           const calculateDeveCoins = await walletContract.getwethPrice(memoizedCoinBalanceConverted);
           setConvertedDeve(calculateDeveCoins.toLocaleString("en-US"));
+        } else {
+          setIsBuyButtonLoading(true);
+          setConvertedDeve(0);
         }
       }
     }, 500);
@@ -76,17 +81,21 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
     return () => {
       clearTimeout(delayDebounceFn);
     };
-  }, [coinBalance]);
+  }, [coinBalance, walletAddress]);
 
   const handleBuy = async () => {
+    setIsBuyButtonLoading(true);
+    setBuyButtonText("Loading");
     const urlParams = new URLSearchParams(window.location.search);
     const ref = urlParams.get("ref");
 
-    const gasPrice = await signerContract.estimateGas.buyTokens(ref, { value: memoizedCoinBalanceConverted });
-    setIsBuyButtonLoading(true);
-    setBuyButtonText("Loading");
+    const gasPrice = await signerContract.estimateGas
+      .buyTokens(ref, { value: memoizedCoinBalanceConverted })
+      .catch((error) => {
+        console.log(error);
+      });
 
-    await signerContract
+    signerContract
       .buyTokens(ref, { value: memoizedCoinBalanceConverted, gasLimit: gasPrice })
       .then((res) => {
         console.log(res);
@@ -98,19 +107,63 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
         });
       })
       .catch((error) => {
-        console.log(error);
-        setBuyButtonText("Buy →");
-        setIsBuyButtonLoading(false);
+        const { code: errorCode } = error.data;
+        if (errorCode === -32000) {
+          toast("You don't have enough native tokens or ensure the network has been added correctly", {
+            duration: 6000,
+            position: "top-center",
+            // Styling
+            style: {
+              color: "#fff",
+              fontSize: "16px",
+              background: "#F03D3D",
+            },
+
+            // Aria
+            ariaProps: {
+              role: "status",
+              "aria-live": "polite",
+            },
+          });
+        }
       });
+    setBuyButtonText("Buy →");
+    setIsBuyButtonLoading(false);
   };
 
   const handleApprove = async () => {
+    setIsApprovedButtonDisabled(true);
     const BUSDContract = getBUSDContract(provider.getSigner());
     await BUSDContract.approve(testNetContract, ethers.utils.parseEther("1000000"))
       .then((res) => {
         console.log(res);
         setIsApprovedButtonDisabled(false);
-        setIsBuyButtonLoading(true);
+        setIsBuyButtonLoading(false);
+        toast(
+          <div>
+            <span className="text-success" style={{ color: "#00ac5d", marginRight: "0.5rem" }}>
+              Approved!
+            </span>
+            You can swap your coins.
+          </div>,
+          {
+            duration: 4000,
+            position: "top-center",
+            // Styling
+            style: {
+              fontSize: "16px",
+              background: "#DCFFEF",
+            },
+            // Custom Icon
+            icon: <SuccessIcon />,
+
+            // Aria
+            ariaProps: {
+              role: "status",
+              "aria-live": "polite",
+            },
+          }
+        );
       })
       .catch((error) => console.log(error));
   };
@@ -119,7 +172,29 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
     const urlParams = new URLSearchParams(window.location.search);
     const ref = urlParams.get("ref");
 
-    const gasPrice = await signerContract.estimateGas.buyTokensBusd(memoizedCoinBalanceConverted, ref);
+    const gasPrice = await signerContract.estimateGas
+      .buyTokensBusd(memoizedCoinBalanceConverted, ref)
+      .catch((error) => {
+        const { code: errorCode } = error.data;
+        if (errorCode === -32603) {
+          toast(`You don't have enough balance to buy ${convertedDeve}`, {
+            duration: 6000,
+            position: "top-center",
+            // Styling
+            style: {
+              color: "#fff",
+              fontSize: "16px",
+              background: "#F03D3D",
+            },
+
+            // Aria
+            ariaProps: {
+              role: "status",
+              "aria-live": "polite",
+            },
+          });
+        }
+      });
     setIsBuyButtonLoading(true);
     setBuyButtonText("Loading");
 
@@ -130,8 +205,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
           setIsBuyButtonLoading(false);
           setBuyButtonText("Buy →");
           handleFinalAmount(convertedDeve);
-
-          // handleStep("final");
+          handleStep("final");
         });
       })
       .catch((error) => {
@@ -202,11 +276,11 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
             onChange={(e) => {
               if (currentCurrency.ticker === "BUSD") {
                 if (e.target.value <= 100000) {
-                  setCoinBalance(e.target.value);
+                  setCoinBalance(Number(e.target.value));
                 }
               } else {
                 if (e.target.value < 1000) {
-                  setCoinBalance(e.target.value);
+                  setCoinBalance(Number(e.target.value));
                 }
               }
             }}

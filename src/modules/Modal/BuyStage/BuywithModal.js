@@ -35,7 +35,7 @@ export default function BuywithModal({
       handleBinanceUSD(convertedContractBalance);
     };
     getBalance();
-  }, []);
+  }, [walletAddress]);
 
   const handleSelectNetworkName = useCallback(
     (name) => {

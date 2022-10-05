@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import FinalModal from "./CommonStage/FinalModal";
 import WalletInfoModal from "./GlobalStage/WalletInfoModal";
@@ -11,6 +11,7 @@ import BuyAmountModal from "./BuyStage/BuyAmountModal";
 import ReferralsModal from "./Referrals/ReferralsModal";
 import { web3Modal } from "../../shared/util/handleWeb3Modal";
 import toast from "react-hot-toast";
+import { getWalletBalance } from "../../shared/util/handleContracts";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
@@ -57,6 +58,37 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
     });
   };
 
+  useEffect(() => {
+    //When wallet address is chanched, it will fetch the new address's balance
+    if (walletAddress) {
+      const resetBalance = async () => {
+        const {
+          deveBalance: newDeveBalance,
+          referralsToClaim: newReferralsToClaim,
+          tokensToClaim: newTokensToClaim,
+        } = await getWalletBalance(provider.getSigner(), walletAddress);
+        if (newDeveBalance && newReferralsToClaim && newTokensToClaim) {
+          setDeveBalance(newDeveBalance);
+          setTokensToClaim(newTokensToClaim);
+          setReferralsToClaim(newReferralsToClaim);
+        }
+      };
+      resetBalance();
+    }
+  }, [walletAddress]);
+
+  useEffect(() => {
+    //When User is changed his wallet address it will get the new wallet address and refresh component
+    const listenToAccountChanges = async () => {
+      const connection = await web3Modal.connect();
+
+      connection.on("accountsChanged", (accounts) => {
+        setwalletAddress(accounts[0]);
+      });
+    };
+    listenToAccountChanges();
+  }, []);
+
   const handleRenderComponentStep = () => {
     switch (currentStep) {
       case "starter":
@@ -77,10 +109,6 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             handleStep={handleStep}
             walletAddress={walletAddress}
             disconnect={handleDisconnectWeb3Modal}
-            handleDeveBalance={setDeveBalance}
-            handleTokensClaim={setTokensToClaim}
-            handleReferralsToClaim={setReferralsToClaim}
-            provider={provider}
           />
         );
       case "options":
