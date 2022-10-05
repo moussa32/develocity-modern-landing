@@ -17,7 +17,7 @@
             "turkish": "التركية"
         },
         "whitepaper": "الصحيفة البيضاء",
-        "followUs": ":Follow us on"
+        "followUs": ": تابعنا على"
     },
     "homeSection": {
         "mainText": "بدأ الاكتتاب",
@@ -28,80 +28,80 @@
         },
         "modal": {
             "starterModal": {
-                "mainText": "Connect To",
-                "subText": "Select Blockchain To Connect To It"
+                "mainText": "اربط",
+                "subText": "حدد شبكة البلوكتشين التي تريد الاتصال بها"
             },
             "walletInfoModal": {
-                "mainText": "Your Wallet",
-                "subText": "DEVE Balance In Your Wallet",
-                "inputLable": "Wallet",
-                "deveBalance": "DEVE Balance:",
-                "tokensToClaim": "Tokens To Claim:",
-                "referralsToClaim": "Referrals To Claim:",
-                "nextBtn": "Next →"
+                "mainText": "محفظتك",
+                "subText": "رصيد ديڤي في محفظتك",
+                "inputLable": "المحفظة",
+                "deveBalance": "رصيد الديڤي:",
+                "tokensToClaim": "مطالبة العملات:",
+                "referralsToClaim": " مطالبة الإحالات:",
+                "nextBtn": "التالي →"
             },
             "optionsModal": {
-                "mainText": "Select You Option",
-                "subText": "What You Wanna Do",
+                "mainText": "حدد اختيارك",
+                "subText": "ماذا تريد أن تفعل",
                 "btns": {
-                    "buyDEVE": "Buy DEVE",
-                    "claimYourTokens": "Claim Your Tokens",
-                    "referrals": "Referrals"
+                    "buyDEVE": "شراء ديڤي",
+                    "claimYourTokens": "مطالبة عملاتك",
+                    "referrals": "الإحالات"
                 }
             },
             "buyWithModal": {
-                "mainText": "Buying With",
-                "subText": "Select The Cryptocurrency You Want To Use",
+                "mainText": "شراء باستخدام",
+                "subText": "حدد العملة التي تريد استخدامها",
                 "btns": {
                     "binanceCoin": {
-                        "balance": "Balance: 567.29",
-                        "btnMainText": "Binance Coin",
+                        "balance": "الرصيد: ٥٦٧.٢٩",
+                        "btnMainText": "عملة بينانس",
                         "btnSubText": "BNB"
                     },
                     "binanceUSD": {
-                        "balance": "Balance: 2,914.0594",
-                        "btnMainText": "Binance USD",
+                        "balance": "الرصيد: ٢.٩١٤.٠٥٩٤",
+                        "btnMainText": "بينانس USD",
                         "btnSubText": "BUSD"
                     }
                 }
             },
             "buyAmountModal": {
-                "balance": "Balance: 2,914.0594",
+                "balance": "الرصيد: ٢.٩١٤.٠٥٩٤",
                 "lables":{
-                    "from": "From",
-                    "to": "To"
+                    "from": "من",
+                    "to": "إلى"
                 },
-                "price": "Price",
-                "estimatedBalance": "Estimated Balance:",
+                "price": "السعر",
+                "estimatedBalance": "الرصيد المتوقع:",
                 "btns": {
-                    "buy": "Buy →",
-                    "approve": "Approve"
+                    "buy": "شراء →",
+                    "approve": "موافقة"
                 }
             },
             "claimModal": {
-                "mainText": "Claim Your Tokens",
-                "subText": "Claim Your Referrals Tokens",
-                "DEVEBalance": "DEVE Balance:",
-                "tokensToClaim": "Tokens To Claim:",
-                "claimBtn": "Claim →"
+                "mainText": "مطالبة عملاتك",
+                "subText": "مطالبة عملات الإحالات الخاصة بك",
+                "DEVEBalance": "رصيد الديڤي:",
+                "tokensToClaim": "مطالبة العملات:",
+                "claimBtn": "مطالبة →"
             },
             "referralModal": {
-                "mainText": "Referrals",
-                "subText": "Use Your Code Or Claim Referrals",
-                "referralLinkLabel": "Referral Link",
-                "yourReferrals": "Your Referrals:",
-                "referralsToClaim": "Referrals To Claim:",
-                "claimBtn": "Claim →"
+                "mainText": "الإحالات",
+                "subText": "استخدم الرمز الخاص بك او مطالبة الإحالات",
+                "referralLinkLabel": "رابط الإحالة",
+                "yourReferrals": "إحالاتك:",
+                "referralsToClaim": "مطالبة الإحالات:",
+                "claimBtn": "مطالبة →"
             },
             "finalModal": {
-                "mainText": "Done!",
-                "subText": "Your Transaction Is Complete.",
-                "referralText": "Get 50 DEVE Per Invitation With",
-                "referralBtn": "Referral Code.",
-                "DEVEBalance": "DEVE Balance:",
-                "contribution": "Contribution:",
-                "fromReferrals": "From Referrals:",
-                "backToHomepageBtn": "Back To Homepage →"
+                "mainText": "تمت العملية!",
+                "subText": "اكتملت عمليتك",
+                "referralText": "احصل على ٥٠ ديڤي مقابل كل دعوة",
+                "referralBtn": "رمز الإحالة",
+                "DEVEBalance": "رصيد الديڤي:",
+                "contribution": "التوزيع:",
+                "fromReferrals": "من الإحالات:",
+                "backToHomepageBtn": "العودة إلى الصفحة الرئيسية →"
             }
         },
         "exampleSection":{
@@ -112,18 +112,18 @@
     "aboutSection": {
         "header": "ثقة، أمان، مصداقية",
         "mainText": "ما هي ديڤيلوستي ؟",
-        "subText": "Develocity aspires to present its final project in four primary stages. Each stage is presented separately and merged in the post-final stage to create a decentralised platform, which would be distinctively in terms of technology and development based on Web 3.0. DeVelocity strives to create a safe and trustworthy crypto environment where investors and developers can interact securely, considering the transparent credibility and technical measures and standards.",
-        "subTextSecondParagraph": "DeVelocity’s goal is to become a thought leadership organisation, enhancing the community’s awareness and knowledge of the cryptocurrency market by building a virtual academy."
+        "subText": "تطمح شركة ديڤيلوستي لتقديم مشروعها النهائي على أربع مراحل أولية، يتم تقديم كل مرحلة على انفراد و دمجها في مرحلة ما بعد النهائية لإنشاء منصة لامركزية، والتي سوف تكون مميزة من حيث التكنولوجيا و التطوير القائم على الويب ٣.٠ ، تسعى ديڤيلوستي لإنشاء بيئة تشفير أمنة و جديرة بالثقة حيث يمكن للمستثمرين و المطورين التفاعل بشكل آمن، النظر في الشفافية والمصداقية والتدابير و المعايير الفنية.",
+        "subTextSecondParagraph": "هدف ديڤيلوستي هو أن تصبح منظمة قيادة فكرية ، و تعزز وعي المجتمع ومعرفته بسوق العملات المشفرة من خلال بناء أكاديمية افتراضية."
     },
     "scanToEarnSection": {
         "header": "أداة متعددة الوظائف " ,
         "mainText": "إعادة ابتكار الطريقة التي تستثمر بها و تجني الأموال",
         "subText": "ابحث و اكسب",
-        "normalText": "DeFi users are always trying to find the ideal investment, and they are willing to take the risk; even if they try as much as they can to reduce the risk, they won’t be able to determine the size of the risk.",
-        "normalTextSecondParagraph": "The multi-functional tool comes to help the users with their challenges by scanning the contract or searching for the token to get a quick and deep detailed report about the token.",
+        "normalText": "يحاول مستخدمو التمويل اللامركزي دائما العثور على الاستثمار المثالي وهم على استعداد لتحمل المخاطر حتى لو حاولو بقدر المستطاع تقليل المخاطر فلن يتمكنوا من تحديد حجم المخاطرة.",
+        "normalTextSecondParagraph": "تأتي الأداة متعددة الوظائف لمساعدة المستخدمين في مواجهة مخاطرهم عن طريق فحص العقد أو البحث عن العملة للحصول على تقرير مفصل سريع و عميق حول العملة المدخلة.",
         "btn": "ابدأ باستخدام أداة البحث →",
         "svg": {
-            "scan": "SCAN",
+            "scan": "بحث",
             "tokenName": "اسم العملة",
             "topTokens": "أعلى العملات",
             "withdrawTheMoney": "سحب الأموال",
@@ -198,19 +198,19 @@
         "mainText": "فريق العمل",
         "members": [
             {
-                "name": "Marwan Bin Mohammed Al Maktoum",
+                "name": "الشيخ مروان بن محمد بن راشد آل مكتوم",
                 "role": "المؤسس"
             },
             {
-                "name": "Mahdi Ajaj",
+                "name": "مهدي عجاج",
                 "role": "الرئيس التنفيذي"
             },
             {
-                "name": "Abdulaziz Bin Fahad",
+                "name": "عبدالعزيز بن فهد",
                 "role": "رئيس قسم التكنولوجيا"
             },
             {
-                "name": "Mamuka Kavtelishvili",
+                "name": "ماموكا",
                 "role": "رئيس قسم التسويق"
             }
         ]
@@ -218,11 +218,11 @@
     "contactSection": {
         "mainText": "ابق على تواصل",
         "headquarter": {
-            "mainText": "Headquarter",
-            "subText": "Dubai, United Arab Emirates"
+            "mainText": "المقر الرئيسي",
+            "subText": "دبي، الإمارات العربية المتحدة"
         },
         "email": {
-            "mainText": "Email",
+            "mainText": "البريد الالكتروني",
             "subText": "contact@develocity.finance"
         }
     },

@@ -17,7 +17,7 @@
             "turkish": "Türk"
         },
         "whitepaper": "Beyaz sayfa",
-        "followUs": ":Follow us on"
+        "followUs": ":Bizi Takip edin"
     },
     "homeSection": {
         "mainText": "Ön satış Başladı",
@@ -28,80 +28,80 @@
         },
         "modal": {
             "starterModal": {
-                "mainText": "Connect To",
-                "subText": "Select Blockchain To Connect To It"
+                "mainText": "Bağlanmak",
+                "subText": "Bağlanmak için Blockchain ağ Seçin"
             },
             "walletInfoModal": {
-                "mainText": "Your Wallet",
-                "subText": "DEVE Balance In Your Wallet",
-                "inputLable": "Wallet",
-                "deveBalance": "DEVE Balance:",
-                "tokensToClaim": "Tokens To Claim:",
-                "referralsToClaim": "Referrals To Claim:",
-                "nextBtn": "Next →"
+                "mainText": "Cüzdanınız",
+                "subText": "Cüzdanınızda DEVE Bakiyesi",
+                "inputLable": "Cüzdan",
+                "deveBalance": "Deve bakiyesi:",
+                "tokensToClaim": "Talep edilecek tokenler:",
+                "referralsToClaim": "Talep Edilecek Yönlendirmeler:",
+                "nextBtn": "Sonraki →"
             },
             "optionsModal": {
-                "mainText": "Select You Option",
-                "subText": "What You Wanna Do",
+                "mainText": "Seçeneği Seç",
+                "subText": "Ne yapmak istiyorsun",
                 "btns": {
-                    "buyDEVE": "Buy DEVE",
-                    "claimYourTokens": "Claim Your Tokens",
-                    "referrals": "Referrals"
+                    "buyDEVE": "Deve al",
+                    "claimYourTokens": "Tokenleri claim yap",
+                    "referrals": "Yönlendirmeler"
                 }
             },
             "buyWithModal": {
-                "mainText": "Buying With",
-                "subText": "Select The Cryptocurrency You Want To Use",
+                "mainText": "İle satın alma",
+                "subText": "Kullanmak İstediğiniz Kripto Para Birimi Seçin",
                 "btns": {
                     "binanceCoin": {
-                        "balance": "Balance: 567.29",
+                        "balance": "Bakiye: 567.29",
                         "btnMainText": "Binance Coin",
                         "btnSubText": "BNB"
                     },
                     "binanceUSD": {
-                        "balance": "Balance: 2,914.0594",
+                        "balance": "Bakiye:2,914.0594",
                         "btnMainText": "Binance USD",
                         "btnSubText": "BUSD"
                     }
                 }
             },
             "buyAmountModal": {
-                "balance": "Balance: 2,914.0594",
+                "balance": "Bakiye:2,914.0594",
                 "lables":{
-                    "from": "From",
-                    "to": "To"
+                    "from": "İtibaren",
+                    "to": "İle"
                 },
-                "price": "Price",
-                "estimatedBalance": "Estimated Balance:",
+                "price": "Fiyat",
+                "estimatedBalance": "Tahmini bakiye:",
                 "btns": {
-                    "buy": "Buy →",
-                    "approve": "Approve"
+                    "buy": "Satın al →",
+                    "approve": "Onaylamak"
                 }
             },
             "claimModal": {
-                "mainText": "Claim Your Tokens",
-                "subText": "Claim Your Referrals Tokens",
-                "DEVEBalance": "DEVE Balance:",
-                "tokensToClaim": "Tokens To Claim:",
+                "mainText": "Tokenleri claim yap",
+                "subText": "Yönlendirme jetonlarınızı claim yapın",
+                "DEVEBalance": "Deve bakiyesi:",
+                "tokensToClaim": "Claim  yapılacak tokenler:",
                 "claimBtn": "Claim →"
             },
             "referralModal": {
-                "mainText": "Referrals",
-                "subText": "Use Your Code Or Claim Referrals",
-                "referralLinkLabel": "Referral Link",
-                "yourReferrals": "Your Referrals:",
-                "referralsToClaim": "Referrals To Claim:",
+                "mainText": "Yönlendirmeler",
+                "subText": "Kodunuzu Kullanın veya Yönlendirme calim yapın",
+                "referralLinkLabel": "Referans linki",
+                "yourReferrals": "Referanslarınız:",
+                "referralsToClaim": "Claim yapılacak yönlendiremler:",
                 "claimBtn": "Claim →"
             },
             "finalModal": {
-                "mainText": "Done!",
-                "subText": "Your Transaction Is Complete.",
-                "referralText": "Get 50 DEVE Per Invitation With",
-                "referralBtn": "Referral Code.",
-                "DEVEBalance": "DEVE Balance:",
-                "contribution": "Contribution:",
-                "fromReferrals": "From Referrals:",
-                "backToHomepageBtn": "Back To Homepage →"
+                "mainText": "Tamamlamak!",
+                "subText": "İşleminiz Tamamlandı.",
+                "referralText": "Davetiye Başına 50 DEVE Alın",
+                "referralBtn": "Yönlendirme kodu.",
+                "DEVEBalance": "Deve bakiyesi:",
+                "contribution": "Katkı:",
+                "fromReferrals": "Referanslarınız:",
+                "backToHomepageBtn": "Ana sayfaya geri dön →"
             }
         },
         "exampleSection":{
@@ -112,18 +112,18 @@
     "aboutSection": {
         "header": "Güven, Emniyet, güvenilirlik",
         "mainText": "Develocity nedir?",
-        "subText": "Develocity aspires to present its final project in four primary stages. Each stage is presented separately and merged in the post-final stage to create a decentralised platform, which would be distinctively in terms of technology and development based on Web 3.0. DeVelocity strives to create a safe and trustworthy crypto environment where investors and developers can interact securely, considering the transparent credibility and technical measures and standards.",
-        "subTextSecondParagraph": "DeVelocity’s goal is to become a thought leadership organisation, enhancing the community’s awareness and knowledge of the cryptocurrency market by building a virtual academy."
+        "subText": "Develocity, nihai projesini dört ana aşamada sunmayı hedeflemektedir. Her aşama ayrı ayrı sunulur, Web 3.0'a dayalı teknoloji ve geliştirme açısından belirgin bir şekilde merkezi olmayan bir platform oluşturmak için son aşamada birleştirilir. Develocity, şeffaf güvenilirlik ,teknik önlemler ve standartlar göz önünde bulundurularak yatırımcıların ve geliştiricilerin güvenli bir şekilde etkileşime girebileceği güvenli ve güvenilir bir kripto ortamı yaratmaya çalışmaktadır.",
+        "subTextSecondParagraph": "Develocity'nin amacı, sanal bir akademi kurarak topluluğun kripto para piyasası hakkındaki farkındalığını ve bilgisini artıran bir düşünce liderliği organizasyonu olmaktır."
     },
     "scanToEarnSection": {
         "header": "Çok fonksiyonlu araç" ,
         "mainText": "Yatırım yapma ve para kazanma şeklinizi yeniden keşfetmek",
         "subText": "Tarayın ve kazanın",
-        "normalText": "DeFi users are always trying to find the ideal investment, and they are willing to take the risk; even if they try as much as they can to reduce the risk, they won’t be able to determine the size of the risk.",
-        "normalTextSecondParagraph": "The multi-functional tool comes to help the users with their challenges by scanning the contract or searching for the token to get a quick and deep detailed report about the token.",
+        "normalText": "DeFi kullanıcıları her zaman ideal yatırımı bulmaya çalışırlar ve riski almaya isteklidirler; riski azaltmak için ellerinden geldiğince çabalasalar bile, riskin boyutunu belirleyemezler.",
+        "normalTextSecondParagraph": "Çok işlevli araç, token hakkında hızlı ve derin ayrıntılı bir rapor almak için sözleşmeyi tarayarak veya Token  arayarak kullanıcıların zorluklarıyla başa çıkmalarına yardımcı olmak için gelir.",
         "btn": "Tarayıcı aracını kullanmaya başlayın →",
         "svg": {
-            "scan": "SCAN",
+            "scan": "Tara",
             "tokenName": "Token adı",
             "topTokens": "En iyi tokenler",
             "withdrawTheMoney": "Parayı çekme",
@@ -218,11 +218,11 @@
     "contactSection": {
         "mainText": "İletişim de kal",
         "headquarter": {
-            "mainText": "Headquarter",
-            "subText": "Dubai, United Arab Emirates"
+            "mainText": "Merkezi",
+            "subText": "Dubai, Birleşik Arap Emirlikleri"
         },
         "email": {
-            "mainText": "Email",
+            "mainText": "E-posta",
             "subText": "contact@develocity.finance"
         }
     },
