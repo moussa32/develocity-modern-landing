@@ -22,6 +22,8 @@ import { getWalletBalance } from "../../shared/util/handleContracts";
 
 const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [currentStep, setCurrentStep] = useState("starter");
+  const [selectedNetwork, setSelectedNetwork] = useState(null);
+  const [userNetwork, setUserNetwork] = useState(null);
   const [walletAddress, setwalletAddress] = useState("");
   const [firstCoin, setFirstCoin] = useState(0);
   const [secondCoin, setSecondCoin] = useState(0);
@@ -98,6 +100,10 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             handleWalletAddress={setwalletAddress}
             handleOpen={handleOpen}
             handleProvider={setProvider}
+            selectedNetwork={selectedNetwork}
+            userNetwork={userNetwork}
+            handleSelectedNetwork={setSelectedNetwork}
+            handleUserNetwork={setUserNetwork}
           />
         );
       case "walletInfo":
@@ -118,12 +124,13 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
           <BuywithModal
             handleStep={handleStep}
             walletAddress={walletAddress}
-            handleBinanceCoin={setFirstCoin}
-            binanceBalance={firstCoin}
-            handleBinanceUSD={setSecondCoin}
-            binanceUSDBalance={secondCoin}
+            handleFirstCoin={setFirstCoin}
+            firstCoin={firstCoin}
+            handleSecondCoin={setSecondCoin}
+            secondCoin={secondCoin}
             handleSelectCurrency={setSelectedCurreny}
             provider={provider}
+            selectedNetwork={selectedNetwork}
           />
         );
       case "buyamount":

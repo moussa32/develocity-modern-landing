@@ -6,25 +6,25 @@ import TextFloatRight from "../CommonStage/TextFloatRight";
 import ButtonItem from "..//CommonStage/ButtonItem";
 import { ethers } from "ethers";
 import { getBUSDContract } from "../../../shared/util/handleContracts";
+import { networkSupportedCoins } from "../../../shared/util/handleNetworkProvider";
 
 export default function BuywithModal({
   handleStep,
   walletAddress,
-  handleBinanceCoin,
-  binanceBalance,
-  binanceUSDBalance,
-  handleBinanceUSD,
+  handleFirstCoin,
+  firstCoin,
+  secondCoin,
+  handleSecondCoin,
   handleSelectCurrency,
   provider,
+  selectedNetwork,
 }) {
-  const [selectedNetwork, setSelectedNetwork] = useState("");
-
   useEffect(() => {
     const getBalance = async () => {
       const balanceInWei = await provider.getBalance(walletAddress);
       const convertedBalanc = Number(ethers.utils.formatEther(balanceInWei)).toFixed(3);
       console.log(convertedBalanc);
-      handleBinanceCoin(convertedBalanc);
+      handleFirstCoin(convertedBalanc);
 
       const busdAbiContract = getBUSDContract(provider);
       console.log(busdAbiContract);
@@ -32,54 +32,37 @@ export default function BuywithModal({
       const convertedContractBalance = parseFloat(ethers.utils.formatUnits(contractBalance, 18)).toLocaleString(
         "en-US"
       );
-      handleBinanceUSD(convertedContractBalance);
+      handleSecondCoin(convertedContractBalance);
     };
     getBalance();
   }, [walletAddress]);
 
-  const handleSelectNetworkName = useCallback(
-    (name) => {
-      handleStep("buyamount");
-      setSelectedNetwork(name);
-    },
-    [handleStep]
-  );
+  const handleSelectNetworkName = useCallback(() => {
+    handleStep("buyamount");
+  }, [handleStep]);
   return (
     <>
       <div>
         <ModalHeaderText header="Buying With" caption="Select The Cryptocurrency You Want To Use" />
-        <TextFloatRight balanceValue={binanceBalance} />
-        <ButtonItem
-          mainText="Binance Coin"
-          secondaryText="BNB"
-          image={binanceCoin}
-          selected={selectedNetwork}
-          handleSelect={handleSelectNetworkName}
-          getAllValues={(...elements) =>
-            handleSelectCurrency({
-              name: elements[2],
-              ticker: elements[3],
-              image: elements[1],
-              balance: binanceBalance,
-            })
-          }
-        />
-        <TextFloatRight balanceValue={binanceUSDBalance} />
-        <ButtonItem
-          mainText="Binance USD"
-          secondaryText="BUSD"
-          image={binanceUSD}
-          selected={selectedNetwork}
-          handleSelect={handleSelectNetworkName}
-          getAllValues={(...elements) =>
-            handleSelectCurrency({
-              name: elements[2],
-              ticker: elements[3],
-              image: elements[1],
-              balance: binanceUSDBalance,
-            })
-          }
-        />
+        {networkSupportedCoins(selectedNetwork).map(({ id, name, image, ticker }) => (
+          <div key={id}>
+            <TextFloatRight balanceValue={id === 1 ? firstCoin : secondCoin} />
+            <ButtonItem
+              mainText={name}
+              secondaryText={ticker}
+              image={image}
+              handleSelect={handleSelectNetworkName}
+              getAllValues={(...elements) =>
+                handleSelectCurrency({
+                  name: elements[2],
+                  ticker: elements[3],
+                  image: elements[1],
+                  balance: firstCoin,
+                })
+              }
+            />
+          </div>
+        ))}
       </div>
     </>
   );

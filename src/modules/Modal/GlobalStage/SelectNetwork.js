@@ -3,35 +3,64 @@ import EtherumIcon from "../../../assets/images/Ethereum-icon.png";
 import PolygonIcon from "../../../assets/images/polygon-icon.png";
 import BinanceIcon from "../../../assets/images/binanceCoin.png";
 import { ethers } from "ethers";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { web3Modal } from "../../../shared/util/handleWeb3Modal";
+import { convertEtherNetworkNameToName } from "../../../shared/util/handleNetworkProvider";
+import toast from "react-hot-toast";
 
-const SelectNetwork = ({ handleStep, handleOpen, handleWalletAddress, handleProvider }) => {
-  const [selectedNetwork, setSelectedNetwork] = useState("");
+const SelectNetwork = ({
+  handleStep,
+  handleOpen,
+  handleWalletAddress,
+  handleProvider,
+  selectedNetwork,
+  handleUserNetwork,
+  handleSelectedNetwork,
+}) => {
+  const handleSelectNetworkName = useCallback(async (name) => {
+    handleSelectedNetwork(name);
+    sessionStorage.setItem("network", name);
+    connectWeb3Wallet(name);
+    handleStep("walletInfo");
+  }, []);
 
-  const connectWeb3Wallet = async () => {
+  const connectWeb3Wallet = async (currentNetwork) => {
     try {
       handleOpen(false);
       const web3Provider = await web3Modal.connect();
       const library = new ethers.providers.Web3Provider(web3Provider);
       handleProvider(library);
       const web3Accounts = await library.listAccounts();
-      const network = await library.getNetwork();
-      console.log(network);
-      handleWalletAddress(web3Accounts[0]);
+      const userNetwork = await library.getNetwork();
+      handleUserNetwork(userNetwork.name);
+      if (convertEtherNetworkNameToName(userNetwork.name) === currentNetwork) {
+        handleWalletAddress(web3Accounts[0]);
+        handleStep("walletInfo");
+      } else {
+        toast("Please change your wallet network", {
+          duration: 6000,
+          position: "top-center",
+          // Styling
+          style: {
+            color: "#fff",
+            fontSize: "16px",
+            background: "#F03D3D",
+          },
+
+          // Aria
+          ariaProps: {
+            role: "status",
+            "aria-live": "polite",
+          },
+        });
+
+        handleStep("starter");
+      }
       handleOpen(true);
-      handleStep("walletInfo");
     } catch (error) {
       handleStep("starter");
     }
   };
-
-  const handleSelectNetworkName = useCallback(async (name) => {
-    setSelectedNetwork(name);
-    sessionStorage.setItem("network", name);
-    connectWeb3Wallet();
-    handleStep("walletInfo");
-  }, []);
 
   return (
     <div>
