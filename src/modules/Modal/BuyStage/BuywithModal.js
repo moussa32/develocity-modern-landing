@@ -1,14 +1,12 @@
 import { useEffect, useState, useCallback } from "react";
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
-import binanceUSD from "../../../assets/images/binance_USD.png";
-import binanceCoin from "../../../assets/images/BinanceUSD.png";
 import TextFloatRight from "../CommonStage/TextFloatRight";
 import ButtonItem from "..//CommonStage/ButtonItem";
 import { ethers } from "ethers";
 import { getBUSDContract } from "../../../shared/util/handleContracts";
 import { networkSupportedCoins } from "../../../shared/util/handleNetworkProvider";
-
 import { useTranslation } from "react-i18next";
+
 const BuywithModal = ({
   handleStep,
   walletAddress,
@@ -21,8 +19,6 @@ const BuywithModal = ({
   selectedNetwork,
   handleCurrent,
 }) => {
-  const [selectedNetwork, setSelectedNetwork] = useState("");
-
   const { t } = useTranslation();
 
   useEffect(() => {

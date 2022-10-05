@@ -1,6 +1,6 @@
 import EtherumImage from "../../assets/images/Ethereum-icon.png";
 import TetherImage from "../../assets/images/Tether-icon.png";
-import binanceUSD from "../../assets/images/bscCoin.svg";
+import binanceUSD from "../../assets/images/bscCoin.png";
 import binanceCoin from "../../assets/images/BinanceUSD.png";
 
 export const convertEtherNetworkNameToName = (networkTicker) => {
@@ -8,6 +8,8 @@ export const convertEtherNetworkNameToName = (networkTicker) => {
     case "homestead":
       return "mainnet";
     case "bnb":
+      return "binance";
+    case "bnbt":
       return "binance";
     case "matic":
       return "matic";
@@ -36,6 +38,11 @@ export const networkSupportedCoins = (network) => {
       return [
         { id: 1, name: "Binance Coin", ticker: "BNB", image: binanceCoin },
         { id: 2, name: "Binance USD", ticker: "BUSD", image: binanceUSD },
+      ];
+    case "matic":
+      return [
+        { id: 1, name: "Matic Coin", ticker: "MATIC", image: binanceCoin },
+        { id: 2, name: "Tether USD", ticker: "USDT", image: binanceUSD },
       ];
   }
 };
