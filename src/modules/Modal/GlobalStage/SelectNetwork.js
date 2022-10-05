@@ -5,7 +5,6 @@ import BinanceIcon from "../../../assets/images/binanceCoin.png";
 import { ethers } from "ethers";
 import { useCallback, useEffect, useState } from "react";
 import { web3Modal } from "../../../shared/util/handleWeb3Modal";
-import { useTranslation } from "react-i18next";
 import { convertEtherNetworkNameToName } from "../../../shared/util/handleNetworkProvider";
 import toast from "react-hot-toast";
 
@@ -14,13 +13,10 @@ const SelectNetwork = ({
   handleOpen,
   handleWalletAddress,
   handleProvider,
-  handleCurrent,
   selectedNetwork,
   handleUserNetwork,
   handleSelectedNetwork,
 }) => {
-  const { t } = useTranslation();
-
   const handleSelectNetworkName = useCallback(async (name) => {
     handleSelectedNetwork(name);
     sessionStorage.setItem("network", name);
@@ -66,18 +62,10 @@ const SelectNetwork = ({
     }
   };
 
-  const handleSelectNetworkName = useCallback(async (name) => {
-    setSelectedNetwork(name);
-    sessionStorage.setItem("network", name);
-    connectWeb3Wallet();
-    handleStep("walletInfo");
-    handleCurrent();
-  }, []);
-
   return (
     <div>
-      <h2 className="text-center">{t("homeSection.modal.starterModal.mainText")}</h2>
-      <p className="text-center text-small text-body-text">{t("homeSection.modal.starterModal.subText")}</p>
+      <h2 className="text-center">Connect to</h2>
+      <p className="text-center text-small text-body-text">Select Blockchain To Connect To It</p>
       <div className="d-flex flex-column gap-4 w-100">
         <ButtonItem
           mainText="Etherum"

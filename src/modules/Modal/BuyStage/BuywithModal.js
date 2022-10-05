@@ -8,7 +8,8 @@ import { ethers } from "ethers";
 import { getBUSDContract } from "../../../shared/util/handleContracts";
 import { networkSupportedCoins } from "../../../shared/util/handleNetworkProvider";
 
-export default function BuywithModal({
+import { useTranslation } from "react-i18next";
+const BuywithModal = ({
   handleStep,
   walletAddress,
   handleFirstCoin,
@@ -19,7 +20,7 @@ export default function BuywithModal({
   provider,
   selectedNetwork,
   handleCurrent,
-}) {
+}) => {
   const [selectedNetwork, setSelectedNetwork] = useState("");
 
   const { t } = useTranslation();
@@ -71,4 +72,6 @@ export default function BuywithModal({
       </div>
     </>
   );
-}
+};
+
+export default BuywithModal;
