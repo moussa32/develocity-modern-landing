@@ -6,7 +6,7 @@ import { ethers } from "ethers";
 import { useCallback, useState } from "react";
 import { web3Modal } from "../../../shared/util/handleWeb3Modal";
 
-const SelectNetwork = ({ handleStep, handleOpen, handleWalletAddress, handleProvider }) => {
+const SelectNetwork = ({ handleStep, handleOpen, handleWalletAddress, handleProvider, handleCurrent }) => {
   const [selectedNetwork, setSelectedNetwork] = useState("");
 
   const connectWeb3Wallet = async () => {
@@ -31,6 +31,7 @@ const SelectNetwork = ({ handleStep, handleOpen, handleWalletAddress, handleProv
     sessionStorage.setItem("network", name);
     connectWeb3Wallet();
     handleStep("walletInfo");
+    handleCurrent()
   }, []);
 
   return (

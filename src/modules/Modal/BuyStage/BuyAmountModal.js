@@ -7,7 +7,7 @@ import { testNetContract } from "../../../shared/constants/contractAddress";
 import { getBUSDContract } from "../../../shared/util/handleContracts";
 import { ReactComponent as SuccessIcon } from "../../../assets/images/SuccessIcon.svg";
 
-const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency, provider, handleFinalAmount }) => {
+const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency, provider, handleFinalAmount ,handleCurrent}) => {
   const [coinBalance, setCoinBalance] = useState(0);
   const [convertedDeve, setConvertedDeve] = useState(0);
   const [isBuyButtonLoading, setIsBuyButtonLoading] = useState(true);
@@ -376,9 +376,14 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
           </button>
         )}
         <button
-          className="m-btns buy"
+          className={`m-btns buy ${currentCurrency.ticker === "BUSD"?'btn-buy-left ':'btn-buy-center'}`}
           disabled={isBuyButtonLoading}
-          onClick={() => (currentCurrency.ticker === "BUSD" ? handleBuyBUSD() : handleBuy())}
+          onClick={() => { 
+            (currentCurrency.ticker === "BUSD" ? handleBuyBUSD() : handleBuy())
+            handleCurrent()
+          }
+          
+          }
         >
           {buyButtonText}
         </button>

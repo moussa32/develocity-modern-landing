@@ -5,11 +5,13 @@ import ClaimTokenIcon from "../../../assets/images/ClaimTokenIcon.svg";
 import ReferralsIcon from "../../../assets/images/ReferralsIcon.svg";
 import { useState } from "react";
 
-const SelectOption = ({ handleStep, deveBalance }) => {
+const SelectOption = ({ handleStep, deveBalance ,handleCurrent}) => {
   const [selectedStep, setSelectedStep] = useState("");
 
   const updateStep = (nextStep) => {
     handleStep(nextStep);
+    handleCurrent()
+
   };
 
   return (

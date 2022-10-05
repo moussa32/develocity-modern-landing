@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
-import binanceUSD from "../../../assets/images/bscCoin.svg";
+import binanceUSD from "../../../assets/images/binance_USD.png";
 import binanceCoin from "../../../assets/images/BinanceUSD.png";
 import TextFloatRight from "../CommonStage/TextFloatRight";
 import ButtonItem from "..//CommonStage/ButtonItem";
@@ -16,6 +16,7 @@ export default function BuywithModal({
   handleBinanceUSD,
   handleSelectCurrency,
   provider,
+  handleCurrent
 }) {
   const [selectedNetwork, setSelectedNetwork] = useState("");
 
@@ -41,6 +42,8 @@ export default function BuywithModal({
     (name) => {
       handleStep("buyamount");
       setSelectedNetwork(name);
+      handleCurrent()
+
     },
     [handleStep]
   );

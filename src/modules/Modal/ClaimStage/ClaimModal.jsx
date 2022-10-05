@@ -4,7 +4,7 @@ import { ModalHeaderText } from '../ModalHeader/ModalHeaderText';
 import TextItem from '../CommonStage/TextItem';
 import NextButton from '../CommonStage/NextButton';
 import styles from '../CommonStage/CommonStyle.module.css'
-export default function ClaimModal({handleStep}) {
+export default function ClaimModal({handleStep, handleCurrent}) {
   return (
     <>
     <div>
@@ -30,9 +30,15 @@ export default function ClaimModal({handleStep}) {
           <div className={styles.nextButtonContainer}>
                     <NextButton
                         text="Claim &#8594;"
-                        stylesButton={{ bg: "#9C3FE5" }}
+                        stylesButton={{ bg: "#9C3FE5" , marginTop:'170px'}}
                         disabled={true}
-                        handleStep={() => handleStep("final")} />
+                        handleStep={() => { 
+                        handleStep("final");
+                        handleCurrent()
+                      
+                      }
+                        }
+                        />
                 </div>
     </div>
 

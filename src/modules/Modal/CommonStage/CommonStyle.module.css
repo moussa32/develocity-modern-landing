@@ -81,8 +81,8 @@
 }
 
 .btn-next-container {
-  position: absolute;
-  bottom: 32px;
+  /* position: absolute;
+  bottom: 32px; */
   width: 100%;
   left: 0px;
 }

@@ -3,7 +3,7 @@ import NextButton from "../CommonStage/NextButton";
 import TextItem from "../CommonStage/TextItem";
 import styles from "../CommonStage/CommonStyle.module.css";
 
-const WalletInfoModal = ({ handleStep, walletAddress, disconnect, deveBalance, referralsToClaim }) => {
+const WalletInfoModal = ({ handleStep, walletAddress, disconnect, deveBalance, referralsToClaim ,handleCurrent}) => {
   return (
     <>
       <div>
@@ -21,10 +21,14 @@ const WalletInfoModal = ({ handleStep, walletAddress, disconnect, deveBalance, r
         <TextItem title="DEVE Price" value="1 DEVE" secondaryText="= $0.22" hr="true" />
         <TextItem title="Referrals To Claim" value={referralsToClaim} percentage="" hr="" />
         <div className={styles.nextButtonContainer}>
-          <NextButton
+        <NextButton
+            handleStep={() => { 
+              handleStep("options");
+              handleCurrent()
+            }
+          }
             text="Next &#8594;"
-            stylesButton={{ bg: "#0D162A" }}
-            handleStep={() => handleStep("options")}
+            stylesButton={{ bg: "#0D162A" , marginTop:'70px'}}
             disabled={false}
           />
         </div>
