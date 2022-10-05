@@ -75,7 +75,8 @@
                 "estimatedBalance": "Estimated Balance:",
                 "btns": {
                     "buy": "Buy →",
-                    "approve": "Approve"
+                    "approve": "Approve",
+                    "Loading": "Loading"
                 }
             },
             "claimModal": {

@@ -15,7 +15,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
   const [coinBalance, setCoinBalance] = useState(0);
   const [convertedDeve, setConvertedDeve] = useState(0);
   const [isBuyButtonLoading, setIsBuyButtonLoading] = useState(true);
-  const [buyButtonText, setBuyButtonText] = useState("Buy →");
+  const [buyButtonText, setBuyButtonText] = useState(t("homeSection.modal.buyAmountModal.btns.buy"));
   const [isApprovedButtonLoading, setIsApprovedButtonDisabled] = useState(false);
   const [isApproved, setIsApproved] = useState(false);
 
@@ -89,7 +89,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
 
   const handleBuy = async () => {
     setIsBuyButtonLoading(true);
-    setBuyButtonText("Loading");
+    setBuyButtonText(t("homeSection.modal.buyAmountModal.btns.Loading"));
     const urlParams = new URLSearchParams(window.location.search);
     const ref = urlParams.get("ref");
 
@@ -105,7 +105,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
         console.log(res);
         res.wait().then((receipt) => {
           setIsBuyButtonLoading(false);
-          setBuyButtonText("Buy →");
+          setBuyButtonText(t("homeSection.modal.buyAmountModal.btns.buy"));
           handleFinalAmount(convertedDeve);
           handleStep("final");
         });
@@ -131,7 +131,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
           });
         }
       });
-    setBuyButtonText("Buy →");
+    setBuyButtonText(t("homeSection.modal.buyAmountModal.btns.buy"));
     setIsBuyButtonLoading(false);
   };
 
@@ -200,21 +200,21 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
         }
       });
     setIsBuyButtonLoading(true);
-    setBuyButtonText("Loading");
+    setBuyButtonText(t("homeSection.modal.buyAmountModal.btns.Loading"));
 
     await signerContract
       .buyTokensBusd(memoizedCoinBalanceConverted, ref, { gasLimit: gasPrice })
       .then((res) => {
         res.wait().then((receipt) => {
           setIsBuyButtonLoading(false);
-          setBuyButtonText("Buy →");
+          setBuyButtonText(t("homeSection.modal.buyAmountModal.btns.buy"));
           handleFinalAmount(convertedDeve);
           handleStep("final");
         });
       })
       .catch((error) => {
         console.log(error);
-        setBuyButtonText("Buy →");
+        setBuyButtonText(t("homeSection.modal.buyAmountModal.btns.buy"));
         setIsBuyButtonLoading(false);
       });
   };
