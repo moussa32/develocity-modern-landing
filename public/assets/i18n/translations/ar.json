@@ -35,9 +35,9 @@
                 "mainText": "محفظتك",
                 "subText": "رصيد ديڤي في محفظتك",
                 "inputLable": "المحفظة",
-                "deveBalance": "رصيد الديڤي:",
-                "tokensToClaim": "مطالبة العملات:",
-                "referralsToClaim": " مطالبة الإحالات:",
+                "deveBalance": "رصيد الديڤي",
+                "tokensToClaim": "مطالبة العملات",
+                "referralsToClaim": " مطالبة الإحالات",
                 "nextBtn": "التالي →"
             },
             "optionsModal": {

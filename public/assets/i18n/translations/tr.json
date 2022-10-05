@@ -35,9 +35,9 @@
                 "mainText": "Cüzdanınız",
                 "subText": "Cüzdanınızda DEVE Bakiyesi",
                 "inputLable": "Cüzdan",
-                "deveBalance": "Deve bakiyesi:",
-                "tokensToClaim": "Talep edilecek tokenler:",
-                "referralsToClaim": "Talep Edilecek Yönlendirmeler:",
+                "deveBalance": "Deve bakiyesi",
+                "tokensToClaim": "Talep edilecek tokenler",
+                "referralsToClaim": "Talep Edilecek Yönlendirmeler",
                 "nextBtn": "Sonraki →"
             },
             "optionsModal": {
