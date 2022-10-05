@@ -6,6 +6,7 @@ import TextFloatRight from "../CommonStage/TextFloatRight";
 import ButtonItem from "..//CommonStage/ButtonItem";
 import { ethers } from "ethers";
 import { getBUSDContract } from "../../../shared/util/handleContracts";
+import { useTranslation } from 'react-i18next';
 
 export default function BuywithModal({
   handleStep,
@@ -19,6 +20,8 @@ export default function BuywithModal({
   handleCurrent
 }) {
   const [selectedNetwork, setSelectedNetwork] = useState("");
+  
+  const { t } = useTranslation();
 
   useEffect(() => {
     const getBalance = async () => {
@@ -50,10 +53,10 @@ export default function BuywithModal({
   return (
     <>
       <div>
-        <ModalHeaderText header="Buying With" caption="Select The Cryptocurrency You Want To Use" />
+        <ModalHeaderText header={t("homeSection.modal.buyWithModal.mainText")} caption={t("homeSection.modal.buyWithModal.subText")} />
         <TextFloatRight balanceValue={binanceBalance} />
         <ButtonItem
-          mainText="Binance Coin"
+          mainText={t("homeSection.modal.buyWithModal.btns.binanceCoin.btnMainText")}
           secondaryText="BNB"
           image={binanceCoin}
           selected={selectedNetwork}
@@ -69,7 +72,7 @@ export default function BuywithModal({
         />
         <TextFloatRight balanceValue={binanceUSDBalance} />
         <ButtonItem
-          mainText="Binance USD"
+          mainText={t("homeSection.modal.buyWithModal.btns.binanceUSD.btnMainText")}
           secondaryText="BUSD"
           image={binanceUSD}
           selected={selectedNetwork}

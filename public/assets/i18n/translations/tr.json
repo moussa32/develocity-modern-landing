@@ -54,19 +54,19 @@
                 "subText": "Kullanmak İstediğiniz Kripto Para Birimi Seçin",
                 "btns": {
                     "binanceCoin": {
-                        "balance": "Bakiye: 567.29",
+                        "balance": "Bakiye:",
                         "btnMainText": "Binance Coin",
                         "btnSubText": "BNB"
                     },
                     "binanceUSD": {
-                        "balance": "Bakiye:2,914.0594",
+                        "balance": "Bakiye:",
                         "btnMainText": "Binance USD",
                         "btnSubText": "BUSD"
                     }
                 }
             },
             "buyAmountModal": {
-                "balance": "Bakiye:2,914.0594",
+                "balance": "Bakiye:",
                 "lables":{
                     "from": "İtibaren",
                     "to": "İle"

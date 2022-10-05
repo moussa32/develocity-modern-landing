@@ -54,19 +54,19 @@
                 "subText": "حدد العملة التي تريد استخدامها",
                 "btns": {
                     "binanceCoin": {
-                        "balance": "الرصيد: ٥٦٧.٢٩",
+                        "balance": "الرصيد:",
                         "btnMainText": "عملة بينانس",
                         "btnSubText": "BNB"
                     },
                     "binanceUSD": {
-                        "balance": "الرصيد: ٢.٩١٤.٠٥٩٤",
+                        "balance": "الرصيد:",
                         "btnMainText": "بينانس USD",
                         "btnSubText": "BUSD"
                     }
                 }
             },
             "buyAmountModal": {
-                "balance": "الرصيد: ٢.٩١٤.٠٥٩٤",
+                "balance": "الرصيد:",
                 "lables":{
                     "from": "من",
                     "to": "إلى"

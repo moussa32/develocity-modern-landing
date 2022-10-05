@@ -54,7 +54,7 @@
                 "subText": "Select The Cryptocurrency You Want To Use",
                 "btns": {
                     "binanceCoin": {
-                        "balance": "Balance: 567.29",
+                        "balance": "Balance:",
                         "btnMainText": "Binance Coin",
                         "btnSubText": "BNB"
                     },
@@ -66,7 +66,7 @@
                 }
             },
             "buyAmountModal": {
-                "balance": "Balance: 2,914.0594",
+                "balance": "Balance:",
                 "lables":{
                     "from": "From",
                     "to": "To"

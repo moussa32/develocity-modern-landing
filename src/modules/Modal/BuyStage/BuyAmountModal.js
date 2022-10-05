@@ -6,8 +6,12 @@ import { ethers } from "ethers";
 import { testNetContract } from "../../../shared/constants/contractAddress";
 import { getBUSDContract } from "../../../shared/util/handleContracts";
 import { ReactComponent as SuccessIcon } from "../../../assets/images/SuccessIcon.svg";
+import { useTranslation } from 'react-i18next';
 
 const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency, provider, handleFinalAmount ,handleCurrent}) => {
+  
+  const { t } = useTranslation();
+
   const [coinBalance, setCoinBalance] = useState(0);
   const [convertedDeve, setConvertedDeve] = useState(0);
   const [isBuyButtonLoading, setIsBuyButtonLoading] = useState(true);
@@ -265,8 +269,8 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
 
       <div className="mt-4">
         <div className="d-flex justify-content-between">
-          <label className="first-lable">From</label>
-          <h5 className="second-lable">Balance: {currentCurrency.balance} </h5>
+          <label className="first-lable">{t("homeSection.modal.buyAmountModal.lables.from")}</label>
+          <h5 className="second-lable">{t("homeSection.modal.buyAmountModal.balance")}{currentCurrency.balance} </h5>
         </div>
         <div className="d-flex s-container">
           <input
@@ -327,7 +331,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
 
       <div className="mt-1">
         <div className="d-flex justify-content-between">
-          <label className="first-lable">To</label>
+          <label className="first-lable">{t("homeSection.modal.buyAmountModal.lables.to")}</label>
         </div>
         <div className="d-flex s-container">
           <input className="w-75" value={convertedDeve} placeholder="0" disabled />
@@ -365,14 +369,14 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
         </div>
       </div>
       <div className="mt-4 w-100">
-        <TextItem title={"Price"} value="1" secondaryText="DEVE = $0.22" hr="true" />
-        <TextItem title={"Estimate Balance"} value={convertedDeve} symbol="&plusmn;" percentage="0.25%" hr="true" />
+        <TextItem title={t("homeSection.modal.buyAmountModal.price")} value="1" secondaryText="DEVE = $0.22" hr="true" />
+        <TextItem title={t("homeSection.modal.buyAmountModal.estimatedBalance")} value={convertedDeve} symbol="&plusmn;" percentage="0.25%" hr="true" />
       </div>
 
       <div className="d-flex justify-content-between w-100">
         {currentCurrency.ticker === "BUSD" && (
           <button className="m-btns approve" disabled={isApprovedButtonLoading} onClick={handleApprove}>
-            Approve
+            {t("homeSection.modal.buyAmountModal.btns.approve")}
           </button>
         )}
         <button
