@@ -7,7 +7,7 @@ export default function NextButton({ handleStep, text, stylesButton, disabled })
         type="button"
         className={`${styles.nextBtn} ${disabled ? styles.disabledBtn : ""}`}
         onClick={handleStep}
-        style={{ backgroundColor: stylesButton?.bg }}
+        style={{ backgroundColor: stylesButton?.bg , marginTop:stylesButton?.marginTop}}
         disabled={disabled}
       >
         {text}

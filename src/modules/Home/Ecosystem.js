@@ -1,4 +1,4 @@
-import EcosystemImage from "../../assets/images/vision.PNG";
+import EcosystemImage from "../../assets/images/Ourvision.PNG";
 const Ecosystem = () => {
   return (
     <>

@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
-import binanceUSD from "../../../assets/images/bscCoin.svg";
+import binanceUSD from "../../../assets/images/binance_USD.png";
 import binanceCoin from "../../../assets/images/BinanceUSD.png";
 import TextFloatRight from "../CommonStage/TextFloatRight";
 import ButtonItem from "..//CommonStage/ButtonItem";
@@ -18,7 +18,12 @@ export default function BuywithModal({
   handleSelectCurrency,
   provider,
   selectedNetwork,
+  handleCurrent,
 }) {
+  const [selectedNetwork, setSelectedNetwork] = useState("");
+
+  const { t } = useTranslation();
+
   useEffect(() => {
     const getBalance = async () => {
       const balanceInWei = await provider.getBalance(walletAddress);

@@ -61,6 +61,17 @@
         width: 210px;
     } */
  }
+ @media screen and (max-width:992px) {
+    .partnering_body img{
+        width: 200px;
+    }
+    .partnering_body .imgColorful:hover img{
+        width: 200px;
+        filter: none;
+    
+    }
+    
+ }
 
  @media screen and (max-width:767px) {
     .sliderShow{

@@ -35,9 +35,9 @@
                 "mainText": "Your Wallet",
                 "subText": "DEVE Balance In Your Wallet",
                 "inputLable": "Wallet",
-                "deveBalance": "DEVE Balance:",
-                "tokensToClaim": "Tokens To Claim:",
-                "referralsToClaim": "Referrals To Claim:",
+                "deveBalance": "DEVE Balance",
+                "tokensToClaim": "DEVE Price",
+                "referralsToClaim": "Referrals To Claim",
                 "nextBtn": "Next →"
             },
             "optionsModal": {
@@ -54,7 +54,7 @@
                 "subText": "Select The Cryptocurrency You Want To Use",
                 "btns": {
                     "binanceCoin": {
-                        "balance": "Balance: 567.29",
+                        "balance": "Balance:",
                         "btnMainText": "Binance Coin",
                         "btnSubText": "BNB"
                     },
@@ -66,7 +66,7 @@
                 }
             },
             "buyAmountModal": {
-                "balance": "Balance: 2,914.0594",
+                "balance": "Balance:",
                 "lables":{
                     "from": "From",
                     "to": "To"

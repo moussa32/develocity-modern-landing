@@ -4,21 +4,26 @@ import BuyIcon from "../../../assets/images/BuyDEVE.svg";
 import ClaimTokenIcon from "../../../assets/images/ClaimTokenIcon.svg";
 import ReferralsIcon from "../../../assets/images/ReferralsIcon.svg";
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 
-const SelectOption = ({ handleStep, deveBalance }) => {
+const SelectOption = ({ handleStep, deveBalance ,handleCurrent}) => {
+  const { t } = useTranslation();
+
   const [selectedStep, setSelectedStep] = useState("");
 
   const updateStep = (nextStep) => {
     handleStep(nextStep);
+    handleCurrent()
+
   };
 
   return (
     <div>
-      <ModalHeaderText header="Select You Option" caption="What You Wanna Do" />
+      <ModalHeaderText header={t("homeSection.modal.optionsModal.mainText")} caption={t("homeSection.modal.optionsModal.subText")} />
       <div className="d-flex flex-column gap-4 w-100">
         <div onClick={() => updateStep("buywith")}>
           <ButtonItem
-            mainText="Buy DEVE"
+            mainText={t("homeSection.modal.optionsModal.btns.buyDEVE")} 
             image={BuyIcon}
             selected={selectedStep}
             handleSelect={setSelectedStep}
@@ -27,7 +32,7 @@ const SelectOption = ({ handleStep, deveBalance }) => {
         </div>
         <div onClick={() => deveBalance.amount >= 50 && updateStep("claim")}>
           <ButtonItem
-            mainText="Claim Your Tokens"
+            mainText={t("homeSection.modal.optionsModal.btns.claimYourTokens")} 
             image={ClaimTokenIcon}
             selected={selectedStep}
             handleSelect={setSelectedStep}
@@ -36,7 +41,7 @@ const SelectOption = ({ handleStep, deveBalance }) => {
         </div>
         <div onClick={() => deveBalance.amount >= 50 && updateStep("referral")}>
           <ButtonItem
-            mainText="Referrals"
+            mainText={t("homeSection.modal.optionsModal.btns.referrals")}
             image={ReferralsIcon}
             selected={selectedStep}
             handleSelect={setSelectedStep}
