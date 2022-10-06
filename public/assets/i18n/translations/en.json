@@ -102,6 +102,7 @@
                 "referralBtn": "Referral Code.",
                 "DEVEBalance": "DEVE Balance:",
                 "contribution": "Contribution:",
+                "PurchasedTokens":"Purchased Tokens",
                 "fromReferrals": "From Referrals:",
                 "backToHomepageBtn": "Back To Homepage →"
             }
