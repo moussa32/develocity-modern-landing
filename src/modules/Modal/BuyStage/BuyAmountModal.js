@@ -4,12 +4,20 @@ import toast from "react-hot-toast";
 import contractAbi from "../../../assets/contractABI.json";
 import { ethers } from "ethers";
 import { testNetContract } from "../../../shared/constants/contractAddress";
-import { getBUSDContract } from "../../../shared/util/handleContracts";
+import { getSecondCoinContract } from "../../../shared/util/handleContracts";
 import { ReactComponent as SuccessIcon } from "../../../assets/images/SuccessIcon.svg";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
-const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency, provider, handleFinalAmount ,handleCurrent}) => {
-  
+const BuyAmountModal = ({
+  handleStep,
+  walletAddress,
+  disconnect,
+  currentCurrency,
+  provider,
+  handleFinalAmount,
+  handleCurrent,
+  selectedNetwork,
+}) => {
   const { t } = useTranslation();
 
   const [coinBalance, setCoinBalance] = useState(0);
@@ -137,7 +145,7 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
 
   const handleApprove = async () => {
     setIsApprovedButtonDisabled(true);
-    const BUSDContract = getBUSDContract(provider.getSigner());
+    const BUSDContract = getSecondCoinContract(provider.getSigner(), selectedNetwork);
     await BUSDContract.approve(testNetContract, ethers.utils.parseEther("1000000"))
       .then((res) => {
         console.log(res);
@@ -270,7 +278,10 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
       <div className="mt-4">
         <div className="d-flex justify-content-between">
           <label className="first-lable">{t("homeSection.modal.buyAmountModal.lables.from")}</label>
-          <h5 className="second-lable">{t("homeSection.modal.buyAmountModal.balance")}{currentCurrency.balance} </h5>
+          <h5 className="second-lable">
+            {t("homeSection.modal.buyAmountModal.balance")}
+            {currentCurrency.balance}{" "}
+          </h5>
         </div>
         <div className="d-flex s-container">
           <input
@@ -369,8 +380,19 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
         </div>
       </div>
       <div className="mt-4 w-100">
-        <TextItem title={t("homeSection.modal.buyAmountModal.price")} value="1" secondaryText="DEVE = $0.22" hr="true" />
-        <TextItem title={t("homeSection.modal.buyAmountModal.estimatedBalance")} value={convertedDeve} symbol="&plusmn;" percentage="0.25%" hr="true" />
+        <TextItem
+          title={t("homeSection.modal.buyAmountModal.price")}
+          value="1"
+          secondaryText="DEVE = $0.22"
+          hr="true"
+        />
+        <TextItem
+          title={t("homeSection.modal.buyAmountModal.estimatedBalance")}
+          value={convertedDeve}
+          symbol="&plusmn;"
+          percentage="0.25%"
+          hr="true"
+        />
       </div>
 
       <div className="d-flex justify-content-between w-100">
@@ -380,14 +402,12 @@ const BuyAmountModal = ({ handleStep, walletAddress, disconnect, currentCurrency
           </button>
         )}
         <button
-          className={`m-btns buy ${currentCurrency.ticker === "BUSD"?'btn-buy-left ':'btn-buy-center'}`}
+          className={`m-btns buy ${currentCurrency.ticker === "BUSD" ? "btn-buy-left " : "btn-buy-center"}`}
           disabled={isBuyButtonLoading}
-          onClick={() => { 
-            (currentCurrency.ticker === "BUSD" ? handleBuyBUSD() : handleBuy())
-            handleCurrent()
-          }
-          
-          }
+          onClick={() => {
+            currentCurrency.ticker === "BUSD" ? handleBuyBUSD() : handleBuy();
+            handleCurrent();
+          }}
         >
           {buyButtonText}
         </button>

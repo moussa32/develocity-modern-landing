@@ -3,7 +3,7 @@ import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
 import TextFloatRight from "../CommonStage/TextFloatRight";
 import ButtonItem from "..//CommonStage/ButtonItem";
 import { ethers } from "ethers";
-import { getBUSDContract } from "../../../shared/util/handleContracts";
+import { getSecondCoinContract } from "../../../shared/util/handleContracts";
 import { networkSupportedCoins } from "../../../shared/util/handleNetworkProvider";
 import { useTranslation } from "react-i18next";
 
@@ -25,11 +25,9 @@ const BuywithModal = ({
     const getBalance = async () => {
       const balanceInWei = await provider.getBalance(walletAddress);
       const convertedBalanc = Number(ethers.utils.formatEther(balanceInWei)).toFixed(3);
-      console.log(convertedBalanc);
       handleFirstCoin(convertedBalanc);
 
-      const busdAbiContract = getBUSDContract(provider);
-      console.log(busdAbiContract);
+      const busdAbiContract = getSecondCoinContract(provider, selectedNetwork);
       const contractBalance = await busdAbiContract.balanceOf(walletAddress);
       const convertedContractBalance = parseFloat(ethers.utils.formatUnits(contractBalance, 18)).toLocaleString(
         "en-US"

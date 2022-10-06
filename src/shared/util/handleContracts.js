@@ -2,13 +2,15 @@ import { ethers } from "ethers";
 import { testNetContract } from "../constants/contractAddress";
 import contractAbi from "../../assets/contractABI.json";
 import { deveCost } from "../constants/deveCost";
+import { getSecondCoinContractAddress } from "./handleNetworkProvider";
 
-export const getBUSDContract = (provider) =>
+export const getSecondCoinContract = (provider, networkName) => {
   new ethers.Contract(
-    "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7",
+    getSecondCoinContractAddress(networkName),
     ["function balanceOf(address) view returns (uint)", "function approve(address, uint256) external returns (bool)"],
     provider
   );
+};
 
 export const getWalletBalance = async (provider, walletAddress) => {
   const walletContract = new ethers.Contract(testNetContract, contractAbi, provider);
