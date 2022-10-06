@@ -33,6 +33,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen, current, handleCurrent }) => {
   const [tokensToClaim, setTokensToClaim] = useState({ amount: 0, value: 0 });
   const [referralsToClaim, setReferralsToClaim] = useState(0);
   const [provider, setProvider] = useState(null);
+  const [connection, setConnection] = useState(null);
   const [transAmount, setTransAmount] = useState(null);
 
   const handleStep = useCallback((step) => {
@@ -82,15 +83,17 @@ const ModalBuyNow = ({ open, onClose, handleOpen, current, handleCurrent }) => {
 
   useEffect(() => {
     //When User is changed his wallet address it will get the new wallet address and refresh component
-    const listenToAccountChanges = async () => {
-      const connection = await web3Modal.connect();
+    if (connection) {
+      const listenToAccountChanges = async () => {
+        console.log(connection);
 
-      connection.on("accountsChanged", (accounts) => {
-        setwalletAddress(accounts[0]);
-      });
-    };
-    listenToAccountChanges();
-  }, []);
+        connection.on("accountsChanged", (accounts) => {
+          setwalletAddress(accounts[0]);
+        });
+      };
+      listenToAccountChanges();
+    }
+  }, [connection]);
 
   const handleRenderComponentStep = () => {
     switch (currentStep) {
@@ -105,6 +108,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen, current, handleCurrent }) => {
             userNetwork={userNetwork}
             handleSelectedNetwork={setSelectedNetwork}
             handleUserNetwork={setUserNetwork}
+            handleConnection={setConnection}
           />
         );
       case "walletInfo":
