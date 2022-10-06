@@ -72,7 +72,7 @@
                     "to": "إلى"
                 },
                 "price": "السعر",
-                "estimatedBalance": "الرصيد المتوقع:",
+                "estimatedBalance": "الرصيد المتوقع",
                 "btns": {
                     "buy": "شراء →",
                     "approve": "موافقة",

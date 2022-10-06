@@ -72,7 +72,7 @@
                     "to": "İle"
                 },
                 "price": "Fiyat",
-                "estimatedBalance": "Tahmini bakiye:",
+                "estimatedBalance": "Tahmini bakiye",
                 "btns": {
                     "buy": "Satın al →",
                     "approve": "Onaylamak",

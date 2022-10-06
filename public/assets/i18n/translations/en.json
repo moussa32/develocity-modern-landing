@@ -72,7 +72,7 @@
                     "to": "To"
                 },
                 "price": "Price",
-                "estimatedBalance": "Estimated Balance:",
+                "estimatedBalance": "Estimated Balance",
                 "btns": {
                     "buy": "Buy →",
                     "approve": "Approve",
