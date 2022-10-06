@@ -92,6 +92,7 @@
                 "referralLinkLabel": "Referral Link",
                 "yourReferrals": "Your Referrals:",
                 "referralsToClaim": "Referrals To Claim:",
+                "referralPercentage": "Referral Percentage:",
                 "claimBtn": "Claim →"
             },
             "finalModal": {
