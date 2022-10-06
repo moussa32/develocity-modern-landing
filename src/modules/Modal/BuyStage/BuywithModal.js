@@ -43,7 +43,7 @@ const BuywithModal = ({
   return (
     <>
       <div>
-        <ModalHeaderText header="Buying With" caption="Select The Cryptocurrency You Want To Use" />
+        <ModalHeaderText header={t("homeSection.modal.buyWithModal.mainText")} caption={t("homeSection.modal.buyWithModal.subText")} />
         {networkSupportedCoins(selectedNetwork).map(({ id, name, image, ticker }) => (
           <div key={id}>
             <TextFloatRight balanceValue={id === 1 ? firstCoin : secondCoin} />
