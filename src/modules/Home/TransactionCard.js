@@ -35,11 +35,9 @@ const TransactionCard = () => {
   ]
   useEffect(()=>{
     let n ;
-    setInterval(()=>{
-      setTimeout(() => {
+    setInterval(()=>{ 
         n = Math.floor(Math.random() * (4 + 1))
-        setTransaction(tArr[n])
-      }, 3000)
+        setTransaction(tArr[n]) 
     },3000)
   },[])
 
