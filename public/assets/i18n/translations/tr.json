@@ -14,7 +14,8 @@
         "languages": {
             "english": "İngilizce",
             "arabic": "Arapça",
-            "turkish": "Türk"
+            "turkish": "Türk",
+            "russian": "Rusça" 
         },
         "whitepaper": "Beyaz sayfa",
         "followUs": ":Bizi Takip edin"
@@ -26,6 +27,7 @@
             "buyNow": "Şimdi satın al",
             "howToBuy": "Nasıl alınır"
         },
+        "WhereToBuy": "Nerden alınır",
         "modal": {
             "starterModal": {
                 "mainText": "Bağlanmak",

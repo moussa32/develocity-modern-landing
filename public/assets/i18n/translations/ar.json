@@ -14,7 +14,8 @@
         "languages": {
             "english": "الانجليزية",
             "arabic": "العربية",
-            "turkish": "التركية"
+            "turkish": "التركية",
+            "russian": "الروسية" 
         },
         "whitepaper": "الصحيفة البيضاء",
         "followUs": ": تابعنا على"
@@ -26,6 +27,7 @@
             "buyNow": "اشتر الأن",
             "howToBuy": "طريقة الشراء"
         },
+        "WhereToBuy": "أماكن الشراء",
         "modal": {
             "starterModal": {
                 "mainText": "اربط",

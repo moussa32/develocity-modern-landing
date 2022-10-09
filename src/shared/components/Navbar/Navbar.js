@@ -23,6 +23,10 @@ const Navbar = ({ onClose }) => {
       locale: "tr",
       name: `${t("headSection.languages.turkish")}`,
     },
+    {
+      locale: "rus",
+      name: `${t("headSection.languages.russian")}`,
+    },
   ];
 
   const returnSelectedLang = (locale) => {

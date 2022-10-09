@@ -14,7 +14,8 @@
         "languages": {
             "english": "English",
             "arabic": "Arabic",
-            "turkish": "Turkish"
+            "turkish": "Turkish",
+            "russian": "Russian" 
         },
         "whitepaper": "Whitepaper",
         "followUs": ":Follow us on"
@@ -26,6 +27,7 @@
             "buyNow": "Buy Now",
             "howToBuy": "How to Buy?"
         },
+        "WhereToBuy": "Where to buy",
         "modal": {
             "starterModal": {
                 "mainText": "Connect To",
@@ -153,8 +155,8 @@
                 "subText": [
                     "Website Launching",
                     "Project #1 Introduction",
-                    "Company Registration & Licence",
-                    "Legale Opinion"
+                    "Company Name Registration",
+                    "License & Legal Opinion"
                 ]
             },
             "launch": {
