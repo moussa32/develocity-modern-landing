@@ -18,7 +18,7 @@
           "russian": "Русский" 
       },
       "whitepaper": "Белая бумага",
-      "followUs": ":Follow us on"
+      "followUs": ":Подпишитесь на нас"
   },
   "homeSection": {
       "mainText": "IDO началось!",
@@ -30,83 +30,83 @@
       "WhereToBuy": "Где купить",
       "modal": {
           "starterModal": {
-              "mainText": "Connect To",
-              "subText": "Select Blockchain To Connect To It"
+              "mainText": "Подключиться к",
+              "subText": "Выберите блокчейн, чтобы подключиться к нему"
           },
           "walletInfoModal": {
-              "mainText": "Your Wallet",
-              "subText": "DEVE Balance In Your Wallet",
-              "inputLable": "Wallet",
-              "deveBalance": "DEVE Balance",
-              "tokensToClaim": "DEVE Price",
-              "referralsToClaim": "Referrals To Claim",
-              "nextBtn": "Next →"
+              "mainText": "Ваш кошелек",
+              "subText": "Баланс DEVE в вашем кошельке",
+              "inputLable": "Кошелек",
+              "deveBalance": "Баланс DEVE",
+              "tokensToClaim": "DEVE цена",
+              "referralsToClaim": "Получить рефералов",
+              "nextBtn": "Следующий →"
           },
           "optionsModal": {
-              "mainText": "Select You Option",
-              "subText": "What You Wanna Do",
+              "mainText": "Выберите вариант",
+              "subText": "Что вы хотите сделать",
               "btns": {
-                  "buyDEVE": "Buy DEVE",
-                  "claimYourTokens": "Claim Your Tokens",
-                  "referrals": "Referrals"
+                  "buyDEVE": "Купить DEVE",
+                  "claimYourTokens": "Получите свои токены",
+                  "referrals": "Рефералы"
               }
           },
           "buyWithModal": {
-              "mainText": "Buying With",
-              "subText": "Select The Cryptocurrency You Want To Use",
+              "mainText": "Покупка с",
+              "subText": "Выберите криптовалюту, которую хотите использовать",
               "btns": {
                   "binanceCoin": {
-                      "balance": "Balance:",
+                      "balance": "Баланс:",
                       "btnMainText": "Binance Coin",
                       "btnSubText": "BNB"
                   },
                   "binanceUSD": {
-                      "balance": "Balance: 2,914.0594",
+                      "balance": "Баланс: 2,914.0594",
                       "btnMainText": "Binance USD",
                       "btnSubText": "BUSD"
                   }
               }
           },
           "buyAmountModal": {
-              "balance": "Balance:",
+              "balance": "Баланс:",
               "lables":{
-                  "from": "From",
-                  "to": "To"
+                  "from": "От",
+                  "to": "К"
               },
-              "price": "Price",
-              "estimatedBalance": "Estimated Balance",
+              "price": "Цена",
+              "estimatedBalance": "Предполагаемый баланс",
               "btns": {
-                  "buy": "Buy →",
-                  "approve": "Approve",
-                  "Loading": "Loading"
+                  "buy": "Купить →",
+                  "approve": "Одобрить",
+                  "Loading": "загрузка"
               }
           },
           "claimModal": {
-              "mainText": "Claim Your Tokens",
-              "subText": "Claim Your Referrals Tokens",
-              "DEVEBalance": "DEVE Balance:",
-              "tokensToClaim": "Tokens To Claim:",
-              "claimBtn": "Claim →"
+              "mainText": "Получите свои токены",
+              "subText": "Получите свои реферальные токены",
+              "DEVEBalance": "Баланс DEVE:",
+              "tokensToClaim": "Получить токены:",
+              "claimBtn": "Получить →"
           },
           "referralModal": {
-              "mainText": "Referrals",
-              "subText": "Use Your Code Or Claim Referrals",
-              "referralLinkLabel": "Referral Link",
-              "yourReferrals": "Your Referrals:",
-              "referralsToClaim": "Referrals To Claim:",
-              "referralPercentage": "Referral Percentage:",
-              "claimBtn": "Claim →"
+              "mainText": "Рефералы",
+              "subText": "Используйте свой код или получите рефералов",
+              "referralLinkLabel": "Реферальная ссылка",
+              "yourReferrals": "Ваши рефералы:",
+              "referralsToClaim": "Получить рефералов:",
+              "referralPercentage": "Реферальный процент:",
+              "claimBtn": "Получить →"
           },
           "finalModal": {
-              "mainText": "Done!",
-              "subText": "Your Transaction Is Complete.",
-              "referralText": "Get 50 DEVE Per Invitation With",
-              "referralBtn": "Referral Code.",
-              "DEVEBalance": "DEVE Balance:",
-              "contribution": "Contribution:",
-              "PurchasedTokens":"Purchased Tokens",
-              "fromReferrals": "From Referrals:",
-              "backToHomepageBtn": "Back To Homepage →"
+              "mainText": "Готово!",
+              "subText": "Ваша транзакция завершена.",
+              "referralText": "Получите 50 DEVE за приглашение с",
+              "referralBtn": "Реферальный код.",
+              "DEVEBalance": "Баланс DEVE:",
+              "contribution": "Вклад:",
+              "PurchasedTokens":"Купленные токены",
+              "fromReferrals": "От рефералов:",
+              "backToHomepageBtn": "Назад на главную страницу →"
           }
       },
       "exampleSection":{
@@ -223,11 +223,11 @@
   "contactSection": {
       "mainText": "Свяжитесь с нами!",
       "headquarter": {
-          "mainText": "Headquarter",
-          "subText": "Dubai, United Arab Emirates"
+          "mainText": "Головной офис",
+          "subText": "Дубай, Объединенные Арабские Эмираты"
       },
       "email": {
-          "mainText": "Email",
+          "mainText": "Электронная почта",
           "subText": "contact@develocity.finance"
       }
   },

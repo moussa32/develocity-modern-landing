@@ -19,6 +19,7 @@ export function Roadmap() {
       ],
       icon: check,
       bgColor: "#5AD2FF",
+      phase: `${t("roadmapSection.phases.0")}`
     },
     {
       header: `${t("roadmapSection.cards.launch.mainText")}`,
@@ -32,6 +33,7 @@ export function Roadmap() {
       ],
       icon: clock,
       bgColor: "#FFD13A",
+      phase: `${t("roadmapSection.phases.1")}`
     },
     {
       header: `${t("roadmapSection.cards.expansion.mainText")}`,
@@ -45,6 +47,7 @@ export function Roadmap() {
       ],
       icon: "",
       bgColor: "#71E581",
+      phase: `${t("roadmapSection.phases.2")}`
     },
     {
       header: `${t("roadmapSection.cards.opportunities.mainText")}`,
@@ -57,6 +60,7 @@ export function Roadmap() {
       ],
       icon: "",
       bgColor: "#EC92EC",
+      phase: `${t("roadmapSection.phases.3")}`
     },
   ];
   return (
@@ -90,6 +94,7 @@ export function Roadmap() {
                         style={{ backgroundColor: el.bgColor }}
                       >
                         {el.icon && <img src={el.icon} alt="status" />}
+                        <span className={`${styles.roadmapSvgAfter} d-md-none`}>{el.phase}</span>
                       </span>
                     </div>
                   </div>
