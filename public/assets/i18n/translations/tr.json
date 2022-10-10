@@ -111,7 +111,7 @@
         },
         "exampleSection":{
             "transactionComplete": "İşlem tamamlandı",
-            "time": "35 saniye önce"
+            "time": " saniye önce"
         }
     },
     "aboutSection": {

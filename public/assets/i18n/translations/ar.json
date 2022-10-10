@@ -111,7 +111,7 @@
         },
         "exampleSection":{
             "transactionComplete": "اكتملت المعاملة",
-            "time": "٣٥ ثانية مضت"
+            "time": " ثانية مضت"
         }
     },
     "aboutSection": {
@@ -237,6 +237,6 @@
             "multifunctionalTool": "الأداة متعددة الوظائف",
             "whitePaper": "الصحيفة البيضاء"
         },
-        "copyright": "Develocity 2022 © حقوق محفوظة "
+        "copyright": "Develocity 2022 © الحقوق محفوظة ل"
     }
 }
