@@ -82,7 +82,9 @@ const BuyAmountModal = ({
         if (coinBalance > 0) {
           setIsBuyButtonLoading(false);
           const calculateDeveCoins = await walletContract.getwethPrice(memoizedCoinBalanceConverted);
-          setConvertedDeve(ethers.utils.formatEther(calculateDeveCoins.toString()).toLocaleString("en-US"));
+          setConvertedDeve(
+            Number(ethers.utils.formatEther(calculateDeveCoins.toString())).toFixed(2).toLocaleString("en-US")
+          );
         } else {
           setIsBuyButtonLoading(true);
           setConvertedDeve(0);
