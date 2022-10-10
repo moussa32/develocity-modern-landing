@@ -36,6 +36,8 @@ const BuyAmountModal = ({
     const delayDebounceFn = setTimeout(async () => {
       if (currentCurrency.ticker === "BUSD") {
         const calculateDeveCoins = await walletContract.getbusdPrice(memoizedCoinBalanceConverted);
+        const returnedCalculateDeveCoins = Number(ethers.utils.formatEther(calculateDeveCoins.toString())).toFixed(2);
+
         if (!isApproved) {
           await walletContract
             .getBusdAll(calculateDeveCoins, walletAddress)
@@ -75,14 +77,12 @@ const BuyAmountModal = ({
               console.log(error);
             });
         }
-
-        setConvertedDeve(calculateDeveCoins.toLocaleString("en-US"));
+        setConvertedDeve(returnedCalculateDeveCoins.toLocaleString("en-US"));
       } else {
-        console.log(typeof coinBalance, coinBalance, Number(coinBalance) > 0);
         if (coinBalance > 0) {
           setIsBuyButtonLoading(false);
           const calculateDeveCoins = await walletContract.getwethPrice(memoizedCoinBalanceConverted);
-          setConvertedDeve(calculateDeveCoins.toLocaleString("en-US"));
+          setConvertedDeve(ethers.utils.formatEther(calculateDeveCoins.toString()).toLocaleString("en-US"));
         } else {
           setIsBuyButtonLoading(true);
           setConvertedDeve(0);
@@ -185,7 +185,7 @@ const BuyAmountModal = ({
     const ref = urlParams.get("ref");
 
     const gasPrice = await signerContract.estimateGas
-      .buyTokensBusd(memoizedCoinBalanceConverted, ref)
+      .buyTokensBusd(memoizedCoinBalanceConverted.toString(), ref)
       .catch((error) => {
         const { code: errorCode } = error.data;
         if (errorCode === -32603) {
@@ -211,7 +211,7 @@ const BuyAmountModal = ({
     setBuyButtonText(t("homeSection.modal.buyAmountModal.btns.Loading"));
 
     await signerContract
-      .buyTokensBusd(memoizedCoinBalanceConverted, ref, { gasLimit: gasPrice })
+      .buyTokensBusd(memoizedCoinBalanceConverted.toString(), ref, { gasLimit: gasPrice })
       .then((res) => {
         res.wait().then((receipt) => {
           setIsBuyButtonLoading(false);
@@ -279,8 +279,7 @@ const BuyAmountModal = ({
         <div className="d-flex justify-content-between">
           <label className="first-lable">{t("homeSection.modal.buyAmountModal.lables.from")}</label>
           <h5 className="second-lable">
-            {t("homeSection.modal.buyAmountModal.balance")}
-            {currentCurrency.balance}{" "}
+            {t("homeSection.modal.buyAmountModal.balance")} {currentCurrency.balance}
           </h5>
         </div>
         <div className="d-flex s-container">

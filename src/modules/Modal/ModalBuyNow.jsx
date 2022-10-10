@@ -13,6 +13,7 @@ import { web3Modal } from "../../shared/util/handleWeb3Modal";
 import toast from "react-hot-toast";
 import { getWalletBalance } from "../../shared/util/handleContracts";
 import { AnimatePresence, motion } from "framer-motion";
+import { ethers } from "ethers";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
@@ -150,6 +151,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen, current, handleCurrent }) => {
             provider={provider}
             handleFinalAmount={setTransAmount}
             handleCurrent={handleCurrent}
+            selectedNetwork={selectedNetwork}
           />
         );
       case "claim":

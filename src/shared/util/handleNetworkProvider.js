@@ -1,7 +1,7 @@
 import EtherumImage from "../../assets/images/Ethereum-icon.png";
 import TetherImage from "../../assets/images/Tether-icon.png";
-import binanceUSD from "../../assets/images/bscCoin.png";
-import binanceCoin from "../../assets/images/BinanceUSD.png";
+import binanceUSD from "../../assets/images/binance_USD.png";
+import binanceCoin from "../../assets/images/binance-coin.png";
 import MaticCoinImage from "../../assets/images/matic-icon.png";
 
 export const convertEtherNetworkNameToName = (networkTicker) => {
@@ -53,7 +53,7 @@ export const getSecondCoinContractAddress = (networkName) => {
     case "mainnet":
       return "0xdac17f958d2ee523a2206206994597c13d831ec7";
     case "binance":
-      return "0xe9e7cea3dedca5984780bafc599bd69add087d56";
+      return "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7";
     case "matic":
       return "0xc2132d05d31c914a87c6611c10748aeb04b58e8f";
   }

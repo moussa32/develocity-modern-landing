@@ -3,8 +3,6 @@ import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
 
 export default function OptionsModal({ handleStep }) {
   const [selectedOption, setSelectedOption] = useState("");
-  console.log(selectedOption);
-
   return (
     <>
       <div>

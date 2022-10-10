@@ -1,2 +1,2 @@
-export const testNetContract = "0x2053605B3b6c3bb7FF0a9a3c4C6bd9795a4a5045";
+export const testNetContract = "0x5277e2F44984C85393E76a7BfE3928067485BCCe";
 export const mainNetContract = "0xc1ec20ef71c47004616a7c82ce0dd6a60fbe897c";

@@ -57,7 +57,7 @@ const BuywithModal = ({
                   name: elements[2],
                   ticker: elements[3],
                   image: elements[1],
-                  balance: firstCoin,
+                  balance: id === 1 ? firstCoin : secondCoin,
                 })
               }
             />

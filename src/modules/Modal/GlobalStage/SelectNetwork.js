@@ -35,7 +35,6 @@ const SelectNetwork = ({
       const web3Accounts = await library.listAccounts();
       const userNetwork = await library.getNetwork();
       handleUserNetwork(userNetwork.name);
-      console.log(userNetwork.name);
       if (convertEtherNetworkNameToName(userNetwork.name) === currentNetwork) {
         handleWalletAddress(web3Accounts[0]);
         handleStep("walletInfo");
