@@ -37,12 +37,15 @@ const Navbar = ({ onClose }) => {
         return "العربية";
       case "tr":
         return "Türk";
+      case "rus":
+        return "Русский";
     }
   };
 
   const changeLanguage = (langObj) => {
     setSelectedLang(returnSelectedLang(langObj.locale));
     i18n.changeLanguage(langObj.locale);
+    document.documentElement.setAttribute("lang", langObj.locale);
   };
 
   /* Add box shadow when scroll */
