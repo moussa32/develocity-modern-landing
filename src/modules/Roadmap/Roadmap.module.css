@@ -49,7 +49,7 @@
 /* card component */
 .cardContent{
    width: 250px;
-   height: 260px !important;
+   height: 285px !important;
 }
 .cardContent h3{
    font-size: 26px;
@@ -66,7 +66,7 @@
 }
 .cardContent ul>li{
    padding-top: 4px;
-   font-size: 14px;
+   font-size: 13px;
 }
 
 
@@ -259,7 +259,19 @@
 
       display: inline-block;
    }
-   .roadmapCards .cardBox:nth-child(1) .circle::after{
+   .roadmapSvgAfter{
+      position: absolute;
+      left: 40px;
+      top: 3px;
+      width: 180px;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Manrope', sans-serif;
+      display: inline-block;
+      text-align: left;
+      padding-left: 8px;
+   }
+  /* .roadmapCards .cardBox:nth-child(1) .circle::after{
       content: "Phase I";
    }
    .roadmapCards .cardBox:nth-child(2) .circle::after{
@@ -270,8 +282,8 @@
    }
    .roadmapCards .cardBox:nth-child(4) .circle::after{
       content: "Phase IV";
-   }
-   /* .step{
+   }*/
+   /*.step{
     width: 50%;
       margin-top: -4px;
       height: 6px;

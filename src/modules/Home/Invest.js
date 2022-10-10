@@ -563,7 +563,7 @@ const Invest = () => {
                       data-name="My Wallet"
                       transform="translate(79.68 50.164)"
                       fill="#373737"
-                      fontSize="13"
+                      fontSize="12"
                       fontFamily="SegoeUI-Bold, Segoe UI"
                       fontWeight="700"
                       opacity="0.5"

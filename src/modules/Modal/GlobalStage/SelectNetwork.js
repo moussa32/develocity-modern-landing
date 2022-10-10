@@ -7,6 +7,7 @@ import { useCallback, useEffect, useState } from "react";
 import { web3Modal } from "../../../shared/util/handleWeb3Modal";
 import { convertEtherNetworkNameToName } from "../../../shared/util/handleNetworkProvider";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 const SelectNetwork = ({
   handleStep,
@@ -64,10 +65,12 @@ const SelectNetwork = ({
     }
   };
 
+  const { t } = useTranslation();
+
   return (
     <div>
-      <h2 className="text-center">Connect to</h2>
-      <p className="text-center text-small text-body-text">Select Blockchain To Connect To It</p>
+      <h2 className="text-center">{t("homeSection.modal.starterModal.mainText")}</h2>
+      <p className="text-center text-small text-body-text">{t("homeSection.modal.starterModal.subText")}</p>
       <div className="d-flex flex-column gap-4 w-100">
         <ButtonItem
           mainText="Etherum"

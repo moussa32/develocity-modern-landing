@@ -1,7 +1,46 @@
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const TransactionCard = () => {
   const { t } = useTranslation();
+
+   /* Generate random transactions */
+   const [transaction,setTransaction] = useState(
+    {
+      BUSD: 10,
+      DEVE: 45.5
+    })
+  // Transaction array
+  const tArr = [
+    {
+      BUSD: 34,
+      DEVE: 198
+    },
+    {
+      BUSD: 56,
+      DEVE: 254.8
+    }
+    ,{
+      BUSD: 86,
+      DEVE: 460
+    },
+    {
+      BUSD: 91,
+      DEVE: 500
+    },
+    {
+      BUSD: 10,
+      DEVE: 45.5
+    }
+  ]
+  useEffect(()=>{
+    let n ;
+    setInterval(()=>{ 
+        n = Math.floor(Math.random() * (4 + 1))
+        setTransaction(tArr[n]) 
+    },3000)
+  },[])
+
   return (
     <div className="t-container mt-5">
       <div >
@@ -16,7 +55,7 @@ const TransactionCard = () => {
         </svg>
         <span className="fs-xs t-span">{t("homeSection.exampleSection.transactionComplete")}</span>
       </div>
-      <div className="fs-md equ">10 BUSD = 45.5 DEVE</div>
+      <div className="fs-md equ">{transaction.BUSD} BUSD = {transaction.DEVE} DEVE</div>
       <div className="mt-3 d-flex justify-content-around">
         <h4 className="fs-xs card-text-l">
         <svg className="mx-2" xmlns="http://www.w3.org/2000/svg" width="11.294" height="11.294" viewBox="0 0 11.294 11.294">

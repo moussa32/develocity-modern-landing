@@ -1,12 +1,16 @@
 import { deveCost } from "../../../shared/constants/deveCost";
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
 import TextItem from "./TextItem";
+import { useTranslation } from "react-i18next";
 
 const FinalModal = ({ onClose, handleStep, boughtAmount, referral }) => {
   const returnToHome = () => {
     onClose();
     handleStep("starter");
   };
+
+  const { t } = useTranslation();
+
   return (
     <section className="d-flex flex-column justify-content-center align-items-center">
       <svg className="mb-3" xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68">
@@ -29,16 +33,16 @@ const FinalModal = ({ onClose, handleStep, boughtAmount, referral }) => {
         />
       </svg>
 
-      <ModalHeaderText header="Done!" caption="Your Transaction Is Complete." />
+      <ModalHeaderText header={t("homeSection.modal.finalModal.mainText")} caption={t("homeSection.modal.finalModal.subText")} />
       <p className="p-final text-center">
-        Get DEVE Per Invitation With <span style={{ cursor: "pointer" }}>Referral Code.</span>
+      {t("homeSection.modal.finalModal.referralText")} <span style={{ cursor: "pointer" }}>{t("homeSection.modal.finalModal.referralBtn")}</span>
       </p>
       <div className="mt-5 w-100">
-        <TextItem title="Purchased Tokens" value={boughtAmount} percentage={boughtAmount * deveCost} hr="true" />
-        <TextItem title={"From Referrals"} value={referral} percentage={referral * deveCost} />
+        <TextItem title={t("homeSection.modal.finalModal.PurchasedTokens")} value={boughtAmount} percentage={boughtAmount * deveCost} hr="true" />
+        <TextItem title={t("homeSection.modal.finalModal.fromReferrals")} value={referral} percentage={referral * deveCost} />
       </div>
       <button className="back-to-home mt-5" onClick={returnToHome}>
-        Back To Homepage →
+      {t("homeSection.modal.finalModal.backToHomepageBtn")}
       </button>
     </section>
   );

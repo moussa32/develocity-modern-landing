@@ -1,6 +1,7 @@
 import TextItem from "../CommonStage/TextItem";
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
 import toast, { Toaster } from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToClaim }) => {
   const copyToClipboard = async () => {
@@ -19,6 +20,8 @@ const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToC
       },
     });
   };
+
+  const { t } = useTranslation();
 
   return (
     <section className="d-flex flex-column justify-content-center align-items-center">
@@ -46,9 +49,9 @@ const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToC
         />
       </svg>
 
-      <ModalHeaderText header="Referrals" caption="Use Your Code Or Claim Referrals" />
+      <ModalHeaderText header={t("homeSection.modal.referralModal.mainText")} caption={t("homeSection.modal.referralModal.subText")} />
       <div className="ref-container">
-        <label className="referral-lable">Referral Link</label>
+        <label className="referral-lable">{t("homeSection.modal.referralModal.referralLinkLabel")}</label>
         <div className="copy-link d-flex ">
           <p className="m-3">{`${window.location.origin}?ref=${walletAddress.slice(0, 5)}...`}</p>
           <svg
@@ -85,11 +88,11 @@ const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToC
         </div>
       </div>
       <div className="mt-4 w-100">
-        <TextItem title={"Referral Precentage"} value={tokensToClaim} secondaryText="%" hr="true" />
-        <TextItem title={"Referrals To Claim"} value={referralsToClaim} />
+        <TextItem title={t("homeSection.modal.referralModal.referralPercentage")} value={tokensToClaim} secondaryText="%" hr="true" />
+        <TextItem title={t("homeSection.modal.referralModal.referralsToClaim")} value={referralsToClaim} />
       </div>
       <button className="referrals-btn mt-5" onClick={() => handleStep("final")}>
-        Claim →
+      {t("homeSection.modal.referralModal.claimBtn")}
       </button>
     </section>
   );

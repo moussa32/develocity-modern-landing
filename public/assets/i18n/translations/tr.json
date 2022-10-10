@@ -14,7 +14,8 @@
         "languages": {
             "english": "İngilizce",
             "arabic": "Arapça",
-            "turkish": "Türk"
+            "turkish": "Türk",
+            "russian": "Rusça" 
         },
         "whitepaper": "Beyaz sayfa",
         "followUs": ":Bizi Takip edin"
@@ -26,6 +27,7 @@
             "buyNow": "Şimdi satın al",
             "howToBuy": "Nasıl alınır"
         },
+        "WhereToBuy": "Nerden alınır",
         "modal": {
             "starterModal": {
                 "mainText": "Bağlanmak",
@@ -72,7 +74,7 @@
                     "to": "İle"
                 },
                 "price": "Fiyat",
-                "estimatedBalance": "Tahmini bakiye:",
+                "estimatedBalance": "Tahmini bakiye",
                 "btns": {
                     "buy": "Satın al →",
                     "approve": "Onaylamak",
@@ -92,6 +94,7 @@
                 "referralLinkLabel": "Referans linki",
                 "yourReferrals": "Referanslarınız:",
                 "referralsToClaim": "Claim yapılacak yönlendiremler:",
+                "referralPercentage": "Yönlendirme Yüzdesi:",
                 "claimBtn": "Claim →"
             },
             "finalModal": {
@@ -101,6 +104,7 @@
                 "referralBtn": "Yönlendirme kodu.",
                 "DEVEBalance": "Deve bakiyesi:",
                 "contribution": "Katkı:",
+                "PurchasedTokens":"Satın Alınan Jetonlar",
                 "fromReferrals": "Referanslarınız:",
                 "backToHomepageBtn": "Ana sayfaya geri dön →"
             }

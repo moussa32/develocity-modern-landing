@@ -14,7 +14,8 @@
         "languages": {
             "english": "الانجليزية",
             "arabic": "العربية",
-            "turkish": "التركية"
+            "turkish": "التركية",
+            "russian": "الروسية" 
         },
         "whitepaper": "الصحيفة البيضاء",
         "followUs": ": تابعنا على"
@@ -26,6 +27,7 @@
             "buyNow": "اشتر الأن",
             "howToBuy": "طريقة الشراء"
         },
+        "WhereToBuy": "أماكن الشراء",
         "modal": {
             "starterModal": {
                 "mainText": "اربط",
@@ -72,7 +74,7 @@
                     "to": "إلى"
                 },
                 "price": "السعر",
-                "estimatedBalance": "الرصيد المتوقع:",
+                "estimatedBalance": "الرصيد المتوقع",
                 "btns": {
                     "buy": "شراء →",
                     "approve": "موافقة",
@@ -92,6 +94,7 @@
                 "referralLinkLabel": "رابط الإحالة",
                 "yourReferrals": "إحالاتك:",
                 "referralsToClaim": "مطالبة الإحالات:",
+                "referralPercentage": "نسبة الإحالة:",
                 "claimBtn": "مطالبة →"
             },
             "finalModal": {
@@ -101,6 +104,7 @@
                 "referralBtn": "رمز الإحالة",
                 "DEVEBalance": "رصيد الديڤي:",
                 "contribution": "التوزيع:",
+                "PurchasedTokens":"الرموز المشتراة",
                 "fromReferrals": "من الإحالات:",
                 "backToHomepageBtn": "العودة إلى الصفحة الرئيسية →"
             }

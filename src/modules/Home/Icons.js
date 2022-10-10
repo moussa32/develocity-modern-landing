@@ -1,9 +1,10 @@
-
+import { useTranslation } from "react-i18next";
 
 const Icons = () => {
+  const { t } = useTranslation();
   return (
    <>
-    <h2 className="c-header mt-5 d-block d-md-none">Where To Buy</h2>
+    <h2 className="c-header mt-5 d-block d-md-none">{t("homeSection.WhereToBuy")}</h2>
     <section className="m-icons d-flex container w-100 ">
         <div>
           <svg className="img-icon d-none d-md-inline svg1" xmlns="http://www.w3.org/2000/svg" width="175" height="50" viewBox="0 0 175 50">

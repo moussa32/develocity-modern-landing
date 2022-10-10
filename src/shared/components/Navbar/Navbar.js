@@ -23,6 +23,10 @@ const Navbar = ({ onClose }) => {
       locale: "tr",
       name: `${t("headSection.languages.turkish")}`,
     },
+    {
+      locale: "rus",
+      name: `${t("headSection.languages.russian")}`,
+    },
   ];
 
   const returnSelectedLang = (locale) => {
@@ -138,7 +142,8 @@ const Navbar = ({ onClose }) => {
                   }}
                   className="nav-link"
                   activeClass="active"
-                  smooth
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show"
                   spy
                   to="home"
                 >
@@ -152,10 +157,11 @@ const Navbar = ({ onClose }) => {
                   }}
                   className="nav-link"
                   activeClass="active"
-                  smooth
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show"
                   spy
                   to="about"
-                  offset={window.innerWidth < 768 ? -150 : -120}
+                  offset={window.innerWidth < 768 ? -500 : -120}
                 >
                   {t("headSection.navbar.about")}
                 </Link>
@@ -167,10 +173,11 @@ const Navbar = ({ onClose }) => {
                   }}
                   className="nav-link"
                   activeClass="active"
-                  smooth
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show"
                   spy
                   to="partners"
-                  offset={window.innerWidth < 768 ? -200 : -120}
+                  offset={window.innerWidth < 768 ? -500 : -120}
                 >
                   {t("headSection.navbar.partners")}
                 </Link>
@@ -182,10 +189,11 @@ const Navbar = ({ onClose }) => {
                   }}
                   className="nav-link"
                   activeClass="active"
-                  smooth
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show"
                   spy
                   to="scan-to-earn"
-                  offset={window.innerWidth < 768 ? -180 : -100}
+                  offset={window.innerWidth < 768 ? -500 : -100}
                 >
                   {t("headSection.navbar.scanToEarn")}
                 </Link>
@@ -197,10 +205,11 @@ const Navbar = ({ onClose }) => {
                   }}
                   className="nav-link"
                   activeClass="active"
-                  smooth
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show"
                   spy
                   to="news"
-                  offset={window.innerWidth < 768 ? -180 : -120}
+                  offset={window.innerWidth < 768 ? -500 : -120}
                 >
                   {t("headSection.navbar.news")}
                 </Link>
@@ -212,10 +221,11 @@ const Navbar = ({ onClose }) => {
                   }}
                   className="nav-link"
                   activeClass="active"
-                  smooth
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show"
                   spy
                   to="roadmap"
-                  offset={window.innerWidth < 768 ? -180 : -100}
+                  offset={window.innerWidth < 768 ? -500 : -100}
                 >
                   {t("headSection.navbar.roadmap")}
                 </Link>
@@ -227,10 +237,11 @@ const Navbar = ({ onClose }) => {
                   }}
                   className="nav-link"
                   activeClass="active"
-                  smooth
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show"
                   spy
                   to="team"
-                  offset={window.innerWidth < 768 ? -160 : -100}
+                  offset={window.innerWidth < 768 ? -500 : -100}
                 >
                   {t("headSection.navbar.team")}
                 </Link>
@@ -239,7 +250,8 @@ const Navbar = ({ onClose }) => {
                 <Link
                   className="nav-link"
                   activeClass="active"
-                  smooth
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show"
                   spy
                   to="contact"
                   onClick={() => {
@@ -271,7 +283,10 @@ const Navbar = ({ onClose }) => {
                   {langs.map((lang, idx) => {
                     return (
                       <li key={idx} onClick={() => changeLanguage(lang)}>
-                        <a className="dropdown-item">{lang.name}</a>
+                        <a className="dropdown-item"  
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show">{lang.name}
+                        </a>
                       </li>
                     );
                   })}
