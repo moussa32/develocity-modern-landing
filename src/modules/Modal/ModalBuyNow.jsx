@@ -89,6 +89,8 @@ const ModalBuyNow = ({ open, onClose, handleOpen, current, handleCurrent }) => {
         console.log(connection);
 
         connection.on("accountsChanged", (accounts) => {
+          console.log(accounts);
+          if (accounts.length <= 0) setCurrentStep("starter");
           setwalletAddress(accounts[0]);
         });
       };
