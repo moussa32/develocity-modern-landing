@@ -22,12 +22,12 @@ const SelectNetwork = ({
   const handleSelectNetworkName = useCallback(async (name) => {
     handleSelectedNetwork(name);
     sessionStorage.setItem("network", name);
-    alert(name);
     connectWeb3Wallet(name);
     handleStep("walletInfo");
   }, []);
 
   const connectWeb3Wallet = async (currentNetwork) => {
+    alert(currentNetwork);
     try {
       //Close select network modal
       handleOpen(false);
