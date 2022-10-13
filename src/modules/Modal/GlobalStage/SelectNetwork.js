@@ -31,7 +31,9 @@ const SelectNetwork = ({
 
     //Open web3modal
     console.log(sessionStorage.getItem("network"));
-    const web3Provider = await web3Modal.connect();
+    const web3Provider = await web3Modal
+      .connect()
+      .catch((error) => alert("Error couldn't find selected network so it couldn't select rpc"));
     handleConnection(web3Provider);
 
     const library = new ethers.providers.Web3Provider(web3Provider);
