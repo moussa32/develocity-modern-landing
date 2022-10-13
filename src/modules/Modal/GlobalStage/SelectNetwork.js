@@ -23,11 +23,9 @@ const SelectNetwork = ({
     handleSelectedNetwork(name);
     sessionStorage.setItem("network", name);
     connectWeb3Wallet(name);
-    handleStep("walletInfo");
   }, []);
 
   const connectWeb3Wallet = async (currentNetwork) => {
-    alert(currentNetwork);
     try {
       //Close select network modal
       handleOpen(false);
@@ -65,7 +63,6 @@ const SelectNetwork = ({
             "aria-live": "polite",
           },
         });
-
         handleStep("starter");
       }
       handleOpen(true);
