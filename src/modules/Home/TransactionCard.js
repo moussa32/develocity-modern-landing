@@ -8,29 +8,41 @@ const TransactionCard = () => {
    const [transaction,setTransaction] = useState(
     {
       BUSD: 10,
-      DEVE: 45.5
+      DEVE: 45.5,
+      address: "0Xa6f0359.....Acaaffd12",
+      sec: 35
     })
   // Transaction array
   const tArr = [
     {
       BUSD: 34,
-      DEVE: 198
+      DEVE: 198,
+      address: "0Xq7f0231.....bcacffd31",
+      sec: 30
     },
     {
       BUSD: 56,
-      DEVE: 254.8
+      DEVE: 254.8,
+      address: "0Xe2f0254.....bbacafd17",
+      sec: 20
     }
     ,{
       BUSD: 86,
-      DEVE: 460
+      DEVE: 460,
+      address: "0Xa5c0230.....cefcafd26",
+      sec: 15
     },
     {
       BUSD: 91,
-      DEVE: 500
+      DEVE: 500,
+      address: "0Xb4c0113.....qrfcacc20",
+      sec: 10
     },
     {
       BUSD: 10,
-      DEVE: 45.5
+      DEVE: 45.5,
+      address: "0X11r1331.....aaqcaqd63",
+      sec: 25
     }
   ]
   useEffect(()=>{
@@ -38,7 +50,7 @@ const TransactionCard = () => {
     setInterval(()=>{ 
         n = Math.floor(Math.random() * (4 + 1))
         setTransaction(tArr[n]) 
-    },3000)
+    },6000)
   },[])
 
   return (
@@ -69,9 +81,9 @@ const TransactionCard = () => {
             </g>
           </g>
         </svg>
-          <span className="me-2">0Xa6f0359.....Acaaffd12</span>
+          <span className="me-2">{transaction.address}</span>
         </h4>
-        <h4 className="fs-xs card-text-r">{t("homeSection.exampleSection.time")}</h4>
+        <h4 className="fs-xs card-text-r">{transaction.sec + t("homeSection.exampleSection.time")}</h4>
       </div>
     </div>
   )

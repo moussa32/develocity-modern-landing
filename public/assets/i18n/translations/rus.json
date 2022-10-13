@@ -111,7 +111,7 @@
       },
       "exampleSection":{
           "transactionComplete": "Транзакция завершена",
-          "time": "35 секунд назад"
+          "time": " секунд назад"
       }
   },
   "aboutSection": {

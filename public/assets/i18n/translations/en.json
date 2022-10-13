@@ -111,7 +111,7 @@
         },
         "exampleSection":{
             "transactionComplete": "Transaction Complete",
-            "time": "35 sec ago"
+            "time": " sec ago"
         }
     },
     "aboutSection": {
