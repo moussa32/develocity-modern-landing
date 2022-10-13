@@ -65,10 +65,11 @@ const SelectNetwork = ({
         });
         handleStep("starter");
       }
-      handleOpen(true);
     } catch (error) {
+      alert(error);
       handleStep("starter");
     }
+    handleOpen(true);
   };
 
   const { t } = useTranslation();
