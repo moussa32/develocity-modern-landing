@@ -31,43 +31,44 @@ const SelectNetwork = ({
 
     //Open web3modal
     console.log(sessionStorage.getItem("network"));
-    const web3Provider = await web3Modal
-      .connect()
-      .catch((error) => alert("Error couldn't find selected network so it couldn't select rpc"));
-    handleConnection(web3Provider);
+    const web3Provider = await web3Modal.connect().catch((error) => alert(error));
 
-    const library = new ethers.providers.Web3Provider(web3Provider);
-    handleProvider(library);
+    if (web3Provider) {
+      console.log("ture");
+      handleConnection(web3Provider);
+      const library = new ethers.providers.Web3Provider(web3Provider);
+      handleProvider(library);
+      const web3Accounts = await library.listAccounts();
+      const userNetwork = await library.getNetwork();
 
-    const web3Accounts = await library.listAccounts();
+      handleUserNetwork(userNetwork.name);
+      if (convertEtherNetworkNameToName(userNetwork.name) === currentNetwork) {
+        handleWalletAddress(web3Accounts[0]);
+        handleStep("walletInfo");
+      } else {
+        toast("Please change your wallet network", {
+          duration: 6000,
+          position: "top-center",
+          // Styling
+          style: {
+            color: "#fff",
+            fontSize: "16px",
+            background: "#F03D3D",
+          },
 
-    const userNetwork = await library.getNetwork();
-    alert(convertEtherNetworkNameToName(userNetwork.name) === currentNetwork);
-
-    handleUserNetwork(userNetwork.name);
-    if (convertEtherNetworkNameToName(userNetwork.name) === currentNetwork) {
-      handleWalletAddress(web3Accounts[0]);
-      handleStep("walletInfo");
+          // Aria
+          ariaProps: {
+            role: "status",
+            "aria-live": "polite",
+          },
+        });
+        handleStep("starter");
+      }
     } else {
-      toast("Please change your wallet network", {
-        duration: 6000,
-        position: "top-center",
-        // Styling
-        style: {
-          color: "#fff",
-          fontSize: "16px",
-          background: "#F03D3D",
-        },
-
-        // Aria
-        ariaProps: {
-          role: "status",
-          "aria-live": "polite",
-        },
-      });
-      handleStep("starter");
+      // handleStep("starter");
+      console.log("error");
     }
-    // handleStep("starter");
+
     handleOpen(true);
   };
 
