@@ -35,12 +35,14 @@ const SelectNetwork = ({
       //Open web3modal
       const web3Provider = await web3Modal.connect();
       handleConnection(web3Provider);
+      alert(web3Provider);
 
       const library = new ethers.providers.Web3Provider(web3Provider);
       handleProvider(library);
 
       const web3Accounts = await library.listAccounts();
-      alert(web3Accounts[0]);
+      alert(web3Provider);
+
       const userNetwork = await library.getNetwork();
       handleUserNetwork(userNetwork.name);
       if (convertEtherNetworkNameToName(userNetwork.name) === currentNetwork) {
