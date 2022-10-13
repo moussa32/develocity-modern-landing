@@ -22,18 +22,25 @@ const SelectNetwork = ({
   const handleSelectNetworkName = useCallback(async (name) => {
     handleSelectedNetwork(name);
     sessionStorage.setItem("network", name);
+    alert(name);
     connectWeb3Wallet(name);
     handleStep("walletInfo");
   }, []);
 
   const connectWeb3Wallet = async (currentNetwork) => {
     try {
+      //Close select network modal
       handleOpen(false);
+
+      //Open web3modal
       const web3Provider = await web3Modal.connect();
       handleConnection(web3Provider);
+
       const library = new ethers.providers.Web3Provider(web3Provider);
       handleProvider(library);
+
       const web3Accounts = await library.listAccounts();
+      alert(web3Accounts[0]);
       const userNetwork = await library.getNetwork();
       handleUserNetwork(userNetwork.name);
       if (convertEtherNetworkNameToName(userNetwork.name) === currentNetwork) {
