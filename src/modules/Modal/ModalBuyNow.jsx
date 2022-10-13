@@ -13,7 +13,6 @@ import { web3Modal } from "../../shared/util/handleWeb3Modal";
 import toast from "react-hot-toast";
 import { getWalletBalance } from "../../shared/util/handleContracts";
 import { AnimatePresence, motion } from "framer-motion";
-import { ethers } from "ethers";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
@@ -63,35 +62,39 @@ const ModalBuyNow = ({ open, onClose, handleOpen, current, handleCurrent }) => {
     });
   };
 
+  const resetBalance = useCallback(async () => {
+    const {
+      deveBalance: newDeveBalance,
+      referralsToClaim: newReferralsToClaim,
+      tokensToClaim: newTokensToClaim,
+    } = await getWalletBalance(provider.getSigner(), walletAddress);
+    setDeveBalance(newDeveBalance);
+    setTokensToClaim(newTokensToClaim);
+    setReferralsToClaim(newReferralsToClaim);
+  }, [walletAddress]);
+
   useEffect(() => {
     //When wallet address is chanched, it will fetch the new address's balance
-    if (walletAddress) {
-      const resetBalance = async () => {
-        const {
-          deveBalance: newDeveBalance,
-          referralsToClaim: newReferralsToClaim,
-          tokensToClaim: newTokensToClaim,
-        } = await getWalletBalance(provider.getSigner(), walletAddress);
-        if (newDeveBalance && newReferralsToClaim && newTokensToClaim) {
-          setDeveBalance(newDeveBalance);
-          setTokensToClaim(newTokensToClaim);
-          setReferralsToClaim(newReferralsToClaim);
-        }
-      };
+    if (walletAddress && open) {
       resetBalance();
     }
-  }, [walletAddress]);
+  }, [walletAddress, open]);
 
   useEffect(() => {
     //When User is changed his wallet address it will get the new wallet address and refresh component
     if (connection) {
       const listenToAccountChanges = async () => {
-        console.log(connection);
-
         connection.on("accountsChanged", (accounts) => {
-          console.log(accounts);
           if (accounts.length <= 0) setCurrentStep("starter");
           setwalletAddress(accounts[0]);
+        });
+
+        connection.on("chainChanged", async () => {
+          setCurrentStep("starter");
+        });
+
+        connection.on("disconnect", () => {
+          setCurrentStep("starter");
         });
       };
       listenToAccountChanges();
