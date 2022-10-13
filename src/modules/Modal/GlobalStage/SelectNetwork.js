@@ -27,7 +27,7 @@ const SelectNetwork = ({
 
   const connectWeb3Wallet = async (currentNetwork) => {
     //Close select network modal
-    handleOpen(false);
+    // handleOpen(false);
 
     //Open web3modal
     console.log(sessionStorage.getItem("network"));
