@@ -33,16 +33,29 @@ const FinalModal = ({ onClose, handleStep, boughtAmount, referral }) => {
         />
       </svg>
 
-      <ModalHeaderText header={t("homeSection.modal.finalModal.mainText")} caption={t("homeSection.modal.finalModal.subText")} />
+      <ModalHeaderText
+        header={t("homeSection.modal.finalModal.mainText")}
+        caption={t("homeSection.modal.finalModal.subText")}
+      />
       <p className="p-final text-center">
-      {t("homeSection.modal.finalModal.referralText")} <span style={{ cursor: "pointer" }}>{t("homeSection.modal.finalModal.referralBtn")}</span>
+        {t("homeSection.modal.finalModal.referralText")}{" "}
+        <span style={{ cursor: "pointer" }}>{t("homeSection.modal.finalModal.referralBtn")}</span>
       </p>
       <div className="mt-5 w-100">
-        <TextItem title={t("homeSection.modal.finalModal.PurchasedTokens")} value={boughtAmount} percentage={boughtAmount * deveCost} hr="true" />
-        <TextItem title={t("homeSection.modal.finalModal.fromReferrals")} value={referral} percentage={referral * deveCost} />
+        <TextItem
+          title={t("homeSection.modal.finalModal.PurchasedTokens")}
+          value={boughtAmount}
+          percentage={(boughtAmount * deveCost).toFixed(4)}
+          hr="true"
+        />
+        <TextItem
+          title={t("homeSection.modal.finalModal.fromReferrals")}
+          value={referral}
+          percentage={(referral * deveCost).toFixed(4)}
+        />
       </div>
       <button className="back-to-home mt-5" onClick={returnToHome}>
-      {t("homeSection.modal.finalModal.backToHomepageBtn")}
+        {t("homeSection.modal.finalModal.backToHomepageBtn")}
       </button>
     </section>
   );
