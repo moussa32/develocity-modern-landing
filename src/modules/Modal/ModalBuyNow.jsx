@@ -63,14 +63,20 @@ const ModalBuyNow = ({ open, onClose, handleOpen, current, handleCurrent }) => {
   };
 
   const resetBalance = useCallback(async () => {
-    const {
-      deveBalance: newDeveBalance,
-      referralsToClaim: newReferralsToClaim,
-      tokensToClaim: newTokensToClaim,
-    } = await getWalletBalance(provider.getSigner(), walletAddress);
-    setDeveBalance(newDeveBalance);
-    setTokensToClaim(newTokensToClaim);
-    setReferralsToClaim(newReferralsToClaim);
+    try {
+      const {
+        deveBalance: newDeveBalance,
+        referralsToClaim: newReferralsToClaim,
+        tokensToClaim: newTokensToClaim,
+      } = await getWalletBalance(provider.getSigner(), walletAddress);
+      setDeveBalance(newDeveBalance);
+      setTokensToClaim(newTokensToClaim);
+      setReferralsToClaim(newReferralsToClaim);
+    } catch (error) {
+      setDeveBalance({ amount: 0, value: 0 });
+      setTokensToClaim(0);
+      setReferralsToClaim(0);
+    }
   }, [walletAddress]);
 
   useEffect(() => {
@@ -94,6 +100,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen, current, handleCurrent }) => {
         });
 
         connection.on("disconnect", () => {
+          handleDisconnectWeb3Modal();
           setCurrentStep("starter");
         });
       };
