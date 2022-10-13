@@ -9,7 +9,7 @@ const TransactionCard = () => {
     {
       BUSD: 10,
       DEVE: 45.5,
-      address: "0Xa6f0359.....Acaaffd12",
+      address: "0xa6f0359.....Acaaffd12",
       sec: 35
     })
   // Transaction array
@@ -17,31 +17,31 @@ const TransactionCard = () => {
     {
       BUSD: 34,
       DEVE: 198,
-      address: "0Xq7f0231.....bcacffd31",
+      address: "0xq7f0231.....bcacffd31",
       sec: 30
     },
     {
       BUSD: 56,
       DEVE: 254.8,
-      address: "0Xe2f0254.....bbacafd17",
+      address: "0xe2f0254.....bbacafd17",
       sec: 20
     }
     ,{
       BUSD: 86,
       DEVE: 460,
-      address: "0Xa5c0230.....cefcafd26",
+      address: "0xa5c0230.....cefcafd26",
       sec: 15
     },
     {
       BUSD: 91,
       DEVE: 500,
-      address: "0Xb4c0113.....qrfcacc20",
+      address: "0xb4c0113.....qrfcacc20",
       sec: 10
     },
     {
       BUSD: 10,
       DEVE: 45.5,
-      address: "0X11r1331.....aaqcaqd63",
+      address: "0x11r1331.....aaqcaqd63",
       sec: 25
     }
   ]
