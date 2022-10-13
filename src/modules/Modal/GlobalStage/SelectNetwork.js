@@ -23,6 +23,7 @@ const SelectNetwork = ({
     handleSelectedNetwork(name);
     sessionStorage.setItem("network", name);
     connectWeb3Wallet(name);
+    console.log(name);
   }, []);
 
   const connectWeb3Wallet = async (currentNetwork) => {
@@ -38,9 +39,10 @@ const SelectNetwork = ({
     handleProvider(library);
 
     const web3Accounts = await library.listAccounts();
-    alert("This from provider =>", web3Accounts[0]);
 
     const userNetwork = await library.getNetwork();
+    alert(convertEtherNetworkNameToName(userNetwork.name) === currentNetwork);
+
     handleUserNetwork(userNetwork.name);
     if (convertEtherNetworkNameToName(userNetwork.name) === currentNetwork) {
       handleWalletAddress(web3Accounts[0]);
@@ -64,7 +66,7 @@ const SelectNetwork = ({
       });
       handleStep("starter");
     }
-    handleStep("starter");
+    // handleStep("starter");
     handleOpen(true);
   };
 
