@@ -3,7 +3,7 @@ import EtherumIcon from "../../../assets/images/Ethereum-icon.png";
 import PolygonIcon from "../../../assets/images/polygon-icon.png";
 import BinanceIcon from "../../../assets/images/binanceCoin.png";
 import { ethers } from "ethers";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback } from "react";
 import { web3Modal } from "../../../shared/util/handleWeb3Modal";
 import { convertEtherNetworkNameToName } from "../../../shared/util/handleNetworkProvider";
 import toast from "react-hot-toast";
@@ -23,7 +23,6 @@ const SelectNetwork = ({
     handleSelectedNetwork(name);
     sessionStorage.setItem("network", name);
     connectWeb3Wallet(name);
-    console.log(name);
   }, []);
 
   const connectWeb3Wallet = async (currentNetwork) => {
@@ -31,9 +30,9 @@ const SelectNetwork = ({
     handleOpen(false);
 
     //Open web3modal
+    console.log(sessionStorage.getItem("network"));
     const web3Provider = await web3Modal.connect();
     handleConnection(web3Provider);
-    alert("This from provider =>", web3Provider);
 
     const library = new ethers.providers.Web3Provider(web3Provider);
     handleProvider(library);
