@@ -1,8 +1,8 @@
 import styles from "./Roadmap.module.css";
 import styleStepper from "./StepLine.module.css";
 import { Card } from "./Card";
-import check from "../../assets/images/check-circle.png";
-import clock from "../../assets/images/clockHistory.svg";
+import check from "../../../assets/images/check-circle.png";
+import clock from "../../../assets/images/clockHistory.svg";
 import { useTranslation } from "react-i18next";
 
 export function Roadmap() {

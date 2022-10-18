@@ -1,12 +1,12 @@
-// import coinbaseImag from './../../assets/images/Coinbase.png';
-// import binanceImag from './../../assets/images/binance.png';
-// import bitmexImag from './../../assets/images/bitmex.png';
+// import coinbaseImag from './../../../assets/images/Coinbase.png';
+// import binanceImag from './../../../assets/images/binance.png';
+// import bitmexImag from './../../../assets/images/bitmex.png';
 
-import coinbaseImag from "./../../assets/images/CoinbaseColored.svg";
-import bitmexImag from "./../../assets/images/BitmexColored.svg";
-import binanceImag from "./../../assets/images/BinanceColored.svg";
+import coinbaseImag from "./../../../assets/images/CoinbaseColored.svg";
+import bitmexImag from "./../../../assets/images/BitmexColored.svg";
+import binanceImag from "./../../../assets/images/BinanceColored.svg";
 import { useState } from "react";
-import AnimatedImage from "../../shared/components/AnimatedImage";
+import AnimatedImage from "../../../shared/components/AnimatedImage";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./Partnering.module.css";
 import "./partnering.css";

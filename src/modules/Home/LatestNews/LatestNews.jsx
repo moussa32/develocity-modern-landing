@@ -1,7 +1,7 @@
 import styles from './LatestNews.module.css'
-import image1 from './../../assets/images/newsImage1.png'
-import image2 from './../../assets/images/newsImage2.png'
-import image3 from './../../assets/images/newsImage3.png'
+import image1 from './../../../assets/images/newsImage1.png'
+import image2 from './../../../assets/images/newsImage2.png'
+// import image3 from './../../../assets/images/newsImage3.png'
 import { useTranslation } from 'react-i18next';
 const newsCard = [
     {

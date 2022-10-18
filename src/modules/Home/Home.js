@@ -1,9 +1,9 @@
 import Footer from "../../shared/components/Footer/Footer";
 import Featured from "./Featured";
 import Invest from "./Invest";
-import { Partnering } from "../Partnering/Partnering";
-import { LatestNews } from "../LatestNews/LatestNews";
-import { Roadmap } from "../Roadmap/Roadmap";
+import { Partnering } from "./Partnering/Partnering";
+import { LatestNews } from "./LatestNews/LatestNews";
+import { Roadmap } from "./Roadmap/Roadmap";
 // import { Roadmap } from "../Roadmap/Roadmap";
 import Navbar from "../../shared/components/Navbar/Navbar";
 import ContactInfo from "./ContactInfo";

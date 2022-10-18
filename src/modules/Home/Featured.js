@@ -1,18 +1,18 @@
-import Bloomberg from "../../assets/images/Bloomberg.png";
-import Coindesk from "../../assets/images/Coindesk.png";
-import Forbes from "../../assets/images/Forbes.png";
-import YahooFinance from "../../assets/images/Yahoo-Finance.png";
-import Wired from "../../assets/images/Wired.png";
-import { Swiper, SwiperSlide } from "swiper/react";
+// import Bloomberg from "../../assets/images/Bloomberg.png";
+// import Coindesk from "../../assets/images/Coindesk.png";
+// import Forbes from "../../assets/images/Forbes.png";
+// import YahooFinance from "../../assets/images/Yahoo-Finance.png";
+// import Wired from "../../assets/images/Wired.png";
+// import { Swiper, SwiperSlide } from "swiper/react";
 import Ecosystem from "./Ecosystem";
-import { useState } from "react";
-import AnimatedImage from "../../shared/components/AnimatedImage";
+// import { useState } from "react";
+// import AnimatedImage from "../../shared/components/AnimatedImage";
 import "swiper/css";
 import { useTranslation } from 'react-i18next';
 
 const Featured = () => {
     const { t } = useTranslation();
-  const [activeFeaturedImage, setActiveFeaturedImage] = useState(null);
+  // const [activeFeaturedImage, setActiveFeaturedImage] = useState(null);
 
   return (
     <>
