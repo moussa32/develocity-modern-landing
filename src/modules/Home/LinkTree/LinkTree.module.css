@@ -158,6 +158,12 @@
 .linksInMobile .btn_title {
     transform: translateX(-90%);
 }
+.removeShareButton .link-btnShare {
+    right: -50px;
+}
+.removeShareButton .btn_title {
+    transform: translateX(-50%);
+}
 
 
 

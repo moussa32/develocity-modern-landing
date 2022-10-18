@@ -3,15 +3,16 @@ import styles from './LinkTree.module.css'
 import ShareIcon from './ShareIcon';
 
 export default function LinkButton({ title, shareNavigator, titleofshare, textofshare, urlofshare }) {
-  const [touch, setTouch] = useState();
+  const [activeTouchElement, setActiveTouchElement] = useState(null);
   const onTouchMove = (e) => {
-    setTouch(e.target.innerHTML)
-    console.log('move:', touch);
+    setActiveTouchElement(e.target.innerHTML)
+    // console.log('move:', touch);
   };
-  const TouchEnd = () => {
-    setTouch(null)
-    console.log('end', touch);
-  };
+  // const TouchEnd = (e) => {
+  //   e.preventDefault()
+  //   setActiveTouchElement(null)
+  // };
+
   const goToLink = () => {
     // eslint-disable-next-line no-restricted-globals
     location.href = `https://bscscan.com`
@@ -20,12 +21,14 @@ export default function LinkButton({ title, shareNavigator, titleofshare, textof
   return (
     <>
       <div
-        className={`${styles['link-wrapper']} ${touch===title && styles.linksInMobile}  `} >
+      onTouchStart={onTouchMove}
+      // onTouchEnd={TouchEnd}
+      // onTouchCancel={TouchEnd}
+        className={`${styles['link-wrapper']} ${activeTouchElement===title && styles.linksInMobile}  
+        ${activeTouchElement !== title && styles.removeShareButton}
+        `} >
         <button className={`${styles.btn_title} `}
           onClick={goToLink}
-          onTouchMove={onTouchMove}
-          onTouchEnd={TouchEnd}
-          onTouchCancel={TouchEnd}
           >
           {title}
         </button>
