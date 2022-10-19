@@ -17,27 +17,41 @@ export default function LinkButton({ title, shareNavigator, titleofshare, textof
     // eslint-disable-next-line no-restricted-globals
     location.href = `https://bscscan.com`
   }
+  const handleScroll = event => {
+    // console.log('offsetHeight: ', event.currentTarget.offsetHeight);
+    if (event.currentTarget.scrollLeft > 1) {
+      setActiveTouchElement(event.target.dataset.title)
+    }
+    else {
+      setActiveTouchElement(null)
+    }
 
+  };
   return (
     <>
       <div
-      onTouchStart={onTouchMove}
-      // onTouchEnd={TouchEnd}
-      // onTouchCancel={TouchEnd}
-        className={`${styles['link-wrapper']} ${activeTouchElement===title && styles.linksInMobile}  
+        onScroll={handleScroll}
+        // onTouchStart={onTouchMove}
+        // onTouchEnd={TouchEnd}
+        // onTouchCancel={TouchEnd}
+        data-title={title}
+        className={`${styles['link-wrapper']}
+         ${activeTouchElement === title && styles.linksInMobile}  
         ${activeTouchElement !== title && styles.removeShareButton}
-        `} >
-        <button className={`${styles.btn_title} `}
-          onClick={goToLink}
+        `} 
+        >
+        <div className={styles.swapContainer}>
+          <button className={`${styles.btn_title} `}
+            onClick={goToLink}
           >
-          {title}
-        </button>
-        <div>
-          <button className={styles['link-btnShare']}
-            onClick={() => shareNavigator(textofshare, titleofshare, urlofshare)}
-          >
-            <ShareIcon color='#fff' />
+            {title}
           </button>
+          <div>
+            <button className={styles['link-btnShare']}
+              onClick={() => shareNavigator(textofshare, titleofshare, urlofshare)}>
+              <ShareIcon color='#fff' />
+            </button>
+          </div>
         </div>
       </div>
     </>

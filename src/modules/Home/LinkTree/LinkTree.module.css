@@ -1,10 +1,11 @@
-.treeWrapper{
-    position: absolute;
-    top: 0;
+.treeWrapper {
+    position: relative;
+    /* top: 0;
     left: 0;
     right: 0;
-    background-color: #F9F9F9;
+    background-color: #F9F9F9; */
 }
+
 .treeContainer {
     width: 480px;
     margin: 50px auto;
@@ -25,20 +26,8 @@
     text-align: start;
     width: 40px;
     font-size: 12px;
-    font-family: 'SF Pro Display Regular';
 }
 
-.btn-share {
-    width: 32px;
-    height: 32px;
-    padding-top: 1px;
-    padding-bottom: 4px;
-    border-radius: 9px;
-    color: white !important;
-    border: none;
-    outline: none;
-    background-color: rgba(138, 105, 235, 0.1);
-}
 
 .info {
     text-align: center;
@@ -46,7 +35,6 @@
 }
 
 .info h5 {
-    font-family: 'SF Pro Display Medium';
     font-size: 22px;
     color: #23282C;
     padding-top: 7px;
@@ -55,7 +43,6 @@
 .info p {
     width: 308px;
     font-size: 12px;
-    font-family: 'SF Pro Display Medium';
     margin: auto;
     color: #6C757D;
 }
@@ -71,8 +58,14 @@
     position: relative;
     margin: auto;
     margin-top: 15px;
+    /*  */
+    /* overflow-x: scroll;
+    overflow-y: hidden; */
+    /* width: 500px; */
+    /* background-color: #1DA1F2; */
 }
-.iconWrapper{
+
+.iconWrapper {
     display: flex;
     justify-content: space-between;
     width: 300px;
@@ -80,42 +73,49 @@
     margin-bottom: 45px;
     margin-top: 20px;
 }
-.iconWrapper a{
+
+.iconWrapper a {
     width: 32px;
     height: 32px;
-    border-radius:9px ;
-    background-color: #B1BACB;
+    border-radius: 9px;
     color: white !important;
     font-size: 18px;
     transition: all 0.5s;
+}
+.facebookIcon, .youtubeIcon, .instgramIcon, .twitterIcon, .tiktokIcon, .telegramIcon{
+    background-color: #B1BACB;
 
 }
-.facebookIcon:hover{
+.facebookIcon:hover {
     background-color: #1672E6;
 }
 
-.youtubeIcon:hover{
+.youtubeIcon:hover {
     background-color: #FF0000;
 }
-.instgramIcon:hover{
+
+.instgramIcon:hover {
     background-color: #A63795;
 }
-.twitterIcon:hover{
+
+.twitterIcon:hover {
     background-color: #1DA1F2;
 }
-.tiktokIcon:hover{
+
+.tiktokIcon:hover {
     background-color: #F12950;
 }
-.telegramIcon:hover{
+
+.telegramIcon:hover {
     background-color: #58BDEF;
 }
+
 .link-wrapper .btn_title {
     outline: none;
     border: none;
     background-color: transparent;
     position: absolute;
     font-size: 12px;
-    font-family: 'SF Pro Display Semibold';
     color: #23282C;
     height: 100%;
     line-height: 45px;
@@ -123,55 +123,120 @@
     left: 50%;
     transform: translateX(-50%);
     transition: all 0.8s;
-   
-
+    /* test */
+    /* width: 130%; */
 }
 
 .link-wrapper:hover {
     border-color: #8968E9;
 }
 
+.btn-share,
+.link-btnShare {
+    width: 32px;
+    height: 32px;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    padding-inline: 2px 1px;
+    border-radius: 9px;
+    /* color: white !important; */
+    border: none;
+    outline: none;
+    background-color: rgba(138, 105, 235, 0.1);
+}
 
 .link-btnShare {
     position: absolute;
-    right: -50px;
-    transition: all 0.8s;
-    background-color: #8968E9;
-    height: 100%;
-    top: 0;
-    width: 50px;
-    border: none;
-    outline: none;
-    padding-top: 1px;
-    padding-bottom: 6px;
+    right: 10px;
+    top: 8px;
+    background-color: rgba(138, 105, 235, 0.1);
+    opacity: 0;
+    transition: all 0.5;
 }
-/* .link-wrapper:hover .link-btnShare {
-    right: 0px;
-} */
-/* .link-wrapper:hover .btn_title {
-    transform: translateX(-90%);
-} */
 
-.linksInMobile .link-btnShare {
-    right: 0px;
+.link-btnShare svg>path {
+    stroke: #8968E9 !important;
 }
-.linksInMobile .btn_title {
-    transform: translateX(-90%);
-}
-.removeShareButton .link-btnShare {
-    right: -50px;
-}
-.removeShareButton .btn_title {
-    transform: translateX(-50%);
+
+.link-wrapper:hover .link-btnShare {
+    opacity: 1;
 }
 
 
 
-@media only screen and (max-width: 767px)  {
+
+
+@media only screen and (max-width: 767px) {
     .treeContainer {
         width: 90%;
-    } 
-    .link-wrapper{
-        width: 90%;
     }
+
+    .facebookIcon {
+        background-color: #1672E6;
+    }
+
+    .youtubeIcon {
+        background-color: #FF0000;
+    }
+
+    .instgramIcon {
+        background-color: #A63795;
+    }
+
+    .twitterIcon {
+        background-color: #1DA1F2;
+    }
+
+    .tiktokIcon {
+        background-color: #F12950;
+    }
+
+    .telegramIcon {
+        background-color: #58BDEF;
+    }
+
+    .link-wrapper {
+        width: 90%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .link-wrapper::-webkit-scrollbar {
+        display: none
+    }
+
+    .link-btnShare {
+        /* position: absolute; */
+        right: 0px;
+        transition: all 0.8s;
+        background-color: #8968E9;
+        height: 50px;
+        top: 0;
+        width: 50px;
+        border: none;
+        outline: none;
+        padding-top: 1px;
+        padding-bottom: 6px;
+        border-radius: 0px;
+    }
+
+    .link-btnShare svg>path {
+        stroke: #fff !important;
+    }
+
+    .swapContainer {
+        width: 400px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .swapContainer .link-btnShare {
+        opacity: 1;
+    }
+
+    /* .linksInMobile{
+        background-color: #F12950 ;
+    } */
 }

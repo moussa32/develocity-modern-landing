@@ -71,6 +71,9 @@ export default function LinkTree() {
     }
     return (
         <>
+          
+
+
         <div className={styles.treeWrapper}> 
             <div className={styles.treeContainer}>
                 <div className={styles.shareWrapper}>
@@ -87,22 +90,22 @@ export default function LinkTree() {
                     <h5>Develocity</h5>
                     <p>DeVelocity strives to create a safe and trustworthy crypto environment where investors and developers can interact securely, considering the transparent credibility and technical measures and standards.</p>
                     <div className={styles.iconWrapper}>
-                        <a href='' className={styles.facebookIcon}>
+                        <a href='https://bscscan.com' className={styles.facebookIcon}>
                             <FaFacebookF />
                         </a>
-                        <a href='' className={styles.youtubeIcon}>
+                        <a href='https://bscscan.com' className={styles.youtubeIcon}>
                             <AiFillYoutube />
                         </a>
-                        <a href='' className={styles.instgramIcon}>
+                        <a href='https://bscscan.com' className={styles.instgramIcon}>
                             <AiOutlineInstagram />
                         </a>
-                        <a href='' className={styles.twitterIcon}>
+                        <a href='https://bscscan.com' className={styles.twitterIcon}>
                             <FaTwitter />
                         </a>
-                        <a href='' className={styles.tiktokIcon}>
+                        <a href='https://bscscan.com' className={styles.tiktokIcon}>
                             <FaTiktok />
                         </a>
-                        <a href='' className={styles.telegramIcon}>
+                        <a href='https://bscscan.com' className={styles.telegramIcon}>
                             <FaPaperPlane />
                         </a>
                     </div>
@@ -122,6 +125,8 @@ export default function LinkTree() {
                 </div>
 
             </div>
+
+         
 
             </div>
         </>
