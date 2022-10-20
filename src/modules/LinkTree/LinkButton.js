@@ -1,36 +1,43 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState ,useRef} from 'react'
 import styles from './LinkTree.module.css'
 import ShareIcon from './ShareIcon';
 
 export default function LinkButton({ title, shareNavigator, titleofshare, textofshare, urlofshare }) {
   const [activeTouchElement, setActiveTouchElement] = useState(null);
-  const onTouchMove = (e) => {
-    setActiveTouchElement(e.target.innerHTML)
-    // console.log('move:', touch);
-  };
+  const ref = useRef(null);
+  // const onTouchMove = (e) => {
+  //   setActiveTouchElement(e.target.innerHTML)
+  // };
   // const TouchEnd = (e) => {
   //   e.preventDefault()
   //   setActiveTouchElement(null)
   // };
+useEffect(()=>{
+  if(activeTouchElement===null){
+    ref.current.scrollLeft=0
+    }
+  // console.log("activeTouchElement: ",ref.current)
+} ,[activeTouchElement])
 
   const goToLink = () => {
     // eslint-disable-next-line no-restricted-globals
     location.href = `https://bscscan.com`
   }
   const handleScroll = event => {
-    // console.log('offsetHeight: ', event.currentTarget.offsetHeight);
     if (event.currentTarget.scrollLeft > 1) {
       setActiveTouchElement(event.target.dataset.title)
     }
     else {
       setActiveTouchElement(null)
+      // event.currentTarget.scrollLeft=0
     }
-
   };
+ 
   return (
     <>
       <div
         onScroll={handleScroll}
+        ref={ref}
         // onTouchStart={onTouchMove}
         // onTouchEnd={TouchEnd}
         // onTouchCancel={TouchEnd}
@@ -40,7 +47,7 @@ export default function LinkButton({ title, shareNavigator, titleofshare, textof
         ${activeTouchElement !== title && styles.removeShareButton}
         `} 
         >
-        <div className={styles.swapContainer}>
+        <div className={styles.swapContainer} >
           <button className={`${styles.btn_title} `}
             onClick={goToLink}
           >

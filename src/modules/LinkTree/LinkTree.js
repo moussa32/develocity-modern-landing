@@ -2,7 +2,7 @@ import React from 'react';
 // import { GrShare } from "react-icons/gr";
 import ShareIcon from './ShareIcon';
 import styles from './LinkTree.module.css'
-import logo from '../../../assets/images/Deve-Logo.svg';
+import logo from '../../assets/images/Deve-Logo.svg';
 import LinkButton from './LinkButton';
 import {
     FaPaperPlane,

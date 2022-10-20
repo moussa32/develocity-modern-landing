@@ -5,10 +5,14 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import LinkTree from "./modules/Home/LinkTree/LinkTree";
+import LinkTree from "./modules/LinkTree/LinkTree";
 const App = () => {
   return (
     <BrowserRouter >
+      <Toaster
+        position="top-center"
+      reverseOrder={false}
+      />
           <Routes >
             <Route exact path="/" element={<Home />} />
             <Route path="/links" element={<LinkTree />} />
