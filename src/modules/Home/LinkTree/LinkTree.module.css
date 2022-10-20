@@ -123,8 +123,6 @@
     left: 50%;
     transform: translateX(-50%);
     transition: all 0.8s;
-    /* test */
-    /* width: 130%; */
 }
 
 .link-wrapper:hover {
@@ -169,8 +167,16 @@
 @media only screen and (max-width: 767px) {
     .treeContainer {
         width: 90%;
+        margin: 10px auto;
     }
+    .iconWrapper{
+        width: 80%;
+    }
+    .link-wrapper .btn_title{
+        left: 30%;
+        transform: translateX(0%);
 
+    }
     .facebookIcon {
         background-color: #1672E6;
     }
@@ -225,7 +231,8 @@
     }
 
     .swapContainer {
-        width: 400px;
+        width: 120%;
+        height: 50px;
         position: absolute;
         top: 0;
         left: 0;
