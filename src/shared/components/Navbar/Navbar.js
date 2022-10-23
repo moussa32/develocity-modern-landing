@@ -111,7 +111,7 @@ const Navbar = ({ onClose }) => {
             <path id="Deve_Logo" data-name="Deve Logo" d="M405.786,384.721h-21.12v14.4l14.4,12,24-14.4-24,26.4-24-20v-28h30.72a17.28,17.28,0,0,1,17.28,17.28v1.92l-9.372,4.686-.228-6.606A7.49,7.49,0,0,0,405.786,384.721Z" transform="translate(-375.066 -375.121)" fill="url(#linear-gradient)"/>
           </svg>*/}
           <a>
-            <img src={`${logo}`} />
+            <img src={`${logo}`} alt=""/>
 
             <svg
               className="ms-3 d-md-inline d-none"

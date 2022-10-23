@@ -58,6 +58,7 @@
     position: relative;
     margin: auto;
     margin-top: 15px;
+    cursor: pointer;
     /*  */
     /* overflow-x: scroll;
     overflow-y: hidden; */
@@ -163,7 +164,6 @@
 
 
 
-
 @media only screen and (max-width: 767px) {
     .treeContainer {
         width: 90%;
@@ -176,12 +176,10 @@
         left: 0%;
         transform: translateX(0%);
         width: 85%;
-
     }
     .facebookIcon {
         background-color: #1672E6;
     }
-
     .youtubeIcon {
         background-color: #FF0000;
     }

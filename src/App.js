@@ -1,5 +1,6 @@
 import Home from "./modules/Home/Home";
-import toast, { Toaster } from 'react-hot-toast';
+import NotFound from "./modules/NotFound";
+import  { Toaster } from 'react-hot-toast';
 import {
   BrowserRouter,
   Routes,
@@ -16,7 +17,7 @@ const App = () => {
           <Routes >
             <Route exact path="/" element={<Home />} />
             <Route path="/links" element={<LinkTree />} />
-            {/* <Route path='*' element={<NotFound/>}/> */}
+            <Route path='*' element={<NotFound/>}/>
           </Routes>
 
         </BrowserRouter>

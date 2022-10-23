@@ -37,6 +37,7 @@ useEffect(()=>{
     <>
       <div
         onScroll={handleScroll}
+        onClick={goToLink}
         ref={ref}
         // onTouchStart={onTouchMove}
         // onTouchEnd={TouchEnd}
@@ -49,7 +50,7 @@ useEffect(()=>{
         >
         <div className={styles.swapContainer} >
           <button className={`${styles.btn_title} `}
-            onClick={goToLink}
+            
           >
             {title}
           </button>
