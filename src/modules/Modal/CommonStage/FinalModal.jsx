@@ -39,7 +39,9 @@ const FinalModal = ({ onClose, handleStep, boughtAmount, referral }) => {
       />
       <p className="p-final text-center">
         {t("homeSection.modal.finalModal.referralText")}{" "}
-        <span style={{ cursor: "pointer" }}>{t("homeSection.modal.finalModal.referralBtn")}</span>
+        <span style={{ cursor: "pointer" }} onClick={() => handleStep("referral")}>
+          {t("homeSection.modal.finalModal.referralBtn")}
+        </span>
       </p>
       <div className="mt-5 w-100">
         <TextItem
