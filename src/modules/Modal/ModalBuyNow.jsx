@@ -94,14 +94,17 @@ const ModalBuyNow = ({ open, onClose, handleOpen, current, handleCurrent }) => {
       const listenToAccountChanges = async () => {
         connection.on("accountsChanged", (accounts) => {
           if (accounts.length <= 0) setCurrentStep("starter");
+          setIsLoaded(false);
           setwalletAddress(accounts[0]);
         });
 
         connection.on("chainChanged", async () => {
+          setIsLoaded(false);
           setCurrentStep("starter");
         });
 
         connection.on("disconnect", () => {
+          setIsLoaded(false);
           handleDisconnectWeb3Modal();
           setCurrentStep("starter");
         });
