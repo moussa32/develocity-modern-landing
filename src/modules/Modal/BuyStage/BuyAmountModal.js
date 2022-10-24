@@ -118,6 +118,7 @@ const BuyAmountModal = ({
           setBuyButtonText(t("homeSection.modal.buyAmountModal.btns.buy"));
           handleFinalAmount(convertedDeve);
           handleStep("final");
+          handleCurrent();
         });
       })
       .catch((error) => {
@@ -219,6 +220,7 @@ const BuyAmountModal = ({
           setBuyButtonText(t("homeSection.modal.buyAmountModal.btns.buy"));
           handleFinalAmount(convertedDeve);
           handleStep("final");
+          handleCurrent();
         });
       })
       .catch((error) => {
