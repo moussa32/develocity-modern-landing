@@ -35,6 +35,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen, current, handleCurrent }) => {
   const [provider, setProvider] = useState(null);
   const [connection, setConnection] = useState(null);
   const [transAmount, setTransAmount] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const handleStep = useCallback((step) => {
     setCurrentStep(step);
@@ -69,6 +70,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen, current, handleCurrent }) => {
         referralsToClaim: newReferralsToClaim,
         tokensToClaim: newTokensToClaim,
       } = await getWalletBalance(provider.getSigner(), walletAddress);
+      setIsLoaded(true);
       setDeveBalance(newDeveBalance);
       setTokensToClaim(newTokensToClaim);
       setReferralsToClaim(newReferralsToClaim);
@@ -134,6 +136,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen, current, handleCurrent }) => {
             walletAddress={walletAddress}
             disconnect={handleDisconnectWeb3Modal}
             handleCurrent={handleCurrent}
+            isDataLoaded={isLoaded}
           />
         );
       case "options":

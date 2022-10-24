@@ -4,7 +4,15 @@ import TextItem from "../CommonStage/TextItem";
 import styles from "../CommonStage/CommonStyle.module.css";
 import { useTranslation } from "react-i18next";
 
-const WalletInfoModal = ({ handleStep, walletAddress, disconnect, deveBalance, referralsToClaim, handleCurrent }) => {
+const WalletInfoModal = ({
+  handleStep,
+  walletAddress,
+  disconnect,
+  deveBalance,
+  referralsToClaim,
+  handleCurrent,
+  isDataLoaded,
+}) => {
   const { t } = useTranslation();
 
   return (
@@ -27,16 +35,23 @@ const WalletInfoModal = ({ handleStep, walletAddress, disconnect, deveBalance, r
           title={t("homeSection.modal.walletInfoModal.deveBalance")}
           value={deveBalance.amount}
           percentage={deveBalance.value}
+          isLoaded={isDataLoaded}
           hr="true"
         />
         <TextItem
           title={t("homeSection.modal.walletInfoModal.tokensToClaim")}
           value="1 DEVE"
           showSymbol={false}
+          isLoaded={isDataLoaded}
           secondaryText="= $0.22"
           hr="true"
         />
-        <TextItem title={t("homeSection.modal.walletInfoModal.referralsToClaim")} value={referralsToClaim} hr="" />
+        <TextItem
+          title={t("homeSection.modal.walletInfoModal.referralsToClaim")}
+          value={referralsToClaim}
+          hr=""
+          isLoaded={isDataLoaded}
+        />
         <div className={styles.nextButtonContainer}>
           <NextButton
             handleStep={() => {
