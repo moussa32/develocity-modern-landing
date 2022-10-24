@@ -140,9 +140,8 @@ const BuyAmountModal = ({
             },
           });
         }
+        setIsBuyButtonLoading(false);
       });
-    setBuyButtonText(t("homeSection.modal.buyAmountModal.btns.buy"));
-    setIsBuyButtonLoading(false);
   };
 
   const handleApprove = async () => {
@@ -407,7 +406,6 @@ const BuyAmountModal = ({
           disabled={isBuyButtonLoading}
           onClick={() => {
             currentCurrency.ticker === "BUSD" ? handleBuyBUSD() : handleBuy();
-            handleCurrent();
           }}
         >
           {buyButtonText}
