@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./CommonStyle.module.css";
 import ContentLoader from "react-content-loader";
 
-const TextItem = ({ title, secondaryText, value, percentage, hr, symbol, isLoaded }) => {
+const TextItem = ({ title, secondaryText, value, percentage, hr, symbol, isLoaded = true }) => {
   const renderValues = () => {
     if (!isLoaded) {
       return (
