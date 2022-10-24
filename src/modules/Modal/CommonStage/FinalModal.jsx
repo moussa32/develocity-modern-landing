@@ -37,12 +37,14 @@ const FinalModal = ({ onClose, handleStep, boughtAmount, referral }) => {
         header={t("homeSection.modal.finalModal.mainText")}
         caption={t("homeSection.modal.finalModal.subText")}
       />
-      <p className="p-final text-center">
-        {t("homeSection.modal.finalModal.referralText")}{" "}
-        <span style={{ cursor: "pointer" }} onClick={() => handleStep("referral")}>
-          {t("homeSection.modal.finalModal.referralBtn")}
-        </span>
-      </p>
+      {boughtAmount >= 50 && (
+        <p className="p-final text-center">
+          {t("homeSection.modal.finalModal.referralText")}{" "}
+          <span style={{ cursor: "pointer" }} onClick={() => handleStep("referral")}>
+            {t("homeSection.modal.finalModal.referralBtn")}
+          </span>
+        </p>
+      )}
       <div className="mt-5 w-100">
         <TextItem
           title={t("homeSection.modal.finalModal.PurchasedTokens")}
