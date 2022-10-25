@@ -1,238 +1,238 @@
 {
   "headSection": {
-    "slogan": "Trust, Security, Credibility",
+    "slogan": "Confinaza, Seguridad, Credibilidad",
     "navbar": {
-      "home": "Home",
-      "about": "About",
-      "partners": "Partners",
-      "scanToEarn": "Scan To Earn",
-      "news": "News",
-      "roadmap": "Roadmap",
-      "team": "Team",
-      "contact": "Contact"
+      "home": "Inicio",
+      "about": "Sobre",
+      "partners": "Colaboradores/asociados",
+      "scanToEarn": "Escanea para ganar",
+      "news": "Noticias",
+      "roadmap": "Hoja de ruta",
+      "team": "Equipo",
+      "contact": "Contacto"
     },
     "languages": {
-      "english": "English",
-      "arabic": "Arabic",
-      "turkish": "Turkish",
-      "russian": "Russian",
+      "english": "Inglés",
+      "arabic": "Árabe",
+      "turkish": "Turco",
+      "russian": "Ruso",
       "spanish": "Español"
     },
-    "whitepaper": "Whitepaper",
-    "followUs": ":Follow us on"
+    "whitepaper": "White paper",
+    "followUs": ":Sígeunos en"
   },
   "homeSection": {
-    "mainText": "IDO Has Started!",
-    "subText": "100% of Tokens Remaining!",
+    "mainText": "¡IDO ha comenzado!",
+    "subText": "¡100% de tokens restantes!",
     "btns": {
-      "buyNow": "Buy Now",
-      "howToBuy": "How to Buy?"
+      "buyNow": "Comprar ahora",
+      "howToBuy": "¿Cómo comprar?"
     },
-    "WhereToBuy": "Where to buy",
+    "WhereToBuy": "Dónde comprar",
     "modal": {
       "starterModal": {
-        "mainText": "Connect To",
-        "subText": "Select Blockchain To Connect To It"
+        "mainText": "Conectado a",
+        "subText": "Seleccione Blockchain para conectarse a él"
       },
       "walletInfoModal": {
-        "mainText": "Your Wallet",
-        "subText": "DEVE Balance In Your Wallet",
-        "inputLable": "Wallet",
-        "deveBalance": "DEVE Balance",
-        "tokensToClaim": "DEVE Price",
-        "referralsToClaim": "Referrals To Claim",
-        "nextBtn": "Next →"
+        "mainText": "Tu cartera",
+        "subText": "Tu saldo DEVE en tu cartera",
+        "inputLable": "Cartera",
+        "deveBalance": "Saldo DEVE",
+        "tokensToClaim": "DEVE Precio",
+        "referralsToClaim": "Referencias para reclamar",
+        "nextBtn": "Siguiente →"
       },
       "optionsModal": {
-        "mainText": "Select You Option",
-        "subText": "What You Wanna Do",
+        "mainText": "Seleccione su opción",
+        "subText": "Qué quiere hacer",
         "btns": {
-          "buyDEVE": "Buy DEVE",
-          "claimYourTokens": "Claim Your Tokens",
-          "referrals": "Referrals"
+          "buyDEVE": "Compre DEVE",
+          "claimYourTokens": "Reclame sus tokens",
+          "referrals": "Referencias"
         }
       },
       "buyWithModal": {
-        "mainText": "Buying With",
-        "subText": "Select The Cryptocurrency You Want To Use",
+        "mainText": "Comprar con",
+        "subText": "Seleccione la criptodivisa que quiere utilizar",
         "btns": {
           "binanceCoin": {
-            "balance": "Balance:",
+            "balance": "Saldo:",
             "btnMainText": "Binance Coin",
             "btnSubText": "BNB"
           },
           "binanceUSD": {
-            "balance": "Balance: 2,914.0594",
+            "balance": "Saldo: 2,914.0594",
             "btnMainText": "Binance USD",
             "btnSubText": "BUSD"
           }
         }
       },
       "buyAmountModal": {
-        "balance": "Balance:",
+        "balance": "Saldo:",
         "lables": {
-          "from": "From",
-          "to": "To"
+          "from": "De",
+          "to": "A"
         },
-        "price": "Price",
-        "estimatedBalance": "Estimated Balance",
+        "price": "Precio",
+        "estimatedBalance": "Balance estimado",
         "btns": {
-          "buy": "Buy →",
-          "approve": "Approve",
-          "Loading": "Loading"
+          "buy": "Compra →",
+          "approve": "Aprobar",
+          "Loading": "Cargando"
         }
       },
       "claimModal": {
-        "mainText": "Claim Your Tokens",
-        "subText": "Claim Your Referrals Tokens",
-        "DEVEBalance": "DEVE Balance:",
-        "tokensToClaim": "Tokens To Claim:",
-        "claimBtn": "Claim →"
+        "mainText": "Reclame sus tokens",
+        "subText": "Reclame sus tokens de referencia",
+        "DEVEBalance": "Saldo DEVE:",
+        "tokensToClaim": "Tokens para reclamar:",
+        "claimBtn": "Reclamación →"
       },
       "referralModal": {
-        "mainText": "Referrals",
-        "subText": "Use Your Code Or Claim Referrals",
-        "referralLinkLabel": "Referral Link",
-        "yourReferrals": "Your Referrals:",
-        "referralsToClaim": "Referrals To Claim:",
-        "referralPercentage": "Referral Percentage:",
-        "claimBtn": "Claim →"
+        "mainText": "Referencias",
+        "subText": "Usa tu código o tus referencias de reclamaciones",
+        "referralLinkLabel": "Enlace de referencia",
+        "yourReferrals": "Tus referencias:",
+        "referralsToClaim": "Referencias para reclamar:",
+        "referralPercentage": "Porcentaje de referencia:",
+        "claimBtn": "Reclamación →"
       },
       "finalModal": {
-        "mainText": "Done!",
-        "subText": "Your Transaction Is Complete.",
-        "referralText": "Get DEVE Per Invitation With",
-        "referralBtn": "Referral Code.",
-        "DEVEBalance": "DEVE Balance:",
-        "contribution": "Contribution:",
-        "PurchasedTokens": "Purchased Tokens",
-        "fromReferrals": "From Referrals:",
-        "backToHomepageBtn": "Back To Homepage →"
+        "mainText": "Hecho!",
+        "subText": "Su transacción ha sido completada.",
+        "referralText": "Obtenga DEVE por invitación con",
+        "referralBtn": "Código de referencia.",
+        "DEVEBalance": "Saldo DEVE:",
+        "contribution": "Contribución:",
+        "PurchasedTokens": "Fichas compradas",
+        "fromReferrals": "De las referencias:",
+        "backToHomepageBtn": "Volver a la página de inicio →"
       }
     },
     "exampleSection": {
-      "transactionComplete": "Transaction Complete",
-      "time": " sec ago"
+      "transactionComplete": "Transacción completada",
+      "time": " Hace segundos"
     }
   },
   "aboutSection": {
-    "header": "Trust, Security, Credibility",
-    "mainText": "What's Develocity?",
-    "subText": "Develocity aspires to present its final project in four primary stages. Each stage is presented separately and merged in the post-final stage to create a decentralised platform, which would be distinctively in terms of technology and development based on Web 3.0. DeVelocity strives to create a safe and trustworthy crypto environment where investors and developers can interact securely, considering the transparent credibility and technical measures and standards.",
-    "subTextSecondParagraph": "DeVelocity’s goal is to become a thought leadership organisation, enhancing the community’s awareness and knowledge of the cryptocurrency market by building a virtual academy."
+    "header": "Confinaza, Seguridad, Credibilidad",
+    "mainText": "Qué es Develocity",
+    "subText": "Develocity aspira a presentar su proyecto final en cuatro etapas principales. Cada etapa se presenta por separado y se fusiona en la etapa posterior a la final para crear una plataforma descentralizada, que sería distintiva en términos de tecnología y desarrollo basada en la Web 3.0. DeVelocity se esfuerza por crear un entorno criptográfico seguro y fiable en el que los inversores y los desarrolladores puedan interactuar de forma segura, teniendo en cuenta la credibilidad transparente y las medidas y normas técnicas.",
+    "subTextSecondParagraph": "El objetivo de DeVelocity es convertirse en una organización de liderazgo de pensamiento, mejorando la conciencia de la comunidad y el conocimiento del mercado de criptodivisas mediante la construcción de una academia virtual."
   },
   "scanToEarnSection": {
-    "header": "Multifunctional Tool",
-    "mainText": "Reinventing The Way You Invest And Make Money",
-    "subText": "Scan and Earn",
-    "normalText": "DeFi users are always trying to find the ideal investment, and they are willing to take the risk; even if they try as much as they can to reduce the risk, they won’t be able to determine the size of the risk.",
-    "normalTextSecondParagraph": "The multi-functional tool comes to help the users with their challenges by scanning the contract or searching for the token to get a quick and deep detailed report about the token.",
-    "btn": "Start Using Scanner Tool →",
+    "header": "Herramienta multifuncional",
+    "mainText": "Reinventing The Way Yo",
+    "subText": "Escanear y obtener",
+    "normalText": "Los usuarios de DeFi siempre tratan de encontrar la inversión ideal, y están dispuestos a asumir el riesgo; aunque traten de reducirlo todo lo posible, no podrán determinar su magnitud.",
+    "normalTextSecondParagraph": "Los usuarios de DeFi siempre tratan de encontrar la inversión ideal, y están dispuestos a asumir el riesgo; aunque traten de reducirlo todo lo posible, no podrán determinar su magnitud.",
+    "btn": "Empezar usando la herramienta del escáner →",
     "svg": {
-      "scan": "SCAN",
-      "tokenName": "Token Name",
-      "topTokens": "Top Tokens",
-      "withdrawTheMoney": "Withdraw The Money",
-      "myWallet": "My Wallet",
-      "totalScans": "Total Scans",
-      "averageScore": "Average Score"
+      "scan": "Sscanear",
+      "tokenName": "Nombre del token",
+      "topTokens": "Mejores tokens",
+      "withdrawTheMoney": "Retirar el dinero",
+      "myWallet": "Mi cartera",
+      "totalScans": "Número total de escaneos",
+      "averageScore": "Puntuación media"
     }
   },
   "partnersSection": {
-    "mainText": "Partnering With"
+    "mainText": "Asociar a"
   },
   "newsSection": {
-    "mainText": "Latest News From Develocity",
-    "subText": "Don't Miss Update From Develocity",
-    "blogBtn": "CHECK OUR BLOG",
-    "readMore": "Read More >"
+    "mainText": "Últimas noticias de Develocity",
+    "subText": "No se pierda las novedades de Develocity",
+    "blogBtn": "Revisa nuestro blog",
+    "readMore": "Leer más >"
   },
   "roadmapSection": {
-    "mainText": "Roadmap",
-    "mainTextSubstring": "Most Secure Eco-System",
+    "mainText": "Hoja de ruta",
+    "mainTextSubstring": "El Ecosistema más seguro",
     "cards": {
       "startup": {
-        "mainText": "Startup",
+        "mainText": "Puesta en marcha",
         "subText": [
-          "Website Launching",
-          "Project #1 Introduction",
-          "Company Name Registration",
-          "License & Legal Opinion"
+          "Lanzamiento del sitio web",
+          "Proyecto 1 Introducción",
+          "Registro del nombre de la compañía",
+          "Licencia y opinión legal"
         ]
       },
       "launch": {
-        "mainText": "Launch",
+        "mainText": "Lanzamiento",
         "subText": [
-          "Publishing Tool \"Beta Version\"",
-          "Start Pre-Sale",
-          "Teaser Marketing Campaign",
-          "Project #2 Introduction",
-          "Promoting & Marketing",
-          "Join Centralized Exchanges"
+          "Publicar la herramienta \"Version Beta\"",
+          "Comienzo de la preventa",
+          "Prueba de la campaña publicitaria",
+          "Proyecto 2 Introducción",
+          "Promoción y marketing",
+          "Únete a los intercambios centralizados"
         ]
       },
       "expansion": {
         "mainText": "Expansion",
         "subText": [
           "Publishing SWAP \"Beta Version\"",
-          "Teaser Marketing Campaign",
-          "Project #3 Introduction",
-          "Promoting & Marketing",
-          "NFT First Edition",
-          "Join Centralized Exchanges"
+          "Prueba de la campaña publicitaria",
+          "Proyecto 3 introducción",
+          "Promoción y marketing",
+          "Primera edición de NFT",
+          "Únete a los intercambios centralizados"
         ]
       },
       "opportunities": {
         "mainText": "Opportunities",
         "subText": [
           "Publishing Bridge \"Beta Version\"",
-          "Project #4 Introduction",
-          "Teaser Marketing Campaign",
-          "Promoting & Marketing",
-          "Looking At The Opportunities"
+          "Proyecto 4 Introducción",
+          "Prueba de la campaña publicitaria",
+          "Promoción y marketing",
+          "Buscar oportunidades"
         ]
       }
     },
-    "phases": ["Phase I", "Phase II", "Phase III", "Phase IV"]
+    "phases": ["Fase 1", "Fase 2", "Fase 3", "Fase 4"]
   },
   "teamSection": {
-    "mainText": "Our Team",
+    "mainText": "Nuestro equipo",
     "members": [
       {
         "name": "Marwan Bin Mohammed Al Maktoum",
-        "role": "Founder"
+        "role": "Fundador"
       },
       {
         "name": "Mahdi Ajaj",
-        "role": "CEO"
+        "role": "Director ejecutivo"
       },
       {
         "name": "Abdulaziz Bin Fahad",
-        "role": "CTO"
+        "role": "Director de tecnología"
       },
       {
         "name": "Mamuka Kavtelishvili",
-        "role": "CMO"
+        "role": "Director de marketing"
       }
     ]
   },
   "contactSection": {
-    "mainText": "Get In Touch!",
+    "mainText": "Contactar!",
     "headquarter": {
-      "mainText": "Headquarter",
-      "subText": "Dubai, United Arab Emirates"
+      "mainText": "Sede Central",
+      "subText": "Dubai, Emiratos Árabes Unidos"
     },
     "email": {
-      "mainText": "Email",
+      "mainText": "Correo",
       "subText": "contact@develocity.finance"
     }
   },
   "footerSection": {
     "links": {
-      "stayUpdated": "Stay Updated",
-      "multifunctionalTool": "Multifunctional Tool",
+      "stayUpdated": "Manténgase al día",
+      "multifunctionalTool": "Herramienta multifuncional",
       "whitePaper": "Whitepaper"
     },
-    "copyright": "Copyright © Develocity 2022"
+    "copyright": "Derechos de autor © Develocity 2022"
   }
 }
