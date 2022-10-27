@@ -1,9 +1,15 @@
 import EcosystemImage from "../../assets/images/Ourvision.PNG";
+// import EcosystemCSS from "../../assets/images/Ecosystem(CSS).svg";
+import { ReactComponent as EcosystemTest } from "../../assets/images/EcosystemTest.svg";
+import { ReactComponent as EcosystemCSS } from "../../assets/images/EcosystemTest.svg";
+
 const Ecosystem = () => {
   return (
     <>
       <div>
-      <img src={EcosystemImage} className="ecosystem-svg" alt="ecosystem" title="ecosystem" />
+        <img src={EcosystemImage} className="ecosystem-svg" alt="ecosystem" title="ecosystem" />
+        <EcosystemCSS />
+        <EcosystemTest />
 
         {/* <img src={EcosystemImage} className="ecosystem-svg" alt="ecosystem" title="ecosystem" />
         <div className="ecosystem-header-center">Our Vision</div> */}
