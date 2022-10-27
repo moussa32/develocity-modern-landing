@@ -58,7 +58,8 @@ export default function LinkTree() {
         },
 
     ]
-    const shareNavigator = (text, title, url) => {
+    const shareNavigator = (event,text, title, url) => {
+        event.stopPropagation();
         if (navigator.share) {
             navigator.share({
                 text: text,
@@ -88,7 +89,7 @@ export default function LinkTree() {
                 <div className={styles.info}>
                     <img src={logo} alt='logo' width={72} />
                     <h5>Develocity</h5>
-                    <p>DeVelocity strives to create a safe and trustworthy crypto environment where investors and developers can interact securely, considering the transparent credibility and technical measures and standards.</p>
+                    <p>Develocity strives to create a safe and trustworthy crypto environment where investors and developers can interact securely, considering the transparent credibility and technical measures and standards.</p>
                     <div className={styles.iconWrapper}>
                         <a href='https://bscscan.com' className={styles.facebookIcon}>
                             <FaFacebookF />

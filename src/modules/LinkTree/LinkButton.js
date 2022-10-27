@@ -36,7 +36,7 @@ useEffect(()=>{
   return (
     <>
       <div
-        onScroll={handleScroll}
+        // onScroll={handleScroll}
         onClick={goToLink}
         ref={ref}
         // onTouchStart={onTouchMove}
@@ -56,8 +56,8 @@ useEffect(()=>{
           </button>
           <div>
             <button className={styles['link-btnShare']}
-              onClick={() => shareNavigator(textofshare, titleofshare, urlofshare)}>
-              <ShareIcon color='#fff' />
+              onClick={(event) => shareNavigator(event,textofshare, titleofshare, urlofshare)}>
+              <ShareIcon color='#8968E9' />
             </button>
           </div>
         </div>

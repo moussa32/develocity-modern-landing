@@ -1,9 +1,10 @@
 .treeWrapper {
     position: relative;
-    /* top: 0;
-    left: 0;
-    right: 0;
-    background-color: #F9F9F9; */
+    background-image: url('../../assets/images/Arrows.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: 120px center;
 }
 
 .treeContainer {
@@ -83,31 +84,26 @@
     font-size: 18px;
     transition: all 0.5s;
 }
-.facebookIcon, .youtubeIcon, .instgramIcon, .twitterIcon, .tiktokIcon, .telegramIcon{
+.facebookIcon:hover, .youtubeIcon:hover, .instgramIcon:hover, .twitterIcon:hover, .tiktokIcon:hover, .telegramIcon:hover{
     background-color: #B1BACB;
-
+    transform: translateY(-6px);
 }
-.facebookIcon:hover {
+.facebookIcon {
     background-color: #1672E6;
 }
-
-.youtubeIcon:hover {
+.youtubeIcon {
     background-color: #FF0000;
 }
-
-.instgramIcon:hover {
+.instgramIcon {
     background-color: #A63795;
 }
-
-.twitterIcon:hover {
+.twitterIcon {
     background-color: #1DA1F2;
 }
-
-.tiktokIcon:hover {
+.tiktokIcon {
     background-color: #F12950;
 }
-
-.telegramIcon:hover {
+.telegramIcon {
     background-color: #58BDEF;
 }
 
@@ -148,7 +144,7 @@
     position: absolute;
     right: 10px;
     top: 8px;
-    background-color: rgba(138, 105, 235, 0.1);
+    /* background-color: rgba(138, 105, 235, 0.1); */
     opacity: 0;
     transition: all 0.5;
 }
@@ -177,7 +173,7 @@
         transform: translateX(0%);
         width: 85%;
     }
-    .facebookIcon {
+    /* .facebookIcon {
         background-color: #1672E6;
     }
     .youtubeIcon {
@@ -198,7 +194,7 @@
 
     .telegramIcon {
         background-color: #58BDEF;
-    }
+    } */
 
     .link-wrapper {
         width: 90%;
@@ -210,8 +206,7 @@
         display: none
     }
 
-    .link-btnShare {
-        /* position: absolute; */
+    /* .link-btnShare {
         right: 0px;
         transition: all 0.8s;
         background-color: #8968E9;
@@ -223,14 +218,14 @@
         padding-top: 1px;
         padding-bottom: 6px;
         border-radius: 0px;
-    }
+    } */
 
     .link-btnShare svg>path {
-        stroke: #fff !important;
+        stroke: #8968E9!important;
     }
 
     .swapContainer {
-        width: 120%;
+        /* width: 120%; */
         height: 50px;
         position: absolute;
         top: 0;
