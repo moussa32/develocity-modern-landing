@@ -344,7 +344,7 @@ const Featured = () => {
       </section> */}
       <section className="container">
         <section className="row spacing-between-section featured-info-section extra-padding">
-          <div className="col-md-6 col-sm-12">
+          <div className="direction col-md-6 col-sm-12">
             <span className="bg-primary bg-opacity-25 text-primary text-capitalize fs-xs featured-badge">
               {t("aboutSection.header")}
             </span>

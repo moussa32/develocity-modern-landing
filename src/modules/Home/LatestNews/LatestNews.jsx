@@ -28,7 +28,7 @@ export function LatestNews() {
     const { t } = useTranslation();
     return (
         <>
-        <div className={`${ styles.newsWrapper}`}> 
+        <div className={`direction ${ styles.newsWrapper}`}> 
                 <h3 className={`container ${styles.news_header}`}><span>{t("newsSection.mainText")}</span></h3>
 
             <div className={`container ${styles.newsBody}`}>

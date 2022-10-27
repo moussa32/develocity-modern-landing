@@ -12,6 +12,11 @@ body{
 html[lang*=ar] body{
   font-family: 'Readex Pro', sans-serif !important;
 }
+/*change direction in arabic language*/
+html[lang*=ar] main,
+html[lang*=ar] .direction{
+  direction: rtl;
+}
 
 $primary: #a066dc;
 $secondary: #373737;

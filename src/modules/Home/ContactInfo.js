@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 const ContactInfo = () => {
   const { t } = useTranslation();
   return (
-    <section id="contact" className="container my-5 py-5">
+    <section id="contact" className="direction container my-5 py-5">
       <header className="t-header text-center my-5">{t("contactSection.mainText")}</header>
       <div className="container flex-column flex-md-row d-flex justify-content-center justify-content-md-around ">
 

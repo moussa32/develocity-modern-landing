@@ -697,7 +697,7 @@ const Invest = () => {
                 </svg>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="direction col-md-6">
               <m.h3 {...animationInfoHeading} className="fs-xl d-flex align-items-center invest-subheading">
                 <span className="bg-white scan-icon-wrapper d-flex align-items-center justify-content-center">
                   <svg
