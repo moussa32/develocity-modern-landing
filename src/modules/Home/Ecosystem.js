@@ -1,7 +1,7 @@
 import EcosystemImage from "../../assets/images/Ourvision.PNG";
 // import EcosystemCSS from "../../assets/images/Ecosystem(CSS).svg";
 import { ReactComponent as EcosystemTest } from "../../assets/images/EcosystemTest.svg";
-import { ReactComponent as EcosystemCSS } from "../../assets/images/EcosystemTest.svg";
+import { ReactComponent as EcosystemCSS } from "../../assets/images/Ecosystem(CSS).svg";
 
 const Ecosystem = () => {
   return (
