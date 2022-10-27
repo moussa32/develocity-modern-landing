@@ -22,7 +22,7 @@
     "followUs": ":Follow us on"
   },
   "homeSection": {
-    "mainText": "IDO Has Started!",
+    "mainText": "ICO Has Started!",
     "subText": "100% of Tokens Remaining!",
     "btns": {
       "buyNow": "Buy Now",
@@ -199,7 +199,7 @@
     "mainText": "Our Team",
     "members": [
       {
-        "name": "Marwan Bin Mohammed Al Maktoum",
+        "name": "Sheikh Marwan Bin Mohammed Al Maktoum",
         "role": "Founder"
       },
       {

@@ -22,11 +22,11 @@
     "followUs": ":Sígeunos en"
   },
   "homeSection": {
-    "mainText": "¡IDO ha comenzado!",
-    "subText": "¡100% de tokens restantes!",
+    "mainText": "ICO ha comenzado!",
+    "subText": "100% de tokens restantes!",
     "btns": {
       "buyNow": "Comprar ahora",
-      "howToBuy": "¿Cómo comprar?"
+      "howToBuy": "Cómo comprar"
     },
     "WhereToBuy": "Dónde comprar",
     "modal": {
@@ -199,7 +199,7 @@
     "mainText": "Nuestro equipo",
     "members": [
       {
-        "name": "Marwan Bin Mohammed Al Maktoum",
+        "name": "Sheikh Marwan Bin Mohammed Al Maktoum",
         "role": "Fundador"
       },
       {

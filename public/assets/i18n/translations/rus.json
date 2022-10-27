@@ -22,7 +22,7 @@
       "followUs": ":Подпишитесь на нас"
   },
   "homeSection": {
-      "mainText": "IDO началось!",
+      "mainText": "ICO началось!",
       "subText": "Осталось 100% токенов!",
       "btns": {
           "buyNow": "Купить сейчас",
@@ -204,7 +204,7 @@
       "mainText": "Наша команда",
       "members": [
           {
-              "name": "Marwan Bin Mohammed Al Maktoum",
+              "name": "Sheikh Marwan Bin Mohammed Al Maktoum",
               "role": "Основатель"
           },
           {

@@ -22,7 +22,7 @@
         "followUs": ":Bizi Takip edin"
     },
     "homeSection": {
-        "mainText": "Ön satış Başladı",
+        "mainText": "ICO Başladı",
         "subText": "Kalan Jetonların %100'ü!",
         "btns": {
             "buyNow": "Şimdi satın al",
@@ -204,7 +204,7 @@
         "mainText": "Takım",
         "members": [
             {
-                "name": "Marwan Bin Mohammed Al Maktoum",
+                "name": "Sheikh Marwan Bin Mohammed Al Maktoum",
                 "role": "Kurucu"
             },
             {
