@@ -7,14 +7,12 @@ import { ReactComponent as EcosystemImage } from "../../assets/images/Ecosystem.
 
 const Ecosystem = () => {
   return (
-    <>
-      <div>
-        <EcosystemImage />
+    <div className="h-100 w-100">
+      <EcosystemImage />
 
-        {/* <img src={EcosystemImage} className="ecosystem-svg" alt="ecosystem" title="ecosystem" />
+      {/* <img src={EcosystemImage} className="ecosystem-svg" alt="ecosystem" title="ecosystem" />
         <div className="ecosystem-header-center">Our Vision</div> */}
-      </div>
-    </>
+    </div>
 
     // <div className="circleWrapper">
     //   <svg
