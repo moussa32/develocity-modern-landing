@@ -14,7 +14,7 @@ html[lang*=ar] body{
 }
 /*change direction in arabic language*/
 html[lang*=ar] main,
-.direction{
+html[lang*=ar] .direction{
   direction: rtl;
 }
 
